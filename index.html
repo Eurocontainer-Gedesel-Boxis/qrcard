@@ -81,6 +81,33 @@ a:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid #008
 @media(max-width:1000px){.page{width:calc(100% - 44px);grid-template-rows:auto auto auto auto}.hero{grid-template-columns:.8fr 1.2fr}.visual{height:350px;min-height:260px}.access{gap:12px}.access-card{grid-template-columns:60px 1fr 24px;padding:17px;gap:13px}.logo-tile{width:58px;height:58px}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact:last-child{grid-column:1/-1}}
 @media(max-width:650px){.page{width:calc(100% - 28px);padding:14px 0 18px;gap:16px}header{align-items:flex-start}.brand{padding:7px 12px}.brand img{width:130px;height:42px}.header-meta{font-size:7px;letter-spacing:.12em}.hero{grid-template-columns:1fr;gap:0}.hero-copy{padding:8px 0 0}h1{font-size:38px}.kicker{font-size:8px;margin-bottom:12px}.hero-copy p{font-size:11px;margin-top:12px;max-width:100%}.hero-tags{margin-top:13px}.hero-tags span{font-size:8px;padding:6px 8px}.visual{height:250px;min-height:220px;margin-top:-2px}.access{grid-template-columns:1fr;gap:10px}.access-card{min-height:116px;grid-template-columns:58px 1fr 22px;padding:15px;gap:12px}.logo-tile{width:56px;height:56px}.access-copy small{font-size:7px;margin-bottom:6px}.access-copy strong{font-size:19px}.access-copy em{font-size:9px}.arrow{font-size:27px}.contacts-head{align-items:flex-start;flex-direction:column;gap:3px}.contacts-head h2{font-size:22px}.contact-grid{grid-template-columns:1fr;gap:9px}.contact:last-child{grid-column:auto}.contact{padding:14px 15px}.bottomline{font-size:7px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* --- QA hardening: stable background stacking and compact desktop viewport --- */
+body{isolation:isolate;background:#dcebf1}
+body:before{z-index:-2;transform:none;background-position:center 54%;background-size:cover}
+body:after{z-index:-1}
+.page{position:relative;z-index:0}
+@media(min-width:1100px) and (min-height:700px){
+ .page{height:100svh;min-height:700px;max-height:none;grid-template-rows:auto minmax(220px,1fr) auto auto;gap:clamp(9px,1.25vh,15px);padding:clamp(12px,1.7vh,20px) 0}
+ .visual{height:min(39vh,390px);min-height:220px}
+ .access-card{min-height:112px;padding:17px 22px}
+ .contact{padding:13px 15px}
+ .person{margin-bottom:9px}
+ .details{gap:5px}
+ .bottomline{margin-top:6px}
+}
+@media(min-width:1100px) and (max-height:780px){
+ h1{font-size:clamp(38px,3.7vw,54px)}
+ .hero-copy p{margin-top:13px;font-size:12px}
+ .hero-tags{margin-top:13px}
+ .visual{height:34vh;min-height:205px}
+ .contact{padding:11px 13px}
+ .person-icon{width:34px;height:34px;flex-basis:34px}
+ .person h3{font-size:12px}
+ .detail{font-size:8.8px}
+}
+@media(max-width:650px){body:before{position:fixed;background-position:58% center}body:after{position:fixed}}
+@media(prefers-reduced-motion:reduce){#container3d{cursor:default}}
 </style>
 </head>
 <body>
@@ -108,7 +135,7 @@ a:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid #008
 <span class="arrow" aria-hidden="true">↗</span>
 </a>
 <a class="access-card euro tilt" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Visitar la web oficial de Eurocontainer">
-<span class="logo-tile"><span class="euro-logo">Eurocontainer<span>.es</span></span></span>
+<span class="logo-tile"><span class="euro-logo">EUROCONTAINER</span></span>
 <span class="access-copy"><small>Web corporativa · Fabricación industrial</small><strong>Eurocontainer</strong><em>Contenedores, cisternas, equipos especiales y soluciones modulares a medida.</em></span>
 <span class="arrow" aria-hidden="true">↗</span>
 </a>
@@ -145,7 +172,7 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&matchMedia("(pointer
 (()=>{const canvas=document.getElementById("container3d");if(!canvas||!window.THREE){canvas.style.background="radial-gradient(ellipse at 50% 65%,rgba(255,255,255,.7),transparent 70%)";return}
 const THREE=window.THREE,scene=new THREE.Scene();scene.background=null;
 const camera=new THREE.PerspectiveCamera(32,1,.1,100);camera.position.set(8.6,5.2,10.8);camera.lookAt(0,1.2,0);
-const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.18;
+let renderer;try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});}catch(error){canvas.style.cursor="default";canvas.setAttribute("aria-label","Vista 3D no disponible en este navegador. Los accesos y contactos siguen funcionando.");const fallback=document.createElement("div");fallback.className="webgl-fallback";fallback.textContent="Vista 3D no disponible en este navegador";fallback.style.cssText="position:absolute;inset:42% 8% auto;text-align:center;color:#31576c;font:700 12px Manrope,Arial";canvas.parentNode.appendChild(fallback);return}renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.18;
 scene.add(new THREE.HemisphereLight(0xffffff,0x829aa7,2.0));
 const sun=new THREE.DirectionalLight(0xffffff,3.2);sun.position.set(-5,9,7);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-10;sun.shadow.camera.right=10;sun.shadow.camera.top=10;sun.shadow.camera.bottom=-10;scene.add(sun);
 const fill=new THREE.DirectionalLight(0x9bdfff,1.1);fill.position.set(6,3,-6);scene.add(fill);
@@ -180,10 +207,10 @@ const tip=cylinder(.17,.17,.55,edge,-.78,H+.58,-.65,Math.PI/2);tip.rotation.z=Ma
 const elbow=new THREE.Mesh(new THREE.TorusGeometry(.28,.12,12,32,Math.PI/2),dark);elbow.rotation.set(Math.PI/2,0,Math.PI);elbow.position.set(-.85,H+.72,-.65);model.add(elbow);
 cube(6.45,.12,2.72,dark,0,-.08,0);
 // Eurocontainer brand plate as crisp canvas texture
-const logoCanvas=document.createElement("canvas");logoCanvas.width=1024;logoCanvas.height=256;const ctx=logoCanvas.getContext("2d");ctx.clearRect(0,0,1024,256);ctx.font="900 116px Arial";ctx.fillStyle="#17394c";ctx.fillText("Eurocontainer",18,152);ctx.fillStyle="#ed6b37";ctx.fillText(".es",690,152);ctx.beginPath();ctx.moveTo(908,92);ctx.lineTo(950,130);ctx.lineTo(1000,65);ctx.lineWidth=22;ctx.strokeStyle="#ed6b37";ctx.stroke();const tex=new THREE.CanvasTexture(logoCanvas);tex.colorSpace=THREE.SRGBColorSpace;
+const logoCanvas=document.createElement("canvas");logoCanvas.width=1024;logoCanvas.height=256;const ctx=logoCanvas.getContext("2d");ctx.clearRect(0,0,1024,256);ctx.font="900 104px Arial";ctx.fillStyle="#17394c";ctx.fillText("EUROCONTAINER",18,152);const tex=new THREE.CanvasTexture(logoCanvas);tex.colorSpace=THREE.SRGBColorSpace;
 const plateMat=new THREE.MeshBasicMaterial({map:tex,transparent:true,side:THREE.DoubleSide});
-const plate=new THREE.Mesh(new THREE.PlaneGeometry(2.65,.66),plateMat);plate.position.set(.45,1.82,D/2+.13);model.add(plate);
-const endPlate=new THREE.Mesh(new THREE.PlaneGeometry(1.65,.42),plateMat);endPlate.rotation.y=Math.PI/2;endPlate.position.set(-L/2-.09,1.7,0);model.add(endPlate);
+const plate=new THREE.Mesh(new THREE.PlaneGeometry(3.0,.66),plateMat);plate.position.set(.45,1.82,D/2+.13);model.add(plate);
+const endPlate=new THREE.Mesh(new THREE.PlaneGeometry(1.85,.42),plateMat);endPlate.rotation.y=Math.PI/2;endPlate.position.set(-L/2-.09,1.7,0);model.add(endPlate);
 // Ground shadow catcher
 const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({opacity:.13}));floor.rotation.x=-Math.PI/2;floor.position.y=-.16;floor.receiveShadow=true;scene.add(floor);
 model.rotation.y=-.28;model.rotation.x=-.035;
@@ -192,7 +219,7 @@ canvas.addEventListener("pointerdown",e=>{drag=true;auto=false;lastX=e.clientX;l
 canvas.addEventListener("pointermove",e=>{if(!drag)return;targetY+=(e.clientX-lastX)*.008;targetX+=(e.clientY-lastY)*.004;targetX=Math.max(-.25,Math.min(.22,targetX));lastX=e.clientX;lastY=e.clientY});
 canvas.addEventListener("pointerup",()=>{drag=false});canvas.addEventListener("pointercancel",()=>{drag=false});
 canvas.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")targetY-=.15;if(e.key==="ArrowRight")targetY+=.15});
-const resize=()=>{const r=canvas.getBoundingClientRect();if(!r.width||!r.height)return;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};new ResizeObserver(resize).observe(canvas);resize();
+const resize=()=>{const r=canvas.getBoundingClientRect();if(!r.width||!r.height)return;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};if("ResizeObserver" in window){new ResizeObserver(resize).observe(canvas)}else{window.addEventListener("resize",resize,{passive:true})}resize();
 const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;let start=performance.now();
 function render(t){requestAnimationFrame(render);if(!drag){if(!reduced)targetY+=.00055;model.rotation.y+=(targetY-model.rotation.y)*.045;model.rotation.x+=(targetX-model.rotation.x)*.045}model.position.y=Math.sin((t-start)*.0007)*.045;renderer.render(scene,camera)}requestAnimationFrame(render);
 })();
