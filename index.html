@@ -1,227 +1,475 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#eaf4f8">
-<meta name="description" content="BOX Integration Systems y Eurocontainer: ingeniería, integración y fabricación de soluciones industriales y modulares.">
-<title>BOX Integration Systems × Eurocontainer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#102f43;--navy:#09283d;--blue:#087eae;--cyan:#55c8e8;--orange:#ed6b37;--paper:#edf5f8}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:Manrope,Inter,"Segoe UI",Arial,sans-serif}
-body{min-height:100svh;overflow-x:hidden;color:var(--ink);background:#dcebf1}
-body:before{content:"";position:fixed;inset:0;z-index:-3;background:url("assets/fondo-industrial.webp?v=20261117-premium3d") center 52%/cover no-repeat;transform:scale(1.02);filter:saturate(1.08)}
-body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(105deg,rgba(244,250,252,.94) 0%,rgba(232,244,249,.82) 44%,rgba(221,239,247,.57) 100%),linear-gradient(180deg,rgba(255,255,255,.1),rgba(7,39,59,.16))}
-.page{width:min(1540px,calc(100% - 72px));min-height:100svh;margin:auto;padding:clamp(18px,2.2vh,28px) 0;display:grid;grid-template-rows:auto minmax(300px,1fr) auto auto;gap:clamp(13px,1.7vh,22px)}
-header{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:5}
-.brand{display:flex;align-items:center;padding:8px 16px;background:linear-gradient(135deg,#123d56,#082b42);box-shadow:0 12px 28px rgba(6,39,58,.18),inset 0 1px rgba(255,255,255,.22);text-decoration:none}
-.brand img{display:block;width:clamp(145px,13vw,178px);height:48px;object-fit:contain}
-.header-meta{text-align:right;color:#19465f;font-size:9px;line-height:1.7;font-weight:900;letter-spacing:.19em;text-transform:uppercase}
-.hero{position:relative;display:grid;grid-template-columns:minmax(330px,.78fr) minmax(0,1.22fr);align-items:center;min-height:0;isolation:isolate}
-.hero-copy{position:relative;z-index:2;padding:10px 0 16px}
-.kicker{display:flex;align-items:center;gap:10px;color:#087da9;font-size:10px;font-weight:900;letter-spacing:.23em;text-transform:uppercase;margin-bottom:18px}
-.kicker:before{content:"";width:30px;height:2px;background:var(--cyan);box-shadow:0 0 12px rgba(85,200,232,.6)}
-h1{max-width:640px;margin:0;color:#0b3048;font-size:clamp(38px,4.3vw,66px);font-weight:900;line-height:.98;letter-spacing:-.065em;text-wrap:balance}
-.hero-copy p{max-width:470px;margin:20px 0 0;color:#31576c;font-size:13px;line-height:1.75;font-weight:600}
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.hero-tags span{padding:7px 11px;background:rgba(255,255,255,.46);box-shadow:inset 0 1px rgba(255,255,255,.85),0 5px 15px rgba(14,58,80,.06);color:#28546a;font-size:9px;font-weight:800;letter-spacing:.04em}
-.visual{position:relative;height:min(48vh,470px);min-height:300px;z-index:1;perspective:1100px}
-#container3d{width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;outline:none}
-#container3d:active{cursor:grabbing}
-.visual:before{content:"";position:absolute;left:12%;right:5%;bottom:10%;height:18%;background:radial-gradient(ellipse,rgba(18,54,72,.23),transparent 68%);filter:blur(14px);pointer-events:none}
-.visual-caption{position:absolute;right:3%;bottom:2%;color:#42677b;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;pointer-events:none}
-.visual-caption:before{content:"";display:inline-block;width:20px;height:1px;background:var(--orange);vertical-align:middle;margin-right:8px}
-.access{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.access-card{--rx:0deg;--ry:0deg;position:relative;isolation:isolate;min-height:132px;display:grid;grid-template-columns:76px 1fr 34px;align-items:center;gap:18px;padding:21px 25px;overflow:hidden;color:#fff;text-decoration:none;background:linear-gradient(115deg,rgba(7,42,63,.97),rgba(12,66,91,.91));box-shadow:0 18px 36px rgba(5,38,57,.19),inset 0 1px rgba(255,255,255,.2);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s,filter .38s}
-.access-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(4,30,47,.18),rgba(4,30,47,.75)),var(--card-image) center/cover;opacity:.7;transition:transform .7s,opacity .4s}
-.access-card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,transparent 15%,rgba(255,255,255,.10) 36%,transparent 58%);transform:translateX(-110%);transition:transform .7s}
-.access-card:hover{transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-5px);box-shadow:0 26px 48px rgba(5,38,57,.27),inset 0 1px rgba(255,255,255,.28);filter:brightness(1.06)}
-.access-card:hover:before{transform:scale(1.06);opacity:.88}
-.access-card:hover:after{transform:translateX(110%)}
-.access-card.boxis{--card-image:url("assets/fondo-contenedores-card.webp")}
-.access-card.euro{--card-image:url("assets/eurocontainer-generator-button-v14.webp")}
-.logo-tile{height:70px;width:70px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.055));box-shadow:8px 10px 22px rgba(0,16,28,.24),inset 1px 1px 0 rgba(255,255,255,.4);transform:translateZ(24px)}
-.logo-tile img{width:86%;height:86%;object-fit:contain}
-.euro-logo{font-size:14px;line-height:1;font-weight:900;letter-spacing:-.07em;color:white;text-shadow:0 2px 8px rgba(0,0,0,.25)}
-.euro-logo span{color:#ff8a50}
-.access-copy{min-width:0;transform:translateZ(20px)}
-.access-copy small{display:block;color:#8fe4f8;font-size:8px;font-weight:900;letter-spacing:.19em;text-transform:uppercase;margin-bottom:8px}
-.access-copy strong{display:block;font-size:clamp(18px,1.9vw,26px);line-height:1.08;letter-spacing:-.045em;font-weight:900}
-.access-copy em{display:block;margin-top:7px;color:rgba(242,250,253,.83);font-size:10px;line-height:1.45;font-style:normal;font-weight:600}
-.arrow{font-size:32px;font-weight:400;color:#fff;line-height:1;transform:translateZ(30px);transition:transform .35s,color .35s;text-shadow:0 4px 12px rgba(0,0,0,.2)}
-.access-card:hover .arrow{transform:translate(5px,-5px) translateZ(38px);color:#8fe4f8}
-.access-card.euro:hover .arrow{color:#ff9c70}
-.contacts{position:relative;z-index:3}
-.contacts-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:10px;gap:18px}
-.contacts-head h2{margin:0;color:#10364e;font-size:clamp(22px,2.1vw,29px);font-weight:900;letter-spacing:-.05em}
-.contacts-head p{margin:0;color:#31586d;font-size:9px;font-weight:800;letter-spacing:.1em}
-.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.contact{--rx:0deg;--ry:0deg;position:relative;min-width:0;padding:16px 18px 16px;background:linear-gradient(135deg,rgba(249,253,255,.91),rgba(220,239,247,.83));box-shadow:0 15px 32px rgba(6,40,59,.14),inset 0 1px rgba(255,255,255,.98),inset 0 -1px rgba(77,140,165,.12);backdrop-filter:blur(18px) saturate(140%);transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .35s,box-shadow .35s}
-.contact:hover{transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-4px);box-shadow:0 22px 40px rgba(6,40,59,.2),inset 0 1px #fff}
-.person{display:flex;align-items:center;gap:11px;margin-bottom:12px}
-.person-icon{width:39px;height:39px;flex:0 0 39px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#57cde7,#08729d 65%,#064363);box-shadow:6px 8px 16px rgba(4,48,73,.2),inset 1px 1px 3px rgba(255,255,255,.55)}
-.person-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.person h3{margin:0 0 3px;color:#10344c;font-size:13px;font-weight:900;letter-spacing:-.025em}
-.role{color:#4b6d81;font-size:9px;font-weight:800}
-.details{display:grid;gap:7px}
-.detail{display:flex;align-items:flex-start;gap:8px;min-width:0;color:#274b60;text-decoration:none;font-size:9.5px;line-height:1.35;font-weight:650}
-a.detail:hover{color:#007eaf}
-.detail-icon{width:15px;height:15px;flex:0 0 15px;display:grid;place-items:center;color:#0789b8}
-.detail-icon svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.vcard{position:absolute;right:13px;top:13px;width:26px;height:26px;border:0;padding:0;background:linear-gradient(145deg,#faffff,#d6edf5);color:#087ba9;font-size:19px;line-height:26px;cursor:pointer;box-shadow:4px 6px 12px rgba(3,44,67,.14);transition:transform .3s}
-.vcard:hover{transform:translate(2px,-2px)}
-.bottomline{display:flex;justify-content:space-between;gap:15px;margin-top:9px;color:#234e64;font-size:8px;font-weight:850;letter-spacing:.08em}
-.bottomline a{color:inherit;text-decoration:none}.bottomline a:hover{color:#007da9}
-a:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid #008dbb;outline-offset:4px}
-@media(min-width:1100px) and (min-height:760px){.page{height:100svh;max-height:1100px}}
-@media(max-width:1000px){.page{width:calc(100% - 44px);grid-template-rows:auto auto auto auto}.hero{grid-template-columns:.8fr 1.2fr}.visual{height:350px;min-height:260px}.access{gap:12px}.access-card{grid-template-columns:60px 1fr 24px;padding:17px;gap:13px}.logo-tile{width:58px;height:58px}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact:last-child{grid-column:1/-1}}
-@media(max-width:650px){.page{width:calc(100% - 28px);padding:14px 0 18px;gap:16px}header{align-items:flex-start}.brand{padding:7px 12px}.brand img{width:130px;height:42px}.header-meta{font-size:7px;letter-spacing:.12em}.hero{grid-template-columns:1fr;gap:0}.hero-copy{padding:8px 0 0}h1{font-size:38px}.kicker{font-size:8px;margin-bottom:12px}.hero-copy p{font-size:11px;margin-top:12px;max-width:100%}.hero-tags{margin-top:13px}.hero-tags span{font-size:8px;padding:6px 8px}.visual{height:250px;min-height:220px;margin-top:-2px}.access{grid-template-columns:1fr;gap:10px}.access-card{min-height:116px;grid-template-columns:58px 1fr 22px;padding:15px;gap:12px}.logo-tile{width:56px;height:56px}.access-copy small{font-size:7px;margin-bottom:6px}.access-copy strong{font-size:19px}.access-copy em{font-size:9px}.arrow{font-size:27px}.contacts-head{align-items:flex-start;flex-direction:column;gap:3px}.contacts-head h2{font-size:22px}.contact-grid{grid-template-columns:1fr;gap:9px}.contact:last-child{grid-column:auto}.contact{padding:14px 15px}.bottomline{font-size:7px;flex-wrap:wrap}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eaf4f8">
+  <meta name="description" content="BOX Integration Systems, Eurocontainer y E=Gedesel: ingeniería modular, fabricación de contenedores e instalaciones eléctricas industriales.">
+  <title>BOXIS · Eurocontainer · E=Gedesel | Soluciones industriales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/eurocontainer-daylight-wide.webp">
+  <style>
+    :root{
+      --ink:#0c2d43;--ink-2:#274a60;--navy:#082a43;--blue:#087ead;--cyan:#59cce9;
+      --orange:#ed6b37;--paper:#edf5f8;--line:rgba(11,54,79,.14);--white:#f8fcfe;
+      --shadow:0 22px 55px rgba(5,35,54,.18);--max:1500px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:78px}
+    body{margin:0;min-width:320px;font-family:Manrope,Inter,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#eaf3f7;overflow-x:hidden}
+    a{color:inherit}
+    button{font:inherit}
+    .page-shell{position:relative;isolation:isolate}
+    .topbar{position:absolute;top:0;left:0;right:0;z-index:20;width:min(var(--max),calc(100% - 64px));margin:auto;height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brandline{display:flex;align-items:center;gap:7px}
+    .brand-link{height:48px;min-width:112px;display:flex;align-items:center;justify-content:center;padding:7px 12px;text-decoration:none;background:rgba(5,39,60,.82);backdrop-filter:blur(14px);box-shadow:0 8px 24px rgba(5,35,54,.12),inset 0 1px rgba(255,255,255,.2);clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));transition:transform .25s,background .25s}
+    .brand-link:hover{transform:translateY(-2px);background:rgba(5,48,73,.94)}
+    .brand-link img{display:block;max-width:132px;max-height:31px;width:auto;height:auto;object-fit:contain}
+    .brand-link.boxis{min-width:160px}
+    .brand-link.euro{min-width:142px}
+    .brand-link.gedesel{min-width:130px;background:rgba(247,252,254,.86)}
+    .brand-link.gedesel img{max-width:110px;max-height:26px}
+    .brand-fallback{display:none;color:#fff;font-weight:900;letter-spacing:-.045em;font-size:15px;white-space:nowrap}
+    .brand-link.gedesel .brand-fallback{color:#123b53}
+    .brand-link img[hidden]+.brand-fallback{display:block}
+    .nav{display:flex;align-items:center;gap:clamp(17px,2.4vw,34px)}
+    .nav a{position:relative;text-decoration:none;color:#fff;text-transform:uppercase;font-size:9px;letter-spacing:.16em;font-weight:900;text-shadow:0 2px 12px rgba(0,24,39,.45);transition:color .2s}
+    .nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--cyan);transition:right .25s}
+    .nav a:hover{color:#b9f2ff}.nav a:hover:after{right:0}
 
-/* --- QA hardening: stable background stacking and compact desktop viewport --- */
-body{isolation:isolate;background:#dcebf1}
-body:before{z-index:-2;transform:none;background-position:center 54%;background-size:cover}
-body:after{z-index:-1}
-.page{position:relative;z-index:0}
-@media(min-width:1100px) and (min-height:700px){
- .page{height:100svh;min-height:700px;max-height:none;grid-template-rows:auto minmax(220px,1fr) auto auto;gap:clamp(9px,1.25vh,15px);padding:clamp(12px,1.7vh,20px) 0}
- .visual{height:min(39vh,390px);min-height:220px}
- .access-card{min-height:112px;padding:17px 22px}
- .contact{padding:13px 15px}
- .person{margin-bottom:9px}
- .details{gap:5px}
- .bottomline{margin-top:6px}
-}
-@media(min-width:1100px) and (max-height:780px){
- h1{font-size:clamp(38px,3.7vw,54px)}
- .hero-copy p{margin-top:13px;font-size:12px}
- .hero-tags{margin-top:13px}
- .visual{height:34vh;min-height:205px}
- .contact{padding:11px 13px}
- .person-icon{width:34px;height:34px;flex-basis:34px}
- .person h3{font-size:12px}
- .detail{font-size:8.8px}
-}
-@media(max-width:650px){body:before{position:fixed;background-position:58% center}body:after{position:fixed}}
-@media(prefers-reduced-motion:reduce){#container3d{cursor:default}}
-</style>
+    .hero{position:relative;min-height:min(890px,100svh);min-height:max(720px,100svh);display:grid;grid-template-columns:minmax(310px,.84fr) minmax(0,1.16fr);align-items:center;padding:114px max(32px,calc((100% - var(--max))/2)) 164px;isolation:isolate;overflow:hidden;background:#cfe2eb}
+    .hero:before{content:"";position:absolute;inset:0;z-index:-3;background:url("assets/eurocontainer-daylight-wide.webp") center 52%/cover no-repeat;transform:scale(1.012);filter:saturate(1.08) contrast(1.025)}
+    .hero:after{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(242,249,252,.95) 0%,rgba(235,245,249,.88) 29%,rgba(226,240,246,.48) 54%,rgba(6,42,63,.15) 100%),linear-gradient(180deg,rgba(8,39,58,.12) 0%,transparent 28%,rgba(5,34,52,.08) 72%,rgba(4,28,44,.4) 100%)}
+    .hero-copy{position:relative;z-index:4;width:min(650px,100%);padding:18px 0 24px}
+    .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 18px;color:#0879a6;font-size:10px;letter-spacing:.24em;font-weight:900;text-transform:uppercase}
+    .eyebrow:before{content:"";display:block;width:33px;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));box-shadow:0 0 12px rgba(69,198,232,.55)}
+    h1{max-width:690px;margin:0;color:#0a2e46;font-size:clamp(46px,5.1vw,78px);line-height:.94;letter-spacing:-.073em;font-weight:900;text-wrap:balance;text-shadow:0 2px 22px rgba(255,255,255,.46)}
+    .hero-copy p{max-width:520px;margin:22px 0 0;color:#284e64;font-size:14px;line-height:1.75;font-weight:600;text-shadow:0 1px 12px rgba(255,255,255,.5)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:17px;margin-top:24px;color:#264f66;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .hero-meta span{display:flex;align-items:center;gap:7px}
+    .hero-meta span:before{content:"";width:6px;height:6px;background:var(--orange);transform:rotate(45deg)}
+
+    .visual-wrap{position:relative;z-index:3;height:min(65vh,590px);min-height:390px;margin:0 -20px 0 -25px;perspective:1300px}
+    #container3d{display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab;outline:none}
+    #container3d:active{cursor:grabbing}
+    .visual-fallback{position:absolute;inset:8% 0 3%;width:100%;height:89%;object-fit:contain;filter:drop-shadow(0 26px 25px rgba(4,35,54,.22));opacity:1;transition:opacity .3s;pointer-events:none}
+    #container3d{opacity:0;transition:opacity .3s}
+    .visual-wrap.webgl-ready .visual-fallback{opacity:0}
+    .visual-wrap.webgl-ready #container3d{opacity:1}
+    .visual-wrap.fallback .visual-fallback{opacity:1}
+    .visual-wrap.fallback #container3d{opacity:0}
+    .visual-controls,.drag-label{opacity:0;pointer-events:none;transition:opacity .25s}
+    .visual-wrap.webgl-ready .visual-controls,.visual-wrap.webgl-ready .drag-label{opacity:1;pointer-events:auto}
+    .visual-wrap.fallback .visual-controls,.visual-wrap.fallback .drag-label{display:none}
+    .visual-mark{position:absolute;right:5%;top:10%;font-size:8px;font-weight:900;letter-spacing:.2em;color:#214e66;text-transform:uppercase;pointer-events:none}
+    .visual-mark:before{content:"";display:inline-block;width:18px;height:1px;background:var(--orange);margin:0 8px 3px 0}
+    .visual-controls{position:absolute;right:4%;bottom:8%;display:flex;align-items:center;gap:0;background:rgba(8,42,64,.66);backdrop-filter:blur(12px);box-shadow:0 8px 24px rgba(5,35,54,.12);clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px))}
+    .visual-controls button{height:34px;padding:0 13px;border:0;border-right:1px solid rgba(255,255,255,.13);background:transparent;color:#fff;font-size:8px;letter-spacing:.1em;text-transform:uppercase;font-weight:850;cursor:pointer;transition:background .2s,color .2s}
+    .visual-controls button:last-child{border:0}
+    .visual-controls button:hover,.visual-controls button[aria-pressed="true"]{background:rgba(88,207,234,.24);color:#bdf4ff}
+    .drag-label{position:absolute;left:4%;bottom:9%;color:#244d64;font-size:8px;letter-spacing:.17em;text-transform:uppercase;font-weight:900;pointer-events:none}
+
+    .access-dock{position:absolute;z-index:8;bottom:0;left:0;right:0;width:min(var(--max),calc(100% - 64px));margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;transform:translateY(0)}
+    .access-card{--rx:0deg;--ry:0deg;position:relative;isolation:isolate;min-height:138px;display:grid;grid-template-columns:62px minmax(0,1fr) 28px;align-items:center;gap:16px;padding:20px 22px;text-decoration:none;color:#fff;overflow:hidden;background:linear-gradient(115deg,rgba(5,39,61,.94),rgba(7,54,78,.86));backdrop-filter:blur(16px) saturate(125%);box-shadow:0 18px 36px rgba(5,36,54,.2),inset 0 1px rgba(255,255,255,.19);clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,13px 100%,0 calc(100% - 13px));transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .35s,filter .35s}
+    .access-card:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(110deg,transparent 27%,rgba(255,255,255,.13) 45%,transparent 58%);transform:translateX(-115%);transition:transform .8s ease}
+    .access-card:after{content:"";position:absolute;z-index:-1;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--cyan),rgba(255,255,255,.05));opacity:.9}
+    .access-card:hover{transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px);box-shadow:0 26px 50px rgba(4,34,52,.3),inset 0 1px rgba(255,255,255,.25);filter:brightness(1.06)}
+    .access-card:hover:before{transform:translateX(115%)}
+    .access-card.euro:after{background:linear-gradient(180deg,#f28a57,rgba(255,255,255,.08))}
+    .access-card.gedesel:after{background:linear-gradient(180deg,#82d4ec,rgba(255,255,255,.08))}
+    .access-logo{width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);box-shadow:8px 10px 18px rgba(0,15,27,.18),inset 1px 1px rgba(255,255,255,.23);transform:translateZ(23px)}
+    .access-logo img{display:block;max-width:88%;max-height:72%;width:auto;height:auto;object-fit:contain}
+    .access-logo.boxis{background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.035))}
+    .access-logo.gedesel{background:#f3f8fb}
+    .access-wordmark{display:none;font-size:14px;font-weight:950;letter-spacing:-.06em;white-space:nowrap}
+    .access-wordmark.euro span{color:#ff8a54}
+    .access-wordmark.gedesel{color:#123c55;font-size:14px}
+    .access-logo img[hidden]+.access-wordmark{display:block}
+    .access-copy{min-width:0;transform:translateZ(18px)}
+    .access-copy small{display:block;margin:0 0 7px;color:#9be9fb;font-size:8px;letter-spacing:.19em;text-transform:uppercase;font-weight:900}
+    .access-copy strong{display:block;color:#fff;font-size:clamp(16px,1.35vw,21px);line-height:1.08;letter-spacing:-.04em;font-weight:900}
+    .access-copy em{display:block;margin-top:7px;color:rgba(241,249,252,.77);font-size:9px;line-height:1.45;font-style:normal;font-weight:600}
+    .access-arrow{align-self:center;display:block;color:#fff;font-size:30px;line-height:1;font-weight:300;transform:translateZ(32px);transition:transform .3s,color .3s;text-shadow:0 4px 13px rgba(0,0,0,.2)}
+    .access-card:hover .access-arrow{transform:translate(5px,-5px) translateZ(38px);color:#9deeff}
+    .access-card.euro:hover .access-arrow{color:#ffab7e}
+
+    .section{width:min(var(--max),calc(100% - 64px));margin:0 auto;padding:110px 0 94px}
+    .section-kicker{margin:0 0 12px;color:#0780ad;font-size:9px;letter-spacing:.24em;font-weight:900;text-transform:uppercase}
+    .section-title{margin:0;color:#0d324a;font-size:clamp(32px,3.5vw,50px);line-height:1.02;letter-spacing:-.06em;font-weight:900;text-wrap:balance}
+    .section-lead{max-width:720px;margin:15px 0 0;color:#4b6879;font-size:13px;line-height:1.7;font-weight:550}
+    .capabilities{background:linear-gradient(180deg,#f2f7f9,#e7f0f4)}
+    .capabilities-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:28px}
+    .cap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+    .cap-card{--rx:0deg;--ry:0deg;position:relative;min-height:310px;padding:27px 26px 24px;background:linear-gradient(145deg,rgba(255,255,255,.83),rgba(255,255,255,.5));box-shadow:0 16px 40px rgba(8,45,66,.08),inset 0 1px rgba(255,255,255,.97);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));transform:perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .35s,box-shadow .35s}
+    .cap-card:hover{transform:perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-4px);box-shadow:0 22px 45px rgba(8,45,66,.14),inset 0 1px #fff}
+    .cap-index{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;color:#5e7b8b;font-size:9px;letter-spacing:.16em;font-weight:900}
+    .cap-index:after{content:"";width:35px;height:2px;background:var(--cyan)}
+    .cap-card.euro .cap-index:after{background:var(--orange)}
+    .cap-card.gedesel .cap-index:after{background:#0f6389}
+    .cap-brand{display:flex;align-items:center;height:34px;margin-bottom:18px}
+    .cap-brand img{display:block;max-width:180px;max-height:31px;width:auto;height:auto;object-fit:contain}
+    .cap-brand.boxis{background:#0b3854;padding:4px 10px;width:max-content;max-width:100%}.cap-brand.boxis img{max-height:24px}.cap-brand.boxis .cap-fallback{color:#fff}
+    .cap-fallback{display:none;font-size:18px;font-weight:950;letter-spacing:-.055em}
+    .cap-brand img[hidden]+.cap-fallback{display:inline-block}
+    .cap-fallback.euro span{color:var(--orange)}
+    .cap-fallback.gedesel{color:#12425d}
+    .cap-card h3{margin:0 0 10px;color:#10374f;font-size:22px;line-height:1.08;letter-spacing:-.05em;font-weight:900}
+    .cap-card p{margin:0;color:#526f80;font-size:11px;line-height:1.65;font-weight:550}
+    .cap-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px}
+    .cap-list li{display:flex;gap:9px;color:#2c536a;font-size:10px;line-height:1.35;font-weight:750}
+    .cap-list li:before{content:"/";color:var(--blue);font-weight:900}
+    .cap-card.euro .cap-list li:before{color:var(--orange)}
+    .cap-card.gedesel .cap-list li:before{color:#0d6d91}
+    .cap-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding-top:13px;border-top:1px solid rgba(13,58,82,.1)}
+    .cap-foot span{color:#678291;font-size:8px;letter-spacing:.12em;font-weight:900;text-transform:uppercase}
+    .cap-foot a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#0c638a;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;transition:gap .2s}
+    .cap-foot a:hover{gap:14px}
+
+    .contact-section{position:relative;overflow:hidden;background:linear-gradient(110deg,#0a2d46,#0e405e 58%,#0b314b);color:#fff}
+    .contact-section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 14%,rgba(85,204,235,.19),transparent 31%),linear-gradient(120deg,transparent 40%,rgba(255,255,255,.035) 40.1%,transparent 40.4%)}
+    .contact-section .section{position:relative;z-index:1;padding-top:85px;padding-bottom:80px}
+    .contact-section .section-kicker{color:#76dff5}
+    .contact-section .section-title{color:#f7fbfd}
+    .contact-section .section-lead{color:#c7dce6}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:29px}
+    .contact-card{position:relative;min-height:220px;padding:22px 22px 20px;background:linear-gradient(140deg,rgba(241,250,254,.12),rgba(241,250,254,.055));box-shadow:inset 0 1px rgba(255,255,255,.18),inset 0 -1px rgba(255,255,255,.06);clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,11px 100%,0 calc(100% - 11px));transition:background .3s,transform .3s}
+    .contact-card:hover{background:linear-gradient(140deg,rgba(241,250,254,.17),rgba(241,250,254,.08));transform:translateY(-4px)}
+    .contact-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .contact-number{color:#78dff5;font-size:9px;font-weight:900;letter-spacing:.16em}
+    .contact-head h3{margin:0;color:#fff;font-size:15px;font-weight:900;letter-spacing:-.025em}
+    .contact-role{margin-top:4px;color:#a9cedd;font-size:9px;font-weight:650}
+    .contact-details{display:grid;gap:11px}
+    .contact-detail{display:flex;align-items:flex-start;gap:10px;color:#e8f4f8;text-decoration:none;font-size:10px;line-height:1.4;font-weight:550;transition:color .2s}
+    .contact-detail:hover{color:#8deaff}
+    .contact-detail svg{width:15px;height:15px;flex:0 0 15px;color:#80e0f4;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .contact-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
+    .contact-actions a,.contact-actions button{display:inline-flex;align-items:center;gap:8px;border:0;background:none;padding:0;color:#9feeff;font-size:8px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:gap .2s,color .2s}
+    .contact-actions a:hover,.contact-actions button:hover{gap:13px;color:#fff}
+    .official-contacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:34px}
+    .official-contact{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 20px;background:rgba(0,20,33,.21);box-shadow:inset 0 1px rgba(255,255,255,.1);min-width:0}
+    .official-contact strong{display:block;color:#fff;font-size:12px;font-weight:900}
+    .official-contact span{display:block;color:#b3d1dd;margin-top:4px;font-size:9px;line-height:1.5}
+    .official-contact a{color:#92e8fb;text-decoration:none;font-size:10px;font-weight:800;white-space:nowrap}
+    .official-contact a:hover{color:#fff}
+    .official-contact .official-links{display:flex;flex-direction:column;align-items:flex-end;gap:7px;flex:0 0 auto}
+    .official-contact .official-links a{white-space:nowrap}
+    @media(max-width:760px){.official-contacts{grid-template-columns:1fr}.official-contact{align-items:flex-start}.official-contact .official-links{align-items:flex-end}}
+    .footer{padding:22px max(32px,calc((100% - var(--max))/2));display:flex;align-items:center;justify-content:space-between;gap:20px;background:#061e30;color:#9fbac7;font-size:8px;letter-spacing:.09em;font-weight:750;text-transform:uppercase}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer a{color:#d4e7ef;text-decoration:none}.footer a:hover{color:#8deaff}
+    .reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    .js .reveal:not(.is-visible){opacity:0;transform:translateY(18px)}
+    .js .reveal.is-visible{opacity:1;transform:none}
+    .skip{position:absolute;left:-9999px;top:auto}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:10px 14px;color:#123}
+    a:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid #34bfe4;outline-offset:4px}
+
+    @media(max-width:1100px){
+      .topbar{width:calc(100% - 44px)}.hero{padding-left:22px;padding-right:22px;grid-template-columns:minmax(280px,.8fr) minmax(0,1.1fr)}
+      .access-dock,.section{width:calc(100% - 44px)}.access-card{grid-template-columns:48px minmax(0,1fr) 20px;padding:17px 16px;gap:12px;min-height:126px}.access-logo{width:46px;height:46px}.access-copy strong{font-size:16px}.access-copy em{font-size:8px}
+      .contact-card{padding:18px 16px}.contact-details{gap:9px}
+    }
+    @media(max-width:760px){
+      html{scroll-padding-top:20px}.topbar{position:relative;width:100%;height:auto;padding:12px 14px;background:#082a43;flex-wrap:wrap;gap:10px}
+      .brandline{width:100%;justify-content:center;gap:5px}.brand-link{min-width:0!important;flex:1;height:43px;padding:6px 8px}.brand-link img{max-width:94%;max-height:27px}.brand-link.boxis img{max-width:110px}.brand-link.gedesel img{max-height:23px}
+      .nav{width:100%;justify-content:center;gap:18px}.nav a{font-size:8px;text-shadow:none}
+      .hero{min-height:0;display:flex;flex-direction:column;align-items:stretch;padding:32px 16px 255px;gap:0}
+      .hero:before{background-position:56% center}.hero:after{background:linear-gradient(180deg,rgba(242,249,252,.93) 0%,rgba(235,245,249,.85) 40%,rgba(8,42,64,.14) 100%),linear-gradient(180deg,transparent 70%,rgba(4,28,44,.42))}
+      .hero-copy{width:100%;padding:0}.eyebrow{font-size:8px;margin-bottom:12px}h1{font-size:clamp(39px,10vw,54px)}.hero-copy p{font-size:12px;margin-top:14px;line-height:1.6}.hero-meta{gap:10px;margin-top:16px;font-size:8px}
+      .visual-wrap{height:290px;min-height:260px;margin:-2px -10px 0}.visual-mark{top:8%;font-size:7px}.drag-label{bottom:5%;font-size:7px}.visual-controls{bottom:4%;right:2%}.visual-controls button{height:30px;padding:0 9px;font-size:7px}
+      .access-dock{width:calc(100% - 28px);grid-template-columns:1fr;gap:7px;bottom:0;transform:translateY(0)}.access-card{min-height:75px;grid-template-columns:43px minmax(0,1fr) 22px;padding:10px 12px;gap:11px}.access-logo{width:40px;height:40px}.access-copy small{font-size:7px;margin-bottom:4px}.access-copy strong{font-size:15px}.access-copy em{font-size:8px;margin-top:4px}.access-arrow{font-size:25px}
+      .section{width:calc(100% - 30px);padding:75px 0}.capabilities-head{display:block}.cap-grid{grid-template-columns:1fr;gap:10px}.cap-card{min-height:0;padding:22px}.cap-index{margin-bottom:17px}.contact-section .section{padding:70px 0}.contact-grid{grid-template-columns:1fr;gap:9px}.contact-card{min-height:0;padding:18px}.official-contacts{grid-template-columns:1fr;gap:9px}.official-contact{padding:14px;gap:12px}.official-contact a{white-space:normal;text-align:right}
+      .footer{padding:18px 16px;display:block;line-height:1.7}.footer-links{margin-top:10px;gap:12px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.access-card,.contact-card,.cap-card,.brand-link{transition:none}#container3d{cursor:default}}
+  </style>
 </head>
 <body>
-<main class="page">
-<header>
-<a class="brand" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="BOX Integration Systems"><img src="assets/boxis-logo-white.webp" alt="BOX Integration Systems"></a>
-<div class="header-meta">Diseño · Fabricación · Integración<br>Soluciones industriales a medida</div>
-</header>
-<section class="hero" aria-labelledby="main-title">
-<div class="hero-copy">
-<div class="kicker">BOX Integration Systems · Eurocontainer</div>
-<h1 id="main-title">Ingeniería que integra.<br>Soluciones que toman forma.</h1>
-<p>Dos especialidades industriales que se complementan: diseño e integración de equipos modulares junto con fabricación de contenedores y soluciones a medida.</p>
-<div class="hero-tags"><span>Ingeniería modular</span><span>Fabricación industrial</span><span>Integración y calidad</span></div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="page-shell">
+  <header class="topbar" aria-label="Navegación principal">
+    <div class="brandline">
+      <a class="brand-link boxis" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Web oficial de BOX Integration Systems">
+        <img src="assets/boxis-logo-from-supplied-image.png" alt="BOX Integration Systems"><span class="brand-fallback">BOXIS</span>
+      </a>
+      <a class="brand-link euro" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Web oficial de Eurocontainer">
+        <img src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Eurocontainer" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="brand-fallback">Eurocontainer.es</span>
+      </a>
+      <a class="brand-link gedesel" href="https://gedesel.net/" target="_blank" rel="noopener" aria-label="Web oficial de E=Gedesel">
+        <img src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="E=Gedesel" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="brand-fallback">E=Gedesel</span>
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="#empresas">Empresas</a>
+      <a href="#capacidades">Capacidades</a>
+      <a href="#contacto">Contactos</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy reveal is-visible">
+        <div class="eyebrow">Ingeniería · fabricación · energía</div>
+        <h1 id="hero-title">Soluciones industriales que toman forma.</h1>
+        <p>Un recorrido por tres especialidades complementarias: integración de equipos modulares, fabricación de contenedores industriales e instalaciones eléctricas de alta y baja tensión.</p>
+        <div class="hero-meta"><span>Diseño a medida</span><span>Integración técnica</span><span>Servicio industrial</span></div>
+      </div>
+      <div class="visual-wrap" id="visualWrap">
+        <div class="visual-mark">Equipo modular · Vista interactiva</div>
+        <canvas id="container3d" tabindex="0" aria-label="Modelo tridimensional de un contenedor industrial. Arrastra con el ratón o el dedo para girarlo; usa las flechas del teclado para rotar."></canvas>
+        <img class="visual-fallback" src="assets/eurocontainer-daylight-wide.webp" alt="Instalación industrial y contenedor Eurocontainer durante el día">
+        <div class="drag-label">Arrastra para girar · Explora el equipo</div>
+        <div class="visual-controls" aria-label="Controles del modelo 3D">
+          <button id="rotateToggle" type="button" aria-pressed="true">Giro automático</button>
+          <button id="resetView" type="button">Restablecer vista</button>
+        </div>
+      </div>
+      <div class="access-dock" id="empresas" aria-label="Accesos a las páginas web corporativas">
+        <a class="access-card boxis tilt" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Visitar BOX Integration Systems">
+          <span class="access-logo boxis"><img src="assets/boxis-logo-from-supplied-image.png" alt="Logo BOX Integration Systems"></span>
+          <span class="access-copy"><small>Integración modular · Web corporativa</small><strong>BOX Integration Systems</strong><em>Diseño, fabricación e integración de equipos industriales.</em></span>
+          <span class="access-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="access-card euro tilt" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Visitar Eurocontainer">
+          <span class="access-logo euro"><img src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Logo Eurocontainer" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="access-wordmark euro">Eurocontainer<span>.es</span></span></span>
+          <span class="access-copy"><small>Fabricación · Soluciones contenerizadas</small><strong>Eurocontainer</strong><em>Contenedores, cisternas y estructuras especiales a medida.</em></span>
+          <span class="access-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="access-card gedesel tilt" href="https://gedesel.net/" target="_blank" rel="noopener" aria-label="Visitar E=Gedesel">
+          <span class="access-logo gedesel"><img src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="Logo E=Gedesel" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="access-wordmark gedesel">E=Gedesel</span></span>
+          <span class="access-copy"><small>Instalaciones eléctricas · Web corporativa</small><strong>E=Gedesel</strong><em>Ingeniería, instalaciones y mantenimiento AT/BT.</em></span>
+          <span class="access-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="capabilities" id="capacidades">
+      <div class="section">
+        <div class="capabilities-head reveal">
+          <div><p class="section-kicker">Especialidades</p><h2 class="section-title">Capacidades que se complementan.</h2></div>
+          <p class="section-lead">Cada empresa mantiene su identidad y su ámbito de actuación. Consulta su web oficial para ampliar información sobre servicios, instalaciones y proyectos.</p>
+        </div>
+        <div class="cap-grid">
+          <article class="cap-card boxis reveal tilt">
+            <div class="cap-index"><span>01 / INTEGRACIÓN</span></div>
+            <div class="cap-brand boxis"><img src="assets/boxis-logo-from-supplied-image.png" alt="BOX Integration Systems"><span class="cap-fallback">BOXIS</span></div>
+            <h3>Ingeniería e integración modular.</h3>
+            <p>Diseño y fabricación de equipos modulares integrados para distintas líneas de actividad industrial.</p>
+            <ul class="cap-list"><li>Energía y equipos industriales</li><li>Servicios en obra y telecomunicaciones</li><li>Cálculos estructurales, eléctricos y de potencia</li><li>Integración, pruebas FAT/SAT y puesta en servicio</li></ul>
+            <div class="cap-foot"><span>+8.000 m² de naves cubiertas*</span><a href="https://boxis.es/" target="_blank" rel="noopener">Web oficial <b>↗</b></a></div>
+          </article>
+          <article class="cap-card euro reveal tilt">
+            <div class="cap-index"><span>02 / CONTENERIZACIÓN</span></div>
+            <div class="cap-brand euro"><img src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Eurocontainer" onerror="this.hidden=true;this.nextElementSibling.style.display='inline-block'"><span class="cap-fallback euro">Eurocontainer<span>.es</span></span></div>
+            <h3>Fabricación industrial a medida.</h3>
+            <p>Diseño y fabricación de contenedores, cajas móviles, furgones, cisternas y elementos complementarios.</p>
+            <ul class="cap-list"><li>Contenedores para energía y Data Center</li><li>Cisternas, belly tanks y soluciones especiales</li><li>Skids, estructuras y salas modulares</li><li>Mantenimiento, reparación e integración de sistemas</li></ul>
+            <div class="cap-foot"><span>+150.000 m² fabricación y almacenaje*</span><a href="https://eurocontainer.es/" target="_blank" rel="noopener">Web oficial <b>↗</b></a></div>
+          </article>
+          <article class="cap-card gedesel reveal tilt">
+            <div class="cap-index"><span>03 / ELECTRICIDAD</span></div>
+            <div class="cap-brand gedesel"><img src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="E=Gedesel" onerror="this.hidden=true;this.nextElementSibling.style.display='inline-block'"><span class="cap-fallback gedesel">E=Gedesel</span></div>
+            <h3>Instalaciones y mantenimiento AT/BT.</h3>
+            <p>Ingeniería aplicada, instalaciones eléctricas y mantenimiento en entornos industriales y sectores estratégicos.</p>
+            <ul class="cap-list"><li>Alta y baja tensión</li><li>Diseño, ejecución y mantenimiento</li><li>Industria, construcción y sector público</li><li>Integración de contenedores</li></ul>
+            <div class="cap-foot"><span>Desde 1982*</span><a href="https://gedesel.net/" target="_blank" rel="noopener">Web oficial <b>↗</b></a></div>
+          </article>
+        </div>
+        <p class="section-lead" style="font-size:9px;margin-top:16px">* Datos publicados en las respectivas webs corporativas. Consulta las páginas oficiales para sus condiciones y alcance actualizados.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="section">
+        <p class="section-kicker">Contacto directo</p>
+        <h2 class="section-title">Hablemos de tu próximo proyecto.</h2>
+        <p class="section-lead">Contactos directos de BOX Integration Systems y datos generales de Eurocontainer y E=Gedesel.</p>
+        <div class="contact-grid">
+          <article class="contact-card reveal">
+            <div class="contact-head"><span class="contact-number">01 / BOXIS</span><div><h3>José Luis Herrando</h3><div class="contact-role">Director de proyecto</div></div></div>
+            <div class="contact-details">
+              <a class="contact-detail" href="tel:+34659481773"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.8 2.1Z"/></svg>+34 659 481 773</a>
+              <a class="contact-detail" href="mailto:jlherrando@boxis.es"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>jlherrando@boxis.es</a>
+              <span class="contact-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Lunes a viernes · 08:30–16:30</span>
+            </div>
+            <div class="contact-actions"><a href="https://www.google.com/maps/search/?api=1&query=Carretera+Alagon+Tudela+A-126+Km+44.900+50637+Zaragoza" target="_blank" rel="noopener">Ubicación ↗</a><button type="button" onclick="saveContact('jose')">Descargar contacto ↓</button></div>
+          </article>
+          <article class="contact-card reveal">
+            <div class="contact-head"><span class="contact-number">02 / BOXIS</span><div><h3>Alejandro Ballestín</h3><div class="contact-role">Director de proyecto</div></div></div>
+            <div class="contact-details">
+              <a class="contact-detail" href="tel:+34683223203"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.8 2.1Z"/></svg>+34 683 223 203</a>
+              <a class="contact-detail" href="mailto:aballestin@boxis.es"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>aballestin@boxis.es</a>
+              <span class="contact-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Lunes a viernes · 08:30–16:30</span>
+            </div>
+            <div class="contact-actions"><a href="https://www.google.com/maps/search/?api=1&query=Carretera+Alagon+Tudela+A-126+Km+44.900+50637+Zaragoza" target="_blank" rel="noopener">Ubicación ↗</a><button type="button" onclick="saveContact('alejandro')">Descargar contacto ↓</button></div>
+          </article>
+          <article class="contact-card reveal">
+            <div class="contact-head"><span class="contact-number">03 / BOXIS</span><div><h3>Rubén Ruiz Cañón</h3><div class="contact-role">Delineante Eléctrico y Calidad</div></div></div>
+            <div class="contact-details">
+              <a class="contact-detail" href="tel:+34659341288"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.8 2.1Z"/></svg>+34 659 341 288</a>
+              <a class="contact-detail" href="mailto:rruiz@boxis.es"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>rruiz@boxis.es</a>
+              <span class="contact-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Lunes a viernes · 08:00–16:00</span>
+            </div>
+            <div class="contact-actions"><a href="https://www.google.com/maps/search/?api=1&query=Carretera+Alagon+Tudela+A-126+Km+44.900+50637+Zaragoza" target="_blank" rel="noopener">Ubicación ↗</a><button type="button" onclick="saveContact('ruben')">Descargar contacto ↓</button></div>
+          </article>
+        </div>
+        <div class="official-contacts" aria-label="Contactos oficiales de las empresas">
+          <div class="official-contact reveal"><div><strong>Eurocontainer · Central Zaragoza</strong><span>C/ Argualas, 3 · 50012 Zaragoza<br>info@eurocontainer.es</span></div><div class="official-links"><a href="tel:+34976308051">+34 976 30 80 51 ↗</a><a href="tel:+34976107525">+34 976 10 75 25 ↗</a></div></div>
+          <div class="official-contact reveal"><div><strong>Eurocontainer · Remolinos</strong><span>Granallado y pintado · Ctra. Alagón–Tudela, km 44,900<br>50637 Remolinos</span></div><div class="official-links"><a href="tel:+34659729752">+34 659 729 752 ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Ctra.+Alagon+Tudela+km+44.900+Remolinos" target="_blank" rel="noopener">Ver ubicación ↗</a></div></div>
+          <div class="official-contact reveal"><div><strong>E=Gedesel · Zaragoza</strong><span>Polígono Malpica · C/E Parc. 29–31, Nave 8 · 50016<br>info@gedesel.net</span></div><div class="official-links"><a href="tel:+34976573000">+34 976 573 000 ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Poligono+Malpica+calle+E+parcela+29+31+Nave+8+Zaragoza" target="_blank" rel="noopener">Ver ubicación ↗</a></div></div>
+          <div class="official-contact reveal"><div><strong>E=Gedesel · Teruel</strong><span>Polígono La Paz · C/ Lisboa, 17 · 44195 Teruel<br>info@gedeselteruel.net</span></div><div class="official-links"><a href="tel:+34978617447">+34 978 617 447 ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Poligono+La+Paz+Calle+Lisboa+17+Teruel" target="_blank" rel="noopener">Ver ubicación ↗</a></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><span>BOX Integration Systems · Eurocontainer · E=Gedesel</span><div class="footer-links"><a href="https://boxis.es/" target="_blank" rel="noopener">BOXIS ↗</a><a href="https://eurocontainer.es/" target="_blank" rel="noopener">Eurocontainer ↗</a><a href="https://gedesel.net/" target="_blank" rel="noopener">E=Gedesel ↗</a></div></footer>
 </div>
-<div class="visual" aria-label="Modelo tridimensional interactivo de un contenedor industrial Eurocontainer">
-<canvas id="container3d" tabindex="0" aria-label="Contenedor 3D. Arrastra para girarlo."></canvas>
-<div class="visual-caption">Vista 3D · Arrastra para girar</div>
-</div>
-</section>
-<section class="access" aria-label="Accesos a las páginas corporativas">
-<a class="access-card boxis tilt" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Visitar la web oficial de BOX Integration Systems">
-<span class="logo-tile"><img src="assets/boxis-logo-white.webp" alt="Logo oficial BOX Integration Systems"></span>
-<span class="access-copy"><small>Web corporativa · Ingeniería e integración</small><strong>BOX Integration Systems</strong><em>Diseño, fabricación e integración de equipos y soluciones industriales.</em></span>
-<span class="arrow" aria-hidden="true">↗</span>
-</a>
-<a class="access-card euro tilt" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Visitar la web oficial de Eurocontainer">
-<span class="logo-tile"><span class="euro-logo">EUROCONTAINER</span></span>
-<span class="access-copy"><small>Web corporativa · Fabricación industrial</small><strong>Eurocontainer</strong><em>Contenedores, cisternas, equipos especiales y soluciones modulares a medida.</em></span>
-<span class="arrow" aria-hidden="true">↗</span>
-</a>
-</section>
-<section class="contacts" aria-labelledby="contacts-title">
-<div class="contacts-head"><h2 id="contacts-title">Contactos</h2><p>Equipo de BOX Integration Systems</p></div>
-<div class="contact-grid">
-<article class="contact tilt"><div class="person"><span class="person-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="10" r="6"/><path d="M5 29c0-7 4-11 11-11s11 4 11 11Z"/></svg></span><div><h3>José Luis Herrando</h3><div class="role">Director de proyecto</div></div></div><div class="details">
-<a class="detail" href="tel:+34659481773"><span class="detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.8 2.1Z"/></svg></span><span>+34 659 481 773</span></a>
-<a class="detail" href="mailto:jlherrando@boxis.es"><span class="detail-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span>jlherrando@boxis.es</span></a>
-<a class="detail" href="https://www.google.com/maps/search/?api=1&amp;query=Carretera%20Alagon%20-%20Tudela%20A-126%20Km%2044.900%2050637%20Zaragoza" target="_blank" rel="noopener"><span class="detail-icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Carretera Alagón–Tudela (A-126), km 44,900, 50637, Zaragoza</span></a>
-<div class="detail"><span class="detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span>Lunes a viernes, 08:30–16:30</span></div></div><button class="vcard" type="button" aria-label="Descargar contacto de José Luis Herrando" onclick="saveContact('jose')">↓</button></article>
-<article class="contact tilt"><div class="person"><span class="person-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="10" r="6"/><path d="M5 29c0-7 4-11 11-11s11 4 11 11Z"/></svg></span><div><h3>Alejandro Ballestín</h3><div class="role">Director de proyecto</div></div></div><div class="details">
-<a class="detail" href="tel:+34683223203"><span class="detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.8 2.1Z"/></svg></span><span>+34 683 223 203</span></a>
-<a class="detail" href="mailto:aballestin@boxis.es"><span class="detail-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span>aballestin@boxis.es</span></a>
-<a class="detail" href="https://www.google.com/maps/search/?api=1&amp;query=Carretera%20Alagon%20-%20Tudela%20A-126%20Km%2044.900%2050637%20Zaragoza" target="_blank" rel="noopener"><span class="detail-icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Carretera Alagón–Tudela (A-126), km 44,900, 50637, Zaragoza</span></a>
-<div class="detail"><span class="detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span>Lunes a viernes, 08:30–16:30</span></div></div><button class="vcard" type="button" aria-label="Descargar contacto de Alejandro Ballestín" onclick="saveContact('alejandro')">↓</button></article>
-<article class="contact tilt"><div class="person"><span class="person-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="10" r="6"/><path d="M5 29c0-7 4-11 11-11s11 4 11 11Z"/></svg></span><div><h3>Rubén Ruiz Cañón</h3><div class="role">Delineante Eléctrico y Calidad</div></div></div><div class="details">
-<a class="detail" href="tel:+34659341288"><span class="detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.8 2.1Z"/></svg></span><span>+34 659 341 288</span></a>
-<a class="detail" href="mailto:rruiz@boxis.es"><span class="detail-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span>rruiz@boxis.es</span></a>
-<a class="detail" href="https://www.google.com/maps/search/?api=1&amp;query=Carretera%20Alagon%20-%20Tudela%20A-126%20Km%2044.900%2050637%20Zaragoza" target="_blank" rel="noopener"><span class="detail-icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Carretera Alagón–Tudela (A-126), km 44,900, 50637, Zaragoza</span></a>
-<div class="detail"><span class="detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span>Lunes a viernes, 08:00–16:00</span></div></div><button class="vcard" type="button" aria-label="Descargar contacto de Rubén Ruiz Cañón" onclick="saveContact('ruben')">↓</button></article>
-</div>
-<div class="bottomline"><span>BOX INTEGRATION SYSTEMS · Zaragoza</span><span><a href="https://boxis.es/" target="_blank" rel="noopener">BOXIS</a>　·　<a href="https://eurocontainer.es/" target="_blank" rel="noopener">EUROCONTAINER</a></span></div>
-</section>
-</main>
+
 <script>
-const people={jose:{first:"José Luis",last:"Herrando",full:"José Luis Herrando",role:"Director de proyecto",phone:"+34 659 481 773",email:"jlherrando@boxis.es",hours:"Lunes a viernes, 08:30–16:30"},alejandro:{first:"Alejandro",last:"Ballestin",full:"Alejandro Ballestín",role:"Director de proyecto",phone:"+34 683 223 203",email:"aballestin@boxis.es",hours:"Lunes a viernes, 08:30–16:30"},ruben:{first:"Rubén",last:"Ruiz Cañón",full:"Rubén Ruiz Cañón",role:"Delineante Eléctrico y Calidad",phone:"+34 659 341 288",email:"rruiz@boxis.es",hours:"Lunes a viernes, 08:00–16:00"}};
-function saveContact(id){const c=people[id],e=s=>String(s).replace(/\\/g,"\\\\").replace(/,/g,"\\,").replace(/;/g,"\\;");const v=["BEGIN:VCARD","VERSION:3.0","N:"+e(c.last)+";"+e(c.first)+";;;","FN:"+e(c.full),"ORG:BOX Integration Systems S.L.","TITLE:"+e(c.role),"TEL;TYPE=CELL:"+c.phone,"EMAIL;TYPE=WORK:"+c.email,"ADR;TYPE=WORK:;;Carretera Alagón–Tudela (A-126), km 44,900;Zaragoza;Zaragoza;50637;Spain","URL:https://boxis.es/","NOTE:"+e(c.hours),"END:VCARD"].join("\r\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard;charset=utf-8"}));a.download=c.full.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"-")+".vcf";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200)}
-if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&matchMedia("(pointer:fine)").matches){document.querySelectorAll(".tilt").forEach(el=>{el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty("--ry",((x-.5)*2.6)+"deg");el.style.setProperty("--rx",((.5-y)*2)+"deg")});el.addEventListener("pointerleave",()=>{el.style.setProperty("--rx","0deg");el.style.setProperty("--ry","0deg")})})}
+document.documentElement.classList.add('js');
+// Official brand images are hosted by each company's website. If they are blocked,
+// their text wordmarks remain visible and links continue to work.
+document.querySelectorAll('.brand-link img, .access-logo img, .cap-brand img').forEach(img=>{
+  img.addEventListener('error',()=>{img.hidden=true;const fallback=img.parentElement.querySelector('.brand-fallback,.access-wordmark,.cap-fallback');if(fallback)fallback.style.display='inline-block';}, {once:true});
+});
+
+const people={
+  jose:{first:'José Luis',last:'Herrando',full:'José Luis Herrando',role:'Director de proyecto',phone:'+34 659 481 773',email:'jlherrando@boxis.es',hours:'Lunes a viernes, 08:30–16:30'},
+  alejandro:{first:'Alejandro',last:'Ballestín',full:'Alejandro Ballestín',role:'Director de proyecto',phone:'+34 683 223 203',email:'aballestin@boxis.es',hours:'Lunes a viernes, 08:30–16:30'},
+  ruben:{first:'Rubén',last:'Ruiz Cañón',full:'Rubén Ruiz Cañón',role:'Delineante Eléctrico y Calidad',phone:'+34 659 341 288',email:'rruiz@boxis.es',hours:'Lunes a viernes, 08:00–16:00'}
+};
+function escapeVCard(value){return String(value).replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;')}
+function saveContact(id){
+  const p=people[id]; if(!p)return;
+  const lines=['BEGIN:VCARD','VERSION:3.0','N:'+escapeVCard(p.last)+';'+escapeVCard(p.first)+';;;','FN:'+escapeVCard(p.full),'ORG:BOX Integration Systems','TITLE:'+escapeVCard(p.role),'TEL;TYPE=CELL:'+p.phone,'EMAIL;TYPE=WORK:'+p.email,'ADR;TYPE=WORK:;;Carretera Alagón–Tudela (A-126), km 44,900;Zaragoza;Zaragoza;50637;España','URL:https://boxis.es/','NOTE:'+escapeVCard(p.hours),'END:VCARD'];
+  const blob=new Blob([lines.join('\r\n')],{type:'text/vcard;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=p.full.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-')+'.vcf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200);
+}
+
+// Progressive reveal and subtle pointer depth; no motion when the user requests reduced motion.
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if('IntersectionObserver' in window&&!reduceMotion){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal:not(.is-visible)').forEach(el=>io.observe(el));
+}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'))}
+if(!reduceMotion&&window.matchMedia('(pointer:fine)').matches){
+  document.querySelectorAll('.tilt,.cap-card').forEach(el=>{
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty('--ry',((x-.5)*2.2).toFixed(2)+'deg');el.style.setProperty('--rx',((.5-y)*1.7).toFixed(2)+'deg')});
+    el.addEventListener('pointerleave',()=>{el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg')});
+  });
+}
+
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-<script>
-(()=>{const canvas=document.getElementById("container3d");if(!canvas)return;if(!window.THREE){canvas.style.background="linear-gradient(rgba(232,244,249,.16),rgba(232,244,249,.16)),url(\"assets/eurocontainer-generator-button-v14.webp\") center/contain no-repeat";canvas.style.cursor="default";const fallback=document.createElement("div");fallback.textContent="Vista 3D no disponible · Puedes visitar las webs corporativas";fallback.style.cssText="position:absolute;left:8%;right:8%;bottom:7%;text-align:center;color:#31576c;font:800 10px Manrope,Arial;letter-spacing:.08em";canvas.parentNode.appendChild(fallback);return}
-const THREE=window.THREE,scene=new THREE.Scene();scene.background=null;
-const camera=new THREE.PerspectiveCamera(32,1,.1,100);camera.position.set(8.6,5.2,10.8);camera.lookAt(0,1.2,0);
-let renderer;try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});}catch(error){canvas.style.cursor="default";canvas.setAttribute("aria-label","Vista 3D no disponible en este navegador. Los accesos y contactos siguen funcionando.");const fallback=document.createElement("div");fallback.className="webgl-fallback";fallback.textContent="Vista 3D no disponible en este navegador";fallback.style.cssText="position:absolute;inset:42% 8% auto;text-align:center;color:#31576c;font:700 12px Manrope,Arial";canvas.parentNode.appendChild(fallback);return}renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.18;
-scene.add(new THREE.HemisphereLight(0xffffff,0x829aa7,2.0));
-const sun=new THREE.DirectionalLight(0xffffff,3.2);sun.position.set(-5,9,7);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-10;sun.shadow.camera.right=10;sun.shadow.camera.top=10;sun.shadow.camera.bottom=-10;scene.add(sun);
-const fill=new THREE.DirectionalLight(0x9bdfff,1.1);fill.position.set(6,3,-6);scene.add(fill);
-const model=new THREE.Group();scene.add(model);
-const white=new THREE.MeshStandardMaterial({color:0xe5edf0,metalness:.38,roughness:.38});
-const edge=new THREE.MeshStandardMaterial({color:0x8799a2,metalness:.62,roughness:.34});
-const dark=new THREE.MeshStandardMaterial({color:0x263943,metalness:.72,roughness:.28});
-const glass=new THREE.MeshStandardMaterial({color:0x263f4a,metalness:.35,roughness:.24});
-function cube(w,h,d,mat,x,y,z,parent=model){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m}
-function cylinder(r1,r2,len,mat,x,y,z,rotZ=0,parent=model){const m=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,len,32),mat);m.rotation.z=rotZ;m.position.set(x,y,z);m.castShadow=true;parent.add(m);return m}
-const L=6.2,H=2.55,D=2.55;
-cube(L,H,D,white,0,H/2,0);
-cube(L+.08,.13,D+.08,edge,0,.08,0);
-cube(L+.08,.13,D+.08,edge,0,H-.07,0);
-for(let i=0;i<37;i++){const x=-L/2+.12+i*(L-.24)/36;cube(.035,H-.24,.065,edge,x,H/2,D/2+.025);cube(.035,H-.24,.065,edge,x,H/2,-D/2-.025)}
-for(let i=0;i<8;i++){const x=-L/2+.18+i*.83;cube(.045,.07,D+.08,edge,x,.18,0);cube(.045,.07,D+.08,edge,x,H-.18,0)}
-// Heavy corner castings and structural rails
-for(const x of [-L/2+.06,L/2-.06])for(const z of [-D/2-.04,D/2+.04]){cube(.16,H+.08,.16,edge,x,H/2,z);cube(.22,.16,.22,dark,x,.05,z);cube(.22,.16,.22,dark,x,H-.05,z)}
-// End doors with recessed panels, locking bars and hinges
-const end=new THREE.Group();end.position.set(0,0,D/2+.09);model.add(end);
-for(const x of [-1.18,0,1.18]){cube(1.12,2.1,.055,edge,x,1.32,0,end);cube(1.02,1.98,.06,white,x,1.32,.04,end);for(let k=0;k<7;k++)cube(.018,1.86,.018,edge,x-.43+k*.143,1.32,.085,end)}
-for(const x of [-1.78,-.58,.58,1.78]){cube(.045,2.15,.09,dark,x,1.32,.14,end);for(const y of [.48,1.98])cube(.09,.12,.12,edge,x,y,.17,end)}
-// Raised equipment enclosure/tower like the reference container
-cube(1.42,2.15,2.48,white,-2.35,H+1.06,0);
-for(let i=0;i<9;i++){const z=-1.08+i*.27;cube(1.38,2.05,.035,edge,-2.35,H+1.06,z)}
-cube(1.48,.12,2.56,edge,-2.35,H+2.12,0);cube(1.48,.12,2.56,edge,-2.35,H+.02,0);
-for(const x of [-3.05,-1.65])for(const z of [-1.22,1.22])cube(.09,2.18,.09,dark,x,H+1.06,z);
-// Exhaust silencer on roof, with outlet and supports
-for(const x of [-.2,1.8])cube(.13,.4,.13,dark,x,H+.22,-.65);
-const muffler=cylinder(.28,.28,2.8,dark,.8,H+.58,-.65,Math.PI/2);muffler.rotation.z=Math.PI/2;
-const tip=cylinder(.17,.17,.55,edge,-.78,H+.58,-.65,Math.PI/2);tip.rotation.z=Math.PI/2;
-const elbow=new THREE.Mesh(new THREE.TorusGeometry(.28,.12,12,32,Math.PI/2),dark);elbow.rotation.set(Math.PI/2,0,Math.PI);elbow.position.set(-.85,H+.72,-.65);model.add(elbow);
-cube(6.45,.12,2.72,dark,0,-.08,0);
-// Eurocontainer brand plate as crisp canvas texture
-const logoCanvas=document.createElement("canvas");logoCanvas.width=1024;logoCanvas.height=256;const ctx=logoCanvas.getContext("2d");ctx.clearRect(0,0,1024,256);ctx.font="900 104px Arial";ctx.fillStyle="#17394c";ctx.fillText("EUROCONTAINER",18,152);const tex=new THREE.CanvasTexture(logoCanvas);tex.colorSpace=THREE.SRGBColorSpace;
-const plateMat=new THREE.MeshBasicMaterial({map:tex,transparent:true,side:THREE.DoubleSide});
-const plate=new THREE.Mesh(new THREE.PlaneGeometry(3.0,.66),plateMat);plate.position.set(.45,1.82,D/2+.13);model.add(plate);
-const endPlate=new THREE.Mesh(new THREE.PlaneGeometry(1.85,.42),plateMat);endPlate.rotation.y=Math.PI/2;endPlate.position.set(-L/2-.09,1.7,0);model.add(endPlate);
-// Ground shadow catcher
-const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({opacity:.13}));floor.rotation.x=-Math.PI/2;floor.position.y=-.16;floor.receiveShadow=true;scene.add(floor);
-model.rotation.y=-.28;model.rotation.x=-.035;
-let targetY=-.28,targetX=-.035,drag=false,lastX=0,lastY=0,auto=true;
-canvas.addEventListener("pointerdown",e=>{drag=true;auto=false;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
-canvas.addEventListener("pointermove",e=>{if(!drag)return;targetY+=(e.clientX-lastX)*.008;targetX+=(e.clientY-lastY)*.004;targetX=Math.max(-.25,Math.min(.22,targetX));lastX=e.clientX;lastY=e.clientY});
-canvas.addEventListener("pointerup",()=>{drag=false});canvas.addEventListener("pointercancel",()=>{drag=false});
-canvas.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")targetY-=.15;if(e.key==="ArrowRight")targetY+=.15});
-const resize=()=>{const r=canvas.getBoundingClientRect();if(!r.width||!r.height)return;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};if("ResizeObserver" in window){new ResizeObserver(resize).observe(canvas)}else{window.addEventListener("resize",resize,{passive:true})}resize();
-const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;let start=performance.now();
-function render(t){requestAnimationFrame(render);if(!drag){if(!reduced)targetY+=.00055;model.rotation.y+=(targetY-model.rotation.y)*.045;model.rotation.x+=(targetX-model.rotation.x)*.045}model.position.y=Math.sin((t-start)*.0007)*.045;renderer.render(scene,camera)}requestAnimationFrame(render);
+<script type="module">
+// Three.js r187 (ES module). The enclosure is a visual interpretation of the
+// supplied Eurocontainer reference photo, not a fabrication/CAD model.
+(async()=>{
+  const wrap=document.getElementById('visualWrap'),canvas=document.getElementById('container3d');
+  const fallback=()=>{if(wrap)wrap.classList.add('fallback')};
+  if(!canvas){fallback();return}
+  let renderer;
+  try{
+    const T=await import('https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js');
+    const scene=new T.Scene();
+    const camera=new T.PerspectiveCamera(31,1,.1,100);camera.position.set(10.8,6.8,11.5);camera.lookAt(0,2.1,0);
+    renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.8));renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.13;
+    renderer.shadowMap.enabled=true;
+    scene.add(new T.HemisphereLight(0xf4fbff,0x78909c,2.15));
+    const sun=new T.DirectionalLight(0xfff8ec,3.2);sun.position.set(-5,10,7);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-12;sun.shadow.camera.right=12;sun.shadow.camera.top=12;sun.shadow.camera.bottom=-12;scene.add(sun);
+    const fill=new T.DirectionalLight(0x93d9f0,1.25);fill.position.set(8,4,-8);scene.add(fill);
+    const rim=new T.DirectionalLight(0xffffff,.9);rim.position.set(-8,3,-4);scene.add(rim);
+    const model=new T.Group();scene.add(model);
+    const m={
+      body:new T.MeshStandardMaterial({color:0xe7edf0,metalness:.34,roughness:.48}),
+      bright:new T.MeshStandardMaterial({color:0xf7fafb,metalness:.28,roughness:.4}),
+      rail:new T.MeshStandardMaterial({color:0x9aaab3,metalness:.65,roughness:.32}),
+      dark:new T.MeshStandardMaterial({color:0x293b46,metalness:.72,roughness:.27}),
+      black:new T.MeshStandardMaterial({color:0x101c24,metalness:.62,roughness:.25}),
+      glass:new T.MeshStandardMaterial({color:0x45616e,metalness:.25,roughness:.2})
+    };
+    function box(w,h,d,mat,x,y,z,parent=model){const o=new T.Mesh(new T.BoxGeometry(w,h,d),mat);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
+    function cylinder(r1,r2,h,mat,x,y,z,rotZ=0,parent=model){const o=new T.Mesh(new T.CylinderGeometry(r1,r2,h,40,1,false),mat);o.rotation.z=rotZ;o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
+    function addRibs(length,height,width,step,x0,y0,z,parent,mat=m.rail){for(let x=x0-length/2+step/2;x<x0+length/2-step/3;x+=step)box(width,height,.055,mat,x,y0,z,parent)}
+    const L=7.6,H=2.55,D=2.75;
+    // Main enclosure and bottom/top rails.
+    box(L,H,D,m.body,0,H/2,0);
+    box(L+.12,.14,D+.12,m.rail,0,.08,0);box(L+.12,.12,D+.12,m.rail,0,H-.06,0);
+    // Corrugated long side (camera-facing) and rear wall.
+    addRibs(L-.18,H-.12,.038,.155,0,H/2,D/2+.028,model,m.rail);
+    addRibs(L-.18,H-.12,.028,.155,0,H/2,-D/2-.02,model,m.rail);
+    // Side door panels and technical access hatches.
+    const doorXs=[-.35,1.35,2.95];
+    doorXs.forEach((x,i)=>{
+      box(1.34,2.04,.09,m.rail,x,1.31,D/2+.09);
+      box(1.22,1.92,.07,m.bright,x,1.31,D/2+.145);
+      for(let k=0;k<7;k++)box(.018,1.78,.018,m.rail,x-.49+k*.163,1.31,D/2+.19);
+      box(.05,.28,.11,m.dark,x+.49,1.31,D/2+.23);
+      box(.06,.06,.12,m.bright,x-.54,.34,D/2+.22);box(.06,.06,.12,m.bright,x+.54,2.25,D/2+.22);
+    });
+    // Ventilation grille near the right end.
+    box(.58,1.88,.1,m.rail,3.28,1.35,D/2+.09);
+    box(.49,1.76,.04,m.dark,3.28,1.35,D/2+.15);
+    for(let i=0;i<13;i++)box(.43,.035,.03,m.rail,3.28,0.56+i*.13,D/2+.19);
+    // Service-door end face and corner castings.
+    const end=new T.Group();end.position.set(-L/2-.03,0,0);model.add(end);
+    box(.12,2.5,D,m.rail,0,1.29,0,end);
+    for(let i=0;i<12;i++)box(.06,2.3,.035,m.bright,0,1.28,-1.22+i*.22,end);
+    for(const z of [-1.15,1.15]){box(.12,2.3,.1,m.dark,.09,1.29,z,end);for(const y of [.45,2.05])box(.15,.12,.15,m.rail,.13,y,z,end)}
+    // Raised equipment/tower at the left end, stacked above the main shell as in reference.
+    const towerX=-2.72,towerY=H+1.28,towerW=1.64,towerH=2.52;
+    box(towerW,towerH,D,m.body,towerX,towerY,0);
+    box(towerW+.08,.11,D+.08,m.rail,towerX,H+.07,0);box(towerW+.08,.1,D+.08,m.rail,towerX,H+towerH-.04,0);
+    addRibs(towerW-.1,towerH-.12,.04,.145,towerX,towerY,D/2+.04,model,m.rail);
+    addRibs(towerW-.1,towerH-.12,.035,.145,towerX,towerY,-D/2-.03,model,m.rail);
+    // Distinct horizontal joint between stacked modules and corner castings.
+    box(towerW+.11,.12,D+.11,m.rail,towerX,H+1.25,0);
+    for(const x of [towerX-towerW/2+.04,towerX+towerW/2-.04])for(const z of [-D/2-.03,D/2+.03]){
+      box(.14,towerH+.18,.14,m.rail,x,towerY,z);box(.2,.16,.2,m.dark,x,H+.08,z);
+    }
+    // Door on the tower front.
+    box(.82,1.78,.09,m.rail,towerX,H+1.08,D/2+.1);
+    box(.72,1.67,.06,m.bright,towerX,H+1.08,D/2+.16);
+    for(let k=0;k<5;k++)box(.02,1.53,.02,m.rail,towerX-.28+k*.14,H+1.08,D/2+.205);
+    // Exhaust/silencer on the main roof: supports, horizontal silencer, bent outlet.
+    for(const x of [.1,2.1])box(.14,.48,.14,m.dark,x,H+.23,-.65);
+    const silencer=cylinder(.29,.29,2.65,m.dark,1.1,H+.62,-.65,Math.PI/2);silencer.rotation.z=Math.PI/2;
+    cylinder(.235,.235,.12,m.rail,-.27,H+.62,-.65,Math.PI/2).rotation.z=Math.PI/2;
+    const exhaustCurve=new T.CatmullRomCurve3([
+      new T.Vector3(-.25,H+.62,-.65),new T.Vector3(-.55,H+.62,-.65),new T.Vector3(-.78,H+.82,-.65),new T.Vector3(-.78,H+1.16,-.65),new T.Vector3(-.98,H+1.34,-.65)
+    ]);
+    const exhaust=new T.Mesh(new T.TubeGeometry(exhaustCurve,40,.105,16,false),m.dark);exhaust.castShadow=true;model.add(exhaust);
+    cylinder(.12,.12,.48,m.black,-.98,H+1.36,-.65,Math.PI/2);
+    // Small roof fixtures, junction boxes, lifting points and underframe.
+    for(const x of [-3.45,-2.0,0,2.4,3.5])box(.12,.14,.12,m.rail,x,H+.08,-1.07);
+    box(L+.2,.2,D+.16,m.dark,0,-.09,0);
+    for(let x=-3.5;x<=3.5;x+=1.75)box(.2,.24,D+.15,m.rail,x,-.25,0);
+    // Brand panel on the long face: exact name, restrained orange accent mark.
+    const brandCanvas=document.createElement('canvas');brandCanvas.width=1024;brandCanvas.height=220;
+    const ctx=brandCanvas.getContext('2d');ctx.clearRect(0,0,1024,220);ctx.font='800 104px Arial';ctx.fillStyle='#17394d';ctx.fillText('Eurocontainer',18,137);ctx.fillStyle='#ed6b37';ctx.fillText('.es',690,137);ctx.strokeStyle='#ed6b37';ctx.lineWidth=19;ctx.lineCap='square';ctx.beginPath();ctx.moveTo(900,84);ctx.lineTo(940,117);ctx.lineTo(990,52);ctx.stroke();
+    const brandTex=new T.CanvasTexture(brandCanvas);brandTex.colorSpace=T.SRGBColorSpace;
+    const brandPlate=new T.Mesh(new T.PlaneGeometry(2.95,.62),new T.MeshBasicMaterial({map:brandTex,transparent:true,side:T.DoubleSide}));brandPlate.position.set(2.15,1.95,D/2+.205);model.add(brandPlate);
+    // Ground catcher and subtle shadow.
+    const ground=new T.Mesh(new T.PlaneGeometry(100,100),new T.ShadowMaterial({opacity:.12}));ground.rotation.x=-Math.PI/2;ground.position.y=-.38;ground.receiveShadow=true;scene.add(ground);
+    model.rotation.y=-.38;model.rotation.x=-.035;
+    let yaw=-.38,pitch=-.035,drag=false,lastX=0,lastY=0,auto=true,visible=true,lastFrame=0;
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduced){auto=false;}
+    const rotateToggle=document.getElementById('rotateToggle');const resetView=document.getElementById('resetView');
+    rotateToggle.addEventListener('click',()=>{auto=!auto;rotateToggle.setAttribute('aria-pressed',String(auto));rotateToggle.textContent=auto?'Giro automático':'Giro pausado'});
+    if(reduced){rotateToggle.setAttribute('aria-pressed','false');rotateToggle.textContent='Giro pausado';}
+    resetView.addEventListener('click',()=>{yaw=-.38;pitch=-.035;auto=!reduced;rotateToggle.setAttribute('aria-pressed',String(auto));rotateToggle.textContent=auto?'Giro automático':'Giro pausado'});
+    canvas.addEventListener('pointerdown',e=>{drag=true;auto=false;rotateToggle.setAttribute('aria-pressed','false');rotateToggle.textContent='Giro pausado';lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
+    canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-lastX)*.0075;pitch+=(e.clientY-lastY)*.0035;pitch=Math.max(-.24,Math.min(.22,pitch));lastX=e.clientX;lastY=e.clientY});
+    const stopDrag=()=>{drag=false};canvas.addEventListener('pointerup',stopDrag);canvas.addEventListener('pointercancel',stopDrag);
+    canvas.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){yaw-=.14;e.preventDefault()}if(e.key==='ArrowRight'){yaw+=.14;e.preventDefault()}if(e.key==='ArrowUp'){pitch=Math.max(-.24,pitch-.06);e.preventDefault()}if(e.key==='ArrowDown'){pitch=Math.min(.22,pitch+.06);e.preventDefault()}});
+    const resize=()=>{const r=canvas.getBoundingClientRect();if(r.width<1||r.height<1)return;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};
+    if('ResizeObserver' in window)new ResizeObserver(resize).observe(canvas);else window.addEventListener('resize',resize);resize();
+    wrap.classList.add('webgl-ready');
+    if('IntersectionObserver' in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting}).observe(wrap);
+    function animate(t){requestAnimationFrame(animate);if(!visible||document.hidden)return;if(t-lastFrame<28)return;lastFrame=t;if(auto&&!drag)yaw+=.00055;model.rotation.y+=(yaw-model.rotation.y)*.045;model.rotation.x+=(pitch-model.rotation.x)*.045;model.position.y=Math.sin(t*.0007)*.035;renderer.render(scene,camera)}
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)resize()});requestAnimationFrame(animate);
+  }catch(err){console.warn('3D viewer fallback:',err);try{renderer?.dispose()}catch(_){}fallback()}
 })();
 </script>
 </body>
