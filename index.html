@@ -3,152 +3,114 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b2639">
-<meta name="description" content="BOX Integration Systems y Eurocontainer. Ingeniería, fabricación e integración de soluciones industriales y modulares.">
-<title>BOX Integration Systems · Eurocontainer</title>
+<meta name="theme-color" content="#eaf4f8">
+<meta name="description" content="BOX Integration Systems y Eurocontainer: ingeniería, integración y fabricación de soluciones industriales y modulares.">
+<title>BOX Integration Systems × Eurocontainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#102f43;--navy:#08283d;--blue:#087eae;--cyan:#54c8e5;--orange:#f36b32;--white:#f7fbfd}
+:root{--ink:#102f43;--navy:#09283d;--blue:#087eae;--cyan:#55c8e8;--orange:#ed6b37;--paper:#edf5f8}
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:Inter,"Segoe UI",Arial,sans-serif}
-body{min-height:100svh;color:var(--ink);background:#dce8ed;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:url("assets/fondo-industrial.webp?v=20261117-clean") center 52%/cover no-repeat;transform:scale(1.015)}
-body:after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(239,247,250,.78),rgba(231,242,247,.56) 48%,rgba(8,39,58,.14)),linear-gradient(180deg,rgba(240,248,251,.15),rgba(7,35,53,.12) 55%,rgba(5,28,44,.50));pointer-events:none}
-main{width:min(1500px,calc(100% - 72px));min-height:100svh;margin:auto;padding:clamp(18px,2.5vh,28px) 0;display:grid;grid-template-rows:auto auto 1fr auto;gap:clamp(14px,2vh,22px)}
-header{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:inline-flex;align-items:center;text-decoration:none}
-.brand img{width:clamp(170px,16vw,215px);height:auto;max-height:58px;object-fit:contain;filter:drop-shadow(0 3px 10px rgba(3,32,49,.16))}
-.header-note{text-align:right;color:#fff;font-size:10px;line-height:1.65;letter-spacing:.19em;font-weight:850;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,30,49,.7)}
-.intro{display:flex;align-items:end;justify-content:space-between;gap:28px}
-.intro-copy{max-width:760px}
-.eyebrow{display:flex;align-items:center;gap:10px;color:#087ba9;font-size:10px;letter-spacing:.23em;text-transform:uppercase;font-weight:900;margin-bottom:10px}
-.eyebrow:before{content:"";width:28px;height:2px;background:var(--cyan);box-shadow:0 0 12px rgba(84,200,229,.6)}
-h1{margin:0;color:#0b3048;font-size:clamp(34px,4vw,58px);line-height:.99;letter-spacing:-.055em;font-weight:900;text-wrap:balance;text-shadow:0 2px 18px rgba(255,255,255,.4)}
-.intro p{max-width:400px;margin:0 0 3px;color:#173d55;font-size:13px;line-height:1.6;font-weight:600;text-shadow:0 1px 10px rgba(255,255,255,.4)}
-.websites{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px);align-self:center}
-.site-link{--rx:0deg;--ry:0deg;position:relative;isolation:isolate;min-height:clamp(190px,24vh,255px);display:flex;align-items:end;overflow:hidden;text-decoration:none;color:#fff;background:#123b54;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,26px 100%,0 calc(100% - 26px));transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .35s ease;box-shadow:0 24px 50px rgba(4,33,51,.28)}
-.site-link:before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .6s}
-.site-link.boxis:before{background-image:linear-gradient(90deg,rgba(5,38,60,.22),rgba(4,30,49,.78)),url("assets/fondo-contenedores-card.webp")}
-.site-link.euro:before{background-image:linear-gradient(90deg,rgba(5,34,50,.12),rgba(4,29,45,.72)),url("assets/eurocontainer-generator-button-v14.webp")}
-.site-link:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(3,24,39,.02) 15%,rgba(3,25,41,.83) 100%);opacity:.95;transition:opacity .4s}
-.site-link:hover{filter:brightness(1.09);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-7px);box-shadow:0 34px 65px rgba(4,33,51,.34)}
-.site-link:hover:before{transform:scale(1.055);filter:saturate(1.12)}
-.site-content{width:100%;display:flex;align-items:center;gap:22px;padding:clamp(22px,3vw,38px);position:relative;z-index:1}
-.logo-panel{width:clamp(88px,10vw,126px);height:clamp(72px,8vw,100px);flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.055));box-shadow:12px 15px 28px rgba(0,15,26,.2),inset 1px 1px 0 rgba(255,255,255,.35),inset -1px -1px 0 rgba(0,0,0,.15);backdrop-filter:blur(12px);transform:translateZ(30px)}
-.logo-panel img{width:82%;max-height:78%;object-fit:contain}
-.euro-mark{font-size:clamp(16px,1.9vw,25px);font-weight:950;letter-spacing:-.065em;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.28);white-space:nowrap}
-.euro-mark span{color:#ff824c}
-.site-copy{flex:1;min-width:0;transform:translateZ(25px)}
-.site-copy small{display:block;margin-bottom:9px;color:#a6edff;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:900}
-.site-copy strong{display:block;font-size:clamp(21px,2.4vw,34px);line-height:1.03;letter-spacing:-.045em;font-weight:900}
-.site-copy em{display:block;margin-top:9px;color:rgba(244,251,255,.88);font-size:12px;line-height:1.45;font-style:normal;font-weight:550}
-.arrow{flex:0 0 auto;align-self:center;margin-left:4px;color:#fff;font-size:42px;line-height:1;font-weight:300;transform:translateZ(35px);transition:transform .35s cubic-bezier(.2,.8,.2,1),color .3s;text-shadow:0 4px 15px rgba(0,0,0,.3)}
-.site-link:hover .arrow{transform:translate(7px,-6px) translateZ(45px);color:#9cecff}
-.site-link.euro:hover .arrow{color:#ffb18b}
-.contacts{align-self:end}
-.contacts-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:12px}
-.contacts-head h2{margin:0;color:#fff;font-size:clamp(23px,2.2vw,31px);letter-spacing:-.045em;font-weight:900;text-shadow:0 2px 15px rgba(0,28,45,.7)}
-.contacts-head p{margin:0;color:#f5fbff;font-size:10px;font-weight:750;letter-spacing:.08em;text-shadow:0 2px 12px rgba(0,25,42,.8)}
-.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.5vw,22px)}
-.contact{--rx:0deg;--ry:0deg;position:relative;min-width:0;padding:18px 20px 19px;background:linear-gradient(125deg,rgba(247,252,254,.90),rgba(220,238,246,.82));backdrop-filter:blur(18px) saturate(125%);box-shadow:0 18px 42px rgba(3,31,49,.18),inset 0 1px 0 rgba(255,255,255,.95);transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .4s,box-shadow .35s,background .35s}
-.contact:hover{box-shadow:0 25px 50px rgba(3,31,49,.25),inset 0 1px 0 #fff;background:linear-gradient(125deg,rgba(255,255,255,.96),rgba(224,243,250,.91))}
-.person{display:flex;align-items:center;gap:12px;margin-bottom:13px}
-.person-icon{width:39px;height:39px;flex:0 0 39px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#43b8d5,#07537d);box-shadow:6px 8px 15px rgba(4,48,73,.22),inset 1px 1px 3px rgba(255,255,255,.5)}
-.person-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.person h3{margin:0 0 4px;color:#10344c;font-size:14px;font-weight:900;letter-spacing:-.02em}
-.role{color:#476a80;font-size:10px;font-weight:750}
-.details{display:grid;gap:8px}
-.detail{display:flex;align-items:flex-start;gap:9px;min-width:0;color:#24475d;text-decoration:none;font-size:10.5px;line-height:1.35;font-weight:600}
+html,body{margin:0;min-height:100%;font-family:Manrope,Inter,"Segoe UI",Arial,sans-serif}
+body{min-height:100svh;overflow-x:hidden;color:var(--ink);background:#dcebf1}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:url("assets/fondo-industrial.webp?v=20261117-premium3d") center 52%/cover no-repeat;transform:scale(1.02);filter:saturate(1.08)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(105deg,rgba(244,250,252,.94) 0%,rgba(232,244,249,.82) 44%,rgba(221,239,247,.57) 100%),linear-gradient(180deg,rgba(255,255,255,.1),rgba(7,39,59,.16))}
+.page{width:min(1540px,calc(100% - 72px));min-height:100svh;margin:auto;padding:clamp(18px,2.2vh,28px) 0;display:grid;grid-template-rows:auto minmax(300px,1fr) auto auto;gap:clamp(13px,1.7vh,22px)}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:5}
+.brand{display:flex;align-items:center;padding:8px 16px;background:linear-gradient(135deg,#123d56,#082b42);box-shadow:0 12px 28px rgba(6,39,58,.18),inset 0 1px rgba(255,255,255,.22);text-decoration:none}
+.brand img{display:block;width:clamp(145px,13vw,178px);height:48px;object-fit:contain}
+.header-meta{text-align:right;color:#19465f;font-size:9px;line-height:1.7;font-weight:900;letter-spacing:.19em;text-transform:uppercase}
+.hero{position:relative;display:grid;grid-template-columns:minmax(330px,.78fr) minmax(0,1.22fr);align-items:center;min-height:0;isolation:isolate}
+.hero-copy{position:relative;z-index:2;padding:10px 0 16px}
+.kicker{display:flex;align-items:center;gap:10px;color:#087da9;font-size:10px;font-weight:900;letter-spacing:.23em;text-transform:uppercase;margin-bottom:18px}
+.kicker:before{content:"";width:30px;height:2px;background:var(--cyan);box-shadow:0 0 12px rgba(85,200,232,.6)}
+h1{max-width:640px;margin:0;color:#0b3048;font-size:clamp(38px,4.3vw,66px);font-weight:900;line-height:.98;letter-spacing:-.065em;text-wrap:balance}
+.hero-copy p{max-width:470px;margin:20px 0 0;color:#31576c;font-size:13px;line-height:1.75;font-weight:600}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.hero-tags span{padding:7px 11px;background:rgba(255,255,255,.46);box-shadow:inset 0 1px rgba(255,255,255,.85),0 5px 15px rgba(14,58,80,.06);color:#28546a;font-size:9px;font-weight:800;letter-spacing:.04em}
+.visual{position:relative;height:min(48vh,470px);min-height:300px;z-index:1;perspective:1100px}
+#container3d{width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;outline:none}
+#container3d:active{cursor:grabbing}
+.visual:before{content:"";position:absolute;left:12%;right:5%;bottom:10%;height:18%;background:radial-gradient(ellipse,rgba(18,54,72,.23),transparent 68%);filter:blur(14px);pointer-events:none}
+.visual-caption{position:absolute;right:3%;bottom:2%;color:#42677b;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;pointer-events:none}
+.visual-caption:before{content:"";display:inline-block;width:20px;height:1px;background:var(--orange);vertical-align:middle;margin-right:8px}
+.access{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.access-card{--rx:0deg;--ry:0deg;position:relative;isolation:isolate;min-height:132px;display:grid;grid-template-columns:76px 1fr 34px;align-items:center;gap:18px;padding:21px 25px;overflow:hidden;color:#fff;text-decoration:none;background:linear-gradient(115deg,rgba(7,42,63,.97),rgba(12,66,91,.91));box-shadow:0 18px 36px rgba(5,38,57,.19),inset 0 1px rgba(255,255,255,.2);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s,filter .38s}
+.access-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(4,30,47,.18),rgba(4,30,47,.75)),var(--card-image) center/cover;opacity:.7;transition:transform .7s,opacity .4s}
+.access-card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,transparent 15%,rgba(255,255,255,.10) 36%,transparent 58%);transform:translateX(-110%);transition:transform .7s}
+.access-card:hover{transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-5px);box-shadow:0 26px 48px rgba(5,38,57,.27),inset 0 1px rgba(255,255,255,.28);filter:brightness(1.06)}
+.access-card:hover:before{transform:scale(1.06);opacity:.88}
+.access-card:hover:after{transform:translateX(110%)}
+.access-card.boxis{--card-image:url("assets/fondo-contenedores-card.webp")}
+.access-card.euro{--card-image:url("assets/eurocontainer-generator-button-v14.webp")}
+.logo-tile{height:70px;width:70px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.055));box-shadow:8px 10px 22px rgba(0,16,28,.24),inset 1px 1px 0 rgba(255,255,255,.4);transform:translateZ(24px)}
+.logo-tile img{width:86%;height:86%;object-fit:contain}
+.euro-logo{font-size:14px;line-height:1;font-weight:900;letter-spacing:-.07em;color:white;text-shadow:0 2px 8px rgba(0,0,0,.25)}
+.euro-logo span{color:#ff8a50}
+.access-copy{min-width:0;transform:translateZ(20px)}
+.access-copy small{display:block;color:#8fe4f8;font-size:8px;font-weight:900;letter-spacing:.19em;text-transform:uppercase;margin-bottom:8px}
+.access-copy strong{display:block;font-size:clamp(18px,1.9vw,26px);line-height:1.08;letter-spacing:-.045em;font-weight:900}
+.access-copy em{display:block;margin-top:7px;color:rgba(242,250,253,.83);font-size:10px;line-height:1.45;font-style:normal;font-weight:600}
+.arrow{font-size:32px;font-weight:400;color:#fff;line-height:1;transform:translateZ(30px);transition:transform .35s,color .35s;text-shadow:0 4px 12px rgba(0,0,0,.2)}
+.access-card:hover .arrow{transform:translate(5px,-5px) translateZ(38px);color:#8fe4f8}
+.access-card.euro:hover .arrow{color:#ff9c70}
+.contacts{position:relative;z-index:3}
+.contacts-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:10px;gap:18px}
+.contacts-head h2{margin:0;color:#10364e;font-size:clamp(22px,2.1vw,29px);font-weight:900;letter-spacing:-.05em}
+.contacts-head p{margin:0;color:#31586d;font-size:9px;font-weight:800;letter-spacing:.1em}
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.contact{--rx:0deg;--ry:0deg;position:relative;min-width:0;padding:16px 18px 16px;background:linear-gradient(135deg,rgba(249,253,255,.91),rgba(220,239,247,.83));box-shadow:0 15px 32px rgba(6,40,59,.14),inset 0 1px rgba(255,255,255,.98),inset 0 -1px rgba(77,140,165,.12);backdrop-filter:blur(18px) saturate(140%);transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .35s,box-shadow .35s}
+.contact:hover{transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-4px);box-shadow:0 22px 40px rgba(6,40,59,.2),inset 0 1px #fff}
+.person{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.person-icon{width:39px;height:39px;flex:0 0 39px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#57cde7,#08729d 65%,#064363);box-shadow:6px 8px 16px rgba(4,48,73,.2),inset 1px 1px 3px rgba(255,255,255,.55)}
+.person-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.person h3{margin:0 0 3px;color:#10344c;font-size:13px;font-weight:900;letter-spacing:-.025em}
+.role{color:#4b6d81;font-size:9px;font-weight:800}
+.details{display:grid;gap:7px}
+.detail{display:flex;align-items:flex-start;gap:8px;min-width:0;color:#274b60;text-decoration:none;font-size:9.5px;line-height:1.35;font-weight:650}
 a.detail:hover{color:#007eaf}
-.detail-icon{flex:0 0 16px;width:16px;height:16px;display:grid;place-items:center;color:#0789b8}
-.detail-icon svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.vcard{position:absolute;right:16px;top:17px;border:0;background:transparent;color:#087ba9;font-size:23px;font-weight:300;cursor:pointer;transition:transform .3s,color .3s}
-.vcard:hover{transform:translate(3px,-3px);color:#044668}
-.bottomline{display:flex;justify-content:space-between;gap:18px;margin-top:10px;color:#f4fbff;font-size:9px;letter-spacing:.08em;font-weight:750;text-shadow:0 2px 12px rgba(0,24,40,.75)}
-.bottomline a{color:inherit;text-decoration:none}.bottomline a:hover{color:#a4edff}
-a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:4px}
-@media(min-width:1100px) and (min-height:700px){main{height:100svh;max-height:1050px}}
-@media(max-width:1000px){main{width:calc(100% - 44px);padding:22px 0;gap:18px}.intro{align-items:start;flex-direction:column;gap:10px}.intro p{max-width:680px}.site-link{min-height:190px}.site-content{gap:15px;padding:22px}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact:last-child{grid-column:1/-1}}
-@media(max-width:650px){body:before{background-position:58% center}body:after{background:linear-gradient(180deg,rgba(235,245,249,.74),rgba(7,37,57,.18) 44%,rgba(5,28,44,.58))}main{width:calc(100% - 28px);padding:16px 0 20px;gap:19px}header{align-items:start}.brand img{width:150px}.header-note{font-size:8px;max-width:145px}.eyebrow{font-size:8px;margin-bottom:8px}h1{font-size:36px}.intro p{font-size:12px}.websites{grid-template-columns:1fr;gap:12px}.site-link{min-height:150px}.site-content{padding:18px;gap:13px}.logo-panel{width:72px;height:66px}.site-copy small{font-size:7px;margin-bottom:6px}.site-copy strong{font-size:21px}.site-copy em{font-size:10px;margin-top:6px}.arrow{font-size:34px}.contacts-head{align-items:start;flex-direction:column;gap:4px}.contact-grid{grid-template-columns:1fr;gap:10px}.contact,.contact:last-child{grid-column:auto;padding:15px 16px 17px}.details{gap:7px}.bottomline{font-size:8px;flex-wrap:wrap}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-
-/* --- Corporate daylight / premium 3D refresh --- */
-:root{--ink:#10344b;--navy:#092d45;--blue:#087eae;--cyan:#51c8e8;--orange:#f36b32;--white:#f8fcff}
-html,body{min-height:100%;background:#d9e8ef}
-body:before{background-image:url("assets/fondo-industrial.webp?v=20261117-day3d");background-position:center 55%;filter:saturate(1.08) contrast(1.02);transform:scale(1.025)}
-body:after{background:linear-gradient(100deg,rgba(238,247,251,.86) 0%,rgba(231,243,249,.58) 43%,rgba(220,239,248,.18) 100%),linear-gradient(180deg,rgba(246,251,253,.12),rgba(4,38,60,.12) 70%,rgba(5,35,55,.3))}
-main{width:min(1540px,calc(100% - 64px));grid-template-rows:auto auto minmax(210px,1fr) auto;gap:clamp(10px,1.6vh,18px)}
-header{position:relative;z-index:5}
-.brand{padding:9px 17px;background:linear-gradient(145deg,rgba(5,43,67,.94),rgba(9,65,91,.82));box-shadow:0 12px 28px rgba(6,39,58,.2),inset 0 1px rgba(255,255,255,.2);backdrop-filter:blur(14px)}
-.brand img{width:clamp(155px,14vw,190px);max-height:52px}
-.header-note{color:#153f58;text-shadow:0 1px 8px rgba(255,255,255,.8)}
-.intro{align-items:center;position:relative;z-index:2}
-h1{color:#0b3048;font-size:clamp(34px,3.55vw,54px);max-width:700px}
-.intro p{color:#214c64}
-.websites{position:relative;z-index:3;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-self:stretch;align-items:end;padding-top:6px}
-.site-link{min-height:clamp(148px,19vh,205px);clip-path:none;border-radius:3px 24px 3px 24px;outline:1px solid rgba(255,255,255,.46);outline-offset:-1px;box-shadow:0 24px 55px rgba(5,36,54,.25),inset 0 1px rgba(255,255,255,.24)}
-.site-link:before{filter:saturate(1.12)}
-.site-link.boxis:before{background-image:linear-gradient(90deg,rgba(5,38,60,.3),rgba(4,30,49,.78)),url("assets/fondo-contenedores-card.webp")}
-.site-link.euro:before{background-image:linear-gradient(90deg,rgba(5,34,50,.18),rgba(4,29,45,.74)),url("assets/eurocontainer-generator-button-v14.webp")}
-.site-content{padding:clamp(19px,2.2vw,30px);gap:18px}
-.logo-panel{width:clamp(82px,8vw,108px);height:clamp(68px,7vw,88px);border-radius:2px 14px 2px 14px;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.07));box-shadow:10px 13px 25px rgba(0,15,26,.2),inset 1px 1px 0 rgba(255,255,255,.42);backdrop-filter:blur(16px)}
-.euro-mark{font-family:Arial,sans-serif;font-weight:950;letter-spacing:-.075em;font-size:clamp(15px,1.65vw,22px)}
-.site-copy strong{font-size:clamp(20px,2vw,29px)}
-.site-copy em{font-size:11px}
-.arrow{font-size:40px;font-weight:300}
-.contacts{position:relative;z-index:4}
-.contacts-head h2{color:#10364f;text-shadow:0 1px 12px rgba(255,255,255,.72)}
-.contacts-head p{color:#16415b;text-shadow:0 1px 10px rgba(255,255,255,.8)}
-.contact-grid{gap:16px}
-.contact{padding:18px 19px 18px;border-radius:2px 18px 2px 18px;background:linear-gradient(135deg,rgba(250,254,255,.92),rgba(220,239,248,.86));box-shadow:0 18px 40px rgba(4,37,57,.2),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(75,144,174,.12);backdrop-filter:blur(22px) saturate(145%)}
-.contact:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#67d8f2,#087eae 55%,#f36b32);opacity:.9}
-.contact:hover{transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-5px);box-shadow:0 25px 48px rgba(4,37,57,.25),inset 0 1px 0 #fff}
-.person-icon{border-radius:2px 11px 2px 11px;width:42px;height:42px;flex-basis:42px;background:linear-gradient(145deg,#59d2ed,#08719e 62%,#064665);box-shadow:7px 9px 18px rgba(4,48,73,.22),inset 1px 1px 3px rgba(255,255,255,.58)}
-.person h3{font-size:14px;color:#10344c}
-.role{color:#42677e}
-.detail{font-size:10px;color:#24485d}
-.detail-icon{color:#0789b8}
-.vcard{top:auto;bottom:12px;right:15px;width:30px;height:30px;font-size:23px;line-height:26px;background:linear-gradient(145deg,#faffff,#d5edf6);box-shadow:4px 6px 12px rgba(3,44,67,.16);border-radius:2px 9px 2px 9px}
-.bottomline{color:#fff}
-.scene3d{position:absolute;z-index:1;right:2%;top:24%;width:min(52vw,760px);height:40vh;min-height:250px;max-height:420px;perspective:1100px;pointer-events:none;opacity:.94;filter:drop-shadow(0 32px 26px rgba(5,38,57,.25))}
-.container3d{position:absolute;left:8%;top:20%;width:78%;height:56%;transform-style:preserve-3d;transform:rotateX(-7deg) rotateY(-24deg);animation:containerOrbit 24s ease-in-out infinite}
-.container3d .face{position:absolute;overflow:hidden;background:linear-gradient(180deg,#f9fcfd,#d8e1e5 48%,#b7c6ce);border:2px solid rgba(99,124,137,.55);box-shadow:inset 0 0 24px rgba(255,255,255,.7)}
-.container3d .front{inset:0;transform:translateZ(105px);background:linear-gradient(180deg,#f9fcfd,#cbd7de)}
-.container3d .side{top:0;left:100%;width:210px;height:100%;transform-origin:left;transform:rotateY(90deg);background:linear-gradient(90deg,#d8e2e7,#f6f9fa 50%,#bac9d1)}
-.container3d .top{top:0;left:0;width:100%;height:210px;transform-origin:top;transform:rotateX(90deg);background:linear-gradient(135deg,#fff,#cbd8de)}
-.container3d .front:before,.container3d .side:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 17px,rgba(91,119,134,.34) 18px 20px,rgba(255,255,255,.68) 21px 23px)}
-.container3d .front:after{content:"";position:absolute;left:7%;right:7%;top:15%;bottom:13%;border:2px solid rgba(91,119,134,.32);box-shadow:inset 0 0 0 5px rgba(255,255,255,.32)}
-.container3d .brandmark{position:absolute;z-index:2;top:22%;left:9%;font-size:clamp(13px,1.4vw,20px);font-weight:950;letter-spacing:-.06em;color:#183b50;text-shadow:0 1px 0 #fff}
-.container3d .brandmark span{color:#e66b35}
-.container3d .door{position:absolute;z-index:3;top:38%;bottom:18%;width:18%;border:3px solid rgba(95,119,132,.5);background:linear-gradient(90deg,rgba(255,255,255,.38),rgba(155,177,188,.16));box-shadow:inset 0 0 0 3px rgba(255,255,255,.55)}
-.container3d .door.one{right:9%}.container3d .door.two{right:29%}
-.container3d .door:after{content:"";position:absolute;right:9%;top:42%;height:24%;width:4px;background:#607988}
-.container3d .base{position:absolute;left:-2%;right:-3%;height:18px;bottom:-20px;transform:translateZ(104px);background:linear-gradient(#8498a3,#dbe4e8);box-shadow:0 8px 12px rgba(4,30,45,.22)}
-.container3d .corner{position:absolute;z-index:4;top:0;bottom:0;width:12px;background:linear-gradient(90deg,#8da0aa,#f5f8fa,#9aabb4)}
-.container3d .corner.left{left:0}.container3d .corner.right{right:0}
-@keyframes containerOrbit{0%,100%{transform:rotateX(-7deg) rotateY(-24deg) translateY(0)}50%{transform:rotateX(-5deg) rotateY(18deg) translateY(-8px)}}
-@media(max-width:1000px){main{width:calc(100% - 42px)}.scene3d{right:-4%;top:22%;width:55vw;opacity:.42}.websites{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact:last-child{grid-column:1/-1}}
-@media(max-width:650px){main{width:calc(100% - 28px);grid-template-rows:auto auto auto auto}.scene3d{position:relative;top:auto;right:auto;width:100%;height:190px;min-height:190px;opacity:.72;margin:-4px 0 -12px}.container3d{left:8%;width:76%;height:58%;top:20%}.container3d .front{transform:translateZ(65px)}.container3d .side{width:130px}.container3d .top{height:130px}.container3d .base{transform:translateZ(64px)}.websites{grid-template-columns:1fr;gap:11px}.site-link{min-height:135px}.contact-grid{grid-template-columns:1fr}.contact:last-child{grid-column:auto}.contacts-head h2{color:#fff;text-shadow:0 2px 14px rgba(0,28,45,.75)}.contacts-head p{color:#fff;text-shadow:0 2px 14px rgba(0,28,45,.75)}}
-@media(prefers-reduced-motion:reduce){.container3d{animation:none}}
-
+.detail-icon{width:15px;height:15px;flex:0 0 15px;display:grid;place-items:center;color:#0789b8}
+.detail-icon svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.vcard{position:absolute;right:13px;top:13px;width:26px;height:26px;border:0;padding:0;background:linear-gradient(145deg,#faffff,#d6edf5);color:#087ba9;font-size:19px;line-height:26px;cursor:pointer;box-shadow:4px 6px 12px rgba(3,44,67,.14);transition:transform .3s}
+.vcard:hover{transform:translate(2px,-2px)}
+.bottomline{display:flex;justify-content:space-between;gap:15px;margin-top:9px;color:#234e64;font-size:8px;font-weight:850;letter-spacing:.08em}
+.bottomline a{color:inherit;text-decoration:none}.bottomline a:hover{color:#007da9}
+a:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid #008dbb;outline-offset:4px}
+@media(min-width:1100px) and (min-height:760px){.page{height:100svh;max-height:1100px}}
+@media(max-width:1000px){.page{width:calc(100% - 44px);grid-template-rows:auto auto auto auto}.hero{grid-template-columns:.8fr 1.2fr}.visual{height:350px;min-height:260px}.access{gap:12px}.access-card{grid-template-columns:60px 1fr 24px;padding:17px;gap:13px}.logo-tile{width:58px;height:58px}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact:last-child{grid-column:1/-1}}
+@media(max-width:650px){.page{width:calc(100% - 28px);padding:14px 0 18px;gap:16px}header{align-items:flex-start}.brand{padding:7px 12px}.brand img{width:130px;height:42px}.header-meta{font-size:7px;letter-spacing:.12em}.hero{grid-template-columns:1fr;gap:0}.hero-copy{padding:8px 0 0}h1{font-size:38px}.kicker{font-size:8px;margin-bottom:12px}.hero-copy p{font-size:11px;margin-top:12px;max-width:100%}.hero-tags{margin-top:13px}.hero-tags span{font-size:8px;padding:6px 8px}.visual{height:250px;min-height:220px;margin-top:-2px}.access{grid-template-columns:1fr;gap:10px}.access-card{min-height:116px;grid-template-columns:58px 1fr 22px;padding:15px;gap:12px}.logo-tile{width:56px;height:56px}.access-copy small{font-size:7px;margin-bottom:6px}.access-copy strong{font-size:19px}.access-copy em{font-size:9px}.arrow{font-size:27px}.contacts-head{align-items:flex-start;flex-direction:column;gap:3px}.contacts-head h2{font-size:22px}.contact-grid{grid-template-columns:1fr;gap:9px}.contact:last-child{grid-column:auto}.contact{padding:14px 15px}.bottomline{font-size:7px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<main>
+<main class="page">
 <header>
 <a class="brand" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="BOX Integration Systems"><img src="assets/boxis-logo-white.webp" alt="BOX Integration Systems"></a>
-<div class="header-note">Diseño · Fabricación · Integración<br>Soluciones industriales a medida</div>
+<div class="header-meta">Diseño · Fabricación · Integración<br>Soluciones industriales a medida</div>
 </header>
-<section class="intro" aria-labelledby="main-title">
-<div class="intro-copy"><div class="eyebrow">BOX Integration Systems · Eurocontainer</div><h1 id="main-title">Ingeniería industrial.<br>Soluciones que toman forma.</h1></div>
-<p>Dos empresas, una misma apuesta por la ingeniería, la fabricación y las soluciones modulares a medida.</p>
+<section class="hero" aria-labelledby="main-title">
+<div class="hero-copy">
+<div class="kicker">BOX Integration Systems · Eurocontainer</div>
+<h1 id="main-title">Ingeniería que integra.<br>Soluciones que toman forma.</h1>
+<p>Dos especialidades industriales que se complementan: diseño e integración de equipos modulares junto con fabricación de contenedores y soluciones a medida.</p>
+<div class="hero-tags"><span>Ingeniería modular</span><span>Fabricación industrial</span><span>Integración y calidad</span></div>
+</div>
+<div class="visual" aria-label="Modelo tridimensional interactivo de un contenedor industrial Eurocontainer">
+<canvas id="container3d" tabindex="0" aria-label="Contenedor 3D. Arrastra para girarlo."></canvas>
+<div class="visual-caption">Vista 3D · Arrastra para girar</div>
+</div>
 </section>
-<div class="scene3d" aria-hidden="true"><div class="container3d"><div class="face front"><span class="brandmark">Eurocontainer<span>.es</span></span><i class="door one"></i><i class="door two"></i><b class="corner left"></b><b class="corner right"></b></div><div class="face side"></div><div class="face top"></div><div class="base"></div></div></div>
-<section class="websites" aria-label="Páginas web corporativas">
-<a class="site-link boxis tilt" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Visitar BOX Integration Systems">
-<div class="site-content"><span class="logo-panel"><img src="assets/boxis-logo-white.webp" alt="Logotipo BOX Integration Systems"></span><span class="site-copy"><small>Web corporativa · Ingeniería e integración</small><strong>BOX Integration Systems</strong><em>Diseño, fabricación e integración de equipos y soluciones industriales.</em></span><span class="arrow" aria-hidden="true">↗</span></div>
+<section class="access" aria-label="Accesos a las páginas corporativas">
+<a class="access-card boxis tilt" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Visitar la web oficial de BOX Integration Systems">
+<span class="logo-tile"><img src="assets/boxis-logo-white.webp" alt="Logo oficial BOX Integration Systems"></span>
+<span class="access-copy"><small>Web corporativa · Ingeniería e integración</small><strong>BOX Integration Systems</strong><em>Diseño, fabricación e integración de equipos y soluciones industriales.</em></span>
+<span class="arrow" aria-hidden="true">↗</span>
 </a>
-<a class="site-link euro tilt" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Visitar Eurocontainer">
-<div class="site-content"><span class="logo-panel"><span class="euro-mark">Eurocontainer<span>.es</span></span></span><span class="site-copy"><small>Web corporativa · Fabricación industrial</small><strong>Eurocontainer</strong><em>Diseño y fabricación de contenedores, cisternas y soluciones a medida.</em></span><span class="arrow" aria-hidden="true">↗</span></div>
+<a class="access-card euro tilt" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Visitar la web oficial de Eurocontainer">
+<span class="logo-tile"><span class="euro-logo">Eurocontainer<span>.es</span></span></span>
+<span class="access-copy"><small>Web corporativa · Fabricación industrial</small><strong>Eurocontainer</strong><em>Contenedores, cisternas, equipos especiales y soluciones modulares a medida.</em></span>
+<span class="arrow" aria-hidden="true">↗</span>
 </a>
 </section>
 <section class="contacts" aria-labelledby="contacts-title">
@@ -176,6 +138,64 @@ h1{color:#0b3048;font-size:clamp(34px,3.55vw,54px);max-width:700px}
 <script>
 const people={jose:{first:"José Luis",last:"Herrando",full:"José Luis Herrando",role:"Director de proyecto",phone:"+34 659 481 773",email:"jlherrando@boxis.es",hours:"Lunes a viernes, 08:30–16:30"},alejandro:{first:"Alejandro",last:"Ballestin",full:"Alejandro Ballestín",role:"Director de proyecto",phone:"+34 683 223 203",email:"aballestin@boxis.es",hours:"Lunes a viernes, 08:30–16:30"},ruben:{first:"Rubén",last:"Ruiz Cañón",full:"Rubén Ruiz Cañón",role:"Delineante Eléctrico y Calidad",phone:"+34 659 341 288",email:"rruiz@boxis.es",hours:"Lunes a viernes, 08:00–16:00"}};
 function saveContact(id){const c=people[id],e=s=>String(s).replace(/\\/g,"\\\\").replace(/,/g,"\\,").replace(/;/g,"\\;");const v=["BEGIN:VCARD","VERSION:3.0","N:"+e(c.last)+";"+e(c.first)+";;;","FN:"+e(c.full),"ORG:BOX Integration Systems S.L.","TITLE:"+e(c.role),"TEL;TYPE=CELL:"+c.phone,"EMAIL;TYPE=WORK:"+c.email,"ADR;TYPE=WORK:;;Carretera Alagón–Tudela (A-126), km 44,900;Zaragoza;Zaragoza;50637;Spain","URL:https://boxis.es/","NOTE:"+e(c.hours),"END:VCARD"].join("\r\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard;charset=utf-8"}));a.download=c.full.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"-")+".vcf";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200)}
-if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&matchMedia("(pointer:fine)").matches){document.querySelectorAll(".tilt").forEach(el=>{el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty("--ry",((x-.5)*3.5)+"deg");el.style.setProperty("--rx",((.5-y)*2.5)+"deg")});el.addEventListener("pointerleave",()=>{el.style.setProperty("--rx","0deg");el.style.setProperty("--ry","0deg")})})}
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&matchMedia("(pointer:fine)").matches){document.querySelectorAll(".tilt").forEach(el=>{el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty("--ry",((x-.5)*2.6)+"deg");el.style.setProperty("--rx",((.5-y)*2)+"deg")});el.addEventListener("pointerleave",()=>{el.style.setProperty("--rx","0deg");el.style.setProperty("--ry","0deg")})})}
 </script>
-</body></html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script>
+(()=>{const canvas=document.getElementById("container3d");if(!canvas||!window.THREE){canvas.style.background="radial-gradient(ellipse at 50% 65%,rgba(255,255,255,.7),transparent 70%)";return}
+const THREE=window.THREE,scene=new THREE.Scene();scene.background=null;
+const camera=new THREE.PerspectiveCamera(32,1,.1,100);camera.position.set(8.6,5.2,10.8);camera.lookAt(0,1.2,0);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.18;
+scene.add(new THREE.HemisphereLight(0xffffff,0x829aa7,2.0));
+const sun=new THREE.DirectionalLight(0xffffff,3.2);sun.position.set(-5,9,7);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-10;sun.shadow.camera.right=10;sun.shadow.camera.top=10;sun.shadow.camera.bottom=-10;scene.add(sun);
+const fill=new THREE.DirectionalLight(0x9bdfff,1.1);fill.position.set(6,3,-6);scene.add(fill);
+const model=new THREE.Group();scene.add(model);
+const white=new THREE.MeshStandardMaterial({color:0xe5edf0,metalness:.38,roughness:.38});
+const edge=new THREE.MeshStandardMaterial({color:0x8799a2,metalness:.62,roughness:.34});
+const dark=new THREE.MeshStandardMaterial({color:0x263943,metalness:.72,roughness:.28});
+const glass=new THREE.MeshStandardMaterial({color:0x263f4a,metalness:.35,roughness:.24});
+function cube(w,h,d,mat,x,y,z,parent=model){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m}
+function cylinder(r1,r2,len,mat,x,y,z,rotZ=0,parent=model){const m=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,len,32),mat);m.rotation.z=rotZ;m.position.set(x,y,z);m.castShadow=true;parent.add(m);return m}
+const L=6.2,H=2.55,D=2.55;
+cube(L,H,D,white,0,H/2,0);
+cube(L+.08,.13,D+.08,edge,0,.08,0);
+cube(L+.08,.13,D+.08,edge,0,H-.07,0);
+for(let i=0;i<37;i++){const x=-L/2+.12+i*(L-.24)/36;cube(.035,H-.24,.065,edge,x,H/2,D/2+.025);cube(.035,H-.24,.065,edge,x,H/2,-D/2-.025)}
+for(let i=0;i<8;i++){const x=-L/2+.18+i*.83;cube(.045,.07,D+.08,edge,x,.18,0);cube(.045,.07,D+.08,edge,x,H-.18,0)}
+// Heavy corner castings and structural rails
+for(const x of [-L/2+.06,L/2-.06])for(const z of [-D/2-.04,D/2+.04]){cube(.16,H+.08,.16,edge,x,H/2,z);cube(.22,.16,.22,dark,x,.05,z);cube(.22,.16,.22,dark,x,H-.05,z)}
+// End doors with recessed panels, locking bars and hinges
+const end=new THREE.Group();end.position.set(0,0,D/2+.09);model.add(end);
+for(const x of [-1.18,0,1.18]){cube(1.12,2.1,.055,edge,x,1.32,0,end);cube(1.02,1.98,.06,white,x,1.32,.04,end);for(let k=0;k<7;k++)cube(.018,1.86,.018,edge,x-.43+k*.143,1.32,.085,end)}
+for(const x of [-1.78,-.58,.58,1.78]){cube(.045,2.15,.09,dark,x,1.32,.14,end);for(const y of [.48,1.98])cube(.09,.12,.12,edge,x,y,.17,end)}
+// Raised equipment enclosure/tower like the reference container
+cube(1.42,2.15,2.48,white,-2.35,H+1.06,0);
+for(let i=0;i<9;i++){const z=-1.08+i*.27;cube(1.38,2.05,.035,edge,-2.35,H+1.06,z)}
+cube(1.48,.12,2.56,edge,-2.35,H+2.12,0);cube(1.48,.12,2.56,edge,-2.35,H+.02,0);
+for(const x of [-3.05,-1.65])for(const z of [-1.22,1.22])cube(.09,2.18,.09,dark,x,H+1.06,z);
+// Exhaust silencer on roof, with outlet and supports
+for(const x of [-.2,1.8])cube(.13,.4,.13,dark,x,H+.22,-.65);
+const muffler=cylinder(.28,.28,2.8,dark,.8,H+.58,-.65,Math.PI/2);muffler.rotation.z=Math.PI/2;
+const tip=cylinder(.17,.17,.55,edge,-.78,H+.58,-.65,Math.PI/2);tip.rotation.z=Math.PI/2;
+const elbow=new THREE.Mesh(new THREE.TorusGeometry(.28,.12,12,32,Math.PI/2),dark);elbow.rotation.set(Math.PI/2,0,Math.PI);elbow.position.set(-.85,H+.72,-.65);model.add(elbow);
+cube(6.45,.12,2.72,dark,0,-.08,0);
+// Eurocontainer brand plate as crisp canvas texture
+const logoCanvas=document.createElement("canvas");logoCanvas.width=1024;logoCanvas.height=256;const ctx=logoCanvas.getContext("2d");ctx.clearRect(0,0,1024,256);ctx.font="900 116px Arial";ctx.fillStyle="#17394c";ctx.fillText("Eurocontainer",18,152);ctx.fillStyle="#ed6b37";ctx.fillText(".es",690,152);ctx.beginPath();ctx.moveTo(908,92);ctx.lineTo(950,130);ctx.lineTo(1000,65);ctx.lineWidth=22;ctx.strokeStyle="#ed6b37";ctx.stroke();const tex=new THREE.CanvasTexture(logoCanvas);tex.colorSpace=THREE.SRGBColorSpace;
+const plateMat=new THREE.MeshBasicMaterial({map:tex,transparent:true,side:THREE.DoubleSide});
+const plate=new THREE.Mesh(new THREE.PlaneGeometry(2.65,.66),plateMat);plate.position.set(.45,1.82,D/2+.13);model.add(plate);
+const endPlate=new THREE.Mesh(new THREE.PlaneGeometry(1.65,.42),plateMat);endPlate.rotation.y=Math.PI/2;endPlate.position.set(-L/2-.09,1.7,0);model.add(endPlate);
+// Ground shadow catcher
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({opacity:.13}));floor.rotation.x=-Math.PI/2;floor.position.y=-.16;floor.receiveShadow=true;scene.add(floor);
+model.rotation.y=-.28;model.rotation.x=-.035;
+let targetY=-.28,targetX=-.035,drag=false,lastX=0,lastY=0,auto=true;
+canvas.addEventListener("pointerdown",e=>{drag=true;auto=false;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener("pointermove",e=>{if(!drag)return;targetY+=(e.clientX-lastX)*.008;targetX+=(e.clientY-lastY)*.004;targetX=Math.max(-.25,Math.min(.22,targetX));lastX=e.clientX;lastY=e.clientY});
+canvas.addEventListener("pointerup",()=>{drag=false});canvas.addEventListener("pointercancel",()=>{drag=false});
+canvas.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")targetY-=.15;if(e.key==="ArrowRight")targetY+=.15});
+const resize=()=>{const r=canvas.getBoundingClientRect();if(!r.width||!r.height)return;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};new ResizeObserver(resize).observe(canvas);resize();
+const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;let start=performance.now();
+function render(t){requestAnimationFrame(render);if(!drag){if(!reduced)targetY+=.00055;model.rotation.y+=(targetY-model.rotation.y)*.045;model.rotation.x+=(targetX-model.rotation.x)*.045}model.position.y=Math.sin((t-start)*.0007)*.045;renderer.render(scene,camera)}requestAnimationFrame(render);
+})();
+</script>
+</body>
+</html>
