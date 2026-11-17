@@ -70,6 +70,66 @@ a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 @media(max-width:1000px){main{width:calc(100% - 44px);padding:22px 0;gap:18px}.intro{align-items:start;flex-direction:column;gap:10px}.intro p{max-width:680px}.site-link{min-height:190px}.site-content{gap:15px;padding:22px}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact:last-child{grid-column:1/-1}}
 @media(max-width:650px){body:before{background-position:58% center}body:after{background:linear-gradient(180deg,rgba(235,245,249,.74),rgba(7,37,57,.18) 44%,rgba(5,28,44,.58))}main{width:calc(100% - 28px);padding:16px 0 20px;gap:19px}header{align-items:start}.brand img{width:150px}.header-note{font-size:8px;max-width:145px}.eyebrow{font-size:8px;margin-bottom:8px}h1{font-size:36px}.intro p{font-size:12px}.websites{grid-template-columns:1fr;gap:12px}.site-link{min-height:150px}.site-content{padding:18px;gap:13px}.logo-panel{width:72px;height:66px}.site-copy small{font-size:7px;margin-bottom:6px}.site-copy strong{font-size:21px}.site-copy em{font-size:10px;margin-top:6px}.arrow{font-size:34px}.contacts-head{align-items:start;flex-direction:column;gap:4px}.contact-grid{grid-template-columns:1fr;gap:10px}.contact,.contact:last-child{grid-column:auto;padding:15px 16px 17px}.details{gap:7px}.bottomline{font-size:8px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* --- Corporate daylight / premium 3D refresh --- */
+:root{--ink:#10344b;--navy:#092d45;--blue:#087eae;--cyan:#51c8e8;--orange:#f36b32;--white:#f8fcff}
+html,body{min-height:100%;background:#d9e8ef}
+body:before{background-image:url("assets/fondo-industrial.webp?v=20261117-day3d");background-position:center 55%;filter:saturate(1.08) contrast(1.02);transform:scale(1.025)}
+body:after{background:linear-gradient(100deg,rgba(238,247,251,.86) 0%,rgba(231,243,249,.58) 43%,rgba(220,239,248,.18) 100%),linear-gradient(180deg,rgba(246,251,253,.12),rgba(4,38,60,.12) 70%,rgba(5,35,55,.3))}
+main{width:min(1540px,calc(100% - 64px));grid-template-rows:auto auto minmax(210px,1fr) auto;gap:clamp(10px,1.6vh,18px)}
+header{position:relative;z-index:5}
+.brand{padding:9px 17px;background:linear-gradient(145deg,rgba(5,43,67,.94),rgba(9,65,91,.82));box-shadow:0 12px 28px rgba(6,39,58,.2),inset 0 1px rgba(255,255,255,.2);backdrop-filter:blur(14px)}
+.brand img{width:clamp(155px,14vw,190px);max-height:52px}
+.header-note{color:#153f58;text-shadow:0 1px 8px rgba(255,255,255,.8)}
+.intro{align-items:center;position:relative;z-index:2}
+h1{color:#0b3048;font-size:clamp(34px,3.55vw,54px);max-width:700px}
+.intro p{color:#214c64}
+.websites{position:relative;z-index:3;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-self:stretch;align-items:end;padding-top:6px}
+.site-link{min-height:clamp(148px,19vh,205px);clip-path:none;border-radius:3px 24px 3px 24px;outline:1px solid rgba(255,255,255,.46);outline-offset:-1px;box-shadow:0 24px 55px rgba(5,36,54,.25),inset 0 1px rgba(255,255,255,.24)}
+.site-link:before{filter:saturate(1.12)}
+.site-link.boxis:before{background-image:linear-gradient(90deg,rgba(5,38,60,.3),rgba(4,30,49,.78)),url("assets/fondo-contenedores-card.webp")}
+.site-link.euro:before{background-image:linear-gradient(90deg,rgba(5,34,50,.18),rgba(4,29,45,.74)),url("assets/eurocontainer-generator-button-v14.webp")}
+.site-content{padding:clamp(19px,2.2vw,30px);gap:18px}
+.logo-panel{width:clamp(82px,8vw,108px);height:clamp(68px,7vw,88px);border-radius:2px 14px 2px 14px;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.07));box-shadow:10px 13px 25px rgba(0,15,26,.2),inset 1px 1px 0 rgba(255,255,255,.42);backdrop-filter:blur(16px)}
+.euro-mark{font-family:Arial,sans-serif;font-weight:950;letter-spacing:-.075em;font-size:clamp(15px,1.65vw,22px)}
+.site-copy strong{font-size:clamp(20px,2vw,29px)}
+.site-copy em{font-size:11px}
+.arrow{font-size:40px;font-weight:300}
+.contacts{position:relative;z-index:4}
+.contacts-head h2{color:#10364f;text-shadow:0 1px 12px rgba(255,255,255,.72)}
+.contacts-head p{color:#16415b;text-shadow:0 1px 10px rgba(255,255,255,.8)}
+.contact-grid{gap:16px}
+.contact{padding:18px 19px 18px;border-radius:2px 18px 2px 18px;background:linear-gradient(135deg,rgba(250,254,255,.92),rgba(220,239,248,.86));box-shadow:0 18px 40px rgba(4,37,57,.2),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(75,144,174,.12);backdrop-filter:blur(22px) saturate(145%)}
+.contact:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#67d8f2,#087eae 55%,#f36b32);opacity:.9}
+.contact:hover{transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-5px);box-shadow:0 25px 48px rgba(4,37,57,.25),inset 0 1px 0 #fff}
+.person-icon{border-radius:2px 11px 2px 11px;width:42px;height:42px;flex-basis:42px;background:linear-gradient(145deg,#59d2ed,#08719e 62%,#064665);box-shadow:7px 9px 18px rgba(4,48,73,.22),inset 1px 1px 3px rgba(255,255,255,.58)}
+.person h3{font-size:14px;color:#10344c}
+.role{color:#42677e}
+.detail{font-size:10px;color:#24485d}
+.detail-icon{color:#0789b8}
+.vcard{top:auto;bottom:12px;right:15px;width:30px;height:30px;font-size:23px;line-height:26px;background:linear-gradient(145deg,#faffff,#d5edf6);box-shadow:4px 6px 12px rgba(3,44,67,.16);border-radius:2px 9px 2px 9px}
+.bottomline{color:#fff}
+.scene3d{position:absolute;z-index:1;right:2%;top:24%;width:min(52vw,760px);height:40vh;min-height:250px;max-height:420px;perspective:1100px;pointer-events:none;opacity:.94;filter:drop-shadow(0 32px 26px rgba(5,38,57,.25))}
+.container3d{position:absolute;left:8%;top:20%;width:78%;height:56%;transform-style:preserve-3d;transform:rotateX(-7deg) rotateY(-24deg);animation:containerOrbit 24s ease-in-out infinite}
+.container3d .face{position:absolute;overflow:hidden;background:linear-gradient(180deg,#f9fcfd,#d8e1e5 48%,#b7c6ce);border:2px solid rgba(99,124,137,.55);box-shadow:inset 0 0 24px rgba(255,255,255,.7)}
+.container3d .front{inset:0;transform:translateZ(105px);background:linear-gradient(180deg,#f9fcfd,#cbd7de)}
+.container3d .side{top:0;left:100%;width:210px;height:100%;transform-origin:left;transform:rotateY(90deg);background:linear-gradient(90deg,#d8e2e7,#f6f9fa 50%,#bac9d1)}
+.container3d .top{top:0;left:0;width:100%;height:210px;transform-origin:top;transform:rotateX(90deg);background:linear-gradient(135deg,#fff,#cbd8de)}
+.container3d .front:before,.container3d .side:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 17px,rgba(91,119,134,.34) 18px 20px,rgba(255,255,255,.68) 21px 23px)}
+.container3d .front:after{content:"";position:absolute;left:7%;right:7%;top:15%;bottom:13%;border:2px solid rgba(91,119,134,.32);box-shadow:inset 0 0 0 5px rgba(255,255,255,.32)}
+.container3d .brandmark{position:absolute;z-index:2;top:22%;left:9%;font-size:clamp(13px,1.4vw,20px);font-weight:950;letter-spacing:-.06em;color:#183b50;text-shadow:0 1px 0 #fff}
+.container3d .brandmark span{color:#e66b35}
+.container3d .door{position:absolute;z-index:3;top:38%;bottom:18%;width:18%;border:3px solid rgba(95,119,132,.5);background:linear-gradient(90deg,rgba(255,255,255,.38),rgba(155,177,188,.16));box-shadow:inset 0 0 0 3px rgba(255,255,255,.55)}
+.container3d .door.one{right:9%}.container3d .door.two{right:29%}
+.container3d .door:after{content:"";position:absolute;right:9%;top:42%;height:24%;width:4px;background:#607988}
+.container3d .base{position:absolute;left:-2%;right:-3%;height:18px;bottom:-20px;transform:translateZ(104px);background:linear-gradient(#8498a3,#dbe4e8);box-shadow:0 8px 12px rgba(4,30,45,.22)}
+.container3d .corner{position:absolute;z-index:4;top:0;bottom:0;width:12px;background:linear-gradient(90deg,#8da0aa,#f5f8fa,#9aabb4)}
+.container3d .corner.left{left:0}.container3d .corner.right{right:0}
+@keyframes containerOrbit{0%,100%{transform:rotateX(-7deg) rotateY(-24deg) translateY(0)}50%{transform:rotateX(-5deg) rotateY(18deg) translateY(-8px)}}
+@media(max-width:1000px){main{width:calc(100% - 42px)}.scene3d{right:-4%;top:22%;width:55vw;opacity:.42}.websites{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact:last-child{grid-column:1/-1}}
+@media(max-width:650px){main{width:calc(100% - 28px);grid-template-rows:auto auto auto auto}.scene3d{position:relative;top:auto;right:auto;width:100%;height:190px;min-height:190px;opacity:.72;margin:-4px 0 -12px}.container3d{left:8%;width:76%;height:58%;top:20%}.container3d .front{transform:translateZ(65px)}.container3d .side{width:130px}.container3d .top{height:130px}.container3d .base{transform:translateZ(64px)}.websites{grid-template-columns:1fr;gap:11px}.site-link{min-height:135px}.contact-grid{grid-template-columns:1fr}.contact:last-child{grid-column:auto}.contacts-head h2{color:#fff;text-shadow:0 2px 14px rgba(0,28,45,.75)}.contacts-head p{color:#fff;text-shadow:0 2px 14px rgba(0,28,45,.75)}}
+@media(prefers-reduced-motion:reduce){.container3d{animation:none}}
+
 </style>
 </head>
 <body>
@@ -82,6 +142,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 <div class="intro-copy"><div class="eyebrow">BOX Integration Systems · Eurocontainer</div><h1 id="main-title">Ingeniería industrial.<br>Soluciones que toman forma.</h1></div>
 <p>Dos empresas, una misma apuesta por la ingeniería, la fabricación y las soluciones modulares a medida.</p>
 </section>
+<div class="scene3d" aria-hidden="true"><div class="container3d"><div class="face front"><span class="brandmark">Eurocontainer<span>.es</span></span><i class="door one"></i><i class="door two"></i><b class="corner left"></b><b class="corner right"></b></div><div class="face side"></div><div class="face top"></div><div class="base"></div></div></div>
 <section class="websites" aria-label="Páginas web corporativas">
 <a class="site-link boxis tilt" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Visitar BOX Integration Systems">
 <div class="site-content"><span class="logo-panel"><img src="assets/boxis-logo-white.webp" alt="Logotipo BOX Integration Systems"></span><span class="site-copy"><small>Web corporativa · Ingeniería e integración</small><strong>BOX Integration Systems</strong><em>Diseño, fabricación e integración de equipos y soluciones industriales.</em></span><span class="arrow" aria-hidden="true">↗</span></div>
