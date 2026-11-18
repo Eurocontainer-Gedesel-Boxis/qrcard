@@ -456,6 +456,146 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
  .team-details a,.team-details>div{font-size:9px!important}
 }
 
+
+/* ── Premium readability and continuous glass language ── */
+:root{--line:rgba(220,239,246,.075)}
+body{font-size:15px}
+.nav a{font-size:10px;letter-spacing:.14em}
+.main-brand span{font-size:9px;line-height:1.5}
+.eyebrow{font-size:10px;letter-spacing:.19em}
+h1{font-size:clamp(48px,5.5vw,88px)}
+.hero-lead{font-size:15px;line-height:1.72;max-width:560px}
+.hero-stat b{font-size:31px}
+.hero-stat span{font-size:9px;line-height:1.5;letter-spacing:.11em}
+.action-primary,.action-quiet,.nav-cta{font-size:10px;min-height:46px;letter-spacing:.12em}
+.model-stage{min-height:560px}
+.stage-caption{font-size:10px;letter-spacing:.16em}
+.stage-hint{font-size:10px;letter-spacing:.1em}
+.model-selection-info{font-size:10px;letter-spacing:.12em}
+.model-hover-label{font-size:10px;letter-spacing:.1em}
+.stage-index{font-size:25px}
+.model-view-modes{position:absolute;z-index:7;left:3%;top:11%;display:flex;align-items:center;gap:clamp(12px,1.5vw,24px);padding:0;background:rgba(7,18,26,.18);backdrop-filter:blur(16px);box-shadow:none}
+.model-view-modes button{position:relative;padding:10px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:rgba(231,243,247,.72);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:color .2s,transform .2s}
+.model-view-modes button:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,#92d9e5,transparent);transition:right .25s}
+.model-view-modes button:hover,.model-view-modes button[aria-pressed="true"]{color:#fff;transform:translateY(-2px)}
+.model-view-modes button:hover:after,.model-view-modes button[aria-pressed="true"]:after{right:0}
+.model-controls{right:3%;bottom:4%;left:auto;display:flex;align-items:center;gap:clamp(12px,1.2vw,20px);padding:0;background:rgba(7,18,26,.18);backdrop-filter:blur(16px);border:0!important;box-shadow:none!important}
+.model-controls button{position:relative;height:38px;min-width:0;padding:6px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:rgba(231,243,247,.76);font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.model-controls button:after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:1px;background:linear-gradient(90deg,#91d9e7,transparent);transition:right .22s}
+.model-controls button:hover,.model-controls button[aria-pressed="true"]{color:#fff;background:transparent!important;transform:translateY(-2px)}
+.model-controls button:hover:after,.model-controls button[aria-pressed="true"]:after{right:0}
+.model-controls button.accent{color:#efb397}
+.model-controls button.accent:after{background:linear-gradient(90deg,#e87543,transparent)}
+.model-selection-info{left:3%;bottom:4%;padding:0;background:transparent;border:0;box-shadow:none}
+.model-hover-label{background:transparent;border:0;border-left:0;color:#d8edf2;font-size:10px;text-shadow:0 2px 12px rgba(0,0,0,.85)}
+.brand-tile{min-height:132px;grid-template-columns:minmax(165px,.82fr) minmax(0,1.18fr) 20px;padding:18px 20px;border:0!important;border-radius:0!important;box-shadow:0 20px 42px rgba(0,0,0,.18)!important;background:rgba(7,20,29,.23);backdrop-filter:blur(22px) saturate(145%)}
+.tile-logo{height:72px}
+.tile-logo .boxis-logo{width:170px;max-height:68px}
+.tile-logo .euro-logo{width:175px;max-height:67px}
+.tile-logo .gedesel-logo{width:180px;max-height:65px}
+.tile-text small{font-size:9px;letter-spacing:.14em}
+.tile-text strong{font-size:clamp(17px,1.4vw,22px);line-height:1.12}
+.tile-text span{font-size:11px;line-height:1.5;color:#eef4f6}
+.tile-arrow{width:auto!important;height:auto!important;min-width:0!important;border:0!important;background:transparent!important;box-shadow:none!important;font-size:27px!important}
+.brand-tile:hover .tile-arrow{background:transparent!important;transform:translate(4px,-3px) translateZ(38px)}
+.screen-footnote{font-size:9px}
+.platform-screen{padding:clamp(38px,4.5vw,68px) clamp(24px,4.1vw,76px) 38px!important;gap:clamp(22px,2.4vw,34px)!important}
+.platform-head h2{font-size:clamp(38px,3.5vw,58px);line-height:1.02}
+.platform-head p{font-size:13px;line-height:1.75;max-width:480px;color:#d0dce1}
+.company-grid{gap:clamp(16px,1.6vw,26px)}
+.company-panel{border:0!important;border-radius:0!important;box-shadow:0 24px 65px rgba(0,0,0,.19)!important;background:rgba(7,18,26,.36)!important;backdrop-filter:blur(18px) saturate(130%);padding:clamp(22px,2vw,32px)}
+.company-panel:after{display:none!important}
+.company-panel:hover{border:0!important;box-shadow:0 30px 72px rgba(0,0,0,.28)!important}
+.company-top{min-height:68px;margin-bottom:18px}
+.company-logo{height:58px;max-width:82%}
+.company-logo .boxis-logo{max-width:175px;max-height:58px}
+.company-logo .euro-logo{max-width:180px;max-height:58px}
+.company-logo .gedesel-logo{max-width:185px;max-height:58px}
+.company-index{font-size:27px;color:rgba(239,247,249,.72)}
+.company-panel h3{font-size:clamp(21px,1.55vw,27px);line-height:1.14}
+.company-intro{font-size:13px;line-height:1.75;color:#e0eaee;margin-top:12px}
+.company-facts{gap:14px;margin-top:19px}
+.company-fact{border:0!important;padding:12px 0;background:transparent!important;box-shadow:none!important}
+.company-fact b{font-size:29px}
+.company-fact span{font-size:10px;letter-spacing:.08em;color:#c1d1d8}
+.company-list{gap:10px;margin-top:18px}
+.company-list li{padding-left:16px;font-size:12px;line-height:1.6;color:#e2eaed}
+.company-list li:before{width:5px;height:5px;top:7px}
+.company-contact{border:0!important;border-top:0!important;padding-top:20px;gap:10px}
+.company-contact .contact-label{font-size:10px;letter-spacing:.12em;color:#9bd6e2}
+.company-contact a{font-size:12px;line-height:1.45;color:#f0f6f8}
+.company-contact .contact-cta{border:0!important;margin-top:8px;padding:10px 0!important;font-size:11px;color:#a7e0e9}
+.company-contact .contact-cta:after{display:none}
+.team-section{gap:20px}
+.team-heading{border:0!important;border-right:0!important;background:rgba(7,18,26,.24)!important;box-shadow:none!important;backdrop-filter:blur(14px);padding:21px 24px}
+.team-brand-logo{width:190px;height:72px}
+.team-heading small{font-size:10px;letter-spacing:.16em}
+.team-heading h2{font-size:clamp(26px,2.15vw,34px)}
+.team-heading p{font-size:12px;line-height:1.6;color:#c9d7dc}
+.team-strip{gap:clamp(14px,1.5vw,22px)}
+.team-contact{border:0!important;border-radius:0!important;background:linear-gradient(125deg,rgba(10,27,37,.68),rgba(10,24,34,.44))!important;box-shadow:0 22px 55px rgba(0,0,0,.18)!important;backdrop-filter:blur(18px) saturate(140%);padding:clamp(19px,1.65vw,28px)}
+.team-contact:hover{border:0!important;box-shadow:0 30px 68px rgba(0,0,0,.27)!important}
+.team-contact:before{opacity:.095;background-size:166px auto;background-position:right 15px top 10px}
+.team-card-top{margin-bottom:20px}
+.team-num{font-size:23px}
+.team-unit{font-size:9px;letter-spacing:.12em}
+.team-contact h3{font-size:clamp(21px,1.55vw,26px);white-space:normal;overflow:visible}
+.team-role{font-size:12px;line-height:1.5;color:#afe0e8}
+.team-details{gap:12px}
+.team-details a,.team-details>div{grid-template-columns:38px minmax(0,1fr);font-size:12px;line-height:1.6;color:#e3edf0;overflow-wrap:anywhere}
+.detail-icon{font-size:9px;color:#9bdde8}
+.team-card-actions{border:0!important;border-top:0!important;padding-top:16px;gap:18px}
+.save-vcard,.contact-open{border:0!important;border-radius:0!important;background:rgba(223,242,248,.045)!important;padding:10px 0!important;font-size:10px;letter-spacing:.1em}
+.save-vcard:after,.contact-open:after{bottom:3px}
+.platform-footer{border:0!important;border-top:0!important;padding-top:16px;font-size:10px;color:#b2c4cc}
+.platform-footer nav{gap:24px}
+.platform-footer nav a{font-size:10px}
+.action-primary,.action-quiet,.nav-cta{border:0!important;border-radius:0!important;box-shadow:none!important;background:rgba(225,243,249,.09)!important;backdrop-filter:blur(18px) saturate(145%)}
+.action-primary:hover,.action-quiet:hover,.nav-cta:hover{border:0!important;background:rgba(135,206,222,.16)!important;box-shadow:none!important}
+.company-panel,.team-contact,.brand-tile,.model-view-modes,.model-controls,.team-heading{transform-style:preserve-3d}
+button,.company-fact,.company-contact a,.team-card-actions a,.team-card-actions button,.company-list li,.hero-stat{transform-style:preserve-3d;transition:transform .25s var(--ease),color .2s,background .2s}
+button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:hover,.team-card-actions button:hover,.company-list li:hover,.hero-stat:hover{transform:translateY(-2px) translateZ(4px)}
+@media(max-width:1200px){
+ .brand-tile{grid-template-columns:minmax(145px,.82fr) minmax(0,1.18fr) 18px}
+ .tile-logo .boxis-logo{width:150px}.tile-logo .euro-logo{width:155px}.tile-logo .gedesel-logo{width:160px}
+ .company-panel h3{font-size:22px}.company-intro{font-size:12px}.company-list li{font-size:11.5px}
+ .team-details a,.team-details>div{font-size:11px}
+}
+@media(max-width:850px){
+ .model-stage{min-height:490px}
+ .model-view-modes{left:3%;right:3%;top:10%;gap:15px;flex-wrap:wrap}
+ .model-view-modes button{font-size:9px}
+ .model-controls{left:3%;right:3%;bottom:4%;justify-content:space-between;gap:10px;flex-wrap:wrap}
+ .model-controls button{font-size:9px}
+ .company-panel{padding:22px 20px!important}
+ .company-intro{font-size:12.5px}
+ .company-list li{font-size:12px}
+ .team-strip{grid-template-columns:1fr!important}
+ .team-contact{padding:22px!important}
+ .team-contact h3{font-size:23px}
+ .team-details a,.team-details>div{font-size:12px}
+}
+@media(max-width:520px){
+ .nav a{font-size:8px}
+ .hero-lead{font-size:13px}
+ .model-stage{height:430px;min-height:430px}
+ .model-view-modes{top:8%;gap:10px}
+ .model-view-modes button{font-size:8px}
+ .model-controls{bottom:3%;gap:9px}
+ .model-controls button{font-size:8px}
+ .platform-screen{padding:32px 14px 25px!important}
+ .platform-head h2{font-size:32px}
+ .company-intro{font-size:12px}
+ .company-list li{font-size:11.5px}
+ .team-heading{padding:15px}
+ .team-brand-logo{width:140px;height:54px}
+ .team-contact h3{font-size:21px}
+ .team-details a,.team-details>div{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"}}</script>
 </head>
@@ -496,12 +636,18 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       <div class="model-stage-top"><span class="stage-caption">EUROCONTAINER · RECONSTRUCCIÓN 3D FOTOGRÁFICA</span><span class="stage-index">EC<span>/</span>01</span></div>
       <div class="model-selection-info" id="modelSelectionInfo" aria-live="polite">CONJUNTO COMPLETO · Selecciona un componente</div>
       <div class="model-hover-label" id="modelHoverLabel" aria-live="polite"></div>
+      <div class="model-view-modes" role="group" aria-label="Vistas del grupo electrógeno">
+        <button type="button" data-model-view="exterior" aria-pressed="true">Exterior</button>
+        <button type="button" data-model-view="cutaway" aria-pressed="false">Interior / corte</button>
+        <button type="button" data-model-view="tank" aria-pressed="false">Belly tank</button>
+        <button type="button" data-model-view="exploded" aria-pressed="false">Despiece</button>
+      </div>
       <div class="stage-hint">Órbita 360° · Zoom · Selección individual de componentes</div>
       <div class="model-controls" aria-label="Controles del modelo 3D">
         <button type="button" id="autoRotate" aria-pressed="true">Pausar giro</button>
         <button type="button" id="selectWhole">Conjunto completo</button>
         <button type="button" id="resetView">Vista inicial</button>
-        <button type="button" id="focusTank" class="accent" aria-pressed="false">Belly tank</button>
+        <button type="button" id="focusTank" class="accent" aria-pressed="false">Enfocar depósito</button>
         <button type="button" id="zoomIn" aria-label="Acercar">＋</button>
         <button type="button" id="zoomOut" aria-label="Alejar">−</button>
       </div>
@@ -653,7 +799,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       if (fallback && fallback.classList.contains('logo-fallback')) fallback.style.display = 'inline-flex';
     }, {once:true});
   });
-  document.querySelectorAll('.brand-tile,.company-panel,.team-contact,.main-brand,.action-primary,.action-quiet,.nav a').forEach(el => {
+  document.querySelectorAll('.brand-tile,.company-panel,.team-contact,.main-brand,.action-primary,.action-quiet,.nav a,button,.company-fact,.company-contact a,.team-card-actions a,.team-card-actions button,.company-list li,.hero-stat').forEach(el => {
     if (reduceMotion || !window.matchMedia('(pointer:fine)').matches) return;
     el.addEventListener('pointermove', e => {
       const r = el.getBoundingClientRect();
@@ -752,7 +898,20 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       vent:new T.MeshStandardMaterial({color:0x343d42,metalness:.48,roughness:.58}),
       tank:new T.MeshStandardMaterial({color:0x737f84,metalness:.54,roughness:.54}),
       orange:new T.MeshStandardMaterial({color:0xd65a27,metalness:.22,roughness:.5}),
-      silver:new T.MeshStandardMaterial({color:0xaeb6b8,metalness:.68,roughness:.35})
+      silver:new T.MeshStandardMaterial({color:0xaeb6b8,metalness:.68,roughness:.35}),
+      cabinet:new T.MeshStandardMaterial({color:0x9ea8aa,metalness:.48,roughness:.48}),
+      cabinetDark:new T.MeshStandardMaterial({color:0x27343a,metalness:.34,roughness:.48}),
+      screen:new T.MeshStandardMaterial({color:0x183c40,metalness:.12,roughness:.28,emissive:0x1a6870,emissiveIntensity:.62}),
+      fuelPipe:new T.MeshStandardMaterial({color:0xc69b51,metalness:.62,roughness:.36}),
+      fuelReturn:new T.MeshStandardMaterial({color:0x5c8794,metalness:.52,roughness:.42}),
+      cablePower:new T.MeshStandardMaterial({color:0x161d22,metalness:.18,roughness:.72}),
+      cablePhase:new T.MeshStandardMaterial({color:0x9a4a2d,metalness:.18,roughness:.66}),
+      cableControl:new T.MeshStandardMaterial({color:0x4b7e9a,metalness:.14,roughness:.7}),
+      engine:new T.MeshStandardMaterial({color:0x58656a,metalness:.58,roughness:.46}),
+      engineCover:new T.MeshStandardMaterial({color:0x9ca7a7,metalness:.55,roughness:.4}),
+      red:new T.MeshStandardMaterial({color:0xb53a2d,metalness:.22,roughness:.48}),
+      led:new T.MeshStandardMaterial({color:0xe7f5f4,emissive:0xbceaf2,emissiveIntensity:1.65,metalness:.08,roughness:.24}),
+      amber:new T.MeshStandardMaterial({color:0xe2a346,emissive:0x9d551a,emissiveIntensity:.42,metalness:.12,roughness:.34})
     };
 
     // A fine powder-coat grain; subtle enough to avoid a plastic/toy finish.
@@ -824,39 +983,20 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       box(g,label+' · cerradero',.055,.055,.04,x+width*.32,y-.10,z+.10,materials.silver);
       return g;
     }
-    function drawWordmark(){
-      const c=document.createElement('canvas');c.width=1200;c.height=240;
-      const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);
-      ctx.textBaseline='middle';ctx.font='italic 700 104px Arial';
-      ctx.fillStyle='#121619';ctx.fillText('Eurocontainer',10,118);
-      const w=ctx.measureText('Eurocontainer').width;
-      ctx.fillStyle='#d85d2d';ctx.font='italic 700 100px Arial';ctx.fillText('.es',w+15,118);
-      const start=w+155;
-      ctx.fillStyle='#d65a27';ctx.beginPath();ctx.moveTo(start,82);ctx.lineTo(start+40,117);
-      ctx.lineTo(start+106,42);ctx.lineTo(start+126,59);ctx.lineTo(start+43,153);
-      ctx.lineTo(start-2,107);ctx.closePath();ctx.fill();
-      const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;texture.anisotropy=8;return texture;
-    }
-    function drawTowerMark(){
-      const c=document.createElement('canvas');c.width=600;c.height=450;
-      const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);
-      ctx.fillStyle='#8e9698';ctx.beginPath();ctx.moveTo(300,25);ctx.lineTo(470,120);ctx.lineTo(300,215);ctx.lineTo(130,120);ctx.closePath();ctx.fill();
-      ctx.fillStyle='#d95c2b';ctx.beginPath();ctx.moveTo(110,180);ctx.lineTo(245,265);ctx.lineTo(470,105);ctx.lineTo(520,145);ctx.lineTo(250,345);ctx.lineTo(110,260);ctx.closePath();ctx.fill();
-      ctx.fillStyle='#151719';ctx.font='italic 700 54px Arial';ctx.textAlign='center';ctx.fillText('Eurocontainer',300,405);
-      const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;return texture;
-    }
-
     // Main horizontal acoustic container — external proportions read from the attached photographs.
     const main=part('01 · CONTENEDOR PRINCIPAL / ENVOLVENTE ACÚSTICA');
     const L=8.65,W=2.68,bodyBottom=.72,bodyTop=2.92,bodyH=bodyTop-bodyBottom;
     const bodyCentreX=L/2;
-    addRibbedFace(main,'Lateral frontal corrugado',0,L,bodyBottom,bodyH,1.335,true,[[2.0,3.1],[5.2,6.35]]);
-    addRibbedFace(main,'Lateral posterior corrugado',0,L,bodyBottom,bodyH,-1.335,false);
+    const frontWall=part('01A · PANEL LATERAL FRONTAL DESMONTABLE',main);
+    addRibbedFace(frontWall,'Lateral frontal corrugado',0,L,bodyBottom,bodyH,1.335,true,[[2.0,3.1],[5.2,6.35]]);
+    const rearWall=part('01B · PANEL LATERAL POSTERIOR',main);
+    addRibbedFace(rearWall,'Lateral posterior corrugado',0,L,bodyBottom,bodyH,-1.335,false);
     box(main,'Testero derecho',.07,bodyH,W, L-.035,bodyBottom+bodyH/2,0,materials.shell);
-    box(main,'Testero derecho · plano corrugado',.05,bodyH,W-.12,L-.075,bodyBottom+bodyH/2,0,materials.panel);
-    box(main,'Cubierta superior',L+.08,.12,W+.12,bodyCentreX,bodyTop+.02,0,materials.panel);
-    box(main,'Alero longitudinal frontal',L+.12,.075,.12,bodyCentreX,bodyTop-.02,1.34,materials.edge);
-    box(main,'Alero longitudinal posterior',L+.12,.075,.12,bodyCentreX,bodyTop-.02,-1.34,materials.edge);
+    box(main,'Testero derecho · plano corrugado',.05,bodyH,W-.12,L-.075,0,materials.panel);
+    const roofGroup=part('01C · CUBIERTA Y PERFILES SUPERIORES',main);
+    box(roofGroup,'Cubierta superior',L+.08,.12,W+.12,bodyCentreX,bodyTop+.02,0,materials.panel);
+    box(roofGroup,'Alero longitudinal frontal',L+.12,.075,.12,bodyCentreX,bodyTop-.02,1.34,materials.edge);
+    box(roofGroup,'Alero longitudinal posterior',L+.12,.075,.12,bodyCentreX,bodyTop-.02,-1.34,materials.edge);
 
     // The lower continuous skirt, folded rails and transportation frame visible in the reference.
     const skirtBottom=.34,skirtHeight=.40;
@@ -885,11 +1025,147 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     cylinder(tank,'Respiradero',.055,.22,6.25,.77,-.45,materials.silver,'y',24);
     cylinder(tank,'Válvula de drenaje',.065,.15,2.4,.25,1.0,materials.dark,'z',24);
 
+
+    // Interior equipment is independently selectable. Exact OEM/model and final placement remain configurable.
+    const interior=part('10 · CONJUNTO INTERIOR ELECTROMECÁNICO');
+    interior.visible=false;
+    function equipmentLabel(parent,name,title,subtitle,width,height,x,y,z,rotationY=0){
+      const c=document.createElement('canvas');c.width=640;c.height=190;
+      const ctx=c.getContext('2d');
+      ctx.fillStyle='rgba(10,25,33,.94)';ctx.fillRect(0,0,c.width,c.height);
+      ctx.fillStyle='#9ed9e5';ctx.fillRect(0,0,8,c.height);
+      ctx.fillStyle='#f0f5f6';ctx.font='700 36px Arial';ctx.textBaseline='middle';ctx.fillText(title,24,78);
+      ctx.fillStyle='#a7bbc4';ctx.font='500 22px Arial';ctx.fillText(subtitle,24,139);
+      const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;texture.anisotropy=8;
+      const mesh=new T.Mesh(new T.PlaneGeometry(width,height),new T.MeshBasicMaterial({map:texture,side:T.DoubleSide,depthWrite:false}));
+      mesh.name=name;mesh.position.set(x,y,z);mesh.rotation.y=rotationY;mesh.userData.component=name;parent.add(mesh);return mesh;
+    }
+    function cabinet(parent,name,title,x,width=.78,height=1.22,z=-.98){
+      const g=part(name,parent);
+      const depth=.30,y=1.78;
+      box(g,name+' · envolvente metálica',width,height,depth,x,y,z,materials.cabinet);
+      box(g,name+' · puerta técnica',width-.075,height-.085,.035,x,y,z+depth/2+.025,materials.panel);
+      box(g,name+' · visor LCD',width*.43,.20,.022,x,y+.28,z+depth/2+.05,materials.screen);
+      box(g,name+' · tirador',.035,.19,.035,x+width*.36,y-.08,z+depth/2+.055,materials.edge);
+      for(const py of [y-.42,y-.28])cylinder(g,name+' · pulsador',.026,.035,x-width*.31,py,z+depth/2+.05,materials.red,'z',18);
+      equipmentLabel(g,name+' · placa identificativa',title,'PANEL DE CONTROL',width*.82,.19,x,y+height*.34,z+depth/2+.055);
+      return g;
+    }
+    function sensorProbe(parent,name,x,y,z,height=.42,material=materials.silver){
+      const g=part(name,parent);
+      cylinder(g,name+' · cuerpo de sonda',.035,height,x,y+height/2,z,material,'y',24);
+      cylinder(g,name+' · cabeza',.065,.09,x,y+height,z,materials.dark,'y',24);
+      return g;
+    }
+
+    // Diesel engine and coupled alternator. OEM plate deliberately left configurable.
+    const engine=part('10.1 · MOTOR DIÉSEL · FABRICANTE POR CONFIRMAR',interior);
+    box(engine,'Bloque principal del motor',3.25,.92,1.18,4.35,1.30,.10,materials.engine);
+    box(engine,'Cárter inferior',2.95,.34,1.06,4.35,.67,.10,materials.dark);
+    box(engine,'Culata longitudinal',3.05,.28,1.10,4.35,1.91,.10,materials.engineCover);
+    for(let i=0;i<8;i++){
+      const x=2.92+i*.405;
+      box(engine,'Tapa de culata cilindro '+(i+1),.31,.16,.86,x,2.12,.10,materials.edge);
+      for(const z of [-.53,.72]){
+        cylinder(engine,'Tornillería de culata',.027,.045,x,2.10,z,materials.silver,'z',12);
+      }
+      box(engine,'Aleta de refrigeración cilindro '+(i+1),.035,.50,1.22,x,1.40,.10,materials.edge);
+    }
+    box(engine,'Colector de admisión',2.55,.19,.24,4.35,2.32,-.10,materials.dark);
+    tube(engine,'Tubería de admisión',[[3.1,2.30,-.18],[3.1,2.48,-.42],[4.0,2.48,-.42],[5.7,2.35,-.42]],.075,materials.rubber);
+    tube(engine,'Colector de escape',[[2.95,1.66,.76],[3.45,1.62,.79],[4.2,1.62,.79],[5.3,1.62,.79],[5.95,1.72,.70]],.07,materials.edge);
+    const turbo=part('10.1A · TURBO Y CONJUNTO DE ESCAPE DEL MOTOR',engine);
+    cylinder(turbo,'Carcasa de turbocompresor',.25,.34,5.98,1.74,.76,materials.edge,'z',40);
+    cylinder(turbo,'Entrada turbo',.15,.20,6.02,1.74,.98,materials.dark,'z',32);
+    tube(turbo,'Conexión turbo a silenciador',[[6.0,1.78,.75],[6.1,2.0,.73],[6.2,2.30,.55],[6.4,2.55,.2]],.08,materials.dark);
+    const alternator=part('10.1B · ALTERNADOR ACOPLADO',engine);
+    cylinder(alternator,'Carcasa de alternador',.42,.74,6.45,1.30,.1,materials.engine,'x',56);
+    cylinder(alternator,'Tapa frontal alternador',.35,.08,6.84,1.30,.1,materials.silver,'x',48);
+    box(alternator,'Caja de bornes de alternador',.36,.25,.33,6.40,1.77,.1,materials.cabinet);
+    equipmentLabel(engine,'Placa motor OEM configurable','MOTOR DIÉSEL','ROLLS-ROYCE / CAT / CUMMINS · OEM POR CONFIRMAR',1.50,.28,4.55,1.02,.72);
+
+    const engineController=part('10.1C · CUADRO DE MOTOR INTEGRADO',engine);
+    box(engineController,'Caja de control de motor',.62,.48,.20,3.80,1.63,.76,materials.cabinet);
+    box(engineController,'Pantalla control motor',.31,.16,.025,3.80,1.71,.875,materials.screen);
+    equipmentLabel(engineController,'Identificación cuadro motor','ENGINE CONTROL','MONTADO EN EL MOTOR',.56,.14,3.80,1.40,.885);
+
+    // Internal electrical and control cabinets mounted along the rear equipment wall.
+    const panels=part('10.2 · CUADROS ELÉCTRICOS Y DE CONTROL',interior);
+    const auxPanel=cabinet(panels,'Cuadro auxiliar','AUXILIARY PANEL',.85,.76,1.18,-1.02);
+    const dataPanel=cabinet(panels,'Cuadro de datos','DATA PANEL',2.05,.76,1.18,-1.02);
+    const fuelPanel=cabinet(panels,'Cuadro Fuel Panel','FUEL PANEL',6.48,.78,1.18,-1.02);
+    const davenhamPanel=cabinet(panels,'Cuadro Davenham','DAVENHAM',7.64,.72,1.18,-1.02);
+    const panelCableTrunk=part('10.2A · CANALETA PRINCIPAL DE CONTROL',panels);
+    box(panelCableTrunk,'Canaleta superior de señales',6.9,.12,.12,4.25,2.48,-.82,materials.edge);
+    box(panelCableTrunk,'Canaleta inferior de señales',6.9,.10,.10,4.25,1.02,-.82,materials.edge);
+
+    // Belly tank instrumentation: HYTEK, T5020, level/overfill probes and fuel polisher.
+    const tankSystems=part('03A · INSTRUMENTACIÓN Y EQUIPOS DEL BELLY TANK',tank);
+    tankSystems.visible=false;
+    cabinet(tankSystems,'Cuadro HYTEK','HYTEK · LEVEL',3.05,.58,.44,1.03);
+    cabinet(tankSystems,'Cuadro T5020','T5020 · LEVEL',4.02,.58,.44,1.03);
+    const fuelPolisher=part('03B · BOMBA FUEL POLISHER',tankSystems);
+    box(fuelPolisher,'Bancada fuel polisher',.72,.10,.44,5.82,.55,.90,materials.frame);
+    cylinder(fuelPolisher,'Motor eléctrico fuel polisher',.20,.55,5.72,.77,.90,materials.engine,'x',36);
+    cylinder(fuelPolisher,'Cuerpo de bomba fuel polisher',.24,.38,6.12,.77,.90,materials.silver,'x',40);
+    box(fuelPolisher,'Filtro fuel polisher',.28,.48,.26,6.48,.77,.90,materials.cabinet);
+    equipmentLabel(fuelPolisher,'Placa fuel polisher','FUEL POLISHER','BOMBA DE PULIDO DE COMBUSTIBLE',.78,.16,6.12,1.08,1.055);
+
+    const tankSensors=part('03C · SONDAS Y SENSORES DEL BELLY TANK',tankSystems);
+    sensorProbe(tankSensors,'Sonda de sobrellenado',1.72,.65,.34,.60,materials.orange);
+    sensorProbe(tankSensors,'Sonda HYTEK de nivel',3.05,.65,-.18,.48,materials.silver);
+    sensorProbe(tankSensors,'Sonda T5020 de nivel',4.02,.65,-.18,.48,materials.silver);
+    sensorProbe(tankSensors,'Sonda de detección de fuga',6.85,.65,.45,.42,materials.amber);
+
+    // Fuel flow: separate inlet/return lines, fire valve and solenoid shut-off valve.
+    const fuelSystem=part('10.3 · CIRCUITO DE COMBUSTIBLE Y SEGURIDAD',interior);
+    tube(fuelSystem,'Tubería de entrada de combustible',[[1.8,.70,.82],[2.10,.98,.85],[2.75,1.05,.82],[3.28,1.05,.72],[3.55,1.35,.70]],.045,materials.fuelPipe);
+    tube(fuelSystem,'Tubería de retorno de combustible',[[3.72,1.26,.73],[3.42,.92,.82],[2.72,.88,.88],[2.18,.78,.92],[1.85,.62,.88]],.04,materials.fuelReturn);
+    const fireValve=part('10.3A · FIRE VALVE',fuelSystem);
+    cylinder(fireValve,'Cuerpo de fire valve',.12,.24,2.18,.95,.86,materials.red,'z',32);
+    box(fireValve,'Palanca fire valve',.045,.38,.045,2.18,1.18,.86,materials.red);
+    box(fireValve,'Indicador fire valve',.22,.12,.10,2.18,1.35,.86,materials.dark);
+    const solenoid=part('10.3B · ELECTROVÁLVULA DE CORTE',fuelSystem);
+    cylinder(solenoid,'Cuerpo de electroválvula',.105,.24,2.82,1.04,.82,materials.silver,'z',32);
+    box(solenoid,'Bobina electroválvula',.24,.24,.22,2.82,1.22,.82,materials.cabinet);
+    equipmentLabel(solenoid,'Placa electroválvula','SOLENOID VALVE','CORTE DE COMBUSTIBLE',.56,.15,2.82,1.43,.94);
+
+    // Sensor and fire detection chain between the container and tank.
+    const safety=part('10.4 · DETECCIÓN DE INCENDIO Y SOBRELLENADO',interior);
+    for(const x of [2.0,5.5,7.2]){
+      cylinder(safety,'Detector de incendio en techo',.095,.08,x,2.67,0,materials.red,'y',32);
+      cylinder(safety,'Base detector de incendio',.13,.045,x,2.61,0,materials.cabinet,'y',32);
+    }
+    sensorProbe(safety,'Sonda de alarma por sobrellenado',5.05,1.05,.60,.78,materials.orange);
+    tube(safety,'Cable sonda incendio / señal',[[2.0,2.62,-.3],[2.0,2.48,-.75],[2.05,2.35,-.98],[2.05,2.0,-.98]],.018,materials.cableControl);
+    tube(safety,'Cable HYTEK hacia cuadro de datos',[[3.05,1.08,1.04],[3.05,1.55,.85],[2.7,2.20,.55],[2.05,2.48,-.82]],.018,materials.cableControl);
+    tube(safety,'Cable T5020 hacia Fuel Panel',[[4.02,1.08,1.04],[4.6,1.45,.75],[5.5,2.12,-.65],[6.48,2.43,-.82]],.018,materials.cablePhase);
+
+    // Power cabling to the engine and fluorescent/emergency lighting.
+    const power=part('10.5 · CABLEADO DE POTENCIA E ILUMINACIÓN',interior);
+    for(let i=0;i<3;i++){
+      const z=-.54+i*.17;
+      tube(power,'Cable de potencia fase '+(i+1),[[1.22,2.42,-.84],[2.2,2.43,-.70],[3.3,2.36,-.45],[4.05,2.15,-.25],[4.45,1.85,.45]],.038,materials.cablePower);
+    }
+    tube(power,'Cable de control apantallado hacia motor',[[2.05,2.30,-.84],[3.1,2.28,-.55],[3.7,2.10,.30],[3.8,1.75,.77]],.024,materials.cableControl);
+    for(const x of [1.5,3.35,5.2,7.05]){
+      box(power,'Luminaria LED estanca',1.18,.065,.16,x,2.69,0,materials.cabinetDark);
+      box(power,'Difusor fluorescente LED',1.06,.035,.12,x,2.64,0,materials.led);
+    }
+    for(const z of [-.95,.95]){
+      box(power,'Luz de emergencia',.24,.13,.12,.58,2.62,z,materials.red);
+      box(power,'Difusor luz de emergencia',.17,.07,.045,.58,2.62,z+.075,materials.amber);
+    }
+    equipmentLabel(power,'Identificación luminarias','ILUMINACIÓN LED','EMERGENCIA · ALUMBRADO INTERIOR',1.20,.17,4.2,2.47,.17);
+
+
     // Tall two-level riser/tower at the left-hand end, clearly visible in both photographs.
     const tower=part('04 · TORRE ELEVADA / MÓDULO VERTICAL');
     const tx0=-2.25,tw=2.25,towerH=5.55,towerBottom=.34,towerTop=towerBottom+towerH;
-    addRibbedFace(tower,'Torre · frente corrugado',tx0,tw,towerBottom,towerH,1.335,true);
-    addRibbedFace(tower,'Torre · trasera corrugada',tx0,tw,towerBottom,towerH,-1.335,false);
+    const towerFront=part('04A · PANEL FRONTAL DE TORRE',tower);
+    addRibbedFace(towerFront,'Torre · frente corrugado',tx0,tw,towerBottom,towerH,1.335,true);
+    const towerRear=part('04B · PANEL POSTERIOR DE TORRE',tower);
+    addRibbedFace(towerRear,'Torre · trasera corrugada',tx0,tw,towerBottom,towerH,-1.335,false);
     box(tower,'Torre · testero izquierdo',.07,towerH,W,-2.285,towerBottom+towerH/2,0,materials.shell);
     box(tower,'Torre · testero derecho',.07,towerH,W,-.035,towerBottom+towerH/2,0,materials.shell);
     for(const y of [2.85,4.70]){
@@ -939,14 +1215,17 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       cylinder(locks,'Perno de cierre',.035,.03,x,y,z+(z>0?.09:-.09),materials.dark,'z',16);
     }
 
-    // Official-looking paint markings are drawn as a texture on real faces, never as floating labels.
-    const branding=part('09 · SERIGRAFÍA EUROCONTAINER');
-    const sideMap=drawWordmark();
-    const sideLogo=new T.Mesh(new T.PlaneGeometry(2.35,.46),new T.MeshBasicMaterial({map:sideMap,transparent:true,side:T.DoubleSide,depthWrite:false}));
-    sideLogo.name='Serigrafía Eurocontainer.es · lateral';sideLogo.position.set(6.55,2.67,1.414);sideLogo.userData.component=sideLogo.name;branding.add(sideLogo);
-    const endMap=drawTowerMark();
-    const endLogo=new T.Mesh(new T.PlaneGeometry(1.02,.78),new T.MeshBasicMaterial({map:endMap,transparent:true,side:T.DoubleSide,depthWrite:false}));
-    endLogo.name='Logotipo Eurocontainer · torre';endLogo.position.set(-2.326,1.55,0);endLogo.rotation.y=-Math.PI/2;branding.add(endLogo);
+    // Exact Eurocontainer serigraphy cropped from the real unit photograph supplied in this conversation.
+    const branding=part('09 · SERIGRAFÍA EUROCONTAINER · ORIGINAL FOTOGRAFIADA');
+    const logoLoader=new T.TextureLoader();
+    const sideMap=logoLoader.load('assets/eurocontainer-side-wordmark.webp');
+    sideMap.colorSpace=T.SRGBColorSpace;sideMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
+    const sideLogo=new T.Mesh(new T.PlaneGeometry(2.55,.565),new T.MeshBasicMaterial({map:sideMap,side:T.DoubleSide,depthWrite:false,toneMapped:false}));
+    sideLogo.name='Serigrafía original Eurocontainer.es · lateral';sideLogo.position.set(6.55,2.58,1.418);sideLogo.userData.component=sideLogo.name;sideLogo.renderOrder=4;branding.add(sideLogo);
+    const endMap=logoLoader.load('assets/eurocontainer-tower-mark.webp');
+    endMap.colorSpace=T.SRGBColorSpace;endMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
+    const endLogo=new T.Mesh(new T.PlaneGeometry(1.18,1.14),new T.MeshBasicMaterial({map:endMap,side:T.DoubleSide,depthWrite:false,toneMapped:false}));
+    endLogo.name='Serigrafía original Eurocontainer · torre';endLogo.position.set(-1.14,1.52,1.418);endLogo.userData.component=endLogo.name;endLogo.renderOrder=4;branding.add(endLogo);
 
     // Studio ground is separate from the selectable product.
     const floor=new T.Mesh(new T.PlaneGeometry(120,120),new T.MeshStandardMaterial({color:0x202b31,metalness:.16,roughness:.8}));
@@ -1026,7 +1305,9 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       const rect=canvas.getBoundingClientRect();
       pointer.set(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
       raycaster.setFromCamera(pointer,camera);
-      const hit=raycaster.intersectObjects(allMeshes,false)[0];
+      const hit=raycaster.intersectObjects(allMeshes,false).find(item=>{
+        let node=item.object;while(node){if(!node.visible)return false;node=node.parent;}return true;
+      });
       if(!hit){hoverLabel.classList.remove('is-visible');canvas.style.cursor='grab';return;}
       let target=hit.object.parent;
       while(target&&target!==root&&!target.userData.selectablePart)target=target.parent;
@@ -1043,7 +1324,9 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       const rect=canvas.getBoundingClientRect();
       pointer.set(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
       raycaster.setFromCamera(pointer,camera);
-      const hit=raycaster.intersectObjects(allMeshes,false)[0];
+      const hit=raycaster.intersectObjects(allMeshes,false).find(item=>{
+        let node=item.object;while(node){if(!node.visible)return false;node=node.parent;}return true;
+      });
       if(!hit){selectGroup(root);return;}
       let group=hit.object.parent;
       while(group&&group!==root&&!group.userData.selectablePart)group=group.parent;
@@ -1067,16 +1350,75 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     }
     syncRotate();
     rotateButton.addEventListener('click',()=>{controls.autoRotate=!controls.autoRotate;syncRotate();});
-    selectButton.addEventListener('click',()=>{selectGroup(root);frameGroup(root,true);controls.autoRotate=false;syncRotate();});
+    selectButton.addEventListener('click',()=>{selectGroup(root);setView('exterior',true);controls.autoRotate=false;syncRotate();});
     resetButton.addEventListener('click',()=>{
-      selectGroup(root);frameGroup(root,true);controls.autoRotate=true;syncRotate();
-      tankButton.setAttribute('aria-pressed','false');tankButton.textContent='Belly tank';
+      selectGroup(root);setView('exterior',true);controls.autoRotate=true;syncRotate();
+      tankButton.setAttribute('aria-pressed','false');tankButton.textContent='Enfocar depósito';
     });
     tankButton.addEventListener('click',()=>{
-      selectGroup(tank);frameGroup(tank,true);
+      selectGroup(tank);setView('tank',true);
       controls.autoRotate=false;syncRotate();
-      tankButton.setAttribute('aria-pressed','true');tankButton.textContent='Depósito seleccionado';
+      tankButton.setAttribute('aria-pressed','true');tankButton.textContent='Depósito enfocado';
     });
+    const modeButtons=[...document.querySelectorAll('[data-model-view]')];
+    const topLevelParts=[main,tower,chassis,tank,doors,exhaust,vents,locks,branding,interior];
+    const startingPositions=new Map(topLevelParts.map(group=>[group,group.position.clone()]));
+    const resetExplodedPositions=()=>{
+      topLevelParts.forEach(group=>group.position.copy(startingPositions.get(group)));
+    };
+    function setView(mode,shouldFrame=true){
+      resetExplodedPositions();
+      main.visible=true;tower.visible=true;chassis.visible=true;tank.visible=true;
+      doors.visible=true;exhaust.visible=true;vents.visible=true;locks.visible=true;branding.visible=true;
+      interior.visible=false;tankSystems.visible=false;
+      frontWall.visible=true;rearWall.visible=true;roofGroup.visible=true;towerFront.visible=true;towerRear.visible=true;
+      if(mode==='cutaway'){
+        frontWall.visible=false;roofGroup.visible=false;towerFront.visible=false;
+        doors.visible=false;vents.visible=false;interior.visible=true;tankSystems.visible=true;
+      }else if(mode==='interior'){
+        main.visible=false;tower.visible=false;doors.visible=false;exhaust.visible=false;
+        vents.visible=false;locks.visible=false;branding.visible=false;
+        interior.visible=true;tankSystems.visible=true;
+      }else if(mode==='tank'){
+        main.visible=false;tower.visible=false;doors.visible=false;exhaust.visible=false;
+        vents.visible=false;locks.visible=false;branding.visible=false;
+        interior.visible=false;tankSystems.visible=true;
+      }else if(mode==='exploded'){
+        frontWall.visible=false;roofGroup.visible=false;towerFront.visible=false;doors.visible=true;
+        interior.visible=true;tankSystems.visible=true;
+        main.position.z+=.92;tower.position.x-=.58;tower.position.y+=.28;
+        tank.position.y-=.66;chassis.position.y-=.28;doors.position.z+=.72;
+        exhaust.position.y+=.48;vents.position.x+=.24;branding.position.z+=.90;
+        interior.position.z-=.42;
+      }
+      modeButtons.forEach(button=>{
+        const active=button.dataset.modelView===mode;
+        button.setAttribute('aria-pressed',String(active));
+      });
+      if(mode==='exterior'){
+        selectionInfo.textContent='VISTA EXTERIOR · Selecciona torre, puertas, escape, bastidor o serigrafía';
+        if(shouldFrame)frameGroup(root,true);
+      }else if(mode==='cutaway'){
+        selectionInfo.textContent='VISTA DE CORTE · Motor, cuadros, cableado, combustible y sensores';
+        if(shouldFrame)frameGroup(interior,true);
+      }else if(mode==='interior'){
+        selectionInfo.textContent='VISTA INTERIOR · Equipos eléctricos y electromecánicos';
+        if(shouldFrame)frameGroup(interior,true);
+      }else if(mode==='tank'){
+        selectionInfo.textContent='BELLY TANK · HYTEK · T5020 · FUEL POLISHER · SONDAS';
+        if(shouldFrame)frameGroup(tank,true);
+      }else if(mode==='exploded'){
+        selectionInfo.textContent='DESPIECE 3D · Conjuntos separados para inspección visual';
+        if(shouldFrame)frameGroup(root,true);
+      }
+      currentMode=mode;
+    }
+    let currentMode='exterior';
+    modeButtons.forEach(button=>button.addEventListener('click',()=>{
+      selectGroup(root);
+      setView(button.dataset.modelView,true);
+      controls.autoRotate=false;syncRotate();
+    }));
     function zoomBy(factor){
       const offset=camera.position.clone().sub(controls.target).multiplyScalar(factor);
       const next=offset.length();
