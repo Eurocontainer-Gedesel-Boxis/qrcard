@@ -943,7 +943,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     const branding=part('09 · SERIGRAFÍA EUROCONTAINER');
     const sideMap=drawWordmark();
     const sideLogo=new T.Mesh(new T.PlaneGeometry(2.35,.46),new T.MeshBasicMaterial({map:sideMap,transparent:true,side:T.DoubleSide,depthWrite:false}));
-    sideLogo.name='Serigrafía Eurocontainer.es · lateral';sideLogo.position.set(6.55,2.55,1.414);sideLogo.userData.component=sideLogo.name;branding.add(sideLogo);
+    sideLogo.name='Serigrafía Eurocontainer.es · lateral';sideLogo.position.set(6.55,2.67,1.414);sideLogo.userData.component=sideLogo.name;branding.add(sideLogo);
     const endMap=drawTowerMark();
     const endLogo=new T.Mesh(new T.PlaneGeometry(1.02,.78),new T.MeshBasicMaterial({map:endMap,transparent:true,side:T.DoubleSide,depthWrite:false}));
     endLogo.name='Logotipo Eurocontainer · torre';endLogo.position.set(-2.326,1.55,0);endLogo.rotation.y=-Math.PI/2;branding.add(endLogo);
