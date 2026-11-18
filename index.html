@@ -1000,6 +1000,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     }
     function selectGroup(group){
       clearHighlight();
+      if(tankButton){tankButton.setAttribute('aria-pressed',String(group===tank));tankButton.textContent=group===tank?'Depósito seleccionado':'Belly tank';}
       const name=group===root?'CONJUNTO COMPLETO':group.name;
       if(group!==root){
         selectedMeshes=collectMeshes(group);
@@ -1033,6 +1034,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       hoverLabel.classList.add('is-visible');canvas.style.cursor='pointer';
     });
     canvas.addEventListener('pointerleave',()=>{hoverLabel.classList.remove('is-visible');canvas.style.cursor='grab';});
+    canvas.addEventListener('pointercancel',()=>{pointerStart=null;hoverLabel.classList.remove('is-visible');});
     canvas.addEventListener('pointerup',event=>{
       if(!pointerStart)return;
       const moved=Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y);
