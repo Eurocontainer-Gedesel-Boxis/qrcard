@@ -885,7 +885,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 
     // Tall two-level riser/tower at the left-hand end, clearly visible in both photographs.
     const tower=part('04 · TORRE ELEVADA / MÓDULO VERTICAL');
-    const tx0=-2.25,tw=2.25,towerH=6.45,towerBottom=.34,towerTop=towerBottom+towerH;
+    const tx0=-2.25,tw=2.25,towerH=5.55,towerBottom=.34,towerTop=towerBottom+towerH;
     addRibbedFace(tower,'Torre · frente corrugado',tx0,tw,towerBottom,towerH,1.335,true);
     addRibbedFace(tower,'Torre · trasera corrugada',tx0,tw,towerBottom,towerH,-1.335,false);
     box(tower,'Torre · testero izquierdo',.07,towerH,W,-2.285,towerBottom+towerH/2,0,materials.shell);
@@ -953,13 +953,14 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     const controls=new OrbitControls(camera,canvas);
     controls.enableDamping=true;controls.dampingFactor=.072;
     controls.rotateSpeed=.58;controls.zoomSpeed=.82;controls.panSpeed=.38;
-    controls.enablePan=false;controls.minPolarAngle=.18;controls.maxPolarAngle=Math.PI/2.02;
+    controls.enablePan=false;controls.minPolarAngle=.08;controls.maxPolarAngle=Math.PI-.08;
     controls.autoRotate=true;controls.autoRotateSpeed=.32;
 
     root.updateMatrixWorld(true);
     const wholeBounds=new T.Box3().setFromObject(root);
     const wholeSphere=wholeBounds.getBoundingSphere(new T.Sphere());
     const viewDirection=new T.Vector3(-.90,.34,1.20).normalize();
+    const tankViewDirection=new T.Vector3(-.68,-.60,1.12).normalize();
     let activeGroup=root,selectedMeshes=[],isVisible=true,frameHandle=0;
     function collectMeshes(group){
       const list=[];group.traverse(object=>{if(object.isMesh)list.push(object);});return list;
@@ -975,7 +976,9 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       const halfH=Math.atan(Math.tan(halfV)*aspect);
       const distance=sphere.radius/Math.sin(Math.min(halfV,halfH))*1.30;
       const target=sphere.center.clone();
-      const position=target.clone().addScaledVector(viewDirection,distance);
+      const direction=group===tank?tankViewDirection:viewDirection;
+      const position=target.clone().addScaledVector(direction,distance);
+      floor.visible=group!==tank;
       controls.minDistance=Math.max(.65,sphere.radius*1.04);
       controls.maxDistance=Math.max(controls.minDistance+3,sphere.radius*5.5);
       if(smooth){
