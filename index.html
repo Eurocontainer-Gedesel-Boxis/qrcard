@@ -320,7 +320,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 #container3d{opacity:0;transition:opacity .35s}
 .model-stage.model-ready #container3d{opacity:1}
 .model-stage.model-ready .model-unavailable{display:none}
-.model-stage:not(.model-ready) .model-controls{opacity:.22;pointer-events:none;filter:grayscale(1)}
+.model-stage:not(.model-ready) .model-controls,.model-stage:not(.model-ready) .model-selection-info,.model-stage:not(.model-ready) .stage-hint{display:none!important}
 .model-selection-info{position:absolute;z-index:5;left:3%;bottom:5%;padding:0;background:transparent;color:#a8c0ca;font-size:8px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;pointer-events:none}
 .model-hover-label{display:none!important}
 .model-tag{display:none!important}
@@ -429,9 +429,9 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       <div class="model-stage-top"><span class="stage-caption">EUROCONTAINER · VISUALIZADOR TÉCNICO</span><span class="stage-index">EC<span>/</span>01</span></div>
       <div class="model-unavailable" id="modelState" role="status">
         <span class="model-state-kicker">VISOR 3D · MODELO DE FABRICACIÓN</span>
-        <strong>Falta el archivo 3D original de esta unidad</strong>
-        <p>Para mostrar el mismo contenedor con geometría real, serigrafías exactas y selección por piezas necesitamos su archivo GLB/GLTF o el STEP de fabricación convertido a GLB.</p>
-        <span class="model-state-note">La maqueta geométrica provisional se ha retirado para no presentarla como un modelo real.</span>
+        <strong>Visualización 3D de fabricación</strong>
+        <p>La órbita 360° y la selección individual de componentes se activarán con el modelo técnico original de esta unidad (GLB/GLTF o STEP de fabricación).</p>
+        <span class="model-state-note">Se ha retirado la maqueta genérica para mantener la fidelidad del equipo y de sus serigrafías.</span>
       </div>
       <div class="model-selection-info" id="modelSelectionInfo" aria-live="polite">Modelo completo · Sin pieza seleccionada</div>
       <div class="stage-hint">Órbita 360° · Zoom · Selección de componentes</div>
