@@ -303,6 +303,91 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
+
+/* Premium surface refinement: no outlined pill/buttons, no double image, no clutter. */
+.model-stage{overflow:hidden!important;background:radial-gradient(ellipse at 56% 55%,rgba(65,116,135,.19),transparent 57%),linear-gradient(145deg,rgba(5,13,20,.16),rgba(5,13,20,.48));}
+.model-stage-top{position:absolute;z-index:5;left:3%;right:3%;top:3%;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.stage-caption{position:static;display:flex;align-items:center;gap:10px;font-size:8px;letter-spacing:.2em;color:#b9ced7}
+.stage-caption:before{content:"";width:5px;height:5px;transform:rotate(45deg);background:#d88a56;box-shadow:0 0 12px rgba(216,138,86,.6)}
+.stage-index{position:static;font-size:19px}
+.model-unavailable{position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);width:min(570px,82%);padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none;text-align:center;color:#e9f1f4}
+.model-unavailable[hidden]{display:none}
+.model-state-kicker{display:block;color:#9ccbd6;font-size:8px;letter-spacing:.24em;font-weight:900;text-transform:uppercase}
+.model-unavailable strong{display:block;margin-top:15px;color:#f4f7f8;font-size:clamp(20px,2.1vw,30px);font-weight:700;line-height:1.12;letter-spacing:-.045em}
+.model-unavailable p{max-width:510px;margin:13px auto 0;color:#b6c7cf;font-size:11px;line-height:1.8}
+.model-state-note{display:block;max-width:490px;margin:14px auto 0;color:#8da5b0;font-size:8px;line-height:1.6;letter-spacing:.04em}
+#container3d{opacity:0;transition:opacity .35s}
+.model-stage.model-ready #container3d{opacity:1}
+.model-stage.model-ready .model-unavailable{display:none}
+.model-stage:not(.model-ready) .model-controls,.model-stage:not(.model-ready) .model-selection-info,.model-stage:not(.model-ready) .stage-hint{display:none!important}
+.model-selection-info{position:absolute;z-index:5;left:3%;bottom:5%;padding:0;background:transparent;color:#a8c0ca;font-size:8px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;pointer-events:none}
+.model-hover-label{display:none!important}
+.model-tag{display:none!important}
+.stage-hint{left:auto;right:3%;bottom:5%;font-size:7px;color:#95aab5}
+.model-controls{right:3%;bottom:10%;left:3%;display:flex;justify-content:flex-end;gap:15px;padding:0;border:0;background:transparent;backdrop-filter:none;box-shadow:none}
+.model-controls button{height:34px;min-width:0;padding:0 3px;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#c7d7de;font-size:8px;letter-spacing:.12em;text-transform:uppercase}
+.model-controls button:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:linear-gradient(90deg,#83cddc,transparent);transition:right .24s}
+.model-controls button:hover:after,.model-controls button[aria-pressed="true"]:after{right:0}
+.model-controls button:hover,.model-controls button[aria-pressed="true"]{transform:translateY(-1px);color:#fff}
+.model-controls button.accent{color:#f1c1a6}
+.brand-tile{border:0!important;border-radius:0!important;box-shadow:0 20px 48px rgba(0,0,0,.22)!important;background:rgba(7,20,29,.16);backdrop-filter:blur(24px) saturate(155%)}
+.brand-tile:before{filter:saturate(.82) contrast(1.03);transition:transform .8s var(--ease),filter .55s}
+.brand-tile:after{opacity:.75}
+.brand-tile:hover{border:0!important;box-shadow:0 26px 62px rgba(0,0,0,.32)!important}
+.tile-arrow{width:auto!important;height:auto!important;min-width:0!important;border:0!important;background:transparent!important;box-shadow:none!important;font-size:25px!important;font-weight:300!important;color:rgba(242,249,251,.88)}
+.brand-tile:hover .tile-arrow{background:transparent!important;transform:translate(5px,-3px) translateZ(38px);color:#fff}
+.tile-logo img{filter:drop-shadow(0 4px 16px rgba(0,0,0,.52));}
+.tile-text small{font-size:8px;letter-spacing:.18em}
+.tile-text strong{font-size:clamp(18px,1.5vw,23px);line-height:1.13}
+.tile-text span{font-size:10px;line-height:1.55}
+.company-panel{border:0!important;border-radius:0!important;background:linear-gradient(145deg,rgba(28,47,59,.56),rgba(14,29,39,.36))!important;box-shadow:none!important}
+.company-panel:after{display:none}
+.company-panel:before{opacity:.55}
+.company-top{border:0!important}
+.company-contact{border:0!important;padding-top:12px}
+.company-contact .contact-cta{border:0!important;padding-top:8px}
+.company-fact{border:0!important;background:rgba(226,240,246,.035)!important}
+.team-heading{border:0!important;background:linear-gradient(110deg,rgba(26,48,62,.28),rgba(13,28,39,.14))!important;box-shadow:none!important}
+.team-contact{border:0!important;border-radius:0!important;background:linear-gradient(140deg,rgba(31,52,65,.52),rgba(12,26,36,.31))!important;box-shadow:none!important;backdrop-filter:blur(16px) saturate(135%)}
+.team-contact:after{display:none!important}
+.team-contact:before{background:radial-gradient(circle at var(--mx) var(--my),rgba(116,209,227,.12),transparent 43%)!important}
+.team-contact:hover{border:0!important;box-shadow:0 18px 42px rgba(0,0,0,.18)!important}
+.team-card-top{border:0!important}
+.team-unit{color:#7f9ba7;font-size:7px;letter-spacing:.16em}
+.team-contact h3{font-size:clamp(19px,1.5vw,24px);letter-spacing:-.045em}
+.team-role{font-size:10px;color:#a0d1dc;letter-spacing:.02em}
+.team-details{gap:11px}
+.team-details a,.team-details>div{grid-template-columns:32px minmax(0,1fr);gap:9px;font-size:10px;line-height:1.55}
+.detail-icon{padding:0;border:0!important;background:transparent!important;color:#76bdcb;font-size:7px;letter-spacing:.1em;text-align:left}
+.team-card-actions{border:0!important;padding-top:12px;gap:18px}
+.save-vcard,.contact-open{position:relative;padding:8px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#d8e7ed;font-size:8px;letter-spacing:.13em}
+.save-vcard:after,.contact-open:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,#8bd1df,transparent);transition:right .25s}
+.save-vcard:hover:after,.contact-open:hover:after{right:0}
+.save-vcard:hover,.contact-open:hover{background:transparent!important;transform:translateY(-1px);color:#fff}
+.platform-footer{border-top:0!important}
+.platform-footer nav a{border:0!important}
+
+
+/* Flatten remaining interface chrome for one uninterrupted glass-first language. */
+.action-primary,.action-quiet,.nav-cta{
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  background:rgba(212,235,243,.075)!important;color:#edf7fa!important;
+  backdrop-filter:blur(20px) saturate(145%);padding-left:15px;padding-right:15px
+}
+.action-primary:hover,.action-quiet:hover,.nav-cta:hover{
+  background:rgba(130,204,220,.15)!important;transform:translateY(-2px);
+  box-shadow:none!important
+}
+.action-primary:after,.action-quiet:after,.nav-cta:after{display:none!important}
+.main-brand span{border-left:0!important;padding-left:0!important}
+.hero-stats{border-top:0!important;border-bottom:0!important}
+.hero-stat+.hero-stat{border-left:0!important}
+.company-fact{background:transparent!important;padding-left:0;padding-right:10px}
+.company-contact{border-top:0!important;padding-top:16px!important}
+.company-panel,.team-contact{outline:0!important}
+.team-heading{border:0!important}
+.team-card-actions{border-top:0!important}
+
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"}}</script>
 </head>
@@ -337,17 +422,22 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       </div>
     </div>
 
-    <div class="model-stage" id="modelStage" aria-label="Visualizador 3D del conjunto contenerizado">
+    <div class="model-stage" id="modelStage" data-model-src="" aria-label="Visor del modelo 3D real de Eurocontainer">
       <div class="stage-glow" aria-hidden="true"></div><div class="stage-grid" aria-hidden="true"></div>
-      <img class="model-fallback" src="assets/eurocontainer-daylight-wide.webp" alt="Conjunto industrial Eurocontainer frente a su fábrica">
-      <canvas id="container3d" tabindex="0" aria-label="Modelo 3D interactivo del conjunto Eurocontainer del fondo de la página. Arrastra para orbitar con inercia, usa la rueda o los controles para acercar y enfocar el belly tank."></canvas>
-      <div class="stage-caption">Conjunto técnico · Vista interactiva</div>
-      <div class="stage-index">EC<span>/</span>01</div>
-      <div class="model-tag" aria-hidden="true"><span>Envolvente acústica</span><span>Silenciador de escape</span><span>Depósito inferior integrado</span></div>
-      <div class="stage-hint">Arrastra para orbitar · rueda para zoom</div>
+      <canvas id="container3d" tabindex="0" aria-label="Visor 3D 360 grados. Arrastra para orbitar, usa la rueda para acercar y selecciona las piezas del modelo técnico."></canvas>
+      <div class="model-stage-top"><span class="stage-caption">EUROCONTAINER · VISUALIZADOR TÉCNICO</span><span class="stage-index">EC<span>/</span>01</span></div>
+      <div class="model-unavailable" id="modelState" role="status">
+        <span class="model-state-kicker">VISOR 3D · MODELO DE FABRICACIÓN</span>
+        <strong>Visualización 3D de fabricación</strong>
+        <p>La órbita 360° y la selección individual de componentes se activarán con el modelo técnico original de esta unidad (GLB/GLTF o STEP de fabricación).</p>
+        <span class="model-state-note">Se ha retirado la maqueta genérica para mantener la fidelidad del equipo y de sus serigrafías.</span>
+      </div>
+      <div class="model-selection-info" id="modelSelectionInfo" aria-live="polite">Modelo completo · Sin pieza seleccionada</div>
+      <div class="stage-hint">Órbita 360° · Zoom · Selección de componentes</div>
       <div class="model-controls" aria-label="Controles del modelo 3D">
         <button type="button" id="autoRotate" aria-pressed="true">Pausar giro</button>
-        <button type="button" id="resetView">Vista inicial</button>
+        <button type="button" id="selectWhole">Seleccionar conjunto</button>
+        <button type="button" id="resetView">Vista completa</button>
         <button type="button" id="focusTank" class="accent" aria-pressed="false">Belly tank</button>
         <button type="button" id="zoomIn" aria-label="Acercar">＋</button>
         <button type="button" id="zoomOut" aria-label="Alejar">−</button>
@@ -467,7 +557,6 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
         <div class="team-details">
           <a href="mailto:rruiz@boxis.es"><span class="detail-icon">MAIL</span><span>rruiz@boxis.es</span></a>
           <a href="https://es.linkedin.com/in/ruben-ruiz-canon" target="_blank" rel="noopener"><span class="detail-icon">IN</span><span>Perfil profesional de LinkedIn</span></a>
-          <a href="tel:+34976220463"><span class="detail-icon">TEL</span><span>Central BOXIS · +34 976 22 04 63</span></a>
           <div><span class="detail-icon">HRS</span><span>Lunes a viernes · 08:00–16:00</span></div>
           <div><span class="detail-icon">LOC</span><span>Carretera Alagón–Tudela, A-126 km 44,900 · 50637 Remolinos, Zaragoza</span></div>
         </div>
@@ -557,356 +646,244 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 (async()=>{
   const stage=document.getElementById('modelStage');
   const canvas=document.getElementById('container3d');
-  if(!stage||!canvas)return;
-  let renderer;
+  const state=document.getElementById('modelState');
+  const selectionInfo=document.getElementById('modelSelectionInfo');
+  if(!stage||!canvas||!state)return;
+
+  // Set data-model-src to the manufacturer's GLB/GLTF once supplied.
+  const modelURL=(stage.dataset.modelSrc||'').trim();
+  if(!modelURL){
+    stage.classList.add('model-awaiting-source');
+    return;
+  }
+
+  let renderer,controls,scene,observer;
   try{
-    const [T,{OrbitControls}]=await Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js'),import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/controls/OrbitControls.js')]);
-    const scene=new T.Scene();scene.background=null;
-    const camera=new T.PerspectiveCamera(27,1,.05,500);
-    camera.position.set(14,9,16);camera.lookAt(0,3,0);
+    const [T,{OrbitControls},{GLTFLoader}]=await Promise.all([
+      import('https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js'),
+      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/controls/OrbitControls.js'),
+      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/loaders/GLTFLoader.js')
+    ]);
+
+    scene=new T.Scene();
+    const camera=new T.PerspectiveCamera(32,1,.05,10000);
     renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.65));
-    renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
-    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
-    renderer.physicallyCorrectLights=true;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.8));
+    renderer.outputColorSpace=T.SRGBColorSpace;
+    renderer.toneMapping=T.ACESFilmicToneMapping;
+    renderer.toneMappingExposure=1.08;
+    renderer.shadowMap.enabled=true;
+    renderer.shadowMap.type=T.PCFSoftShadowMap;
 
-    // Procedural studio reflection environment: long softboxes and a neutral industrial studio.
-    function makeEnvironment(){
-      const faces=[];
-      for(let i=0;i<6;i++){
-        const c=document.createElement('canvas');c.width=512;c.height=512;const g=c.getContext('2d');
-        const gr=g.createLinearGradient(0,0,0,512);gr.addColorStop(0,'#e9f0f2');gr.addColorStop(.36,'#9aaab1');gr.addColorStop(.7,'#52626c');gr.addColorStop(1,'#18252d');g.fillStyle=gr;g.fillRect(0,0,512,512);
-        g.fillStyle='rgba(255,255,255,.82)';g.fillRect(72,50,365,22);g.fillRect(28,176,90,10);g.fillRect(390,225,90,13);
-        g.fillStyle='rgba(255,255,255,.25)';g.fillRect(165,280,210,8);g.fillRect(200,330,140,5);
-        g.fillStyle='rgba(12,24,31,.18)';g.fillRect(0,425,512,87);faces.push(c);
-      }
-      const env=new T.CubeTexture(faces);env.colorSpace=T.SRGBColorSpace;env.needsUpdate=true;return env;
-    }
-    scene.environment=makeEnvironment();
-    scene.add(new T.HemisphereLight(0xeaf5f8,0x3b4a53,1.42));
-    const key=new T.DirectionalLight(0xfff6e9,3.2);key.position.set(-6,11,8);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.camera.left=-12;key.shadow.camera.right=12;key.shadow.camera.top=12;key.shadow.camera.bottom=-12;key.shadow.bias=-.00018;key.shadow.normalBias=.025;scene.add(key);
-    const fill=new T.DirectionalLight(0x8ad7e9,1.35);fill.position.set(8,5,-7);scene.add(fill);
-    const rim=new T.DirectionalLight(0xffffff,2.1);rim.position.set(-8,5,-9);scene.add(rim);
-    const warm=new T.PointLight(0xe87543,20,16,2);warm.position.set(4,3.6,5);scene.add(warm);
+    scene.add(new T.HemisphereLight(0xeaf2f4,0x36454d,1.55));
+    const key=new T.DirectionalLight(0xfff7ec,3.0);
+    key.position.set(-8,12,10);key.castShadow=true;
+    key.shadow.mapSize.set(2048,2048);
+    key.shadow.camera.left=-30;key.shadow.camera.right=30;
+    key.shadow.camera.top=30;key.shadow.camera.bottom=-30;
+    scene.add(key);
+    const fill=new T.DirectionalLight(0x9ccbd8,1.3);fill.position.set(10,6,-10);scene.add(fill);
+    const rim=new T.DirectionalLight(0xffffff,1.8);rim.position.set(-10,8,-12);scene.add(rim);
 
-    // Fine-grain surface texture used as subtle roughness/bump detail on powder-coated steel.
-    function makeGrain(){
-      const c=document.createElement('canvas');c.width=256;c.height=256;const x=c.getContext('2d');
-      x.fillStyle='#a6a6a6';x.fillRect(0,0,256,256);
-      let seed=17;const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};
-      for(let i=0;i<9000;i++){const v=105+Math.floor(rand()*65);x.fillStyle=`rgba(${v},${v},${v},${.18+rand()*.3})`;x.fillRect(rand()*256,rand()*256,1,1)}
-      const tex=new T.CanvasTexture(c);tex.wrapS=tex.wrapT=T.RepeatWrapping;tex.repeat.set(4,2);tex.colorSpace=T.NoColorSpace;return tex;
-    }
-    const grain=makeGrain();
-    const materials={
-      shell:new T.MeshStandardMaterial({color:0xd8dfe1,metalness:.26,roughness:.58,roughnessMap:grain,bumpMap:grain,bumpScale:.012,envMapIntensity:.92}),
-      panel:new T.MeshStandardMaterial({color:0xe8ecec,metalness:.22,roughness:.5,roughnessMap:grain,bumpMap:grain,bumpScale:.009,envMapIntensity:.95}),
-      rib:new T.MeshStandardMaterial({color:0xb6c0c4,metalness:.36,roughness:.56,roughnessMap:grain,bumpMap:grain,bumpScale:.01}),
-      edge:new T.MeshStandardMaterial({color:0x73818a,metalness:.58,roughness:.43,envMapIntensity:1.05}),
-      frame:new T.MeshStandardMaterial({color:0x34434b,metalness:.64,roughness:.44,envMapIntensity:1.0}),
-      black:new T.MeshStandardMaterial({color:0x18232a,metalness:.52,roughness:.4,envMapIntensity:1.1}),
-      tank:new T.MeshPhysicalMaterial({color:0x69767d,metalness:.62,roughness:.49,clearcoat:.2,clearcoatRoughness:.48,roughnessMap:grain,envMapIntensity:1.12}),
-      tankBand:new T.MeshStandardMaterial({color:0x73818a,metalness:.64,roughness:.47,envMapIntensity:1.05}),
-      glass:new T.MeshPhysicalMaterial({color:0x4a8596,metalness:.28,roughness:.12,transmission:.25,transparent:true,opacity:.8,clearcoat:1,envMapIntensity:1.4}),
-      label:new T.MeshStandardMaterial({color:0xd7dfe2,metalness:.55,roughness:.42}),
-      rubber:new T.MeshStandardMaterial({color:0x11191e,metalness:.05,roughness:.86})
-    };
-    const model=new T.Group();scene.add(model);
-    const tankAssembly=new T.Group();model.add(tankAssembly);
-    const chassis=new T.Group();model.add(chassis);
+    const floor=new T.Mesh(
+      new T.PlaneGeometry(500,500),
+      new T.MeshStandardMaterial({color:0x1b252b,metalness:.22,roughness:.74})
+    );
+    floor.rotation.x=-Math.PI/2;floor.position.y=-.025;floor.receiveShadow=true;scene.add(floor);
 
-    function box(w,h,d,mat,x,y,z,parent=model){const m=new T.Mesh(new T.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m}
-    function roundedBox(w,h,d,r,mat,x,y,z,parent=model){
-      const sh=new T.Shape();const a=w/2,b=d/2,rr=Math.min(r,a,b);
-      sh.moveTo(-a+rr,-b);sh.lineTo(a-rr,-b);sh.quadraticCurveTo(a,-b,a,-b+rr);sh.lineTo(a,b-rr);sh.quadraticCurveTo(a,b,a-rr,b);sh.lineTo(-a+rr,b);sh.quadraticCurveTo(-a,b,-a,b-rr);sh.lineTo(-a,-b+rr);sh.quadraticCurveTo(-a,-b,-a+rr,-b);
-      const g=new T.ExtrudeGeometry(sh,{depth:h,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:Math.min(r*.22,.04),bevelThickness:Math.min(r*.22,.04),curveSegments:5});
-      g.translate(0,0,-h/2);g.rotateX(-Math.PI/2);
-      const m=new T.Mesh(g,mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;m.userData.part=parent===tankAssembly?'BELLY TANK · REGISTROS Y REFUERZOS':parent===chassis?'BASTIDOR · TRAVESAÑOS':'ENVOLVENTE ACÚSTICA · ACCESO TÉCNICO';parent.add(m);return m;
-    }
-    function cylinder(radius,height,mat,x,y,z,axis='y',parent=model,radial=48){
-      const m=new T.Mesh(new T.CylinderGeometry(radius,radius,height,radial,1,false),mat);
-      if(axis==='x')m.rotation.z=Math.PI/2;else if(axis==='z')m.rotation.x=Math.PI/2;
-      m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;
-    }
-    function tube(points,radius,mat,parent=model){
-      const curve=new T.CatmullRomCurve3(points.map(p=>new T.Vector3(p[0],p[1],p[2])));
-      const m=new T.Mesh(new T.TubeGeometry(curve,Math.max(20,points.length*12),radius,12,false),mat);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;
-    }
-    function bolt(x,y,z,parent=model,axis='z'){
-      const s=cylinder(.034,.022,materials.black,x,y,z,axis,parent,16);
-      const slot=box(.028,.004,.004,materials.rib,x,y,z+.013,parent);return s;
-    }
-    function plateTexture(title,sub){
-      const c=document.createElement('canvas');c.width=768;c.height=210;const g=c.getContext('2d');
-      g.fillStyle='#26353e';g.fillRect(0,0,768,210);g.strokeStyle='#8e9ca3';g.lineWidth=5;g.strokeRect(6,6,756,198);
-      g.fillStyle='#dfe7ea';g.font='700 44px Inter,Arial';g.fillText(title,34,90);
-      g.fillStyle='#9fb0b8';g.font='600 24px Inter,Arial';g.fillText(sub,36,143);
-      g.fillStyle='#e87543';g.fillRect(34,163,120,5);
-      const tx=new T.CanvasTexture(c);tx.colorSpace=T.SRGBColorSpace;return tx;
-    }
-    function euroDecal(){
-      const c=document.createElement('canvas');c.width=1500;c.height=300;const g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);
-      // Eurocontainer's grey geometric mark and orange forward/check motif.
-      g.save();g.translate(24,48);g.fillStyle='#aeb8bd';g.beginPath();g.moveTo(0,88);g.lineTo(78,12);g.lineTo(155,57);g.lineTo(80,133);g.closePath();g.fill();
-      g.fillStyle='#e87543';g.beginPath();g.moveTo(36,100);g.lineTo(76,139);g.lineTo(167,42);g.lineTo(144,28);g.lineTo(76,100);g.lineTo(53,79);g.closePath();g.fill();g.restore();
-      g.fillStyle='#17252e';g.font='italic 800 132px Arial, sans-serif';g.fillText('Eurocontainer',222,164);
-      g.fillStyle='#e87543';g.font='800 112px Arial, sans-serif';g.fillText('.es',1110,164);
-      const tx=new T.CanvasTexture(c);tx.colorSpace=T.SRGBColorSpace;tx.anisotropy=renderer.capabilities.getMaxAnisotropy();return tx;
-    }
-    let logoTexture=euroDecal();
-    function decal(w,h,x,y,z,parent=model,rotationY=0){
-      const mesh=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({map:logoTexture,transparent:true,side:T.DoubleSide,depthWrite:false}));
-      mesh.position.set(x,y,z);mesh.rotation.y=rotationY;parent.add(mesh);return mesh;
-    }
-
-    // Integrated double-wall square belly tank: a structural module under the genset floor.
-    const tankL=7.86,tankW=2.28,tankH=.72,tankY=.49;
-    roundedBox(tankL,tankH,tankW,.12,materials.tank,0,tankY,0,tankAssembly);
-    // A secondary inner shell is visible at the lower perimeter, suggesting the double-wall bund construction.
-    roundedBox(tankL-.17,.48,tankW-.16,.09,materials.frame,0,tankY-.03,0,tankAssembly);
-    roundedBox(tankL-.27,.43,tankW-.26,.075,materials.tank,0,tankY-.02,0,tankAssembly);
-    // Weld seams and stiffening bands, not ornamental ribs.
-    for(const x of [-3.22,-2.25,-1.28,-.31,.66,1.63,2.60,3.48]){
-      roundedBox(.075,.78,tankW+.035,.02,materials.tankBand,x,tankY,0,tankAssembly);
-    }
-    roundedBox(tankL-.1,.045,.07,.012,materials.edge,0,tankY+.35,tankW/2-.015,tankAssembly);
-    roundedBox(tankL-.1,.045,.07,.012,materials.edge,0,tankY+.35,-tankW/2+.015,tankAssembly);
-    // Inspection/manway, fuel filling neck, breather and drain fittings on top of the tank.
-    cylinder(.24,.075,materials.tankBand,-2.95,tankY+.39,-.52,'y',tankAssembly,56);
-    cylinder(.17,.11,materials.frame,-2.95,tankY+.455,-.52,'y',tankAssembly,48);
-    for(let i=0;i<8;i++){const a=i*Math.PI/4;bolt(-2.95+Math.cos(a)*.195,tankY+.5,-.52+Math.sin(a)*.195,tankAssembly,'y')}
-    cylinder(.11,.2,materials.tankBand,2.85,tankY+.43,.58,'y',tankAssembly,40);
-    cylinder(.065,.18,materials.black,2.85,tankY+.56,.58,'y',tankAssembly,32);
-    cylinder(.075,.16,materials.tankBand,3.45,tankY+.43,-.58,'y',tankAssembly,32);
-    // Level indicator and protected side fittings.
-    roundedBox(.18,.42,.08,.025,materials.edge,-3.42,tankY,.95,tankAssembly);
-    roundedBox(.065,.31,.03,.016,materials.glass,-3.42,tankY,.997,tankAssembly);
-    for(const z of [-.7,.7]){
-      cylinder(.105,.12,materials.tankBand,3.78,tankY-.13,z,'x',tankAssembly,36);
-      cylinder(.062,.16,materials.black,3.86,tankY-.13,z,'x',tankAssembly,32);
-    }
-    // Tank information plate and serial plate.
-    const tankInfo=new T.Mesh(new T.PlaneGeometry(1.38,.38),new T.MeshBasicMaterial({map:plateTexture('BELLY TANK','DOUBLE WALL · FUEL MODULE'),side:T.DoubleSide}));
-    tankInfo.position.set(.1,tankY,.1+tankW/2+.012);tankAssembly.add(tankInfo);
-    const smallPlate=new T.Mesh(new T.PlaneGeometry(.68,.25),new T.MeshBasicMaterial({map:plateTexture('EUROCONTAINER','EQUIPMENT ID'),side:T.DoubleSide}));
-    smallPlate.position.set(2.7,tankY+.01,tankW/2+.012);tankAssembly.add(smallPlate);
-
-    // Heavy transport / skid chassis with crossmembers, forklift apertures and corner castings.
-    roundedBox(tankL+.28,.16,.17,.025,materials.frame,0,.91,tankW/2-.05,chassis);
-    roundedBox(tankL+.28,.16,.17,.025,materials.frame,0,.91,-tankW/2+.05,chassis);
-    for(const x of [-3.6,-2.4,-1.2,0,1.2,2.4,3.6]){
-      roundedBox(.18,.18,tankW-.08,.025,materials.edge,x,.91,0,chassis);
-      roundedBox(.52,.18,.14,.025,materials.frame,x,.18,tankW/2-.28,chassis);
-      roundedBox(.52,.18,.14,.025,materials.frame,x,.18,-tankW/2+.28,chassis);
-    }
-    for(const x of [-4.15,4.15])for(const z of [-1.23,1.23]){
-      roundedBox(.28,.22,.28,.025,materials.edge,x,.88,z,chassis);
-      roundedBox(.26,.18,.26,.025,materials.frame,x,.18,z,chassis);
-    }
-
-    // Main acoustic enclosure. Proportions are based on the supplied Eurocontainer reference image.
-    const L=8.35,W=2.68,H=2.78,baseY=1.11,bodyY=baseY+H/2,roofY=baseY+H;
-    roundedBox(L,H,W,.075,materials.shell,0,bodyY,0,model);
-    // Bottom and roof perimeter rails.
-    roundedBox(L+.13,.12,W+.12,.022,materials.edge,0,baseY,0,model);
-    roundedBox(L+.16,.10,W+.16,.02,materials.edge,0,roofY,0,model);
-    roundedBox(L+.04,.07,.10,.016,materials.frame,0,roofY+.055,W/2-.07,model);
-    roundedBox(L+.04,.07,.10,.016,materials.frame,0,roofY+.055,-W/2+.07,model);
-    // Vertical corrugated steel cladding. A measured rib pitch makes the long elevation read as a real container.
-    for(let x=-4.05;x<=4.05;x+=.17){
-      roundedBox(.038,H-.12,.052,.012,materials.rib,x,bodyY,W/2+.025,model);
-      roundedBox(.038,H-.12,.04,.01,materials.rib,x,bodyY,-W/2-.018,model);
-    }
-    // Panel joints across the end walls and top edge.
-    for(const x of [-4.11,4.11]){
-      roundedBox(.09,H-.05,W-.12,.02,materials.edge,x,bodyY,0,model);
-      for(let z=-1.1;z<=1.11;z+=.22)roundedBox(.04,H-.16,.035,.008,materials.rib,x+(x<0?-.06:.06),bodyY,z,model);
-    }
-    // Large access doors with perimeter seals, 3D hinges, locking rods and keeper blocks.
-    const doorXs=[-1.85,-.15,1.55];
-    doorXs.forEach((x,i)=>{
-      roundedBox(1.38,2.14,.085,.022,materials.edge,x,bodyY,W/2+.08,model);
-      roundedBox(1.28,2.04,.055,.016,materials.panel,x,bodyY,W/2+.135,model);
-      for(let k=0;k<8;k++)roundedBox(.018,1.86,.018,.006,materials.rib,x-.49+k*.14,bodyY,W/2+.166,model);
-      // continuous lock bar and cam handles
-      cylinder(.025,1.76,materials.edge,x+.48,bodyY,W/2+.19,'y',model,20);
-      roundedBox(.12,.32,.045,.014,materials.frame,x+.48,bodyY,W/2+.23,model);
-      for(const y of [bodyY-.82,bodyY+.82]){
-        cylinder(.045,.15,materials.black,x-.57,y,W/2+.16,'x',model,24);
-        cylinder(.034,.17,materials.edge,x+.55,y,W/2+.17,'x',model,24);
-      }
-      for(const dx of [-.55,.55])for(const dy of [-.95,.95])bolt(x+dx,bodyY+dy,W/2+.18,model);
-    });
-    // Ventilation louvres and radiator air path at the aft section.
-    roundedBox(.72,2.12,.10,.025,materials.edge,3.43,bodyY,W/2+.07,model);
-    roundedBox(.62,2.02,.052,.016,materials.black,3.43,bodyY,W/2+.13,model);
-    for(let i=0;i<19;i++){
-      const sl=roundedBox(.53,.047,.04,.012,materials.rib,3.43,bodyY-.88+i*.098,W/2+.17,model);sl.rotation.z=-.12;
-    }
-    // Service cabinet and small conduits on the long wall.
-    roundedBox(.46,.62,.07,.025,materials.edge,2.78,baseY+.72,W/2+.065,model);
-    roundedBox(.36,.52,.04,.018,materials.panel,2.78,baseY+.72,W/2+.112,model);
-    for(const x of [2.62,2.94])for(const y of [baseY+.48,baseY+.96])bolt(x,y,W/2+.145,model);
-    tube([[2.72,baseY+.38,W/2+.12],[2.72,baseY+.18,W/2+.12],[2.35,baseY+.18,W/2+.12]],.018,materials.black,model);
-    // Corner posts and ISO lifting castings.
-    for(const x of [-4.13,4.13])for(const z of [-1.28,1.28]){
-      roundedBox(.15,H+.05,.15,.025,materials.edge,x,bodyY,z,model);
-      roundedBox(.23,.18,.23,.025,materials.frame,x,baseY-.02,z,model);
-      roundedBox(.23,.18,.23,.025,materials.frame,x,roofY+.015,z,model);
-      for(const y of [baseY+.1,roofY-.08])bolt(x,y,z+(z>0?.1:-.1),model);
-    }
-    // Roof fittings, acoustic silencer saddles, exhaust expansion can and pipework.
-    for(const x of [-.65,1.65])roundedBox(.19,.36,.18,.035,materials.frame,x,roofY+.2,-.73,model);
-    cylinder(.36,2.82,materials.black,.48,roofY+.55,-.73,'x',model,64);
-    cylinder(.4,.11,materials.edge,-.94,roofY+.55,-.73,'x',model,48);
-    cylinder(.4,.11,materials.edge,1.90,roofY+.55,-.73,'x',model,48);
-    cylinder(.29,.16,materials.frame,-.98,roofY+.55,-.73,'x',model,48);
-    tube([[-.98,roofY+.55,-.73],[-1.30,roofY+.55,-.73],[-1.50,roofY+.72,-.73],[-1.50,roofY+1.05,-.73],[-1.69,roofY+1.23,-.73]],.13,materials.black,model);
-    cylinder(.15,.28,materials.edge,-1.69,roofY+1.3,-.73,'y',model,48);
-    cylinder(.12,.09,materials.black,-1.69,roofY+1.46,-.73,'y',model,48);
-    for(const x of [-3.75,-2.2,0,2.4,3.7]){
-      cylinder(.055,.16,materials.edge,x,roofY+.09,-1.02,'y',model,24);
-      roundedBox(.17,.11,.17,.018,materials.frame,x,roofY+.12,1.0,model);
-    }
-    // Raised service / radiator module at the forward end, modelled as a joined acoustic enclosure.
-    const towerX=-2.83,towerW=1.68,towerH=2.03,towerBottom=roofY-.03,towerY=towerBottom+towerH/2;
-    roundedBox(towerW,towerH,W,.06,materials.shell,towerX,towerY,0,model);
-    roundedBox(towerW+.1,.12,W+.12,.02,materials.edge,towerX,towerBottom,0,model);
-    roundedBox(towerW+.1,.1,W+.1,.02,materials.edge,towerX,towerBottom+towerH,0,model);
-    for(let x=towerX-towerW/2+.08;x<towerX+towerW/2-.05;x+=.15){
-      roundedBox(.035,towerH-.1,.055,.01,materials.rib,x,towerY,W/2+.026,model);
-    }
-    roundedBox(.9,1.65,.08,.022,materials.edge,towerX,towerY,W/2+.08,model);
-    roundedBox(.8,1.55,.05,.015,materials.panel,towerX,towerY,W/2+.13,model);
-    for(let k=0;k<7;k++)roundedBox(.018,1.38,.02,.006,materials.rib,towerX-.31+k*.103,towerY,W/2+.16,model);
-    for(const y of [towerY-.63,towerY+.63])cylinder(.04,.12,materials.black,towerX-.41,y,W/2+.16,'x',model,24);
-    // Louver bank on the tower's outer side.
-    roundedBox(.52,1.34,.08,.02,materials.edge,towerX+.42,towerY,-W/2-.04,model);
-    for(let i=0;i<14;i++){const sl=roundedBox(.42,.035,.025,.008,materials.black,towerX+.42,towerY-.55+i*.085,-W/2-.09,model);sl.rotation.z=.12;}
-
-    // Correctly readable Eurocontainer serigraphy on both long and end elevations.
-    const sideDecal=new T.Mesh(new T.PlaneGeometry(3.25,.65),new T.MeshBasicMaterial({map:logoTexture,transparent:true,side:T.DoubleSide,depthWrite:false}));
-    sideDecal.position.set(1.8,bodyY+.66,W/2+.19);model.add(sideDecal);
-    const endDecal=new T.Mesh(new T.PlaneGeometry(1.8,.52),new T.MeshBasicMaterial({map:logoTexture,transparent:true,side:T.DoubleSide,depthWrite:false}));
-    endDecal.position.set(-L/2-.1,bodyY+.45,0);endDecal.rotation.y=-Math.PI/2;model.add(endDecal);
-    const officialLogoLoader=new T.TextureLoader();
-    officialLogoLoader.setCrossOrigin('anonymous');
-    officialLogoLoader.load('https://eurocontainer.es/wp-content/uploads/2018/10/eurocontainer_logo240x100.png',texture=>{
-      texture.colorSpace=T.SRGBColorSpace;
-      texture.anisotropy=renderer.capabilities.getMaxAnisotropy();
-      sideDecal.material.map=texture;sideDecal.material.needsUpdate=true;
-      endDecal.material.map=texture;endDecal.material.needsUpdate=true;
-    },undefined,()=>{});
-    // Subtle safety/serial plates: no invented capacity, serial or certification data.
-    const idPlate=new T.Mesh(new T.PlaneGeometry(.78,.28),new T.MeshBasicMaterial({map:plateTexture('MODULAR UNIT','INTEGRATED SYSTEMS'),side:T.DoubleSide}));
-    idPlate.position.set(-3.0,baseY+.32,W/2+.16);model.add(idPlate);
-
-    // Floor and soft contact shadow. Slightly satin concrete, not a glossy toy display base.
-    const floor=new T.Mesh(new T.PlaneGeometry(100,100),new T.MeshStandardMaterial({color:0x202c33,metalness:.25,roughness:.68}));floor.rotation.x=-Math.PI/2;floor.position.y=.02;floor.receiveShadow=true;scene.add(floor);
-    const shadow=new T.Mesh(new T.PlaneGeometry(35,35),new T.ShadowMaterial({opacity:.3}));shadow.rotation.x=-Math.PI/2;shadow.position.y=.031;shadow.receiveShadow=true;scene.add(shadow);
-
-
-    // Fit the full container to the real canvas dimensions and orbit around its centre.
-    model.updateMatrixWorld(true);
-    const wholeBox=new T.Box3().setFromObject(model);
-    const wholeSphere=wholeBox.getBoundingSphere(new T.Sphere());
-    const tankBox=new T.Box3().setFromObject(tankAssembly);
-    const tankSphere=tankBox.getBoundingSphere(new T.Sphere());
     const controls=new OrbitControls(camera,canvas);
     controls.enableDamping=true;controls.dampingFactor=.075;
-    controls.rotateSpeed=.58;controls.zoomSpeed=.78;controls.panSpeed=.42;
-    controls.enablePan=false;controls.minPolarAngle=.24;controls.maxPolarAngle=Math.PI/2.03;
+    controls.rotateSpeed=.58;controls.zoomSpeed=.78;controls.enablePan=false;
+    controls.minPolarAngle=.18;controls.maxPolarAngle=Math.PI/2.02;
     controls.autoRotate=true;controls.autoRotateSpeed=.34;
-    const viewDirection=new T.Vector3(1,.34,1.18).normalize();
-    const cameraGoal=new T.Vector3(),targetGoal=new T.Vector3();
-    let activeSphere=wholeSphere,activeView='full',cameraTransition=false,visible=true,lastFrame=0;
-    function fitDistance(sphere){
-      const aspect=Math.max(.5,canvas.clientWidth/Math.max(1,canvas.clientHeight));
-      const halfV=T.MathUtils.degToRad(camera.fov/2),halfH=Math.atan(Math.tan(halfV)*aspect);
-      return sphere.radius/Math.sin(Math.min(halfV,halfH))*1.24;
+
+    const loader=new GLTFLoader();
+    const loaded=await new Promise((resolve,reject)=>{
+      loader.load(modelURL,resolve,undefined,reject);
+    });
+    const root=loaded.scene;
+    root.name=root.name||'EUROCONTAINER · CONJUNTO COMPLETO';
+    scene.add(root);
+
+    // Preserve manufacturer mesh separation and names for real per-part selection.
+    const parts=[];
+    const originalMaterials=new Map();
+    root.traverse(object=>{
+      if(!object.isMesh)return;
+      object.castShadow=true;object.receiveShadow=true;
+      if(object.material){
+        const mats=Array.isArray(object.material)?object.material:[object.material];
+        originalMaterials.set(object,mats);
+        object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone();
+      }
+      const name=(object.name||object.parent?.name||'Componente sin nombre').trim();
+      object.userData.displayName=name.replace(/[_-]+/g,' ').replace(/\s+/g,' ');
+      parts.push(object);
+    });
+    root.updateMatrixWorld(true);
+    const bounds=new T.Box3().setFromObject(root);
+    const size=bounds.getSize(new T.Vector3());
+    const center=bounds.getCenter(new T.Vector3());
+    if(!Number.isFinite(size.x)||size.length()<.01)throw new Error('El modelo no contiene geometría visible.');
+
+    // Centre the loaded manufacturer's asset at the scene origin; do not rescale individual parts.
+    root.position.sub(center);
+    root.updateMatrixWorld(true);
+    const localBounds=new T.Box3().setFromObject(root);
+    const sphere=localBounds.getBoundingSphere(new T.Sphere());
+    floor.position.y=localBounds.min.y-.012*Math.max(1,sphere.radius/5);
+    let tankRoot=null;
+    root.traverse(object=>{
+      if(tankRoot)return;
+      const name=[object.name,object.userData.displayName].join(' ').toLowerCase();
+      if(/belly|tank|fuel|deposit|depósito/.test(name)&&collectCandidateMeshes(object).length)tankRoot=object;
+    });
+    function collectCandidateMeshes(object){
+      const list=[];if(object?.isMesh)list.push(object);else object?.traverse?.(child=>{if(child.isMesh)list.push(child);});return list;
     }
-    function frameSphere(sphere,mode,smooth=true){
-      activeSphere=sphere;activeView=mode;
-      const distance=fitDistance(sphere);
-      cameraGoal.copy(sphere.center).addScaledVector(viewDirection,distance);
-      targetGoal.copy(sphere.center);
-      controls.minDistance=Math.max(2.7,sphere.radius*1.04);
-      controls.maxDistance=Math.max(controls.minDistance+4,sphere.radius*4.5);
-      if(smooth)cameraTransition=true;
-      else{camera.position.copy(cameraGoal);controls.target.copy(targetGoal);cameraTransition=false;}
+    if(!tankRoot)tankRoot=parts.find(part=>/belly|tank|fuel|deposit|depósito/i.test([part.name,part.userData.displayName].join(' ')))||null;
+
+    const direction=new T.Vector3(1,.35,1.15).normalize();
+    function fit(boxOrSphere,smooth=true){
+      const s=boxOrSphere.isSphere?boxOrSphere:boxOrSphere.getBoundingSphere(new T.Sphere());
+      const aspect=Math.max(.5,canvas.clientWidth/Math.max(1,canvas.clientHeight));
+      const halfV=T.MathUtils.degToRad(camera.fov/2);
+      const halfH=Math.atan(Math.tan(halfV)*aspect);
+      const distance=s.radius/Math.sin(Math.min(halfV,halfH))*1.28;
+      const nextCamera=s.center.clone().addScaledVector(direction,distance);
+      controls.minDistance=Math.max(.25,s.radius*1.03);
+      controls.maxDistance=Math.max(controls.minDistance+1,s.radius*6);
+      if(smooth){
+        camera.position.lerp(nextCamera,.001);
+        targetCamera.copy(nextCamera);targetTarget.copy(s.center);
+        cameraMoving=true;
+      }else{
+        camera.position.copy(nextCamera);controls.target.copy(s.center);
+        targetCamera.copy(nextCamera);targetTarget.copy(s.center);cameraMoving=false;
+      }
       controls.update();
     }
-    frameSphere(wholeSphere,'full',false);
-    const toggle=document.getElementById('autoRotate'),reset=document.getElementById('resetView'),tank=document.getElementById('focusTank');
-    const zoomIn=document.getElementById('zoomIn'),zoomOut=document.getElementById('zoomOut');
-    const updateToggle=()=>{toggle.setAttribute('aria-pressed',String(controls.autoRotate));toggle.textContent=controls.autoRotate?'Pausar giro':'Reanudar giro';};
-    updateToggle();
-    toggle.addEventListener('click',()=>{controls.autoRotate=!controls.autoRotate;updateToggle();});
-    tank.addEventListener('click',()=>{
-      const entering=activeView!=='tank';tank.setAttribute('aria-pressed',String(entering));
-      tank.textContent=entering?'Vista completa':'Belly tank';controls.autoRotate=false;updateToggle();
-      frameSphere(entering?tankSphere:wholeSphere,entering?'tank':'full',true);
-    });
-    reset.addEventListener('click',()=>{
-      tank.setAttribute('aria-pressed','false');tank.textContent='Belly tank';
-      frameSphere(wholeSphere,'full',true);controls.autoRotate=true;updateToggle();
-    });
-    function zoomBy(factor){
-      const offset=camera.position.clone().sub(controls.target).multiplyScalar(factor),distance=offset.length();
-      if(distance>=controls.minDistance&&distance<=controls.maxDistance){
-        camera.position.copy(controls.target).add(offset);cameraGoal.copy(camera.position);
-        cameraTransition=false;controls.update();
-      }
+
+    const targetCamera=new T.Vector3(),targetTarget=new T.Vector3();
+    let cameraMoving=false,selected=null,visible=true,lastSelectedName='Modelo completo';
+    fit(sphere,false);
+    const selectedMeshes=[];
+    function collectMeshes(object){
+      const found=[];
+      if(object?.isMesh)found.push(object);
+      else object?.traverse?.(child=>{if(child.isMesh)found.push(child);});
+      return found;
     }
-    zoomIn.addEventListener('click',()=>zoomBy(.88));zoomOut.addEventListener('click',()=>zoomBy(1.14));
-    canvas.addEventListener('wheel',event=>{event.preventDefault();zoomBy(event.deltaY>0?1.07:.93);},{passive:false});
-    controls.addEventListener('start',()=>{cameraTransition=false;controls.autoRotate=false;updateToggle();});
+    function clearSelection(){
+      selectedMeshes.forEach(mesh=>{
+        const mats=originalMaterials.get(mesh);
+        if(mats)mesh.material=Array.isArray(mesh.material)?mats.map(m=>m.clone()):mats[0].clone();
+      });
+      selectedMeshes.length=0;selected=null;
+    }
+    function selectObject(object,label){
+      clearSelection();
+      if(!object){
+        selectionInfo.textContent='CONJUNTO COMPLETO · SIN PIEZA AISLADA';
+        lastSelectedName='Conjunto completo';return;
+      }
+      selected=object;
+      const meshes=collectMeshes(object);
+      meshes.forEach(mesh=>{
+        const current=Array.isArray(mesh.material)?mesh.material:[mesh.material];
+        const highlighted=current.map(material=>{
+          const clone=material.clone();
+          if(clone.emissive){clone.emissive.set('#3e8798');clone.emissiveIntensity=.28;}
+          return clone;
+        });
+        mesh.material=Array.isArray(mesh.material)?highlighted:highlighted[0];
+        selectedMeshes.push(mesh);
+      });
+      lastSelectedName=label||object.userData.displayName||object.name||'Componente';
+      selectionInfo.textContent='SELECCIÓN 3D · '+lastSelectedName;
+    }
 
     const raycaster=new T.Raycaster(),pointer=new T.Vector2();
-    const partLabel=document.createElement('div');partLabel.className='model-hover-label';
-    partLabel.setAttribute('aria-live','polite');partLabel.textContent='Explora el conjunto';stage.appendChild(partLabel);
-    canvas.addEventListener('pointermove',event=>{
+    canvas.addEventListener('pointerup',event=>{
       if(event.pointerType==='touch')return;
       const rect=canvas.getBoundingClientRect();
       pointer.set(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
       raycaster.setFromCamera(pointer,camera);
-      const hit=raycaster.intersectObject(model,true)[0];
-      if(!hit){partLabel.classList.remove('is-visible');return;}
-      const y=hit.object.getWorldPosition(new T.Vector3()).y;
-      partLabel.textContent=hit.object.userData.part||(y<1.12?'BELLY TANK · BASTIDOR':y>4.1?'SILENCIADOR · MÓDULO SUPERIOR':'ENVOLVENTE · ACCESOS TÉCNICOS');
-      partLabel.classList.add('is-visible');
+      const hit=raycaster.intersectObjects(parts,false)[0];
+      selectObject(hit?hit.object:null);
     });
-    canvas.addEventListener('pointerleave',()=>partLabel.classList.remove('is-visible'));
+
+    const toggle=document.getElementById('autoRotate');
+    const reset=document.getElementById('resetView');
+    const tank=document.getElementById('focusTank');
+    const zoomIn=document.getElementById('zoomIn');
+    const zoomOut=document.getElementById('zoomOut');
+    const selectWhole=document.getElementById('selectWhole');
+    selectWhole.addEventListener('click',()=>{selectObject(root,'CONJUNTO COMPLETO');fit(sphere,true);controls.autoRotate=false;syncToggle();});
+    const syncToggle=()=>{toggle.setAttribute('aria-pressed',String(controls.autoRotate));toggle.textContent=controls.autoRotate?'Pausar giro':'Reanudar giro';};
+    syncToggle();
+    toggle.addEventListener('click',()=>{controls.autoRotate=!controls.autoRotate;syncToggle();});
+    reset.addEventListener('click',()=>{selectObject(null);tank.setAttribute('aria-pressed','false');tank.textContent='Belly tank';fit(sphere,true);controls.autoRotate=true;syncToggle();});
+    tank.addEventListener('click',()=>{
+      if(!tankRoot){
+        selectionInfo.textContent='BELLY TANK · El modelo GLB debe incluir el nombre de esta pieza para enfocarla.';
+        return;
+      }
+      selectObject(tankRoot,'BELLY TANK · '+(tankRoot.name||'DEPÓSITO'));
+      const b=new T.Box3().setFromObject(tankRoot);
+      fit(b,true);controls.autoRotate=false;syncToggle();
+      tank.setAttribute('aria-pressed','true');tank.textContent='Pieza seleccionada';
+    });
+    function zoomBy(factor){
+      const offset=camera.position.clone().sub(controls.target).multiplyScalar(factor);
+      const distance=offset.length();
+      if(distance>=controls.minDistance&&distance<=controls.maxDistance){
+        camera.position.copy(controls.target).add(offset);controls.update();
+      }
+    }
+    zoomIn.addEventListener('click',()=>zoomBy(.88));
+    zoomOut.addEventListener('click',()=>zoomBy(1.14));
+    controls.addEventListener('start',()=>{cameraMoving=false;controls.autoRotate=false;syncToggle();});
+
     const resize=()=>{
-      const rect=canvas.getBoundingClientRect();if(rect.width<2||rect.height<2)return;
-      renderer.setSize(rect.width,rect.height,false);camera.aspect=rect.width/rect.height;camera.updateProjectionMatrix();
-      frameSphere(activeSphere,activeView,true);
+      const r=canvas.getBoundingClientRect();if(r.width<2||r.height<2)return;
+      renderer.setSize(r.width,r.height,false);
+      camera.aspect=r.width/r.height;camera.updateProjectionMatrix();
+      fit(selected?new T.Box3().setFromObject(selected):sphere,true);
     };
     if('ResizeObserver' in window)new ResizeObserver(resize).observe(stage);
     else window.addEventListener('resize',resize,{passive:true});
-    resize();stage.classList.add('webgl-ready');
-    document.getElementById('focusModel').addEventListener('click',()=>{
-      tank.setAttribute('aria-pressed','false');tank.textContent='Belly tank';
-      frameSphere(wholeSphere,'full',true);controls.autoRotate=false;updateToggle();
-      stage.scrollIntoView({behavior:'smooth',block:'center'});
-    });
-    const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;},{threshold:.02});
+    resize();
+    stage.classList.add('model-ready');
+    stage.classList.remove('model-awaiting-source','model-load-error');
+    state.hidden=true;
+
+    observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;},{threshold:.02});
     observer.observe(stage);
     const clock=new T.Clock();
     function frame(){
       requestAnimationFrame(frame);
       if(!visible||document.hidden)return;
       const delta=Math.min(clock.getDelta(),.05);
-      if(cameraTransition){
-        camera.position.lerp(cameraGoal,.085);controls.target.lerp(targetGoal,.085);
-        if(camera.position.distanceTo(cameraGoal)<.012&&controls.target.distanceTo(targetGoal)<.012)cameraTransition=false;
+      if(cameraMoving){
+        camera.position.lerp(targetCamera,.09);
+        controls.target.lerp(targetTarget,.09);
+        if(camera.position.distanceTo(targetCamera)<.01&&controls.target.distanceTo(targetTarget)<.01)cameraMoving=false;
       }
       controls.update(delta);renderer.render(scene,camera);
     }
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden)resize();});
     requestAnimationFrame(frame);
-    window.addEventListener('pagehide',()=>{observer.disconnect();controls.dispose();renderer.dispose();},{once:true});
-  }catch(err){console.warn('Three.js viewer fallback:',err);try{renderer?.dispose()}catch(_){}stage.classList.remove('webgl-ready')}
+    window.addEventListener('pagehide',()=>{observer?.disconnect();controls.dispose();renderer.dispose();},{once:true});
+  }catch(error){
+    console.error('No se pudo cargar el modelo técnico:',error);
+    stage.classList.remove('model-ready');
+    stage.classList.add('model-load-error');
+    state.hidden=false;
+    state.querySelector('strong').textContent='No se ha podido cargar el modelo 3D';
+    state.querySelector('p').textContent='Comprueba que el archivo GLB/GLTF esté en la ruta indicada y que conserve las piezas separadas y sus nombres. No se mostrará una imagen o una maqueta alternativa.';
+    state.querySelector('.model-state-note').textContent='El visor no sustituye el modelo real por una representación dibujada.';
+    if(renderer)renderer.dispose();
+  }
 })();
 </script>
 </body>
