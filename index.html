@@ -1476,11 +1476,11 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
     const logoLoader=new T.TextureLoader();
     const sideMap=logoLoader.load('assets/eurocontainer-side-logo-transparent.webp');
     sideMap.colorSpace=T.SRGBColorSpace;sideMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
-    const sideLogo=new T.Mesh(new T.PlaneGeometry(1.82,.38),new T.MeshBasicMaterial({
+    const sideLogo=new T.Mesh(new T.PlaneGeometry(2.10,.438),new T.MeshBasicMaterial({
       map:sideMap,transparent:true,alphaTest:.06,opacity:1,side:T.DoubleSide,depthWrite:false,toneMapped:false
     }));
     sideLogo.name='Serigrafía original Eurocontainer.es · lateral';
-    sideLogo.position.set(7.22,2.69,1.418);sideLogo.userData.component=sideLogo.name;sideLogo.renderOrder=4;branding.add(sideLogo);
+    sideLogo.position.set(7.20,2.70,1.418);sideLogo.userData.component=sideLogo.name;sideLogo.renderOrder=4;branding.add(sideLogo);
     const endMap=logoLoader.load('assets/eurocontainer-tower-logo-transparent.webp');
     endMap.colorSpace=T.SRGBColorSpace;endMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
     const endLogo=new T.Mesh(new T.PlaneGeometry(1.18,1.14),new T.MeshBasicMaterial({
