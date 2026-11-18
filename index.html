@@ -596,6 +596,24 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
+
+/* Technical viewer: refined glass selectors with no outlined capsules. */
+.model-view-modes{gap:clamp(12px,1.35vw,22px);padding:0;background:linear-gradient(90deg,rgba(7,18,26,.38),rgba(7,18,26,.08));backdrop-filter:blur(18px)}
+.model-view-modes button{font-size:10px;letter-spacing:.14em;white-space:nowrap}
+.model-controls{background:linear-gradient(90deg,rgba(7,18,26,.10),rgba(7,18,26,.34));backdrop-filter:blur(18px)}
+.model-controls button{font-size:10px;white-space:nowrap}
+.company-panel,.team-contact,.brand-tile{backdrop-filter:blur(18px) saturate(140%)}
+.company-panel h3,.team-contact h3,.tile-text strong{ text-shadow:0 2px 16px rgba(0,0,0,.38)}
+.company-intro,.company-list li,.team-details a,.team-details>div{ text-shadow:0 1px 10px rgba(0,0,0,.5)}
+@media(max-width:850px){
+ .model-view-modes{gap:12px;flex-wrap:wrap;max-width:94%}
+ .model-view-modes button{font-size:9px}
+}
+@media(max-width:520px){
+ .model-view-modes{gap:9px 12px;top:7%;max-width:96%}
+ .model-view-modes button{font-size:8px}
+}
+
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"}}</script>
 </head>
@@ -638,7 +656,8 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
       <div class="model-hover-label" id="modelHoverLabel" aria-live="polite"></div>
       <div class="model-view-modes" role="group" aria-label="Vistas del grupo electrógeno">
         <button type="button" data-model-view="exterior" aria-pressed="true">Exterior</button>
-        <button type="button" data-model-view="cutaway" aria-pressed="false">Interior / corte</button>
+        <button type="button" data-model-view="interior" aria-pressed="false">Interior</button>
+        <button type="button" data-model-view="cutaway" aria-pressed="false">Corte</button>
         <button type="button" data-model-view="tank" aria-pressed="false">Belly tank</button>
         <button type="button" data-model-view="exploded" aria-pressed="false">Despiece</button>
       </div>
@@ -860,13 +879,14 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
 
   let renderer,controls,observer;
   try{
-    const [T,{OrbitControls}]=await Promise.all([
+    const [T,{OrbitControls},{RoomEnvironment}]=await Promise.all([
       import('three'),
-      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/controls/OrbitControls.js')
+      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/controls/OrbitControls.js'),
+      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/environments/RoomEnvironment.js')
     ]);
 
     const scene=new T.Scene();
-    const camera=new T.PerspectiveCamera(29,1,.05,300);
+    const camera=new T.PerspectiveCamera(36,1,.05,500);
     renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});
     renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.75));
     renderer.outputColorSpace=T.SRGBColorSpace;
@@ -874,6 +894,10 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
     renderer.toneMappingExposure=1.12;
     renderer.shadowMap.enabled=true;
     renderer.shadowMap.type=T.PCFSoftShadowMap;
+    const pmrem=new T.PMREMGenerator(renderer);
+    const studio=new RoomEnvironment(renderer);
+    scene.environment=pmrem.fromScene(studio).texture;
+    studio.dispose();pmrem.dispose();
 
     scene.add(new T.HemisphereLight(0xf1f5f6,0x39434a,1.7));
     const key=new T.DirectionalLight(0xfff8ec,3.35);
@@ -1084,6 +1108,26 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
     box(alternator,'Caja de bornes de alternador',.36,.25,.33,6.40,1.77,.1,materials.cabinet);
     equipmentLabel(engine,'Placa motor OEM configurable','MOTOR DIÉSEL','ROLLS-ROYCE / CAT / CUMMINS · OEM POR CONFIRMAR',1.50,.28,4.55,1.02,.72);
 
+    // Secondary engine hardware: oil/fuel filters, injection rail, rigid injector lines and service fittings.
+    const engineAncillaries=part('10.1D · FILTRACIÓN, INYECCIÓN Y ACCESORIOS DEL MOTOR',engine);
+    cylinder(engineAncillaries,'Filtro de aceite principal',.12,.48,3.10,1.13,.79,materials.silver,'y',40);
+    cylinder(engineAncillaries,'Filtro secundario de combustible',.10,.40,3.42,1.15,.78,materials.cabinet,'y',36);
+    cylinder(engineAncillaries,'Separador de agua del gasóleo',.115,.42,3.72,1.14,.79,materials.silver,'y',36);
+    cylinder(engineAncillaries,'Bomba de alimentación de gasóleo',.15,.26,4.95,1.18,.76,materials.engine,'z',36);
+    box(engineAncillaries,'Soporte del filtro de combustible',.52,.08,.30,3.43,.86,.78,materials.frame);
+    box(engineAncillaries,'Colector de inyección common rail',2.18,.12,.12,4.35,2.18,.70,materials.silver);
+    for(let i=0;i<8;i++){
+      const x=3.17+i*.335;
+      tube(engineAncillaries,'Tubo rígido de inyector '+(i+1),[[x,2.18,.70],[x,2.32,.59],[x,2.32,.34],[x,2.08,.22]],.018,materials.fuelPipe);
+      cylinder(engineAncillaries,'Racor inyector '+(i+1),.036,.055,x,2.04,.22,materials.silver,'y',16);
+    }
+    tube(engineAncillaries,'Latiguillo flexible de combustible',[[4.95,1.18,.76],[5.15,1.28,.70],[5.45,1.27,.65],[5.58,1.58,.62]],.045,materials.rubber);
+    tube(engineAncillaries,'Manguera de refrigeración superior',[[3.1,1.72,-.48],[3.02,2.18,-.54],[3.22,2.37,-.54],[3.55,2.38,-.42]],.055,materials.rubber);
+    tube(engineAncillaries,'Manguera de refrigeración inferior',[[5.12,1.02,-.48],[5.35,.88,-.53],[5.66,.92,-.4],[5.75,1.16,-.34]],.052,materials.rubber);
+    for(const x of [3.15,3.75,4.35,4.95,5.55]){
+      cylinder(engineAncillaries,'Tornillo de culata visible',.025,.035,x,2.23,.66,materials.edge,'z',12);
+    }
+
     const engineController=part('10.1C · CUADRO DE MOTOR INTEGRADO',engine);
     box(engineController,'Caja de control de motor',.62,.48,.20,3.80,1.63,.76,materials.cabinet);
     box(engineController,'Pantalla control motor',.31,.16,.025,3.80,1.71,.875,materials.screen);
@@ -1121,6 +1165,9 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
     const fuelSystem=part('10.3 · CIRCUITO DE COMBUSTIBLE Y SEGURIDAD',interior);
     tube(fuelSystem,'Tubería de entrada de combustible',[[1.8,.70,.82],[2.10,.98,.85],[2.75,1.05,.82],[3.28,1.05,.72],[3.55,1.35,.70]],.045,materials.fuelPipe);
     tube(fuelSystem,'Tubería de retorno de combustible',[[3.72,1.26,.73],[3.42,.92,.82],[2.72,.88,.88],[2.18,.78,.92],[1.85,.62,.88]],.04,materials.fuelReturn);
+    tube(fuelSystem,'Línea de aspiración belly tank a motor',[[6.25,.58,.74],[6.25,.82,.92],[5.95,1.03,.93],[5.72,1.13,.76],[5.42,1.23,.72]],.055,materials.fuelPipe);
+    tube(fuelSystem,'Línea de retorno motor a belly tank',[[5.42,1.04,.70],[5.82,.88,.92],[6.15,.74,1.02],[6.42,.62,.98],[6.58,.52,.88]],.048,materials.fuelReturn);
+    tube(fuelSystem,'Conducto de venteo tanque a exterior',[[6.25,.75,-.44],[6.25,1.18,-.80],[6.55,1.42,-1.10],[7.10,1.45,-1.12]],.035,materials.silver);
     const fireValve=part('10.3A · FIRE VALVE',fuelSystem);
     cylinder(fireValve,'Cuerpo de fire valve',.12,.24,2.18,.95,.86,materials.red,'z',32);
     box(fireValve,'Palanca fire valve',.045,.38,.045,2.18,1.18,.86,materials.red);
@@ -1140,6 +1187,9 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
     tube(safety,'Cable sonda incendio / señal',[[2.0,2.62,-.3],[2.0,2.48,-.75],[2.05,2.35,-.98],[2.05,2.0,-.98]],.018,materials.cableControl);
     tube(safety,'Cable HYTEK hacia cuadro de datos',[[3.05,1.08,1.04],[3.05,1.55,.85],[2.7,2.20,.55],[2.05,2.48,-.82]],.018,materials.cableControl);
     tube(safety,'Cable T5020 hacia Fuel Panel',[[4.02,1.08,1.04],[4.6,1.45,.75],[5.5,2.12,-.65],[6.48,2.43,-.82]],.018,materials.cablePhase);
+    tube(safety,'Enlace HYTEK belly tank a cuadro auxiliar',[[3.05,.95,.55],[3.10,1.18,.82],[2.75,1.72,-.74],[.85,2.25,-.82]],.021,materials.cableControl);
+    tube(safety,'Enlace T5020 belly tank a cuadro Davenham',[[4.02,.95,.55],[4.55,1.22,.72],[6.05,1.84,-.76],[7.64,2.26,-.82]],.021,materials.cablePhase);
+    tube(safety,'Cable de sonda de sobrellenado al Fuel Panel',[[1.72,1.22,.34],[2.20,1.55,.18],[4.85,2.18,-.73],[6.48,2.35,-.82]],.020,materials.cableControl);
 
     // Power cabling to the engine and fluorescent/emergency lighting.
     const power=part('10.5 · CABLEADO DE POTENCIA E ILUMINACIÓN',interior);
@@ -1250,12 +1300,13 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
     const originalMaterials=new Map(allMeshes.map(mesh=>[mesh,mesh.material]));
     function frameGroup(group,smooth=true){
       activeGroup=group;
-      const bounds=new T.Box3().setFromObject(group);
+      const bounds=new T.Box3();
+      (Array.isArray(group)?group:[group]).forEach(item=>bounds.union(new T.Box3().setFromObject(item)));
       const sphere=bounds.getBoundingSphere(new T.Sphere());
       const aspect=Math.max(.48,canvas.clientWidth/Math.max(1,canvas.clientHeight));
       const halfV=T.MathUtils.degToRad(camera.fov/2);
       const halfH=Math.atan(Math.tan(halfV)*aspect);
-      const distance=sphere.radius/Math.sin(Math.min(halfV,halfH))*1.30;
+      const distance=sphere.radius/Math.sin(Math.min(halfV,halfH))*1.13;
       const target=sphere.center.clone();
       const direction=group===tank?tankViewDirection:viewDirection;
       const position=target.clone().addScaledVector(direction,distance);
@@ -1375,14 +1426,15 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
       if(mode==='cutaway'){
         frontWall.visible=false;roofGroup.visible=false;towerFront.visible=false;
         doors.visible=false;vents.visible=false;interior.visible=true;tankSystems.visible=true;
+        chassis.visible=true;
       }else if(mode==='interior'){
         main.visible=false;tower.visible=false;doors.visible=false;exhaust.visible=false;
         vents.visible=false;locks.visible=false;branding.visible=false;
-        interior.visible=true;tankSystems.visible=true;
+        interior.visible=true;tankSystems.visible=true;chassis.visible=false;
       }else if(mode==='tank'){
         main.visible=false;tower.visible=false;doors.visible=false;exhaust.visible=false;
         vents.visible=false;locks.visible=false;branding.visible=false;
-        interior.visible=false;tankSystems.visible=true;
+        interior.visible=false;tankSystems.visible=true;chassis.visible=false;
       }else if(mode==='exploded'){
         frontWall.visible=false;roofGroup.visible=false;towerFront.visible=false;doors.visible=true;
         interior.visible=true;tankSystems.visible=true;
@@ -1400,10 +1452,10 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
         if(shouldFrame)frameGroup(root,true);
       }else if(mode==='cutaway'){
         selectionInfo.textContent='VISTA DE CORTE · Motor, cuadros, cableado, combustible y sensores';
-        if(shouldFrame)frameGroup(interior,true);
+        if(shouldFrame)frameGroup([interior,tankSystems],true);
       }else if(mode==='interior'){
-        selectionInfo.textContent='VISTA INTERIOR · Equipos eléctricos y electromecánicos';
-        if(shouldFrame)frameGroup(interior,true);
+        selectionInfo.textContent='VISTA INTERIOR · Motor, alternador, cuadros, cableado y alumbrado';
+        if(shouldFrame)frameGroup([interior,tankSystems],true);
       }else if(mode==='tank'){
         selectionInfo.textContent='BELLY TANK · HYTEK · T5020 · FUEL POLISHER · SONDAS';
         if(shouldFrame)frameGroup(tank,true);
