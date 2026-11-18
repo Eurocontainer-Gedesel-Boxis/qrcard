@@ -320,6 +320,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 .model-stage.model-ready #container3d{opacity:1}
 .model-stage.model-ready .model-unavailable{display:none}
 .model-stage:not(.model-ready) .model-controls,.model-stage:not(.model-ready) .model-selection-info,.model-stage:not(.model-ready) .stage-hint{display:none!important}
+.model-hover-label{display:block!important;position:absolute;z-index:6;left:3%;top:auto;bottom:14%;max-width:70%;padding:0;border:0;background:transparent;color:#b7dce4;font-size:8px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s;pointer-events:none}.model-hover-label.is-visible{opacity:1;transform:translateY(0)}
 .model-selection-info{position:absolute;z-index:5;left:3%;bottom:5%;padding:0;background:transparent;color:#a8c0ca;font-size:8px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;pointer-events:none}
 .model-hover-label{display:none!important}
 .model-tag{display:none!important}
@@ -494,6 +495,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       <canvas id="container3d" tabindex="0" aria-label="Modelo tridimensional de la unidad Eurocontainer basado en las fotografías aportadas. Arrastra para orbitar 360 grados, usa la rueda para acercar y selecciona puertas, torre, escape, bastidor y depósito inferior."></canvas>
       <div class="model-stage-top"><span class="stage-caption">EUROCONTAINER · RECONSTRUCCIÓN 3D FOTOGRÁFICA</span><span class="stage-index">EC<span>/</span>01</span></div>
       <div class="model-selection-info" id="modelSelectionInfo" aria-live="polite">CONJUNTO COMPLETO · Selecciona un componente</div>
+      <div class="model-hover-label" id="modelHoverLabel" aria-live="polite"></div>
       <div class="stage-hint">Órbita 360° · Zoom · Selección individual de componentes</div>
       <div class="model-controls" aria-label="Controles del modelo 3D">
         <button type="button" id="autoRotate" aria-pressed="true">Pausar giro</button>
@@ -904,8 +906,8 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 
     // Side access doors and latches visible on the long wall.
     const doors=part('05 · PUERTAS Y REGISTROS DE MANTENIMIENTO');
-    addDoor(doors,'Puerta técnica principal',2.55,1.77,1.42,.88,1.72);
-    addDoor(doors,'Puerta de servicio secundaria',6.10,1.80,1.42,.72,1.52);
+    addDoor(doors,'Puerta técnica principal',2.55,1.65,1.42,.88,1.42);
+    addDoor(doors,'Puerta de servicio secundaria',6.10,1.68,1.42,.72,1.38);
     addDoor(doors,'Registro eléctrico auxiliar',7.13,1.20,1.425,.42,.66);
 
     // Roof-mounted black acoustic exhaust silencer and its supports.
@@ -931,7 +933,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 
     // Corner castings and transport locks at both visible tower and container edges.
     const locks=part('08 · ESQUINEROS Y CIERRES DE TRANSPORTE');
-    for(const x of [-2.20,0.08,8.52])for(const y of [.42,2.84,4.68,6.70])for(const z of [-1.32,1.32]){
+    for(const x of [-2.20,0.08,8.52])for(const y of [.42,2.84,4.68,5.82])for(const z of [-1.32,1.32]){
       if(y>3.0&&x>0.1)continue;
       box(locks,'Esquinero de fundición',.16,.18,.16,x,y,z,materials.edge);
       cylinder(locks,'Perno de cierre',.035,.03,x,y,z+(z>0?.09:-.09),materials.dark,'z',16);
@@ -1015,8 +1017,22 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     }
 
     const raycaster=new T.Raycaster(),pointer=new T.Vector2();
+    const hoverLabel=document.getElementById('modelHoverLabel');
     let pointerStart=null;
     canvas.addEventListener('pointerdown',event=>{pointerStart={x:event.clientX,y:event.clientY};});
+    canvas.addEventListener('pointermove',event=>{
+      if(event.pointerType==='touch'||pointerStart)return;
+      const rect=canvas.getBoundingClientRect();
+      pointer.set(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
+      raycaster.setFromCamera(pointer,camera);
+      const hit=raycaster.intersectObjects(allMeshes,false)[0];
+      if(!hit){hoverLabel.classList.remove('is-visible');canvas.style.cursor='grab';return;}
+      let target=hit.object.parent;
+      while(target&&target!==root&&!target.userData.selectablePart)target=target.parent;
+      hoverLabel.textContent=(target&&target!==root?target.name:'CONJUNTO EUROCONTAINER')+' · CLIC PARA SELECCIONAR';
+      hoverLabel.classList.add('is-visible');canvas.style.cursor='pointer';
+    });
+    canvas.addEventListener('pointerleave',()=>{hoverLabel.classList.remove('is-visible');canvas.style.cursor='grab';});
     canvas.addEventListener('pointerup',event=>{
       if(!pointerStart)return;
       const moved=Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y);
