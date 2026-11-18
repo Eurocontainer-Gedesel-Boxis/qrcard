@@ -368,6 +368,27 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 .platform-footer{border-top:0!important}
 .platform-footer nav a{border:0!important}
 
+
+/* Flatten remaining interface chrome for one uninterrupted glass-first language. */
+.action-primary,.action-quiet,.nav-cta{
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  background:rgba(212,235,243,.075)!important;color:#edf7fa!important;
+  backdrop-filter:blur(20px) saturate(145%);padding-left:15px;padding-right:15px
+}
+.action-primary:hover,.action-quiet:hover,.nav-cta:hover{
+  background:rgba(130,204,220,.15)!important;transform:translateY(-2px);
+  box-shadow:none!important
+}
+.action-primary:after,.action-quiet:after,.nav-cta:after{display:none!important}
+.main-brand span{border-left:0!important;padding-left:0!important}
+.hero-stats{border-top:0!important;border-bottom:0!important}
+.hero-stat+.hero-stat{border-left:0!important}
+.company-fact{background:transparent!important;padding-left:0;padding-right:10px}
+.company-contact{border-top:0!important;padding-top:16px!important}
+.company-panel,.team-contact{outline:0!important}
+.team-heading{border:0!important}
+.team-card-actions{border-top:0!important}
+
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"}}</script>
 </head>
@@ -710,6 +731,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     root.updateMatrixWorld(true);
     const localBounds=new T.Box3().setFromObject(root);
     const sphere=localBounds.getBoundingSphere(new T.Sphere());
+    floor.position.y=localBounds.min.y-.012*Math.max(1,sphere.radius/5);
     const tankParts=parts.filter(part=>/belly|tank|fuel|deposit|dep[oó]sito/i.test(
       [part.name,part.parent?.name,part.userData.displayName].join(' ')
     ));
