@@ -37,7 +37,7 @@
     .nav{display:flex;align-items:center;gap:clamp(17px,2.4vw,34px)}
     .nav a{position:relative;text-decoration:none;color:#fff;text-transform:uppercase;font-size:9px;letter-spacing:.16em;font-weight:900;text-shadow:0 2px 12px rgba(0,24,39,.45);transition:color .2s}
     .nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--cyan);transition:right .25s}
-    .nav a:hover{color:#b9f2ff}.nav a:hover:after{right:0}
+    .nav a:hover{color:#b9f2ff}.nav a:hover:after,.nav a.is-active:after{right:0}.nav a.is-active{color:#b9f2ff}
 
     .hero{position:relative;min-height:min(890px,100svh);min-height:max(720px,100svh);display:grid;grid-template-columns:minmax(310px,.84fr) minmax(0,1.16fr);align-items:center;padding:114px max(32px,calc((100% - var(--max))/2)) 164px;isolation:isolate;overflow:hidden;background:#cfe2eb}
     .hero:before{content:"";position:absolute;inset:0;z-index:-3;background:url("assets/eurocontainer-daylight-wide.webp") center 52%/cover no-repeat;transform:scale(1.012);filter:saturate(1.08) contrast(1.025)}
@@ -58,7 +58,7 @@
     #container3d{opacity:0;transition:opacity .3s}
     .visual-wrap.webgl-ready .visual-fallback{opacity:0}
     .visual-wrap.webgl-ready #container3d{opacity:1}
-    .visual-wrap.fallback .visual-fallback{opacity:1}
+    .visual-wrap.fallback .visual-fallback{opacity:0}
     .visual-wrap.fallback #container3d{opacity:0}
     .visual-controls,.drag-label{opacity:0;pointer-events:none;transition:opacity .25s}
     .visual-wrap.webgl-ready .visual-controls,.visual-wrap.webgl-ready .drag-label{opacity:1;pointer-events:auto}
@@ -182,21 +182,131 @@
       .footer{padding:18px 16px;display:block;line-height:1.7}.footer-links{margin-top:10px;gap:12px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.access-card,.contact-card,.cap-card,.brand-link{transition:none}#container3d{cursor:default}}
+
+    /* --- Corporate glass system: sharp edges, complete marks, no solid logo tiles. --- */
+    .scroll-progress{position:fixed;z-index:60;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,#4dd4f0,#f07842,#67d2e7);box-shadow:0 0 16px rgba(80,211,237,.55);pointer-events:none}
+    .brandline{display:flex;align-items:center;gap:8px}
+    .brand-link{height:54px;min-width:0;padding:8px 14px;display:flex;align-items:center;justify-content:center;background:rgba(5,36,54,.42);border:1px solid rgba(255,255,255,.56);box-shadow:0 9px 28px rgba(4,31,46,.14),inset 0 1px rgba(255,255,255,.36);backdrop-filter:blur(18px) saturate(145%);clip-path:none;transition:transform .3s,border-color .3s,background .3s}
+    .brand-link:hover{transform:translateY(-3px);background:rgba(5,36,54,.42);border-color:rgba(255,255,255,.82)}
+    .brand-lockup{display:flex;align-items:center;gap:10px;min-width:0;color:#fff;white-space:nowrap}
+    .brand-symbol{display:grid;place-items:center;flex:0 0 auto;width:36px;height:36px;color:#fff}
+    .brand-symbol svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .brand-word{display:flex;align-items:center;gap:3px;color:#fff;font-weight:900;letter-spacing:-.045em;line-height:1}
+    .boxis-word b{font-size:22px;letter-spacing:-.07em}
+    .boxis-word em{font-size:9px;font-weight:650;line-height:1.05;letter-spacing:.01em;font-style:italic;opacity:.92}
+    .euro-symbol{color:#ff9a68}.euro-symbol svg{stroke:none;overflow:visible}.euro-symbol .ec-mark-grey{fill:#aeb7bc}.euro-symbol .ec-mark-orange{fill:#ed713c}
+    .euro-word{font-size:17px;letter-spacing:-.055em}
+    .euro-word span{color:#ff9a68;font-size:.74em;align-self:flex-end;margin-bottom:1px}
+    .gedesel-symbol{width:auto;height:auto;display:block;color:#82e2f4;font-size:24px;font-weight:950;letter-spacing:-.1em}
+    .gedesel-word{font-size:17px;letter-spacing:.01em}
+    .brand-link.euro,.brand-link.gedesel,.brand-link.boxis{min-width:0;background:rgba(5,36,54,.42)}
+    .brand-link .brand-lockup{gap:8px}
+    .brand-link .brand-symbol{width:28px;height:28px}
+    .brand-link .boxis-word b{font-size:19px}.brand-link .boxis-word em{font-size:8px}
+    .brand-link .euro-word,.brand-link .gedesel-word{font-size:14px}
+    .brand-link .gedesel-symbol{font-size:21px}
+    .nav a{font-size:9px;letter-spacing:.14em}
+
+    .hero{padding-bottom:184px}
+    .visual-wrap{filter:drop-shadow(0 20px 32px rgba(6,35,52,.16))}
+    .visual-controls{display:flex;flex-wrap:wrap;gap:4px;padding:5px;background:rgba(4,30,45,.36);border:1px solid rgba(255,255,255,.38);backdrop-filter:blur(20px) saturate(145%);clip-path:none;box-shadow:0 12px 30px rgba(5,33,50,.18)}
+    .visual-controls button{height:32px;padding:0 11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);color:#fff;font-size:8px;letter-spacing:.085em;border-radius:0}
+    .visual-controls button:last-child{border-right:1px solid rgba(255,255,255,.12)}
+    .visual-controls button:hover,.visual-controls button[aria-pressed="true"]{background:rgba(111,220,240,.2);border-color:rgba(145,237,250,.55);color:#e9fcff}
+    .drag-label{padding:8px 11px;background:rgba(246,252,254,.16);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(14px);color:#164159}
+
+    .access-dock{gap:14px;bottom:0}
+    .access-card{--rx:0deg;--ry:0deg;--px:50%;--py:50%;position:relative;isolation:isolate;min-height:158px;padding:18px 20px;display:grid;grid-template-columns:minmax(132px,.82fr) minmax(0,1.18fr) 22px;align-items:center;gap:15px;overflow:hidden;color:#fff;text-decoration:none;background:rgba(5,32,49,.19);border:1px solid rgba(255,255,255,.58);border-radius:2px;backdrop-filter:blur(21px) saturate(155%);box-shadow:0 18px 38px rgba(4,31,48,.21),inset 0 1px rgba(255,255,255,.48),inset 0 -1px rgba(255,255,255,.15);clip-path:none;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+    .access-card:before{content:"";position:absolute;z-index:-2;inset:0;opacity:.88;background-image:linear-gradient(100deg,rgba(4,24,38,.78),rgba(4,29,45,.25)),var(--card-image);background-size:cover;background-position:var(--bg-position,center);transform:scale(1.015);transition:transform .7s,filter .5s}
+    .access-card:after{content:"";position:absolute;z-index:-1;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent,#62d6ed),transparent);box-shadow:0 0 18px var(--accent,#62d6ed);opacity:.95}
+    .access-card:hover{transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px);border-color:rgba(255,255,255,.9);box-shadow:0 26px 52px rgba(4,31,48,.29),inset 0 1px rgba(255,255,255,.62)}
+    .access-card:hover:before{transform:scale(1.055);filter:saturate(1.1)}
+    .access-card.boxis{--accent:#52d7f1;--card-image:url("assets/eurocontainer-daylight-wide.webp");--bg-position:18% 48%}
+    .access-card.euro{--accent:#f18550;--card-image:url("assets/eurocontainer-daylight-wide.webp");--bg-position:78% 55%}
+    .access-card.gedesel{--accent:#7eddeb;--card-image:none}
+    .access-card.gedesel:before{opacity:.9;background-image:radial-gradient(ellipse at 83% 16%,rgba(110,220,239,.3),transparent 36%),linear-gradient(120deg,rgba(5,34,53,.9),rgba(8,61,82,.65)),repeating-linear-gradient(135deg,rgba(144,230,244,.13) 0 1px,transparent 1px 18px),linear-gradient(35deg,#0b2c43,#164c62)}
+    .access-card.gedesel:after{background:linear-gradient(90deg,transparent,#80e3f2,transparent)}
+    .access-lockup{position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-start;gap:11px;min-width:0;max-width:100%;transform:translateZ(24px)}
+    .access-lockup .brand-symbol{width:43px;height:43px}
+    .access-lockup .boxis-word b{font-size:25px}
+    .access-lockup .boxis-word em{font-size:9px}
+    .access-lockup .euro-word{font-size:clamp(13px,.98vw,16px);letter-spacing:-.075em}
+    .access-lockup .gedesel-symbol{font-size:33px}
+    .access-lockup .gedesel-word{font-size:clamp(15px,1.25vw,19px);letter-spacing:.005em}
+    .access-copy{position:relative;z-index:1;min-width:0;transform:translateZ(18px)}
+    .access-copy small{display:block;margin:0 0 8px;color:#a9f0fb;font-size:9px;letter-spacing:.11em;text-transform:uppercase;font-weight:900;line-height:1.35}
+    .access-copy strong{display:block;color:#fff;font-size:clamp(16px,1.25vw,19px);line-height:1.08;letter-spacing:-.035em;font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.18)}
+    .access-copy em{display:block;margin-top:7px;color:rgba(250,253,255,.94);font-size:10px;line-height:1.5;font-style:normal;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+    .access-arrow{position:relative;z-index:1;align-self:center;display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.09);color:#fff;font-size:20px;line-height:1;transform:translateZ(30px);transition:transform .3s,background .3s,border-color .3s}
+    .access-card:hover .access-arrow{transform:translate(3px,-3px) translateZ(36px);background:rgba(255,255,255,.2);border-color:#fff}
+
+    /* The same complete typographic brand signatures are reused in the company cards. */
+    .cap-brand{height:45px;margin-bottom:18px;display:flex;align-items:center}
+    .cap-brand .brand-lockup{gap:10px;color:#10374f}
+    .cap-brand .brand-symbol{width:34px;height:34px;color:#0a4d6b}
+    .cap-brand .brand-word{color:#10374f}
+    .cap-brand .boxis-word b{font-size:22px}.cap-brand .boxis-word em{font-size:9px}
+    .cap-brand .euro-symbol{color:#e96e3d}.cap-brand .euro-word{font-size:17px}.cap-brand .euro-word span{color:#e96e3d}
+    .cap-brand .gedesel-symbol{color:#0c88a5;font-size:25px}.cap-brand .gedesel-word{font-size:18px}
+    .cap-brand.boxis{background:none;padding:0;width:auto;max-width:100%}
+    .cap-brand.boxis .brand-symbol{color:#087fa9}
+    .cap-card{position:relative;overflow:hidden}
+    .cap-card:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--px,50%) var(--py,50%),rgba(65,190,220,.14),transparent 42%);transition:opacity .3s}
+    .cap-card:hover:before{opacity:1}
+    .contact-card{--px:50%;--py:50%;overflow:hidden;backdrop-filter:blur(18px)}
+    .contact-card:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--px) var(--py),rgba(120,224,241,.18),transparent 42%);transition:opacity .3s}
+    .contact-card:hover:before{opacity:1}
+    .brand-link:focus-visible,.access-card:focus-visible,.cap-foot a:focus-visible,.nav a:focus-visible{outline:2px solid #7be4f4;outline-offset:4px}
+
+    @media(max-width:1100px){
+      .access-card{grid-template-columns:minmax(120px,.9fr) minmax(0,1.1fr) 20px;gap:12px;padding:16px;min-height:146px}
+      .access-lockup .brand-symbol{width:36px;height:36px}.access-lockup .boxis-word b{font-size:25px}.access-lockup .boxis-word em{font-size:9px}
+      .access-lockup .euro-word{font-size:15px}.access-lockup .gedesel-word{font-size:17px}.access-lockup .gedesel-symbol{font-size:27px}
+    }
+    @media(max-width:760px){
+      .topbar{background:rgba(7,38,56,.82);backdrop-filter:blur(18px);padding:11px 12px}
+      .brandline{width:100%;justify-content:center;gap:5px}
+      .brand-link{height:48px;min-height:48px;padding:6px 7px;flex:1;justify-content:center}
+      .brand-link .brand-lockup{gap:5px}.brand-link .brand-symbol{width:21px;height:21px}
+      .brand-link .boxis-word b{font-size:15px}.brand-link .boxis-word em{font-size:6px}
+      .brand-link .euro-word,.brand-link .gedesel-word{font-size:10px}.brand-link .gedesel-symbol{font-size:16px}
+      .nav{gap:15px}.nav a{font-size:7px;letter-spacing:.12em}
+      .hero{padding-bottom:300px}
+      .visual-wrap{height:285px;min-height:245px;margin-top:2px}
+      .visual-controls{left:1%;right:1%;bottom:2%;justify-content:center;gap:3px;padding:4px}
+      .visual-controls button{height:29px;padding:0 8px;font-size:7px}
+      .drag-label{left:2%;bottom:13%;font-size:6px;padding:6px 8px}
+      .access-dock{width:calc(100% - 24px);grid-template-columns:1fr;gap:7px;bottom:0}
+      .access-card{min-height:88px;grid-template-columns:115px minmax(0,1fr) 23px;padding:10px 12px;gap:10px}
+      .access-lockup{gap:6px}.access-lockup .brand-symbol{width:28px;height:28px}
+      .access-lockup .boxis-word b{font-size:20px}.access-lockup .boxis-word em{font-size:7px}
+      .access-lockup .euro-word{font-size:8.2px;letter-spacing:-.085em}.access-lockup .euro-symbol{width:23px;height:23px}.access-lockup .gedesel-symbol{font-size:23px}.access-lockup .gedesel-word{font-size:13px}
+      .access-copy small{font-size:6px;margin-bottom:4px;letter-spacing:.09em}.access-copy strong{font-size:13px}.access-copy em{font-size:7px;margin-top:4px;line-height:1.35}
+      .access-arrow{width:22px;height:22px;font-size:16px}
+      .cap-brand .brand-symbol{width:29px;height:29px}
+    }
+    @media(max-width:390px){
+      .brand-link .brand-symbol{width:18px;height:18px}.brand-link .brand-word{letter-spacing:-.065em}.brand-link .boxis-word b{font-size:13px}.brand-link .boxis-word em{font-size:5.5px}.brand-link .euro-word,.brand-link .gedesel-word{font-size:9px}
+      .access-card{grid-template-columns:105px minmax(0,1fr) 20px;padding:9px 10px;gap:8px}.access-lockup .boxis-word b{font-size:18px}.access-copy strong{font-size:12px}
+    }
+    @media(prefers-reduced-motion:reduce){.scroll-progress{display:none}.brand-link,.access-card,.access-card:before,.access-arrow,.contact-card,.cap-card{transition:none!important}}
+
   </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="page-shell">
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <header class="topbar" aria-label="Navegación principal">
-    <div class="brandline">
+    <div class="brandline" aria-label="Empresas colaboradoras">
       <a class="brand-link boxis" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Web oficial de BOX Integration Systems">
-        <img src="assets/boxis-logo-from-supplied-image.png" alt="BOX Integration Systems"><span class="brand-fallback">BOXIS</span>
+        <span class="brand-lockup boxis-lockup"><span class="brand-symbol boxis-symbol" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17Z"/><path d="m5 11.5 15 9 15-9M20 20.5V37"/><circle cx="20" cy="20" r="6.2"/><path d="M17 20h6m-3-3v6"/></svg></span><span class="brand-word boxis-word"><b>BOX</b><em>integration<br>systems</em></span></span>
       </a>
       <a class="brand-link euro" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Web oficial de Eurocontainer">
-        <img src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Eurocontainer" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="brand-fallback">Eurocontainer.es</span>
+        <span class="brand-lockup euro-lockup"><span class="brand-symbol euro-symbol" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="ec-mark-grey" d="M5 20 20 5l13 8-13 13Z"/><path class="ec-mark-orange" d="m8 21 9 9 19-21-5-3-14 16-5-5Z"/></svg></span><span class="brand-word euro-word">EUROCONTAINER<span>.es</span></span></span>
       </a>
       <a class="brand-link gedesel" href="https://gedesel.net/" target="_blank" rel="noopener" aria-label="Web oficial de E=Gedesel">
-        <img src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="E=Gedesel" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="brand-fallback">E=Gedesel</span>
+        <span class="brand-lockup gedesel-lockup"><span class="brand-symbol gedesel-symbol" aria-hidden="true">E=</span><span class="brand-word gedesel-word">GEDESEL</span></span>
       </a>
     </div>
     <nav class="nav">
@@ -220,24 +330,27 @@
         <img class="visual-fallback" src="assets/eurocontainer-daylight-wide.webp" alt="Instalación industrial y contenedor Eurocontainer durante el día">
         <div class="drag-label">Arrastra para girar · Explora el equipo</div>
         <div class="visual-controls" aria-label="Controles del modelo 3D">
-          <button id="rotateToggle" type="button" aria-pressed="true">Giro automático</button>
-          <button id="resetView" type="button">Restablecer vista</button>
+          <button id="rotateToggle" type="button" aria-pressed="true">Pausar giro</button>
+          <button id="tankFocus" type="button" aria-pressed="false">Ver belly tank</button>
+          <button id="zoomIn" type="button" aria-label="Acercar modelo">+</button>
+          <button id="zoomOut" type="button" aria-label="Alejar modelo">−</button>
+          <button id="resetView" type="button">Vista inicial</button>
         </div>
       </div>
       <div class="access-dock" id="empresas" aria-label="Accesos a las páginas web corporativas">
         <a class="access-card boxis tilt" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Visitar BOX Integration Systems">
-          <span class="access-logo boxis"><img src="assets/boxis-logo-from-supplied-image.png" alt="Logo BOX Integration Systems"></span>
-          <span class="access-copy"><small>Integración modular · Web corporativa</small><strong>BOX Integration Systems</strong><em>Diseño, fabricación e integración de equipos industriales.</em></span>
+          <span class="brand-lockup access-lockup boxis-lockup"><span class="brand-symbol boxis-symbol" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17Z"/><path d="m5 11.5 15 9 15-9M20 20.5V37"/><circle cx="20" cy="20" r="6.2"/><path d="M17 20h6m-3-3v6"/></svg></span><span class="brand-word boxis-word"><b>BOX</b><em>integration<br>systems</em></span></span>
+          <span class="access-copy"><small>INGENIERÍA · INTEGRACIÓN</small><strong>Diseño e integración</strong><em>Equipos industriales desarrollados a medida, desde la ingeniería hasta la puesta en servicio.</em></span>
           <span class="access-arrow" aria-hidden="true">↗</span>
         </a>
         <a class="access-card euro tilt" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Visitar Eurocontainer">
-          <span class="access-logo euro"><img src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Logo Eurocontainer" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="access-wordmark euro">Eurocontainer<span>.es</span></span></span>
-          <span class="access-copy"><small>Fabricación · Soluciones contenerizadas</small><strong>Eurocontainer</strong><em>Contenedores, cisternas y estructuras especiales a medida.</em></span>
+          <span class="brand-lockup access-lockup euro-lockup"><span class="brand-symbol euro-symbol" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="ec-mark-grey" d="M5 20 20 5l13 8-13 13Z"/><path class="ec-mark-orange" d="m8 21 9 9 19-21-5-3-14 16-5-5Z"/></svg></span><span class="brand-word euro-word">EUROCONTAINER<span>.es</span></span></span>
+          <span class="access-copy"><small>FABRICACIÓN · CONTENERIZACIÓN</small><strong>Contenedores industriales</strong><em>Contenedores, cisternas, belly tanks y soluciones especiales.</em></span>
           <span class="access-arrow" aria-hidden="true">↗</span>
         </a>
         <a class="access-card gedesel tilt" href="https://gedesel.net/" target="_blank" rel="noopener" aria-label="Visitar E=Gedesel">
-          <span class="access-logo gedesel"><img src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="Logo E=Gedesel" onerror="this.hidden=true;this.nextElementSibling.style.display='block'"><span class="access-wordmark gedesel">E=Gedesel</span></span>
-          <span class="access-copy"><small>Instalaciones eléctricas · Web corporativa</small><strong>E=Gedesel</strong><em>Ingeniería, instalaciones y mantenimiento AT/BT.</em></span>
+          <span class="brand-lockup access-lockup gedesel-lockup"><span class="brand-symbol gedesel-symbol" aria-hidden="true">E=</span><span class="brand-word gedesel-word">GEDESEL</span></span>
+          <span class="access-copy"><small>ENERGÍA · INSTALACIONES ELÉCTRICAS</small><strong>Ingeniería eléctrica AT/BT</strong><em>Ingeniería eléctrica, ejecución y mantenimiento para entornos industriales.</em></span>
           <span class="access-arrow" aria-hidden="true">↗</span>
         </a>
       </div>
@@ -252,7 +365,7 @@
         <div class="cap-grid">
           <article class="cap-card boxis reveal tilt">
             <div class="cap-index"><span>01 / INTEGRACIÓN</span></div>
-            <div class="cap-brand boxis"><img src="assets/boxis-logo-from-supplied-image.png" alt="BOX Integration Systems"><span class="cap-fallback">BOXIS</span></div>
+            <div class="cap-brand boxis"><span class="brand-lockup boxis-lockup"><span class="brand-symbol boxis-symbol" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17Z"/><path d="m5 11.5 15 9 15-9M20 20.5V37"/><circle cx="20" cy="20" r="6.2"/><path d="M17 20h6m-3-3v6"/></svg></span><span class="brand-word boxis-word"><b>BOX</b><em>integration<br>systems</em></span></span></div>
             <h3>Ingeniería e integración modular.</h3>
             <p>Diseño y fabricación de equipos modulares integrados para distintas líneas de actividad industrial.</p>
             <ul class="cap-list"><li>Energía y equipos industriales</li><li>Servicios en obra y telecomunicaciones</li><li>Cálculos estructurales, eléctricos y de potencia</li><li>Integración, pruebas FAT/SAT y puesta en servicio</li></ul>
@@ -260,7 +373,7 @@
           </article>
           <article class="cap-card euro reveal tilt">
             <div class="cap-index"><span>02 / CONTENERIZACIÓN</span></div>
-            <div class="cap-brand euro"><img src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Eurocontainer" onerror="this.hidden=true;this.nextElementSibling.style.display='inline-block'"><span class="cap-fallback euro">Eurocontainer<span>.es</span></span></div>
+            <div class="cap-brand euro"><span class="brand-lockup euro-lockup"><span class="brand-symbol euro-symbol" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="ec-mark-grey" d="M5 20 20 5l13 8-13 13Z"/><path class="ec-mark-orange" d="m8 21 9 9 19-21-5-3-14 16-5-5Z"/></svg></span><span class="brand-word euro-word">EUROCONTAINER<span>.es</span></span></span></div>
             <h3>Fabricación industrial a medida.</h3>
             <p>Diseño y fabricación de contenedores, cajas móviles, furgones, cisternas y elementos complementarios.</p>
             <ul class="cap-list"><li>Contenedores para energía y Data Center</li><li>Cisternas, belly tanks y soluciones especiales</li><li>Skids, estructuras y salas modulares</li><li>Mantenimiento, reparación e integración de sistemas</li></ul>
@@ -268,7 +381,7 @@
           </article>
           <article class="cap-card gedesel reveal tilt">
             <div class="cap-index"><span>03 / ELECTRICIDAD</span></div>
-            <div class="cap-brand gedesel"><img src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="E=Gedesel" onerror="this.hidden=true;this.nextElementSibling.style.display='inline-block'"><span class="cap-fallback gedesel">E=Gedesel</span></div>
+            <div class="cap-brand gedesel"><span class="brand-lockup gedesel-lockup"><span class="brand-symbol gedesel-symbol" aria-hidden="true">E=</span><span class="brand-word gedesel-word">GEDESEL</span></span></div>
             <h3>Instalaciones y mantenimiento AT/BT.</h3>
             <p>Ingeniería aplicada, instalaciones eléctricas y mantenimiento en entornos industriales y sectores estratégicos.</p>
             <ul class="cap-list"><li>Alta y baja tensión</li><li>Diseño, ejecución y mantenimiento</li><li>Industria, construcción y sector público</li><li>Integración de contenedores</li></ul>
@@ -329,9 +442,6 @@
 document.documentElement.classList.add('js');
 // Official brand images are hosted by each company's website. If they are blocked,
 // their text wordmarks remain visible and links continue to work.
-document.querySelectorAll('.brand-link img, .access-logo img, .cap-brand img').forEach(img=>{
-  img.addEventListener('error',()=>{img.hidden=true;const fallback=img.parentElement.querySelector('.brand-fallback,.access-wordmark,.cap-fallback');if(fallback)fallback.style.display='inline-block';}, {once:true});
-});
 
 const people={
   jose:{first:'José Luis',last:'Herrando',full:'José Luis Herrando',role:'Director de proyecto',phone:'+34 659 481 773',email:'jlherrando@boxis.es',hours:'Lunes a viernes, 08:30–16:30'},
@@ -353,121 +463,263 @@ if('IntersectionObserver' in window&&!reduceMotion){
   document.querySelectorAll('.reveal:not(.is-visible)').forEach(el=>io.observe(el));
 }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'))}
 if(!reduceMotion&&window.matchMedia('(pointer:fine)').matches){
-  document.querySelectorAll('.tilt,.cap-card').forEach(el=>{
-    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty('--ry',((x-.5)*2.2).toFixed(2)+'deg');el.style.setProperty('--rx',((.5-y)*1.7).toFixed(2)+'deg')});
-    el.addEventListener('pointerleave',()=>{el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg')});
+  document.querySelectorAll('.tilt,.cap-card,.contact-card').forEach(el=>{
+    el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      el.style.setProperty('--px',(x*100).toFixed(1)+'%');el.style.setProperty('--py',(y*100).toFixed(1)+'%');
+      el.style.setProperty('--ry',((x-.5)*2.3).toFixed(2)+'deg');el.style.setProperty('--rx',((.5-y)*1.8).toFixed(2)+'deg');
+    });
+    el.addEventListener('pointerleave',()=>{el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');el.style.setProperty('--px','50%');el.style.setProperty('--py','50%')});
   });
 }
+const scrollProgress=document.getElementById('scrollProgress');
+const updateScrollProgress=()=>{if(!scrollProgress)return;const max=document.documentElement.scrollHeight-window.innerHeight;const pct=max>0?(window.scrollY/max)*100:0;scrollProgress.style.width=pct.toFixed(2)+'%'};
+window.addEventListener('scroll',updateScrollProgress,{passive:true});window.addEventListener('resize',updateScrollProgress,{passive:true});updateScrollProgress();
+const navLinks=[...document.querySelectorAll('.nav a[href^="#"]')];
+if('IntersectionObserver' in window){const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+entry.target.id))}}),{rootMargin:'-28% 0px -58% 0px'});sections.forEach(section=>observer.observe(section))}
 
 </script>
 <script type="module">
-// Three.js r187 (ES module). The enclosure is a visual interpretation of the
-// supplied Eurocontainer reference photo, not a fabrication/CAD model.
+// Three.js r187. A detailed conceptual rendering of a containerised genset enclosure
+// with an integrated belly tank. It is a visual model, not a manufacturing CAD model.
 (async()=>{
-  const wrap=document.getElementById('visualWrap'),canvas=document.getElementById('container3d');
-  const fallback=()=>{if(wrap)wrap.classList.add('fallback')};
-  if(!canvas){fallback();return}
+  const wrap=document.getElementById('visualWrap');
+  const canvas=document.getElementById('container3d');
+  const fallback=()=>wrap?.classList.add('fallback');
+  if(!canvas){fallback();return;}
   let renderer;
   try{
     const T=await import('https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js');
     const scene=new T.Scene();
-    const camera=new T.PerspectiveCamera(31,1,.1,100);camera.position.set(10.8,6.8,11.5);camera.lookAt(0,2.1,0);
+    const camera=new T.PerspectiveCamera(32,1,.1,100);
+    const homePosition=new T.Vector3(10.8,7.0,12.0);
+    const homeTarget=new T.Vector3(0,2.55,0);
+    camera.position.copy(homePosition);camera.lookAt(homeTarget);
+
     renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.8));renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.13;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.7));
+    renderer.outputColorSpace=T.SRGBColorSpace;
+    renderer.toneMapping=T.ACESFilmicToneMapping;
+    renderer.toneMappingExposure=1.16;
     renderer.shadowMap.enabled=true;
-    scene.add(new T.HemisphereLight(0xf4fbff,0x78909c,2.15));
-    const sun=new T.DirectionalLight(0xfff8ec,3.2);sun.position.set(-5,10,7);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-12;sun.shadow.camera.right=12;sun.shadow.camera.top=12;sun.shadow.camera.bottom=-12;scene.add(sun);
-    const fill=new T.DirectionalLight(0x93d9f0,1.25);fill.position.set(8,4,-8);scene.add(fill);
-    const rim=new T.DirectionalLight(0xffffff,.9);rim.position.set(-8,3,-4);scene.add(rim);
-    const model=new T.Group();scene.add(model);
+    renderer.shadowMap.type=T.PCFSoftShadowMap;
+    renderer.setClearColor(0x000000,0);
+
+    // Procedural studio environment: soft sky, floor and long light strips for believable reflections.
+    const envCanvas=document.createElement('canvas');envCanvas.width=1024;envCanvas.height=512;
+    const ec=envCanvas.getContext('2d');
+    const sky=ec.createLinearGradient(0,0,0,512);sky.addColorStop(0,'#9ebdce');sky.addColorStop(.48,'#e4edf0');sky.addColorStop(.72,'#718b98');sky.addColorStop(1,'#263b47');
+    ec.fillStyle=sky;ec.fillRect(0,0,1024,512);
+    ec.fillStyle='rgba(255,255,255,.9)';ec.fillRect(80,105,180,18);ec.fillRect(390,82,260,24);ec.fillRect(760,126,150,16);
+    ec.fillStyle='rgba(255,255,255,.32)';ec.fillRect(0,300,1024,3);ec.fillRect(0,346,1024,2);
+    const envTexture=new T.CanvasTexture(envCanvas);envTexture.mapping=T.EquirectangularReflectionMapping;envTexture.colorSpace=T.SRGBColorSpace;scene.environment=envTexture;
+
+    const hemi=new T.HemisphereLight(0xf2f9fc,0x52636b,2.0);scene.add(hemi);
+    const key=new T.DirectionalLight(0xfff3e3,3.1);key.position.set(-6,11,8);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.camera.left=-11;key.shadow.camera.right=11;key.shadow.camera.top=11;key.shadow.camera.bottom=-11;key.shadow.bias=-.00025;scene.add(key);
+    const fill=new T.DirectionalLight(0x9bdcf0,1.45);fill.position.set(8,5,-7);scene.add(fill);
+    const rim=new T.DirectionalLight(0xffffff,1.15);rim.position.set(-7,4,-7);scene.add(rim);
+
     const m={
-      body:new T.MeshStandardMaterial({color:0xe7edf0,metalness:.34,roughness:.48}),
-      bright:new T.MeshStandardMaterial({color:0xf7fafb,metalness:.28,roughness:.4}),
-      rail:new T.MeshStandardMaterial({color:0x9aaab3,metalness:.65,roughness:.32}),
-      dark:new T.MeshStandardMaterial({color:0x293b46,metalness:.72,roughness:.27}),
-      black:new T.MeshStandardMaterial({color:0x101c24,metalness:.62,roughness:.25}),
-      glass:new T.MeshStandardMaterial({color:0x45616e,metalness:.25,roughness:.2})
+      shell:new T.MeshPhysicalMaterial({color:0xe7ecee,metalness:.38,roughness:.42,clearcoat:.24,clearcoatRoughness:.36}),
+      panel:new T.MeshPhysicalMaterial({color:0xf4f6f6,metalness:.28,roughness:.52,clearcoat:.12}),
+      rib:new T.MeshStandardMaterial({color:0xa9b5ba,metalness:.62,roughness:.38}),
+      edge:new T.MeshStandardMaterial({color:0x75868f,metalness:.72,roughness:.32}),
+      frame:new T.MeshStandardMaterial({color:0x31424c,metalness:.72,roughness:.34}),
+      tank:new T.MeshPhysicalMaterial({color:0x475963,metalness:.66,roughness:.39,clearcoat:.32,clearcoatRoughness:.3}),
+      tankPanel:new T.MeshStandardMaterial({color:0x667985,metalness:.58,roughness:.44}),
+      black:new T.MeshStandardMaterial({color:0x1b252b,metalness:.6,roughness:.32}),
+      rubber:new T.MeshStandardMaterial({color:0x20282d,metalness:.08,roughness:.86}),
+      glass:new T.MeshPhysicalMaterial({color:0x93d8e9,metalness:0,roughness:.1,transmission:.72,thickness:.12,ior:1.45,transparent:true,opacity:1}),
+      fuel:new T.MeshStandardMaterial({color:0x9c7b4a,metalness:.25,roughness:.3}),
+      accent:new T.MeshStandardMaterial({color:0xed713c,metalness:.36,roughness:.38})
     };
-    function box(w,h,d,mat,x,y,z,parent=model){const o=new T.Mesh(new T.BoxGeometry(w,h,d),mat);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
-    function cylinder(r1,r2,h,mat,x,y,z,rotZ=0,parent=model){const o=new T.Mesh(new T.CylinderGeometry(r1,r2,h,40,1,false),mat);o.rotation.z=rotZ;o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
-    function addRibs(length,height,width,step,x0,y0,z,parent,mat=m.rail){for(let x=x0-length/2+step/2;x<x0+length/2-step/3;x+=step)box(width,height,.055,mat,x,y0,z,parent)}
-    const L=7.6,H=2.55,D=2.75;
-    // Main enclosure and bottom/top rails.
-    box(L,H,D,m.body,0,H/2,0);
-    box(L+.12,.14,D+.12,m.rail,0,.08,0);box(L+.12,.12,D+.12,m.rail,0,H-.06,0);
-    // Corrugated long side (camera-facing) and rear wall.
-    addRibs(L-.18,H-.12,.038,.155,0,H/2,D/2+.028,model,m.rail);
-    addRibs(L-.18,H-.12,.028,.155,0,H/2,-D/2-.02,model,m.rail);
-    // Side door panels and technical access hatches.
-    const doorXs=[-.35,1.35,2.95];
-    doorXs.forEach((x,i)=>{
-      box(1.34,2.04,.09,m.rail,x,1.31,D/2+.09);
-      box(1.22,1.92,.07,m.bright,x,1.31,D/2+.145);
-      for(let k=0;k<7;k++)box(.018,1.78,.018,m.rail,x-.49+k*.163,1.31,D/2+.19);
-      box(.05,.28,.11,m.dark,x+.49,1.31,D/2+.23);
-      box(.06,.06,.12,m.bright,x-.54,.34,D/2+.22);box(.06,.06,.12,m.bright,x+.54,2.25,D/2+.22);
-    });
-    // Ventilation grille near the right end.
-    box(.58,1.88,.1,m.rail,3.28,1.35,D/2+.09);
-    box(.49,1.76,.04,m.dark,3.28,1.35,D/2+.15);
-    for(let i=0;i<13;i++)box(.43,.035,.03,m.rail,3.28,0.56+i*.13,D/2+.19);
-    // Service-door end face and corner castings.
-    const end=new T.Group();end.position.set(-L/2-.03,0,0);model.add(end);
-    box(.12,2.5,D,m.rail,0,1.29,0,end);
-    for(let i=0;i<12;i++)box(.06,2.3,.035,m.bright,0,1.28,-1.22+i*.22,end);
-    for(const z of [-1.15,1.15]){box(.12,2.3,.1,m.dark,.09,1.29,z,end);for(const y of [.45,2.05])box(.15,.12,.15,m.rail,.13,y,z,end)}
-    // Raised equipment/tower at the left end, stacked above the main shell as in reference.
-    const towerX=-2.72,towerY=H+1.28,towerW=1.64,towerH=2.52;
-    box(towerW,towerH,D,m.body,towerX,towerY,0);
-    box(towerW+.08,.11,D+.08,m.rail,towerX,H+.07,0);box(towerW+.08,.1,D+.08,m.rail,towerX,H+towerH-.04,0);
-    addRibs(towerW-.1,towerH-.12,.04,.145,towerX,towerY,D/2+.04,model,m.rail);
-    addRibs(towerW-.1,towerH-.12,.035,.145,towerX,towerY,-D/2-.03,model,m.rail);
-    // Distinct horizontal joint between stacked modules and corner castings.
-    box(towerW+.11,.12,D+.11,m.rail,towerX,H+1.25,0);
-    for(const x of [towerX-towerW/2+.04,towerX+towerW/2-.04])for(const z of [-D/2-.03,D/2+.03]){
-      box(.14,towerH+.18,.14,m.rail,x,towerY,z);box(.2,.16,.2,m.dark,x,H+.08,z);
+    const model=new T.Group();scene.add(model);
+    const tankGroup=new T.Group();model.add(tankGroup);
+    function mesh(geometry,material,x,y,z,parent=model){const o=new T.Mesh(geometry,material);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o;}
+    function box(w,h,d,material,x,y,z,parent=model){return mesh(new T.BoxGeometry(w,h,d),material,x,y,z,parent);}
+    function roundedGeometry(w,h,d,r){
+      const x=-w/2,y=-h/2,shape=new T.Shape();
+      shape.moveTo(x+r,y);shape.lineTo(x+w-r,y);shape.quadraticCurveTo(x+w,y,x+w,y+r);shape.lineTo(x+w,y+h-r);shape.quadraticCurveTo(x+w,y+h,x+w-r,y+h);shape.lineTo(x+r,y+h);shape.quadraticCurveTo(x,y+h,x,y+h-r);shape.lineTo(x,y+r);shape.quadraticCurveTo(x,y,x+r,y);
+      const depth=Math.max(.04,d-r*1.2);
+      const g=new T.ExtrudeGeometry(shape,{depth,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:r*.24,bevelThickness:r*.42,curveSegments:8});
+      g.translate(0,0,-depth/2);return g;
     }
-    // Door on the tower front.
-    box(.82,1.78,.09,m.rail,towerX,H+1.08,D/2+.1);
-    box(.72,1.67,.06,m.bright,towerX,H+1.08,D/2+.16);
-    for(let k=0;k<5;k++)box(.02,1.53,.02,m.rail,towerX-.28+k*.14,H+1.08,D/2+.205);
-    // Exhaust/silencer on the main roof: supports, horizontal silencer, bent outlet.
-    for(const x of [.1,2.1])box(.14,.48,.14,m.dark,x,H+.23,-.65);
-    const silencer=cylinder(.29,.29,2.65,m.dark,1.1,H+.62,-.65,Math.PI/2);silencer.rotation.z=Math.PI/2;
-    cylinder(.235,.235,.12,m.rail,-.27,H+.62,-.65,Math.PI/2).rotation.z=Math.PI/2;
-    const exhaustCurve=new T.CatmullRomCurve3([
-      new T.Vector3(-.25,H+.62,-.65),new T.Vector3(-.55,H+.62,-.65),new T.Vector3(-.78,H+.82,-.65),new T.Vector3(-.78,H+1.16,-.65),new T.Vector3(-.98,H+1.34,-.65)
-    ]);
-    const exhaust=new T.Mesh(new T.TubeGeometry(exhaustCurve,40,.105,16,false),m.dark);exhaust.castShadow=true;model.add(exhaust);
-    cylinder(.12,.12,.48,m.black,-.98,H+1.36,-.65,Math.PI/2);
-    // Small roof fixtures, junction boxes, lifting points and underframe.
-    for(const x of [-3.45,-2.0,0,2.4,3.5])box(.12,.14,.12,m.rail,x,H+.08,-1.07);
-    box(L+.2,.2,D+.16,m.dark,0,-.09,0);
-    for(let x=-3.5;x<=3.5;x+=1.75)box(.2,.24,D+.15,m.rail,x,-.25,0);
-    // Brand panel on the long face: exact name, restrained orange accent mark.
+    function rounded(w,h,d,r,material,x,y,z,parent=model){return mesh(roundedGeometry(w,h,d,r),material,x,y,z,parent);}
+    function cylinder(rt,rb,h,material,x,y,z,rotationZ=0,parent=model,rotationX=0){const o=mesh(new T.CylinderGeometry(rt,rb,h,32,1,false),material,x,y,z,parent);o.rotation.z=rotationZ;o.rotation.x=rotationX;return o;}
+    function tube(points,radius,material,parent=model){const curve=new T.CatmullRomCurve3(points.map(p=>new T.Vector3(...p)));return mesh(new T.TubeGeometry(curve,48,radius,12,false),material,0,0,0,parent);}
+    function bolt(x,y,z,parent=model){const o=cylinder(.027,.027,.018,m.edge,x,y,z,0,parent,Math.PI/2);return o;}
+    function labelTexture(title,sub=''){
+      const c=document.createElement('canvas');c.width=1024;c.height=256;const x=c.getContext('2d');
+      x.clearRect(0,0,1024,256);x.fillStyle='#173447';x.font='800 92px Arial';x.fillText(title,22,128);
+      if(sub){x.fillStyle='#e9703b';x.font='700 52px Arial';x.fillText(sub,24,200);}
+      const t=new T.CanvasTexture(c);t.colorSpace=T.SRGBColorSpace;return t;
+    }
+    const L=7.6,H=2.55,D=2.75;
+
+    // Integrated belly tank: rounded welded body, reinforcement bands, service fittings and skid.
+    rounded(L-.42,.62,D-.38,.12,m.tank,0,.36,0,tankGroup);
+    // Perimeter support rails and tank feet.
+    rounded(L+.08,.13,.14,.035,m.frame,0,.72,D/2-.08,tankGroup);
+    rounded(L+.08,.13,.14,.035,m.frame,0,.72,-D/2+.08,tankGroup);
+    for(const x of [-3.0,-1.0,1.0,3.0]){
+      rounded(.28,.17,D-.2,.045,m.frame,x,.08,0,tankGroup);
+      rounded(.34,.12,.24,.035,m.edge,x,.77,D/2-.08,tankGroup);
+      rounded(.34,.12,.24,.035,m.edge,x,.77,-D/2+.08,tankGroup);
+    }
+    // Fuel tank side skin: restrained stiffeners, seams and inspection plates.
+    for(let x=-3.28;x<=3.3;x+=.82){
+      rounded(.055,.48,.035,.014,m.tankPanel,x,.36,D/2-.13,tankGroup);
+      rounded(.055,.48,.035,.014,m.tankPanel,x,.36,-D/2+.13,tankGroup);
+    }
+    for(const x of [-2.55,0,2.55]){
+      rounded(1.18,.33,.035,.035,m.tankPanel,x,.36,D/2-.17,tankGroup);
+      for(const dx of [-.48,.48])for(const dy of [-.11,.11])bolt(x+dx,.36+dy,D/2-.145,tankGroup);
+    }
+    // Forklift pockets are recessed, not just painted marks.
+    for(const x of [-1.65,1.65]){
+      rounded(1.0,.18,.045,.025,m.rubber,x,.18,D/2+.018,tankGroup);
+      rounded(.84,.10,.025,.018,m.frame,x,.18,D/2+.045,tankGroup);
+    }
+    // Inspection / level gauge and fuel connections on the visible tank side.
+    rounded(.16,.43,.11,.035,m.edge,-3.05,.38,D/2+.045,tankGroup);
+    cylinder(.055,.055,.32,m.glass,-3.05,.38,D/2+.12,0,tankGroup,0);
+    cylinder(.086,.086,.065,m.black,-3.05,.2,D/2+.12,0,tankGroup,0);
+    cylinder(.086,.086,.065,m.black,-3.05,.56,D/2+.12,0,tankGroup,0);
+    // Filler neck, breather and drain valve; fittings are deliberately compact.
+    cylinder(.105,.09,.13,m.edge,2.92,.72,-.72,0,tankGroup);
+    cylinder(.12,.12,.045,m.black,2.92,.81,-.72,0,tankGroup);
+    cylinder(.055,.055,.12,m.edge,2.5,.72,-.95,0,tankGroup);
+    tube([[2.5,.77,-.95],[2.5,.88,-.95],[2.34,.91,-.95],[2.34,.91,-.78]],.028,m.edge,tankGroup);
+    cylinder(.068,.068,.12,m.edge,-2.92,.08,D/2+.12,0,tankGroup,Math.PI/2);
+    cylinder(.055,.055,.07,m.black,-2.92,.08,D/2+.2,0,tankGroup,Math.PI/2);
+    // Belly tank identification plate.
+    const tankLabel=new T.Mesh(new T.PlaneGeometry(1.55,.27),new T.MeshBasicMaterial({map:labelTexture('INTEGRATED FUEL TANK','DIESEL RESERVOIR'),transparent:true,side:T.DoubleSide}));
+    tankLabel.position.set(.05,.37,D/2+.205);tankGroup.add(tankLabel);
+
+    // Steel chassis rails separating the tank and acoustic enclosure.
+    rounded(L+.18,.13,.17,.035,m.frame,0,.79,D/2-.08,model);
+    rounded(L+.18,.13,.17,.035,m.frame,0,.79,-D/2+.08,model);
+    for(let x=-3.3;x<=3.3;x+=1.1)rounded(.12,.16,D-.16,.025,m.edge,x,.78,0,model);
+
+    // Main acoustic enclosure with smooth edge treatment and individual corrugated cladding panels.
+    rounded(L,H,D,.085,m.shell,0,2.08,0,model);
+    rounded(L+.12,.12,D+.12,.03,m.edge,0,.82,0,model);
+    rounded(L+.12,.10,D+.12,.025,m.edge,0,3.34,0,model);
+    for(let x=-3.68;x<=3.68;x+=.17){
+      rounded(.028,2.32,.045,.012,m.rib,x,2.08,D/2+.012,model);
+      rounded(.028,2.32,.035,.012,m.rib,x,2.08,-D/2-.008,model);
+    }
+    // Front service doors with framed edges, hinges, handles and fasteners.
+    const doorXs=[-1.55,.05,1.65];
+    doorXs.forEach((x,i)=>{
+      rounded(1.38,2.06,.065,.04,m.edge,x,2.08,D/2+.045,model);
+      rounded(1.27,1.95,.045,.028,m.panel,x,2.08,D/2+.088,model);
+      for(let k=0;k<7;k++)box(.018,1.82,.018,m.rib,x-.47+k*.157,2.08,D/2+.116,model);
+      for(const y of [1.25,2.88])cylinder(.033,.033,.15,m.black,x-.61,y,D/2+.13,0,model,Math.PI/2);
+      rounded(.055,.32,.08,.018,m.frame,x+.49,2.08,D/2+.145,model);
+      rounded(.025,.17,.10,.01,m.edge,x+.49,2.08,D/2+.19,model);
+      for(const dx of [-.56,.56])for(const dy of [-.88,.88])bolt(x+dx,2.08+dy,D/2+.13,model);
+    });
+    // Ventilation grille with angled slats and a proper perimeter frame.
+    rounded(.64,1.92,.09,.035,m.edge,3.28,2.02,D/2+.045,model);
+    rounded(.54,1.8,.04,.02,m.frame,3.28,2.02,D/2+.105,model);
+    for(let i=0;i<14;i++){
+      const slat=box(.46,.035,.035,m.rib,3.28,1.25+i*.115,D/2+.14,model);slat.rotation.z=-.16;
+    }
+    // Side technical panel, conduit and access hardware.
+    rounded(.42,.58,.055,.03,m.edge,2.76,1.43,D/2+.075,model);
+    rounded(.32,.48,.035,.02,m.panel,2.76,1.43,D/2+.112,model);
+    for(const y of [1.24,1.62])bolt(2.76,y,D/2+.14,model);
+    tube([[2.72,1.18,D/2+.12],[2.72,.98,D/2+.12],[2.35,.98,D/2+.12]],.018,m.black,model);
+    // Corner posts, lifting castings and roof rails.
+    for(const x of [-3.72,3.72])for(const z of [-1.31,1.31]){
+      rounded(.13,2.5,.13,.025,m.edge,x,2.08,z,model);
+      rounded(.2,.16,.2,.025,m.frame,x,.86,z,model);
+      rounded(.2,.16,.2,.025,m.frame,x,3.33,z,model);
+      for(const y of [.92,3.29])bolt(x,y,z+.085,model);
+    }
+
+    // Raised equipment / service tower as a joined acoustic module, with its own doors and louvers.
+    const towerX=-2.72,towerW=1.52,towerH=2.42,towerBottom=3.35,towerY=towerBottom+towerH/2;
+    rounded(towerW,towerH,D,.07,m.shell,towerX,towerY,0,model);
+    rounded(towerW+.08,.10,D+.08,.025,m.edge,towerX,towerBottom+.04,0,model);
+    rounded(towerW+.08,.10,D+.08,.025,m.edge,towerX,towerBottom+towerH-.04,0,model);
+    for(let x=towerX-towerW/2+.1;x<towerX+towerW/2-.05;x+=.15){
+      rounded(.025,towerH-.18,.04,.01,m.rib,x,towerY,D/2+.012,model);
+    }
+    rounded(.94,1.88,.07,.04,m.edge,towerX,towerBottom+1.08,D/2+.06,model);
+    rounded(.82,1.76,.04,.025,m.panel,towerX,towerBottom+1.08,D/2+.105,model);
+    for(let k=0;k<6;k++)box(.02,1.62,.018,m.rib,towerX-.31+k*.124,towerBottom+1.08,D/2+.13,model);
+    for(const y of [towerBottom+.3,towerBottom+1.84])cylinder(.035,.035,.14,m.black,towerX-.36,y,D/2+.14,0,model,Math.PI/2);
+    // Tall side louvers for intake / ventilation.
+    rounded(.54,1.48,.08,.03,m.edge,towerX+.45,towerBottom+1.16,-D/2-.03,model);
+    for(let i=0;i<11;i++){
+      const sl=box(.43,.035,.025,m.black,towerX+.45,towerBottom+.52+i*.12,-D/2-.09,model);sl.rotation.z=.13;
+    }
+
+    // Exhaust silencer, curved riser, support saddles and roof pipework.
+    for(const x of [-.15,1.95])rounded(.13,.37,.13,.035,m.frame,x,3.55,-.72,model);
+    const silencer=cylinder(.29,.29,2.65,m.black,.9,3.83,-.72,Math.PI/2,model);silencer.rotation.z=Math.PI/2;
+    cylinder(.31,.31,.09,m.edge,-.43,3.83,-.72,Math.PI/2,model).rotation.z=Math.PI/2;
+    cylinder(.31,.31,.09,m.edge,2.22,3.83,-.72,Math.PI/2,model).rotation.z=Math.PI/2;
+    tube([[-.43,3.83,-.72],[-.7,3.83,-.72],[-.88,3.99,-.72],[-.88,4.25,-.72],[-1.08,4.42,-.72]],.105,m.black,model);
+    cylinder(.12,.12,.26,m.edge,-1.08,4.48,-.72,Math.PI/2,model);
+    for(const x of [-3.5,-2.0,0,2.4,3.45])rounded(.13,.12,.13,.025,m.edge,x,3.39,-1.0,model);
+
+    // Accurate, readable Eurocontainer-style wordmark panel on the container side.
     const brandCanvas=document.createElement('canvas');brandCanvas.width=1024;brandCanvas.height=220;
-    const ctx=brandCanvas.getContext('2d');ctx.clearRect(0,0,1024,220);ctx.font='800 104px Arial';ctx.fillStyle='#17394d';ctx.fillText('Eurocontainer',18,137);ctx.fillStyle='#ed6b37';ctx.fillText('.es',690,137);ctx.strokeStyle='#ed6b37';ctx.lineWidth=19;ctx.lineCap='square';ctx.beginPath();ctx.moveTo(900,84);ctx.lineTo(940,117);ctx.lineTo(990,52);ctx.stroke();
+    const bc=brandCanvas.getContext('2d');bc.clearRect(0,0,1024,220);bc.font='800 108px Arial';bc.fillStyle='#183c50';bc.fillText('Eurocontainer',20,142);bc.fillStyle='#ed713c';bc.font='800 94px Arial';bc.fillText('.es',760,142);
     const brandTex=new T.CanvasTexture(brandCanvas);brandTex.colorSpace=T.SRGBColorSpace;
-    const brandPlate=new T.Mesh(new T.PlaneGeometry(2.95,.62),new T.MeshBasicMaterial({map:brandTex,transparent:true,side:T.DoubleSide}));brandPlate.position.set(2.15,1.95,D/2+.205);model.add(brandPlate);
-    // Ground catcher and subtle shadow.
-    const ground=new T.Mesh(new T.PlaneGeometry(100,100),new T.ShadowMaterial({opacity:.12}));ground.rotation.x=-Math.PI/2;ground.position.y=-.38;ground.receiveShadow=true;scene.add(ground);
-    model.rotation.y=-.38;model.rotation.x=-.035;
-    let yaw=-.38,pitch=-.035,drag=false,lastX=0,lastY=0,auto=true,visible=true,lastFrame=0;
-    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduced){auto=false;}
-    const rotateToggle=document.getElementById('rotateToggle');const resetView=document.getElementById('resetView');
-    rotateToggle.addEventListener('click',()=>{auto=!auto;rotateToggle.setAttribute('aria-pressed',String(auto));rotateToggle.textContent=auto?'Giro automático':'Giro pausado'});
-    if(reduced){rotateToggle.setAttribute('aria-pressed','false');rotateToggle.textContent='Giro pausado';}
-    resetView.addEventListener('click',()=>{yaw=-.38;pitch=-.035;auto=!reduced;rotateToggle.setAttribute('aria-pressed',String(auto));rotateToggle.textContent=auto?'Giro automático':'Giro pausado'});
-    canvas.addEventListener('pointerdown',e=>{drag=true;auto=false;rotateToggle.setAttribute('aria-pressed','false');rotateToggle.textContent='Giro pausado';lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
-    canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-lastX)*.0075;pitch+=(e.clientY-lastY)*.0035;pitch=Math.max(-.24,Math.min(.22,pitch));lastX=e.clientX;lastY=e.clientY});
+    const brandPanel=new T.Mesh(new T.PlaneGeometry(3.2,.68),new T.MeshBasicMaterial({map:brandTex,transparent:true,side:T.DoubleSide}));brandPanel.position.set(1.9,2.72,D/2+.14);model.add(brandPanel);
+
+    // Ground shadow catcher: the real page photo remains visible through the canvas.
+    const ground=new T.Mesh(new T.PlaneGeometry(100,100),new T.ShadowMaterial({opacity:.16}));ground.rotation.x=-Math.PI/2;ground.position.y=-.03;ground.receiveShadow=true;scene.add(ground);
+    model.rotation.y=-.34;model.rotation.x=-.025;
+
+    let yaw=-.34,pitch=-.025,drag=false,lastX=0,lastY=0,auto=true,visible=true,lastFrame=0,tankMode=false;
+    let goalPosition=homePosition.clone(),goalTarget=homeTarget.clone();
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduced)auto=false;
+    const rotateToggle=document.getElementById('rotateToggle');
+    const resetView=document.getElementById('resetView');
+    const tankFocus=document.getElementById('tankFocus');
+    const zoomIn=document.getElementById('zoomIn');
+    const zoomOut=document.getElementById('zoomOut');
+    const updateToggle=()=>{rotateToggle.setAttribute('aria-pressed',String(auto));rotateToggle.textContent=auto?'Pausar giro':'Reanudar giro'};
+    updateToggle();
+    rotateToggle.addEventListener('click',()=>{auto=!auto;updateToggle()});
+    tankFocus.addEventListener('click',()=>{
+      tankMode=!tankMode;tankFocus.setAttribute('aria-pressed',String(tankMode));
+      tankFocus.textContent=tankMode?'Volver al equipo':'Ver belly tank';
+      goalTarget.copy(tankMode?new T.Vector3(0,.38,0):homeTarget);
+      goalPosition.copy(tankMode?new T.Vector3(8.4,3.4,9.2):homePosition);
+      auto=false;updateToggle();
+      m.tank.emissive.set(tankMode?0x102a32:0x000000);m.tank.emissiveIntensity=tankMode?.65:0;
+    });
+    resetView.addEventListener('click',()=>{
+      tankMode=false;tankFocus.setAttribute('aria-pressed','false');tankFocus.textContent='Ver belly tank';
+      goalPosition.copy(homePosition);goalTarget.copy(homeTarget);yaw=-.34;pitch=-.025;auto=!reduced;updateToggle();
+      m.tank.emissive.set(0x000000);m.tank.emissiveIntensity=0;
+    });
+    const zoom=(factor)=>{const offset=goalPosition.clone().sub(goalTarget).multiplyScalar(factor);const length=offset.length();if(length>8.5&&length<19)goalPosition.copy(goalTarget).add(offset)};
+    zoomIn.addEventListener('click',()=>zoom(.88));zoomOut.addEventListener('click',()=>zoom(1.13));
+    canvas.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY>0?1.08:.92)},{passive:false});
+    canvas.addEventListener('pointerdown',e=>{drag=true;auto=false;updateToggle();lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
+    canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-lastX)*.0072;pitch+=(e.clientY-lastY)*.0034;pitch=Math.max(-.22,Math.min(.2,pitch));lastX=e.clientX;lastY=e.clientY});
     const stopDrag=()=>{drag=false};canvas.addEventListener('pointerup',stopDrag);canvas.addEventListener('pointercancel',stopDrag);
-    canvas.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){yaw-=.14;e.preventDefault()}if(e.key==='ArrowRight'){yaw+=.14;e.preventDefault()}if(e.key==='ArrowUp'){pitch=Math.max(-.24,pitch-.06);e.preventDefault()}if(e.key==='ArrowDown'){pitch=Math.min(.22,pitch+.06);e.preventDefault()}});
+    canvas.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){yaw-=.14;e.preventDefault()}if(e.key==='ArrowRight'){yaw+=.14;e.preventDefault()}if(e.key==='ArrowUp'){pitch=Math.max(-.22,pitch-.06);e.preventDefault()}if(e.key==='ArrowDown'){pitch=Math.min(.2,pitch+.06);e.preventDefault()}if(e.key==='+'||e.key==='='){zoom(.9);e.preventDefault()}if(e.key==='-'){zoom(1.1);e.preventDefault()}});
     const resize=()=>{const r=canvas.getBoundingClientRect();if(r.width<1||r.height<1)return;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};
-    if('ResizeObserver' in window)new ResizeObserver(resize).observe(canvas);else window.addEventListener('resize',resize);resize();
+    if('ResizeObserver' in window)new ResizeObserver(resize).observe(canvas);else window.addEventListener('resize',resize,{passive:true});resize();
     wrap.classList.add('webgl-ready');
     if('IntersectionObserver' in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting}).observe(wrap);
-    function animate(t){requestAnimationFrame(animate);if(!visible||document.hidden)return;if(t-lastFrame<28)return;lastFrame=t;if(auto&&!drag)yaw+=.00055;model.rotation.y+=(yaw-model.rotation.y)*.045;model.rotation.x+=(pitch-model.rotation.x)*.045;model.position.y=Math.sin(t*.0007)*.035;renderer.render(scene,camera)}
+    const cameraLook=new T.Vector3();
+    function animate(t){
+      requestAnimationFrame(animate);if(!visible||document.hidden)return;if(t-lastFrame<28)return;lastFrame=t;
+      if(auto&&!drag)yaw+=.00048;
+      model.rotation.y+=(yaw-model.rotation.y)*.045;model.rotation.x+=(pitch-model.rotation.x)*.045;
+      model.position.y=Math.sin(t*.00055)*.018;
+      camera.position.lerp(goalPosition,.055);cameraLook.lerp(goalTarget,.055);camera.lookAt(cameraLook);
+      renderer.render(scene,camera);
+    }
     document.addEventListener('visibilitychange',()=>{if(!document.hidden)resize()});requestAnimationFrame(animate);
   }catch(err){console.warn('3D viewer fallback:',err);try{renderer?.dispose()}catch(_){}fallback()}
 })();
