@@ -388,6 +388,73 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 .team-heading{border:0!important}
 .team-card-actions{border-top:0!important}
 
+
+/* Brand-rich lower section: a restrained montage instead of empty grid panels. */
+.platform-screen{position:relative;isolation:isolate;overflow:hidden!important;background:linear-gradient(135deg,#0b1720,#111e27 58%,#0b151d)!important;min-height:100svh;height:auto!important;grid-template-rows:auto auto auto auto;gap:clamp(18px,2.5vw,34px);padding-top:clamp(42px,5vw,74px);padding-bottom:clamp(28px,4vw,55px)}
+.platform-screen:before{inset:0;z-index:-2;opacity:1;mask-image:none;filter:saturate(.72);background-image:
+ linear-gradient(110deg,rgba(7,16,23,.90),rgba(7,16,23,.73) 48%,rgba(7,16,23,.88)),
+ url('assets/eurocontainer-daylight-wide.webp'),
+ url('https://gedesel.net/wp-content/uploads/2026/04/gedesel_Hospital_teruel.jpg'),
+ url('https://boxis.es/wp-content/uploads/2020/11/energia-background-icon.jpg');
+ background-size:100% 100%,36% 100%,33% 100%,36% 100%;
+ background-position:center,left center,center center,right center;
+ background-repeat:no-repeat}
+.platform-screen:after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:
+ radial-gradient(ellipse at 16% 12%,rgba(81,173,194,.11),transparent 35%),
+ radial-gradient(ellipse at 83% 72%,rgba(224,119,73,.10),transparent 34%),
+ linear-gradient(180deg,rgba(5,13,20,.05),rgba(5,13,20,.32))}
+.platform-head{position:relative;z-index:1}
+.platform-head h2{font-size:clamp(34px,3.2vw,54px)}
+.platform-head p{font-size:clamp(11px,.85vw,13px);max-width:440px;line-height:1.8}
+.company-grid{position:relative;z-index:1;gap:clamp(16px,1.6vw,26px)}
+.company-panel{border:0!important;border-radius:0!important;background:rgba(7,18,26,.38)!important;box-shadow:0 24px 65px rgba(0,0,0,.18)!important;backdrop-filter:blur(13px) saturate(125%);padding:clamp(20px,2vw,30px)}
+.company-panel:before{inset:0;opacity:.31;filter:saturate(.85);background-position:center;background-size:cover;background-repeat:no-repeat}
+.company-panel.boxis:before{background-image:linear-gradient(115deg,rgba(4,14,22,.84),rgba(4,14,22,.48)),url('https://boxis.es/wp-content/uploads/2020/11/energia-background-icon.jpg')}
+.company-panel.euro:before{background-image:linear-gradient(115deg,rgba(4,14,22,.82),rgba(4,14,22,.45)),url('assets/eurocontainer-daylight-wide.webp')}
+.company-panel.gedesel:before{background-image:linear-gradient(115deg,rgba(4,14,22,.84),rgba(4,14,22,.49)),url('https://gedesel.net/wp-content/uploads/2026/04/gedesel_Hospital_teruel.jpg')}
+.company-panel:after{display:none!important}
+.company-panel:hover{transform:perspective(1400px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-4px) translateZ(9px);box-shadow:0 28px 72px rgba(0,0,0,.28)!important}
+.company-index{font-size:25px;color:rgba(235,245,248,.66);text-shadow:0 3px 14px rgba(0,0,0,.5)}
+.company-logo{filter:drop-shadow(0 4px 16px rgba(0,0,0,.4))}
+.company-panel h3{font-size:clamp(19px,1.45vw,25px)}
+.company-intro{font-size:clamp(10px,.78vw,12px);line-height:1.75;color:#d0dbe0}
+.company-fact{border:0!important;background:rgba(236,245,248,.065)!important;backdrop-filter:blur(10px);padding:11px 12px}
+.company-fact b{font-size:26px}
+.company-fact span{font-size:8px}
+.company-list li{font-size:10px;line-height:1.6}
+.company-contact{border:0!important;padding-top:16px;gap:8px}
+.company-contact .contact-label{color:#a9dce5;font-size:8px}
+.company-contact a{font-size:10px}
+.company-contact .contact-cta{border:0!important;background:rgba(227,242,247,.07)!important;padding:10px 0!important;justify-content:space-between;backdrop-filter:blur(8px)}
+.team-section{position:relative;z-index:1;max-width:var(--max);width:100%;margin:0 auto;display:grid;gap:16px}
+.team-heading{border:0!important;background:rgba(7,18,26,.25)!important;box-shadow:none!important;backdrop-filter:blur(10px)}
+.team-contact{position:relative;isolation:isolate;overflow:hidden;border:0!important;border-radius:0!important;background:linear-gradient(130deg,rgba(8,22,31,.66),rgba(8,20,29,.38))!important;box-shadow:0 22px 58px rgba(0,0,0,.19)!important;backdrop-filter:blur(17px) saturate(130%);padding:clamp(19px,1.7vw,28px)}
+.team-contact:before{content:"";position:absolute;z-index:-1;inset:0;opacity:.065;pointer-events:none;background-image:url('assets/boxis-logo-white.webp');background-repeat:no-repeat;background-position:right 14px bottom -20px;background-size:180px auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+.team-contact:after{content:"";position:absolute;z-index:-1;inset:0;top:auto;left:auto;right:0;bottom:0;width:160px;height:116px;opacity:.045;background:radial-gradient(ellipse at bottom right,rgba(107,207,223,.7),transparent 70%)}
+.team-contact:hover{transform:perspective(1300px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px) translateZ(8px);box-shadow:0 30px 70px rgba(0,0,0,.27)!important}
+.team-contact h3{font-size:clamp(20px,1.55vw,25px)}
+.team-role{font-size:11px}
+.team-details a,.team-details>div{font-size:10px;line-height:1.62}
+.team-card-actions{border:0!important;padding-top:14px}
+.team-card-actions .save-vcard,.team-card-actions .contact-open{border:0!important;background:rgba(220,239,245,.055)!important;box-shadow:none!important;padding:9px 0!important;border-radius:0!important}
+.platform-footer{position:relative;z-index:1;border:0!important;margin-top:8px;padding-top:12px}
+.platform-footer nav a{border:0!important}
+@media(max-width:850px){
+ .platform-screen{padding:38px 16px 26px!important;gap:17px!important}
+ .platform-screen:before{background-size:100% 100%,100% 38%,100% 34%,100% 34%;background-position:center,top center,center center,bottom center}
+ .company-grid{grid-template-columns:1fr!important;gap:12px!important}
+ .company-panel{padding:20px 18px!important}
+ .team-strip{grid-template-columns:1fr!important;gap:12px!important}
+ .team-contact{padding:19px!important}
+ .company-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:520px){
+ .platform-screen{padding:30px 13px 22px!important}
+ .platform-head h2{font-size:30px!important}
+ .team-contact h3{font-size:19px!important}
+ .team-details a,.team-details>div{font-size:9px!important}
+}
+
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"}}</script>
 </head>
@@ -422,22 +489,16 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       </div>
     </div>
 
-    <div class="model-stage" id="modelStage" data-model-src="" aria-label="Visor del modelo 3D real de Eurocontainer">
+    <div class="model-stage" id="modelStage" aria-label="Reconstrucción 3D exterior de la unidad Eurocontainer mostrada en las fotografías">
       <div class="stage-glow" aria-hidden="true"></div><div class="stage-grid" aria-hidden="true"></div>
-      <canvas id="container3d" tabindex="0" aria-label="Visor 3D 360 grados. Arrastra para orbitar, usa la rueda para acercar y selecciona las piezas del modelo técnico."></canvas>
-      <div class="model-stage-top"><span class="stage-caption">EUROCONTAINER · VISUALIZADOR TÉCNICO</span><span class="stage-index">EC<span>/</span>01</span></div>
-      <div class="model-unavailable" id="modelState" role="status">
-        <span class="model-state-kicker">VISOR 3D · MODELO DE FABRICACIÓN</span>
-        <strong>Visualización 3D de fabricación</strong>
-        <p>La órbita 360° y la selección individual de componentes se activarán con el modelo técnico original de esta unidad (GLB/GLTF o STEP de fabricación).</p>
-        <span class="model-state-note">Se ha retirado la maqueta genérica para mantener la fidelidad del equipo y de sus serigrafías.</span>
-      </div>
-      <div class="model-selection-info" id="modelSelectionInfo" aria-live="polite">Modelo completo · Sin pieza seleccionada</div>
-      <div class="stage-hint">Órbita 360° · Zoom · Selección de componentes</div>
+      <canvas id="container3d" tabindex="0" aria-label="Modelo tridimensional de la unidad Eurocontainer basado en las fotografías aportadas. Arrastra para orbitar 360 grados, usa la rueda para acercar y selecciona puertas, torre, escape, bastidor y depósito inferior."></canvas>
+      <div class="model-stage-top"><span class="stage-caption">EUROCONTAINER · RECONSTRUCCIÓN 3D FOTOGRÁFICA</span><span class="stage-index">EC<span>/</span>01</span></div>
+      <div class="model-selection-info" id="modelSelectionInfo" aria-live="polite">CONJUNTO COMPLETO · Selecciona un componente</div>
+      <div class="stage-hint">Órbita 360° · Zoom · Selección individual de componentes</div>
       <div class="model-controls" aria-label="Controles del modelo 3D">
         <button type="button" id="autoRotate" aria-pressed="true">Pausar giro</button>
-        <button type="button" id="selectWhole">Seleccionar conjunto</button>
-        <button type="button" id="resetView">Vista completa</button>
+        <button type="button" id="selectWhole">Conjunto completo</button>
+        <button type="button" id="resetView">Vista inicial</button>
         <button type="button" id="focusTank" class="accent" aria-pressed="false">Belly tank</button>
         <button type="button" id="zoomIn" aria-label="Acercar">＋</button>
         <button type="button" id="zoomOut" aria-label="Alejar">−</button>
@@ -646,243 +707,400 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
 (async()=>{
   const stage=document.getElementById('modelStage');
   const canvas=document.getElementById('container3d');
-  const state=document.getElementById('modelState');
   const selectionInfo=document.getElementById('modelSelectionInfo');
-  if(!stage||!canvas||!state)return;
+  if(!stage||!canvas||!selectionInfo)return;
 
-  // Set data-model-src to the manufacturer's GLB/GLTF once supplied.
-  const modelURL=(stage.dataset.modelSrc||'').trim();
-  if(!modelURL){
-    stage.classList.add('model-awaiting-source');
-    return;
-  }
-
-  let renderer,controls,scene,observer;
+  let renderer,controls,observer;
   try{
-    const [T,{OrbitControls},{GLTFLoader}]=await Promise.all([
-      import('https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js'),
-      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/controls/OrbitControls.js'),
-      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/loaders/GLTFLoader.js')
+    const [T,{OrbitControls}]=await Promise.all([
+      import('three'),
+      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/controls/OrbitControls.js')
     ]);
 
-    scene=new T.Scene();
-    const camera=new T.PerspectiveCamera(32,1,.05,10000);
+    const scene=new T.Scene();
+    const camera=new T.PerspectiveCamera(29,1,.05,300);
     renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.8));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.75));
     renderer.outputColorSpace=T.SRGBColorSpace;
     renderer.toneMapping=T.ACESFilmicToneMapping;
-    renderer.toneMappingExposure=1.08;
+    renderer.toneMappingExposure=1.12;
     renderer.shadowMap.enabled=true;
     renderer.shadowMap.type=T.PCFSoftShadowMap;
 
-    scene.add(new T.HemisphereLight(0xeaf2f4,0x36454d,1.55));
-    const key=new T.DirectionalLight(0xfff7ec,3.0);
-    key.position.set(-8,12,10);key.castShadow=true;
+    scene.add(new T.HemisphereLight(0xf1f5f6,0x39434a,1.7));
+    const key=new T.DirectionalLight(0xfff8ec,3.35);
+    key.position.set(-7,13,10);key.castShadow=true;
     key.shadow.mapSize.set(2048,2048);
-    key.shadow.camera.left=-30;key.shadow.camera.right=30;
-    key.shadow.camera.top=30;key.shadow.camera.bottom=-30;
-    scene.add(key);
-    const fill=new T.DirectionalLight(0x9ccbd8,1.3);fill.position.set(10,6,-10);scene.add(fill);
-    const rim=new T.DirectionalLight(0xffffff,1.8);rim.position.set(-10,8,-12);scene.add(rim);
+    key.shadow.camera.left=-15;key.shadow.camera.right=15;
+    key.shadow.camera.top=15;key.shadow.camera.bottom=-15;
+    key.shadow.bias=-.0002;key.shadow.normalBias=.025;scene.add(key);
+    const fill=new T.DirectionalLight(0xa8cbd5,1.45);fill.position.set(10,7,-9);scene.add(fill);
+    const rim=new T.DirectionalLight(0xffffff,2.0);rim.position.set(-10,8,-12);scene.add(rim);
+    const warm=new T.PointLight(0xdca27e,14,26,2);warm.position.set(4,5,8);scene.add(warm);
 
-    const floor=new T.Mesh(
-      new T.PlaneGeometry(500,500),
-      new T.MeshStandardMaterial({color:0x1b252b,metalness:.22,roughness:.74})
-    );
-    floor.rotation.x=-Math.PI/2;floor.position.y=-.025;floor.receiveShadow=true;scene.add(floor);
+    const materials={
+      shell:new T.MeshStandardMaterial({color:0xd8d6c9,metalness:.27,roughness:.63}),
+      panel:new T.MeshStandardMaterial({color:0xe4e1d5,metalness:.22,roughness:.58}),
+      rib:new T.MeshStandardMaterial({color:0xc9c8be,metalness:.34,roughness:.54}),
+      edge:new T.MeshStandardMaterial({color:0x7b8588,metalness:.52,roughness:.48}),
+      frame:new T.MeshStandardMaterial({color:0x39434a,metalness:.62,roughness:.48}),
+      dark:new T.MeshStandardMaterial({color:0x161c20,metalness:.42,roughness:.54}),
+      rubber:new T.MeshStandardMaterial({color:0x111619,metalness:.05,roughness:.86}),
+      door:new T.MeshStandardMaterial({color:0xd0cfc5,metalness:.25,roughness:.6}),
+      vent:new T.MeshStandardMaterial({color:0x343d42,metalness:.48,roughness:.58}),
+      tank:new T.MeshStandardMaterial({color:0x737f84,metalness:.54,roughness:.54}),
+      orange:new T.MeshStandardMaterial({color:0xd65a27,metalness:.22,roughness:.5}),
+      silver:new T.MeshStandardMaterial({color:0xaeb6b8,metalness:.68,roughness:.35})
+    };
+
+    // A fine powder-coat grain; subtle enough to avoid a plastic/toy finish.
+    function makeGrain(){
+      const c=document.createElement('canvas');c.width=256;c.height=256;
+      const ctx=c.getContext('2d');ctx.fillStyle='#888';ctx.fillRect(0,0,256,256);
+      let seed=31;const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
+      for(let i=0;i<12500;i++){
+        const v=105+Math.floor(rnd()*55);
+        ctx.fillStyle='rgba('+v+','+v+','+v+','+(.08+rnd()*.16)+')';
+        ctx.fillRect(rnd()*256,rnd()*256,1,1);
+      }
+      const texture=new T.CanvasTexture(c);texture.wrapS=texture.wrapT=T.RepeatWrapping;
+      texture.repeat.set(5,3);texture.colorSpace=T.NoColorSpace;return texture;
+    }
+    const grain=makeGrain();
+    for(const key of ['shell','panel','rib','door','tank']){
+      materials[key].roughnessMap=grain;materials[key].bumpMap=grain;materials[key].bumpScale=.009;
+    }
+
+    const root=new T.Group();root.name='EUROCONTAINER · UNIDAD COMPLETA';root.userData.selectablePart=true;scene.add(root);
+    const selectable=[];
+    function part(name,parent=root){
+      const group=new T.Group();group.name=name;group.userData.selectablePart=true;
+      parent.add(group);selectable.push(group);return group;
+    }
+    function box(parent,name,w,h,d,x,y,z,material,opts={}){
+      const geometry=new T.BoxGeometry(w,h,d);
+      const mesh=new T.Mesh(geometry,material);
+      mesh.name=name;mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;
+      mesh.userData.component=name;parent.add(mesh);return mesh;
+    }
+    function cylinder(parent,name,radius,length,x,y,z,material,axis='y',segments=48){
+      const mesh=new T.Mesh(new T.CylinderGeometry(radius,radius,length,segments,1,false),material);
+      mesh.name=name;mesh.position.set(x,y,z);
+      if(axis==='x')mesh.rotation.z=Math.PI/2;
+      if(axis==='z')mesh.rotation.x=Math.PI/2;
+      mesh.castShadow=true;mesh.receiveShadow=true;mesh.userData.component=name;parent.add(mesh);return mesh;
+    }
+    function tube(parent,name,points,radius,material){
+      const curve=new T.CatmullRomCurve3(points.map(p=>new T.Vector3(p[0],p[1],p[2])));
+      const mesh=new T.Mesh(new T.TubeGeometry(curve,48,radius,16,false),material);
+      mesh.name=name;mesh.castShadow=true;mesh.receiveShadow=true;mesh.userData.component=name;parent.add(mesh);return mesh;
+    }
+    function addRibbedFace(group,label,x0,length,y0,height,z,front=true,skip=[]){
+      const side=front?1:-1;
+      box(group,label+' · chapa base',length,height,.055,x0+length/2,y0+height/2,z,materials.shell);
+      const step=.17,count=Math.floor(length/step);
+      for(let i=0;i<=count;i++){
+        const x=x0+(i/count)*length;
+        if(skip.some(([a,b])=>x>a&&x<b))continue;
+        box(group,label+' · nervio vertical '+String(i+1).padStart(2,'0'),.052,height-.07,.048,x,y0+height/2,z+side*.035,materials.rib);
+      }
+      box(group,label+' · perfil superior',length,.055,.09,x0+length/2,y0+height-.025,z+side*.035,materials.edge);
+      box(group,label+' · perfil inferior',length,.055,.09,x0+length/2,y0+.025,z+side*.035,materials.edge);
+    }
+    function addDoor(parent,label,x,y,z,width,height){
+      const g=part(label,parent);
+      const t=.065;
+      box(g,label+' · hoja',width,height,.075,x,y,z,materials.door);
+      box(g,label+' · marco izquierdo',t,height+.10,.11,x-width/2-t/2,y,z+.035,materials.edge);
+      box(g,label+' · marco derecho',t,height+.10,.11,x+width/2+t/2,y,z+.035,materials.edge);
+      box(g,label+' · dintel',width+.12,t,.11,x,y+height/2+t/2,z+.035,materials.edge);
+      box(g,label+' · umbral',width+.12,t,.11,x,y-height/2-t/2,z+.035,materials.edge);
+      for(const py of [y-height*.34,y,y+height*.34]){
+        cylinder(g,label+' · bisagra',.038,.12,x-width/2-.025,py,z+.10,materials.dark,'y',20);
+      }
+      box(g,label+' · maneta vertical',.035,.19,.035,x+width*.32,y,z+.10,materials.dark);
+      box(g,label+' · cerradero',.055,.055,.04,x+width*.32,y-.10,z+.10,materials.silver);
+      return g;
+    }
+    function drawWordmark(){
+      const c=document.createElement('canvas');c.width=1200;c.height=240;
+      const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);
+      ctx.textBaseline='middle';ctx.font='italic 700 104px Arial';
+      ctx.fillStyle='#121619';ctx.fillText('Eurocontainer',10,118);
+      const w=ctx.measureText('Eurocontainer').width;
+      ctx.fillStyle='#d85d2d';ctx.font='italic 700 100px Arial';ctx.fillText('.es',w+15,118);
+      const start=w+155;
+      ctx.fillStyle='#d65a27';ctx.beginPath();ctx.moveTo(start,82);ctx.lineTo(start+40,117);
+      ctx.lineTo(start+106,42);ctx.lineTo(start+126,59);ctx.lineTo(start+43,153);
+      ctx.lineTo(start-2,107);ctx.closePath();ctx.fill();
+      const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;texture.anisotropy=8;return texture;
+    }
+    function drawTowerMark(){
+      const c=document.createElement('canvas');c.width=600;c.height=450;
+      const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);
+      ctx.fillStyle='#8e9698';ctx.beginPath();ctx.moveTo(300,25);ctx.lineTo(470,120);ctx.lineTo(300,215);ctx.lineTo(130,120);ctx.closePath();ctx.fill();
+      ctx.fillStyle='#d95c2b';ctx.beginPath();ctx.moveTo(110,180);ctx.lineTo(245,265);ctx.lineTo(470,105);ctx.lineTo(520,145);ctx.lineTo(250,345);ctx.lineTo(110,260);ctx.closePath();ctx.fill();
+      ctx.fillStyle='#151719';ctx.font='italic 700 54px Arial';ctx.textAlign='center';ctx.fillText('Eurocontainer',300,405);
+      const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;return texture;
+    }
+
+    // Main horizontal acoustic container — external proportions read from the attached photographs.
+    const main=part('01 · CONTENEDOR PRINCIPAL / ENVOLVENTE ACÚSTICA');
+    const L=8.65,W=2.68,bodyBottom=.72,bodyTop=2.92,bodyH=bodyTop-bodyBottom;
+    const bodyCentreX=L/2;
+    addRibbedFace(main,'Lateral frontal corrugado',0,L,bodyBottom,bodyH,1.335,true,[[2.0,3.1],[5.2,6.35]]);
+    addRibbedFace(main,'Lateral posterior corrugado',0,L,bodyBottom,bodyH,-1.335,false);
+    box(main,'Testero derecho',.07,bodyH,W, L-.035,bodyBottom+bodyH/2,0,materials.shell);
+    box(main,'Testero derecho · plano corrugado',.05,bodyH,W-.12,L-.075,bodyBottom+bodyH/2,0,materials.panel);
+    box(main,'Cubierta superior',L+.08,.12,W+.12,bodyCentreX,bodyTop+.02,0,materials.panel);
+    box(main,'Alero longitudinal frontal',L+.12,.075,.12,bodyCentreX,bodyTop-.02,1.34,materials.edge);
+    box(main,'Alero longitudinal posterior',L+.12,.075,.12,bodyCentreX,bodyTop-.02,-1.34,materials.edge);
+
+    // The lower continuous skirt, folded rails and transportation frame visible in the reference.
+    const skirtBottom=.34,skirtHeight=.40;
+    for(const z of [1.31,-1.31]){
+      box(main,'Faldón inferior · chapa',L,skirtHeight,.075,bodyCentreX,skirtBottom+skirtHeight/2,z,materials.panel);
+      for(let y=skirtBottom+.075;y<skirtBottom+skirtHeight;y+=.105)
+        box(main,'Faldón inferior · nervio horizontal',L-.06,.027,.045,bodyCentreX,y,z+(z>0?.045:-.045),materials.rib);
+    }
+    const chassis=part('02 · BASTIDOR Y APOYOS');
+    box(chassis,'Larguero frontal',L+.2,.18,.16,bodyCentreX,.22,1.08,materials.frame);
+    box(chassis,'Larguero posterior',L+.2,.18,.16,bodyCentreX,.22,-1.08,materials.frame);
+    box(chassis,'Travesaño izquierdo',.18,.18,2.18,.15,.22,0,materials.frame);
+    box(chassis,'Travesaño derecho',.18,.18,2.18,L-.15,.22,0,materials.frame);
+    for(let x=.4;x<L;x+=1.15)box(chassis,'Travesaño de apoyo',.12,.16,2.12,x,.22,0,materials.edge);
+    for(const x of [.12,L-.12])for(const z of [-1.18,1.18]){
+      box(chassis,'Esquinero de izado',.22,.22,.22,x,.32,z,materials.edge);
+    }
+
+    // Low-profile tank sits inside the base envelope; it is selectable as a single assembly.
+    const tank=part('03 · BELLY TANK / DEPÓSITO INFERIOR INTEGRADO');
+    box(tank,'Depósito cuadrado de doble pared',6.25,.42,1.78,4.28,.47,0,materials.tank);
+    for(const x of [1.25,2.25,3.25,4.25,5.25,6.25,7.25])
+      box(tank,'Nervio exterior del belly tank',.075,.45,1.88,x,.47,0,materials.edge);
+    box(tank,'Registro superior de inspección',.42,.055,.42,3.1,.70,.35,materials.edge);
+    cylinder(tank,'Boca de llenado',.12,.10,5.8,.72,-.45,materials.silver,'y',36);
+    cylinder(tank,'Respiradero',.055,.22,6.25,.77,-.45,materials.silver,'y',24);
+    cylinder(tank,'Válvula de drenaje',.065,.15,2.4,.25,1.0,materials.dark,'z',24);
+
+    // Tall two-level riser/tower at the left-hand end, clearly visible in both photographs.
+    const tower=part('04 · TORRE ELEVADA / MÓDULO VERTICAL');
+    const tx0=-2.25,tw=2.25,towerH=6.45,towerBottom=.34,towerTop=towerBottom+towerH;
+    addRibbedFace(tower,'Torre · frente corrugado',tx0,tw,towerBottom,towerH,1.335,true);
+    addRibbedFace(tower,'Torre · trasera corrugada',tx0,tw,towerBottom,towerH,-1.335,false);
+    box(tower,'Torre · testero izquierdo',.07,towerH,W,-2.285,towerBottom+towerH/2,0,materials.shell);
+    box(tower,'Torre · testero derecho',.07,towerH,W,-.035,towerBottom+towerH/2,0,materials.shell);
+    for(const y of [2.85,4.70]){
+      for(const z of [-1.36,1.36])box(tower,'Junta perimetral horizontal de torre',tw+.12,.11,.12,tx0+tw/2,y,z,materials.edge);
+      for(const x of [tx0-.02,-.02])box(tower,'Junta lateral de torre',.12,.11,W+.12,x,y,0,materials.edge);
+    }
+    for(const y of [towerBottom+.08,towerTop-.04]){
+      for(const z of [-1.34,1.34])box(tower,'Marco perimetral de torre',tw+.15,.12,.12,tx0+tw/2,y,z,materials.frame);
+    }
+    for(const z of [-1.18,1.18])for(const y of [towerBottom+.08,2.85,4.70,towerTop-.08]){
+      box(tower,'Refuerzo vertical de esquina',.13,.12,.14,tx0+.08,y,z,materials.edge);
+      box(tower,'Refuerzo vertical de esquina',.13,.12,.14,-.08,y,z,materials.edge);
+    }
+
+    // Side access doors and latches visible on the long wall.
+    const doors=part('05 · PUERTAS Y REGISTROS DE MANTENIMIENTO');
+    addDoor(doors,'Puerta técnica principal',2.55,1.77,1.42,.88,1.72);
+    addDoor(doors,'Puerta de servicio secundaria',6.10,1.80,1.42,.72,1.52);
+    addDoor(doors,'Registro eléctrico auxiliar',7.13,1.20,1.425,.42,.66);
+
+    // Roof-mounted black acoustic exhaust silencer and its supports.
+    const exhaust=part('06 · SILENCIADOR Y CONDUCTO DE ESCAPE');
+    cylinder(exhaust,'Silenciador cilíndrico horizontal',.30,2.02,2.15,3.34,-.10,materials.rubber,'x',64);
+    cylinder(exhaust,'Tapa silenciador izquierda',.305,.10,1.12,3.34,-.10,materials.dark,'x',48);
+    cylinder(exhaust,'Tapa silenciador derecha',.305,.10,3.18,3.34,-.10,materials.dark,'x',48);
+    for(const x of [1.55,2.75]){
+      box(exhaust,'Cuna de apoyo del silenciador',.20,.12,.72,x,3.05,-.10,materials.frame);
+      cylinder(exhaust,'Abrazadera de escape',.035,.65,x,3.20,-.10,materials.edge,'z',24);
+    }
+    tube(exhaust,'Codo de salida de escape',[[3.15,3.34,-.10],[3.48,3.34,-.10],[3.58,3.50,-.10],[3.58,3.70,-.10]],.105,materials.dark);
+    cylinder(exhaust,'Boca de escape',.12,.08,3.58,3.70,-.10,materials.rubber,'y',36);
+
+    // Ventilation grilles: dark recess, individual horizontal louvers and an outer frame.
+    const vents=part('07 · REJILLAS DE VENTILACIÓN');
+    const ventX=8.12,ventY=1.88,ventW=.50,ventH=1.2,ventZ=1.43;
+    box(vents,'Hueco de ventilación',ventW,ventH,.055,ventX,ventY,ventZ,materials.dark);
+    for(let y=ventY-ventH/2+.08;y<ventY+ventH/2-.03;y+=.105)
+      box(vents,'Lama de ventilación',ventW-.06,.035,.09,ventX,y,ventZ+.055,materials.vent);
+    for(const x of [ventX-ventW/2,ventX+ventW/2])
+      box(vents,'Marco de ventilación',.045,ventH+.06,.08,x,ventY,ventZ+.07,materials.edge);
+
+    // Corner castings and transport locks at both visible tower and container edges.
+    const locks=part('08 · ESQUINEROS Y CIERRES DE TRANSPORTE');
+    for(const x of [-2.20,0.08,8.52])for(const y of [.42,2.84,4.68,6.70])for(const z of [-1.32,1.32]){
+      if(y>3.0&&x>0.1)continue;
+      box(locks,'Esquinero de fundición',.16,.18,.16,x,y,z,materials.edge);
+      cylinder(locks,'Perno de cierre',.035,.03,x,y,z+(z>0?.09:-.09),materials.dark,'z',16);
+    }
+
+    // Official-looking paint markings are drawn as a texture on real faces, never as floating labels.
+    const branding=part('09 · SERIGRAFÍA EUROCONTAINER');
+    const sideMap=drawWordmark();
+    const sideLogo=new T.Mesh(new T.PlaneGeometry(2.35,.46),new T.MeshBasicMaterial({map:sideMap,transparent:true,side:T.DoubleSide,depthWrite:false}));
+    sideLogo.name='Serigrafía Eurocontainer.es · lateral';sideLogo.position.set(6.55,2.55,1.414);sideLogo.userData.component=sideLogo.name;branding.add(sideLogo);
+    const endMap=drawTowerMark();
+    const endLogo=new T.Mesh(new T.PlaneGeometry(1.02,.78),new T.MeshBasicMaterial({map:endMap,transparent:true,side:T.DoubleSide,depthWrite:false}));
+    endLogo.name='Logotipo Eurocontainer · torre';endLogo.position.set(-2.326,1.55,0);endLogo.rotation.y=-Math.PI/2;branding.add(endLogo);
+
+    // Studio ground is separate from the selectable product.
+    const floor=new T.Mesh(new T.PlaneGeometry(120,120),new T.MeshStandardMaterial({color:0x202b31,metalness:.16,roughness:.8}));
+    floor.rotation.x=-Math.PI/2;floor.position.y=.02;floor.receiveShadow=true;scene.add(floor);
 
     const controls=new OrbitControls(camera,canvas);
-    controls.enableDamping=true;controls.dampingFactor=.075;
-    controls.rotateSpeed=.58;controls.zoomSpeed=.78;controls.enablePan=false;
-    controls.minPolarAngle=.18;controls.maxPolarAngle=Math.PI/2.02;
-    controls.autoRotate=true;controls.autoRotateSpeed=.34;
+    controls.enableDamping=true;controls.dampingFactor=.072;
+    controls.rotateSpeed=.58;controls.zoomSpeed=.82;controls.panSpeed=.38;
+    controls.enablePan=false;controls.minPolarAngle=.18;controls.maxPolarAngle=Math.PI/2.02;
+    controls.autoRotate=true;controls.autoRotateSpeed=.32;
 
-    const loader=new GLTFLoader();
-    const loaded=await new Promise((resolve,reject)=>{
-      loader.load(modelURL,resolve,undefined,reject);
-    });
-    const root=loaded.scene;
-    root.name=root.name||'EUROCONTAINER · CONJUNTO COMPLETO';
-    scene.add(root);
-
-    // Preserve manufacturer mesh separation and names for real per-part selection.
-    const parts=[];
-    const originalMaterials=new Map();
-    root.traverse(object=>{
-      if(!object.isMesh)return;
-      object.castShadow=true;object.receiveShadow=true;
-      if(object.material){
-        const mats=Array.isArray(object.material)?object.material:[object.material];
-        originalMaterials.set(object,mats);
-        object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone();
-      }
-      const name=(object.name||object.parent?.name||'Componente sin nombre').trim();
-      object.userData.displayName=name.replace(/[_-]+/g,' ').replace(/\s+/g,' ');
-      parts.push(object);
-    });
     root.updateMatrixWorld(true);
-    const bounds=new T.Box3().setFromObject(root);
-    const size=bounds.getSize(new T.Vector3());
-    const center=bounds.getCenter(new T.Vector3());
-    if(!Number.isFinite(size.x)||size.length()<.01)throw new Error('El modelo no contiene geometría visible.');
-
-    // Centre the loaded manufacturer's asset at the scene origin; do not rescale individual parts.
-    root.position.sub(center);
-    root.updateMatrixWorld(true);
-    const localBounds=new T.Box3().setFromObject(root);
-    const sphere=localBounds.getBoundingSphere(new T.Sphere());
-    floor.position.y=localBounds.min.y-.012*Math.max(1,sphere.radius/5);
-    let tankRoot=null;
-    root.traverse(object=>{
-      if(tankRoot)return;
-      const name=[object.name,object.userData.displayName].join(' ').toLowerCase();
-      if(/belly|tank|fuel|deposit|depósito/.test(name)&&collectCandidateMeshes(object).length)tankRoot=object;
-    });
-    function collectCandidateMeshes(object){
-      const list=[];if(object?.isMesh)list.push(object);else object?.traverse?.(child=>{if(child.isMesh)list.push(child);});return list;
+    const wholeBounds=new T.Box3().setFromObject(root);
+    const wholeSphere=wholeBounds.getBoundingSphere(new T.Sphere());
+    const viewDirection=new T.Vector3(-.90,.34,1.20).normalize();
+    let activeGroup=root,selectedMeshes=[],isVisible=true,frameHandle=0;
+    function collectMeshes(group){
+      const list=[];group.traverse(object=>{if(object.isMesh)list.push(object);});return list;
     }
-    if(!tankRoot)tankRoot=parts.find(part=>/belly|tank|fuel|deposit|depósito/i.test([part.name,part.userData.displayName].join(' ')))||null;
-
-    const direction=new T.Vector3(1,.35,1.15).normalize();
-    function fit(boxOrSphere,smooth=true){
-      const s=boxOrSphere.isSphere?boxOrSphere:boxOrSphere.getBoundingSphere(new T.Sphere());
-      const aspect=Math.max(.5,canvas.clientWidth/Math.max(1,canvas.clientHeight));
+    const allMeshes=collectMeshes(root);
+    const originalMaterials=new Map(allMeshes.map(mesh=>[mesh,mesh.material]));
+    function frameGroup(group,smooth=true){
+      activeGroup=group;
+      const bounds=new T.Box3().setFromObject(group);
+      const sphere=bounds.getBoundingSphere(new T.Sphere());
+      const aspect=Math.max(.48,canvas.clientWidth/Math.max(1,canvas.clientHeight));
       const halfV=T.MathUtils.degToRad(camera.fov/2);
       const halfH=Math.atan(Math.tan(halfV)*aspect);
-      const distance=s.radius/Math.sin(Math.min(halfV,halfH))*1.28;
-      const nextCamera=s.center.clone().addScaledVector(direction,distance);
-      controls.minDistance=Math.max(.25,s.radius*1.03);
-      controls.maxDistance=Math.max(controls.minDistance+1,s.radius*6);
+      const distance=sphere.radius/Math.sin(Math.min(halfV,halfH))*1.30;
+      const target=sphere.center.clone();
+      const position=target.clone().addScaledVector(viewDirection,distance);
+      controls.minDistance=Math.max(.65,sphere.radius*1.04);
+      controls.maxDistance=Math.max(controls.minDistance+3,sphere.radius*5.5);
       if(smooth){
-        camera.position.lerp(nextCamera,.001);
-        targetCamera.copy(nextCamera);targetTarget.copy(s.center);
-        cameraMoving=true;
+        cameraTarget.copy(position);lookTarget.copy(target);moving=true;
       }else{
-        camera.position.copy(nextCamera);controls.target.copy(s.center);
-        targetCamera.copy(nextCamera);targetTarget.copy(s.center);cameraMoving=false;
+        camera.position.copy(position);controls.target.copy(target);
+        cameraTarget.copy(position);lookTarget.copy(target);moving=false;
       }
       controls.update();
     }
-
-    const targetCamera=new T.Vector3(),targetTarget=new T.Vector3();
-    let cameraMoving=false,selected=null,visible=true,lastSelectedName='Modelo completo';
-    fit(sphere,false);
-    const selectedMeshes=[];
-    function collectMeshes(object){
-      const found=[];
-      if(object?.isMesh)found.push(object);
-      else object?.traverse?.(child=>{if(child.isMesh)found.push(child);});
-      return found;
+    const cameraTarget=new T.Vector3(),lookTarget=new T.Vector3();
+    let moving=false;
+    frameGroup(root,false);
+    function clearHighlight(){
+      selectedMeshes.forEach(mesh=>{mesh.material=originalMaterials.get(mesh);});
+      selectedMeshes=[];
     }
-    function clearSelection(){
-      selectedMeshes.forEach(mesh=>{
-        const mats=originalMaterials.get(mesh);
-        if(mats)mesh.material=Array.isArray(mesh.material)?mats.map(m=>m.clone()):mats[0].clone();
-      });
-      selectedMeshes.length=0;selected=null;
-    }
-    function selectObject(object,label){
-      clearSelection();
-      if(!object){
-        selectionInfo.textContent='CONJUNTO COMPLETO · SIN PIEZA AISLADA';
-        lastSelectedName='Conjunto completo';return;
-      }
-      selected=object;
-      const meshes=collectMeshes(object);
-      meshes.forEach(mesh=>{
-        const current=Array.isArray(mesh.material)?mesh.material:[mesh.material];
-        const highlighted=current.map(material=>{
-          const clone=material.clone();
-          if(clone.emissive){clone.emissive.set('#3e8798');clone.emissiveIntensity=.28;}
-          return clone;
+    function selectGroup(group){
+      clearHighlight();
+      const name=group===root?'CONJUNTO COMPLETO':group.name;
+      if(group!==root){
+        selectedMeshes=collectMeshes(group);
+        selectedMeshes.forEach(mesh=>{
+          const base=originalMaterials.get(mesh);
+          const applyHighlight=material=>{
+            const clone=material.clone();
+            if(clone.emissive){clone.emissive.set('#6aa8b4');clone.emissiveIntensity=.24;}
+            return clone;
+          };
+          mesh.material=Array.isArray(base)?base.map(applyHighlight):applyHighlight(base);
         });
-        mesh.material=Array.isArray(mesh.material)?highlighted:highlighted[0];
-        selectedMeshes.push(mesh);
-      });
-      lastSelectedName=label||object.userData.displayName||object.name||'Componente';
-      selectionInfo.textContent='SELECCIÓN 3D · '+lastSelectedName;
+      }
+      selectionInfo.textContent=(group===root?'CONJUNTO · ':'PIEZA SELECCIONADA · ')+name;
     }
 
     const raycaster=new T.Raycaster(),pointer=new T.Vector2();
+    let pointerStart=null;
+    canvas.addEventListener('pointerdown',event=>{pointerStart={x:event.clientX,y:event.clientY};});
     canvas.addEventListener('pointerup',event=>{
-      if(event.pointerType==='touch')return;
+      if(!pointerStart)return;
+      const moved=Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y);
+      pointerStart=null;
+      if(moved>6)return;
       const rect=canvas.getBoundingClientRect();
       pointer.set(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
       raycaster.setFromCamera(pointer,camera);
-      const hit=raycaster.intersectObjects(parts,false)[0];
-      selectObject(hit?hit.object:null);
+      const hit=raycaster.intersectObjects(allMeshes,false)[0];
+      if(!hit){selectGroup(root);return;}
+      let group=hit.object.parent;
+      while(group&&group!==root&&!group.userData.selectablePart)group=group.parent;
+      selectGroup(group&&group.userData.selectablePart?group:root);
+      if(group&&group!==root)frameGroup(group,true);
+      controls.autoRotate=false;syncRotate();
+    });
+    canvas.addEventListener('keydown',event=>{
+      if(event.key==='Escape'){selectGroup(root);frameGroup(root,true);}
     });
 
-    const toggle=document.getElementById('autoRotate');
-    const reset=document.getElementById('resetView');
-    const tank=document.getElementById('focusTank');
+    const rotateButton=document.getElementById('autoRotate');
+    const selectButton=document.getElementById('selectWhole');
+    const resetButton=document.getElementById('resetView');
+    const tankButton=document.getElementById('focusTank');
     const zoomIn=document.getElementById('zoomIn');
     const zoomOut=document.getElementById('zoomOut');
-    const selectWhole=document.getElementById('selectWhole');
-    selectWhole.addEventListener('click',()=>{selectObject(root,'CONJUNTO COMPLETO');fit(sphere,true);controls.autoRotate=false;syncToggle();});
-    const syncToggle=()=>{toggle.setAttribute('aria-pressed',String(controls.autoRotate));toggle.textContent=controls.autoRotate?'Pausar giro':'Reanudar giro';};
-    syncToggle();
-    toggle.addEventListener('click',()=>{controls.autoRotate=!controls.autoRotate;syncToggle();});
-    reset.addEventListener('click',()=>{selectObject(null);tank.setAttribute('aria-pressed','false');tank.textContent='Belly tank';fit(sphere,true);controls.autoRotate=true;syncToggle();});
-    tank.addEventListener('click',()=>{
-      if(!tankRoot){
-        selectionInfo.textContent='BELLY TANK · El modelo GLB debe incluir el nombre de esta pieza para enfocarla.';
-        return;
-      }
-      selectObject(tankRoot,'BELLY TANK · '+(tankRoot.name||'DEPÓSITO'));
-      const b=new T.Box3().setFromObject(tankRoot);
-      fit(b,true);controls.autoRotate=false;syncToggle();
-      tank.setAttribute('aria-pressed','true');tank.textContent='Pieza seleccionada';
+    function syncRotate(){
+      rotateButton.setAttribute('aria-pressed',String(controls.autoRotate));
+      rotateButton.textContent=controls.autoRotate?'Pausar giro':'Reanudar giro';
+    }
+    syncRotate();
+    rotateButton.addEventListener('click',()=>{controls.autoRotate=!controls.autoRotate;syncRotate();});
+    selectButton.addEventListener('click',()=>{selectGroup(root);frameGroup(root,true);controls.autoRotate=false;syncRotate();});
+    resetButton.addEventListener('click',()=>{
+      selectGroup(root);frameGroup(root,true);controls.autoRotate=true;syncRotate();
+      tankButton.setAttribute('aria-pressed','false');tankButton.textContent='Belly tank';
+    });
+    tankButton.addEventListener('click',()=>{
+      selectGroup(tank);frameGroup(tank,true);
+      controls.autoRotate=false;syncRotate();
+      tankButton.setAttribute('aria-pressed','true');tankButton.textContent='Depósito seleccionado';
     });
     function zoomBy(factor){
       const offset=camera.position.clone().sub(controls.target).multiplyScalar(factor);
-      const distance=offset.length();
-      if(distance>=controls.minDistance&&distance<=controls.maxDistance){
+      const next=offset.length();
+      if(next>=controls.minDistance&&next<=controls.maxDistance){
         camera.position.copy(controls.target).add(offset);controls.update();
       }
     }
     zoomIn.addEventListener('click',()=>zoomBy(.88));
     zoomOut.addEventListener('click',()=>zoomBy(1.14));
-    controls.addEventListener('start',()=>{cameraMoving=false;controls.autoRotate=false;syncToggle();});
+    controls.addEventListener('start',()=>{moving=false;controls.autoRotate=false;syncRotate();});
 
     const resize=()=>{
-      const r=canvas.getBoundingClientRect();if(r.width<2||r.height<2)return;
-      renderer.setSize(r.width,r.height,false);
-      camera.aspect=r.width/r.height;camera.updateProjectionMatrix();
-      fit(selected?new T.Box3().setFromObject(selected):sphere,true);
+      const rect=stage.getBoundingClientRect();if(rect.width<2||rect.height<2)return;
+      renderer.setSize(rect.width,rect.height,false);
+      camera.aspect=rect.width/rect.height;camera.updateProjectionMatrix();
+      frameGroup(activeGroup,true);
     };
     if('ResizeObserver' in window)new ResizeObserver(resize).observe(stage);
     else window.addEventListener('resize',resize,{passive:true});
     resize();
     stage.classList.add('model-ready');
-    stage.classList.remove('model-awaiting-source','model-load-error');
-    state.hidden=true;
+    const state=document.getElementById('modelState');if(state)state.hidden=true;
 
-    observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;},{threshold:.02});
+    observer=new IntersectionObserver(entries=>{isVisible=entries[0].isIntersecting;},{threshold:.02});
     observer.observe(stage);
     const clock=new T.Clock();
-    function frame(){
-      requestAnimationFrame(frame);
-      if(!visible||document.hidden)return;
+    function animate(){
+      frameHandle=requestAnimationFrame(animate);
+      if(!isVisible||document.hidden)return;
       const delta=Math.min(clock.getDelta(),.05);
-      if(cameraMoving){
-        camera.position.lerp(targetCamera,.09);
-        controls.target.lerp(targetTarget,.09);
-        if(camera.position.distanceTo(targetCamera)<.01&&controls.target.distanceTo(targetTarget)<.01)cameraMoving=false;
+      if(moving){
+        camera.position.lerp(cameraTarget,.085);
+        controls.target.lerp(lookTarget,.085);
+        if(camera.position.distanceTo(cameraTarget)<.012&&controls.target.distanceTo(lookTarget)<.012)moving=false;
       }
       controls.update(delta);renderer.render(scene,camera);
     }
-    requestAnimationFrame(frame);
-    window.addEventListener('pagehide',()=>{observer?.disconnect();controls.dispose();renderer.dispose();},{once:true});
+    animate();
+    window.addEventListener('pagehide',()=>{cancelAnimationFrame(frameHandle);observer?.disconnect();controls.dispose();renderer.dispose();},{once:true});
   }catch(error){
-    console.error('No se pudo cargar el modelo técnico:',error);
+    console.error('Error al iniciar la reconstrucción 3D de Eurocontainer:',error);
     stage.classList.remove('model-ready');
     stage.classList.add('model-load-error');
-    state.hidden=false;
-    state.querySelector('strong').textContent='No se ha podido cargar el modelo 3D';
-    state.querySelector('p').textContent='Comprueba que el archivo GLB/GLTF esté en la ruta indicada y que conserve las piezas separadas y sus nombres. No se mostrará una imagen o una maqueta alternativa.';
-    state.querySelector('.model-state-note').textContent='El visor no sustituye el modelo real por una representación dibujada.';
-    if(renderer)renderer.dispose();
+    const state=document.getElementById('modelState');
+    if(state){state.hidden=false;state.querySelector('strong').textContent='No se ha podido iniciar el visor 3D';state.querySelector('p').textContent='Comprueba la conexión WebGL o la carga de Three.js. No se ha sustituido el modelo por una fotografía.';}
   }
 })();
 </script>
