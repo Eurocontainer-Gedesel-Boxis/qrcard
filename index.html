@@ -1213,18 +1213,19 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
     box(roofGroup,'Alero longitudinal posterior',L+.12,.075,.12,bodyCentreX,bodyTop-.02,-1.34,materials.edge);
 
     // The lower continuous skirt, folded rails and transportation frame visible in the reference.
+    const skirt=part('01D · FALDÓN INFERIOR DESMONTABLE');
     const skirtBottom=.34,skirtHeight=.40;
     for(const z of [1.31,-1.31]){
-      box(main,'Faldón inferior · chapa',L,skirtHeight,.075,bodyCentreX,skirtBottom+skirtHeight/2,z,materials.panel);
+      box(skirt,'Faldón inferior · chapa',L,skirtHeight,.075,bodyCentreX,skirtBottom+skirtHeight/2,z,materials.panel);
       for(let y=skirtBottom+.075;y<skirtBottom+skirtHeight;y+=.105)
-        box(main,'Faldón inferior · nervio horizontal',L-.06,.027,.045,bodyCentreX,y,z+(z>0?.045:-.045),materials.rib);
+        box(skirt,'Faldón inferior · nervio horizontal',L-.06,.027,.045,bodyCentreX,y,z+(z>0?.045:-.045),materials.rib);
     }
     const chassis=part('02 · BASTIDOR Y APOYOS');
     box(chassis,'Larguero frontal',L+.2,.18,.16,bodyCentreX,.22,1.08,materials.frame);
     box(chassis,'Larguero posterior',L+.2,.18,.16,bodyCentreX,.22,-1.08,materials.frame);
     box(chassis,'Travesaño izquierdo',.18,.18,2.18,.15,.22,0,materials.frame);
     box(chassis,'Travesaño derecho',.18,.18,2.18,L-.15,.22,0,materials.frame);
-    for(let x=.4;x<L;x+=1.15)box(chassis,'Travesaño de apoyo',.12,.16,2.12,x,.22,0,materials.edge);
+    for(let x=.4;x<L;x+=1.15)box(chassis,'Travesaño de apoyo bajo el depósito',.12,.10,2.12,x,.13,0,materials.edge);
     for(const x of [.12,L-.12])for(const z of [-1.18,1.18]){
       box(chassis,'Esquinero de izado',.22,.22,.22,x,.32,z,materials.edge);
     }
@@ -1246,7 +1247,7 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
     box(tankTop,'Registro superior de inspección',.42,.055,.42,3.1,.78,.35,materials.edge);
     cylinder(tankTop,'Boca de llenado',.12,.10,5.8,.80,-.45,materials.silver,'y',36);
     cylinder(tankTop,'Respiradero',.055,.22,6.25,.84,-.45,materials.silver,'y',24);
-    cylinder(tankTop,'Válvula de drenaje',.065,.15,2.4,.25,1.0,materials.dark,'z',24);
+    cylinder(tankTop,'Válvula de drenaje',.065,.15,2.4,.31,.945,materials.dark,'z',24);
 
 
     // Interior equipment is independently selectable. Exact OEM/model and final placement remain configurable.
@@ -1634,7 +1635,7 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
       floor.visible=mode!=='tank';
 
       // Start from a known clean state every time. No leftover hidden panels or exploded offsets.
-      main.visible=true;tower.visible=true;chassis.visible=true;tank.visible=true;
+      main.visible=true;tower.visible=true;chassis.visible=true;tank.visible=true;skirt.visible=true;
       doors.visible=true;exhaust.visible=true;vents.visible=true;locks.visible=true;branding.visible=true;
       interior.visible=false;tankSystems.visible=false;
       tankShell.visible=true;tankTop.visible=true;
@@ -1645,14 +1646,14 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
         selectionInfo.textContent='VISTA EXTERIOR COMPLETA · Unidad Eurocontainer';
       }else if(mode==='interior'){
         doors.visible=false;exhaust.visible=false;vents.visible=false;locks.visible=false;branding.visible=false;
-        frontWall.visible=false;roofGroup.visible=false;towerFront.visible=false;
+        frontWall.visible=false;roofGroup.visible=false;towerFront.visible=false;skirt.visible=false;
         rearWall.visible=true;towerRear.visible=true;
         interior.visible=true;
         tank.visible=false;
         chassis.visible=true;
         selectionInfo.textContent='INTERIOR DEL CONTENEDOR · Motor, cuadros, combustible, sensores y alumbrado';
       }else if(mode==='tank'){
-        main.visible=false;tower.visible=false;chassis.visible=false;
+        main.visible=false;tower.visible=false;chassis.visible=false;skirt.visible=false;
         doors.visible=false;exhaust.visible=false;vents.visible=false;locks.visible=false;branding.visible=false;
         interior.visible=false;
         tank.visible=true;tankShell.visible=true;tankTop.visible=false;tankSystems.visible=true;
