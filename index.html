@@ -1452,10 +1452,10 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
         if(shouldFrame)frameGroup(root,true);
       }else if(mode==='cutaway'){
         selectionInfo.textContent='VISTA DE CORTE · Motor, cuadros, cableado, combustible y sensores';
-        if(shouldFrame)frameGroup([interior,tankSystems],true);
+        if(shouldFrame)frameGroup(root,true);
       }else if(mode==='interior'){
-        selectionInfo.textContent='VISTA INTERIOR · Motor, alternador, cuadros, cableado y alumbrado';
-        if(shouldFrame)frameGroup([interior,tankSystems],true);
+        selectionInfo.textContent='VISTA INTERIOR · Motor, alternador, cuadros, cableado, alumbrado y depósito';
+        if(shouldFrame)frameGroup([interior,tank],true);
       }else if(mode==='tank'){
         selectionInfo.textContent='BELLY TANK · HYTEK · T5020 · FUEL POLISHER · SONDAS';
         if(shouldFrame)frameGroup(tank,true);
