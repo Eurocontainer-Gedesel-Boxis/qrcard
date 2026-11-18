@@ -437,6 +437,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
       <div class="stage-hint">Órbita 360° · Zoom · Selección de componentes</div>
       <div class="model-controls" aria-label="Controles del modelo 3D">
         <button type="button" id="autoRotate" aria-pressed="true">Pausar giro</button>
+        <button type="button" id="selectWhole">Seleccionar conjunto</button>
         <button type="button" id="resetView">Vista completa</button>
         <button type="button" id="focusTank" class="accent" aria-pressed="false">Belly tank</button>
         <button type="button" id="zoomIn" aria-label="Acercar">＋</button>
@@ -732,10 +733,16 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     const localBounds=new T.Box3().setFromObject(root);
     const sphere=localBounds.getBoundingSphere(new T.Sphere());
     floor.position.y=localBounds.min.y-.012*Math.max(1,sphere.radius/5);
-    const tankParts=parts.filter(part=>/belly|tank|fuel|deposit|dep[oó]sito/i.test(
-      [part.name,part.parent?.name,part.userData.displayName].join(' ')
-    ));
-    const tankRoot=tankParts[0]||null;
+    let tankRoot=null;
+    root.traverse(object=>{
+      if(tankRoot)return;
+      const name=[object.name,object.userData.displayName].join(' ').toLowerCase();
+      if(/belly|tank|fuel|deposit|depósito/.test(name)&&collectCandidateMeshes(object).length)tankRoot=object;
+    });
+    function collectCandidateMeshes(object){
+      const list=[];if(object?.isMesh)list.push(object);else object?.traverse?.(child=>{if(child.isMesh)list.push(child);});return list;
+    }
+    if(!tankRoot)tankRoot=parts.find(part=>/belly|tank|fuel|deposit|depósito/i.test([part.name,part.userData.displayName].join(' ')))||null;
 
     const direction=new T.Vector3(1,.35,1.15).normalize();
     function fit(boxOrSphere,smooth=true){
@@ -761,28 +768,40 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     const targetCamera=new T.Vector3(),targetTarget=new T.Vector3();
     let cameraMoving=false,selected=null,visible=true,lastSelectedName='Modelo completo';
     fit(sphere,false);
-    function clearSelection(){
-      if(!selected)return;
-      const mats=originalMaterials.get(selected);
-      if(mats)selected.material=Array.isArray(selected.material)?mats.map(m=>m.clone()):mats[0].clone();
-      selected=null;
+    const selectedMeshes=[];
+    function collectMeshes(object){
+      const found=[];
+      if(object?.isMesh)found.push(object);
+      else object?.traverse?.(child=>{if(child.isMesh)found.push(child);});
+      return found;
     }
-    function selectObject(object){
+    function clearSelection(){
+      selectedMeshes.forEach(mesh=>{
+        const mats=originalMaterials.get(mesh);
+        if(mats)mesh.material=Array.isArray(mesh.material)?mats.map(m=>m.clone()):mats[0].clone();
+      });
+      selectedMeshes.length=0;selected=null;
+    }
+    function selectObject(object,label){
       clearSelection();
       if(!object){
-        selectionInfo.textContent='Modelo completo · Sin pieza seleccionada';
-        lastSelectedName='Modelo completo';return;
+        selectionInfo.textContent='CONJUNTO COMPLETO · SIN PIEZA AISLADA';
+        lastSelectedName='Conjunto completo';return;
       }
       selected=object;
-      const current=Array.isArray(selected.material)?selected.material:[selected.material];
-      const highlighted=current.map(material=>{
-        const clone=material.clone();
-        if(clone.emissive){clone.emissive.set('#3e8798');clone.emissiveIntensity=.28;}
-        return clone;
+      const meshes=collectMeshes(object);
+      meshes.forEach(mesh=>{
+        const current=Array.isArray(mesh.material)?mesh.material:[mesh.material];
+        const highlighted=current.map(material=>{
+          const clone=material.clone();
+          if(clone.emissive){clone.emissive.set('#3e8798');clone.emissiveIntensity=.28;}
+          return clone;
+        });
+        mesh.material=Array.isArray(mesh.material)?highlighted:highlighted[0];
+        selectedMeshes.push(mesh);
       });
-      selected.material=Array.isArray(selected.material)?highlighted:highlighted[0];
-      lastSelectedName=selected.userData.displayName||selected.name||'Componente';
-      selectionInfo.textContent='PIEZA SELECCIONADA · '+lastSelectedName;
+      lastSelectedName=label||object.userData.displayName||object.name||'Componente';
+      selectionInfo.textContent='SELECCIÓN 3D · '+lastSelectedName;
     }
 
     const raycaster=new T.Raycaster(),pointer=new T.Vector2();
@@ -800,6 +819,8 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
     const tank=document.getElementById('focusTank');
     const zoomIn=document.getElementById('zoomIn');
     const zoomOut=document.getElementById('zoomOut');
+    const selectWhole=document.getElementById('selectWhole');
+    selectWhole.addEventListener('click',()=>{selectObject(root,'CONJUNTO COMPLETO');fit(sphere,true);controls.autoRotate=false;syncToggle();});
     const syncToggle=()=>{toggle.setAttribute('aria-pressed',String(controls.autoRotate));toggle.textContent=controls.autoRotate?'Pausar giro':'Reanudar giro';};
     syncToggle();
     toggle.addEventListener('click',()=>{controls.autoRotate=!controls.autoRotate;syncToggle();});
@@ -809,7 +830,7 @@ html{scroll-snap-type:none!important;scroll-padding-top:80px}
         selectionInfo.textContent='BELLY TANK · El modelo GLB debe incluir el nombre de esta pieza para enfocarla.';
         return;
       }
-      selectObject(tankRoot);
+      selectObject(tankRoot,'BELLY TANK · '+(tankRoot.name||'DEPÓSITO'));
       const b=new T.Box3().setFromObject(tankRoot);
       fit(b,true);controls.autoRotate=false;syncToggle();
       tank.setAttribute('aria-pressed','true');tank.textContent='Pieza seleccionada';
