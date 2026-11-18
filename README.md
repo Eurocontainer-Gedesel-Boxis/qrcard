@@ -1,27 +1,19 @@
-# BOXIS · Eurocontainer · E=Gedesel — experiencia industrial premium
+# BOXIS · Eurocontainer · E=Gedesel
 
-Landing corporativa de BOX Integration Systems, Eurocontainer y E=Gedesel. Diseño industrial con fondos fotográficos corporativos, superficies de vidrio translúcido y elementos interactivos con profundidad.
-
-## Estructura
-- `index.html`: página responsive continua, con escena Three.js, vistas exterior/interior/corte/belly tank/despiece, capacidades y contactos.
-- `assets/eurocontainer-daylight-wide.webp`: fotografía diurna original de Eurocontainer utilizada como referencia de composición y fondo.
-- `assets/eurocontainer-side-logo-transparent.webp` y `assets/eurocontainer-tower-mark.webp`: recortes del logotipo/serigrafía Eurocontainer tomados de las fotografías de la unidad aportadas al proyecto; no son un wordmark redibujado.
-- `assets/boxis-logo-white.webp`: símbolo y lockup BOX Integration Systems para la marca de agua sutil de las tarjetas de contacto.
-- Los fondos corporativos BOXIS, Eurocontainer y E=Gedesel se mantienen diferenciados en accesos y paneles.
+Landing corporativa industrial con superficies de cristal, tipografía legible, interacción 3D y contactos BOXIS.
 
 ## Visor 3D
-Reconstrucción procedural Three.js basada en las dos fotografías aportadas. Incluye envolvente acústica, torre elevada de módulos, panelado corrugado, puertas, silenciador y escape, rejillas, bastidor, belly tank, logotipos fotográficos y grupos seleccionables.
+El visor muestra únicamente tres modos de trabajo:
+1. **Exterior completo:** conjunto Eurocontainer, torre, puertas, silenciador, rejillas, faldón, bastidor y serigrafías.
+2. **Interior del contenedor:** motor diésel genérico, alternador, cuadro de motor, cuadros auxiliar/datos/Fuel Panel/Davenham, líneas de combustible, Fire Valve, electroválvula, sensores, cableado de potencia y alumbrado.
+3. **Interior del belly tank:** paredes y fondo del depósito, tapa desmontable, cuadro propio, HYTEK, T5020, sondas y bomba Fuel Polisher.
 
-Las vistas incluyen:
-- **Exterior:** conjunto completo y sus elementos visibles.
-- **Interior:** motor diésel genérico, alternador, cuadro de motor, cuadros auxiliar/datos/Fuel Panel/Davenham, tuberías y cableado, sensores y alumbrado.
-- **Corte:** visión del interior a través de paneles retirados.
-- **Belly tank:** cuadro propio, HYTEK, T5020, sondas y bomba Fuel Polisher.
-- **Despiece:** separación visual de los principales conjuntos.
+El ratón permite orbitar 360°, usar zoom, pausar/reanudar la rotación y seleccionar componentes visibles. La cámara encuadra automáticamente solo la geometría visible en cada uno de los tres modos.
 
-Cada grupo y sus mallas pueden seleccionarse, resaltarse y encuadrarse. La cámara permite órbita 360°, zoom, amortiguación y giro automático.
+## Identidad gráfica
+- La serigrafía lateral y la marca de la torre se obtienen de recortes de las fotografías de la unidad proporcionadas por el usuario. Las texturas conservan transparencia para que no aparezca un rectángulo negro sobre la chapa.
+- Las fichas de José Luis Herrando, Alejandro Ballestín y Rubén Ruiz Cañón utilizan el logotipo BOX Integration Systems como marca de agua de fondo, texto ampliado y acciones «Añadir a contactos» / «Enviar correo» sin cajas ni marcos.
+- Los datos de contacto conservan la descarga individual de vCards.
 
 ## Precisión técnica
-La geometría exterior es una reconstrucción visual a partir de fotografías, no un modelo CAD/STEP del fabricante. La distribución y geometría de los componentes interiores son esquemáticas y sirven para visualizar la arquitectura indicada, no para fabricación, mantenimiento ni ingeniería de detalle. El OEM del motor está marcado como **por confirmar**: no se atribuye a Rolls-Royce, CAT ni Cummins sin documentación de esa unidad.
-
-Para obtener fidelidad dimensional, ubicación exacta de equipos, tuberías, cableado y elementos internos se requiere el modelo CAD/STEP del conjunto y sus planos de fabricación.
+La geometría exterior es una reconstrucción visual a partir de las fotografías. La disposición de los equipos interiores es conceptual y se ha montado a partir de la lista de componentes facilitada por el usuario. No es un CAD/STEP del fabricante y no debe utilizarse para fabricación, mantenimiento ni ingeniería de detalle. El fabricante del motor queda por confirmar.
