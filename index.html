@@ -1268,13 +1268,13 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
     // Exact Eurocontainer serigraphy cropped from the real unit photograph supplied in this conversation.
     const branding=part('09 · SERIGRAFÍA EUROCONTAINER · ORIGINAL FOTOGRAFIADA');
     const logoLoader=new T.TextureLoader();
-    const sideMap=logoLoader.load('assets/eurocontainer-side-wordmark.webp');
+    const sideMap=logoLoader.load('assets/eurocontainer-side-logo-transparent.webp');
     sideMap.colorSpace=T.SRGBColorSpace;sideMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
-    const sideLogo=new T.Mesh(new T.PlaneGeometry(2.55,.565),new T.MeshBasicMaterial({map:sideMap,side:T.DoubleSide,depthWrite:false,toneMapped:false}));
+    const sideLogo=new T.Mesh(new T.PlaneGeometry(2.55,.532),new T.MeshBasicMaterial({map:sideMap,side:T.DoubleSide,depthWrite:false,toneMapped:false}));
     sideLogo.name='Serigrafía original Eurocontainer.es · lateral';sideLogo.position.set(6.55,2.58,1.418);sideLogo.userData.component=sideLogo.name;sideLogo.renderOrder=4;branding.add(sideLogo);
     const endMap=logoLoader.load('assets/eurocontainer-tower-mark.webp');
     endMap.colorSpace=T.SRGBColorSpace;endMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
-    const endLogo=new T.Mesh(new T.PlaneGeometry(1.18,1.14),new T.MeshBasicMaterial({map:endMap,side:T.DoubleSide,depthWrite:false,toneMapped:false}));
+    const endLogo=new T.Mesh(new T.PlaneGeometry(1.18,.885),new T.MeshBasicMaterial({map:endMap,side:T.DoubleSide,depthWrite:false,toneMapped:false}));
     endLogo.name='Serigrafía original Eurocontainer · torre';endLogo.position.set(-1.14,1.52,1.418);endLogo.userData.component=endLogo.name;endLogo.renderOrder=4;branding.add(endLogo);
 
     // Studio ground is separate from the selectable product.
@@ -1291,7 +1291,7 @@ button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:h
     const wholeBounds=new T.Box3().setFromObject(root);
     const wholeSphere=wholeBounds.getBoundingSphere(new T.Sphere());
     const viewDirection=new T.Vector3(-.90,.34,1.20).normalize();
-    const tankViewDirection=new T.Vector3(-.68,-.60,1.12).normalize();
+    const tankViewDirection=new T.Vector3(-.68,.42,1.12).normalize();
     let activeGroup=root,selectedMeshes=[],isVisible=true,frameHandle=0;
     function collectMeshes(group){
       const list=[];group.traverse(object=>{if(object.isMesh)list.push(object);});return list;
