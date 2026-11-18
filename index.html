@@ -1345,6 +1345,11 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
     // Belly tank instrumentation: HYTEK, T5020, level/overfill probes and fuel polisher.
     const tankSystems=part('03A · INSTRUMENTACIÓN Y EQUIPOS DEL BELLY TANK',tank);
     tankSystems.visible=false;
+    const tankInstrumentShelf=part('03D · BANCADA INTERIOR DE INSTRUMENTACIÓN',tankSystems);
+    box(tankInstrumentShelf,'Bandeja de soporte para cuadros HYTEK y T5020',3.12,.06,.74,3.10,.72,.28,materials.frame);
+    for(const x of [1.72,4.48]){
+      box(tankInstrumentShelf,'Perfil de apoyo de instrumentación',.07,.08,.78,x,.72,.28,materials.edge);
+    }
     cabinet(tankSystems,'Cuadro belly tank','BELLY TANK PANEL',2.10,.62,.30,.28,.90);
     cabinet(tankSystems,'Cuadro HYTEK','HYTEK · LEVEL',3.12,.56,.30,.28,.90);
     cabinet(tankSystems,'Cuadro T5020','T5020 · LEVEL',4.08,.56,.30,.28,.90);
@@ -1626,6 +1631,7 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
     function setView(mode,shouldFrame=true){
       if(!['exterior','interior','tank'].includes(mode))mode='exterior';
       currentMode=mode;
+      floor.visible=mode!=='tank';
 
       // Start from a known clean state every time. No leftover hidden panels or exploded offsets.
       main.visible=true;tower.visible=true;chassis.visible=true;tank.visible=true;
