@@ -1494,42 +1494,13 @@ button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.com
     controls.autoRotate=true;controls.autoRotateSpeed=.32;
 
     root.updateMatrixWorld(true);
-    const wholeBounds=new T.Box3().setFromObject(root);
-    const wholeSphere=wholeBounds.getBoundingSphere(new T.Sphere());
-    const viewDirection=new T.Vector3(-.90,.34,1.20).normalize();
-    const tankViewDirection=new T.Vector3(-.68,.42,1.12).normalize();
-    let activeGroup=root,selectedMeshes=[],isVisible=true,frameHandle=0;
+    root.updateMatrixWorld(true);
+    let selectedMeshes=[];
     function collectMeshes(group){
       const list=[];group.traverse(object=>{if(object.isMesh)list.push(object);});return list;
     }
     const allMeshes=collectMeshes(root);
     const originalMaterials=new Map(allMeshes.map(mesh=>[mesh,mesh.material]));
-    function frameGroup(group,smooth=true){
-      activeGroup=group;
-      const bounds=new T.Box3();
-      (Array.isArray(group)?group:[group]).forEach(item=>bounds.union(new T.Box3().setFromObject(item)));
-      const sphere=bounds.getBoundingSphere(new T.Sphere());
-      const aspect=Math.max(.48,canvas.clientWidth/Math.max(1,canvas.clientHeight));
-      const halfV=T.MathUtils.degToRad(camera.fov/2);
-      const halfH=Math.atan(Math.tan(halfV)*aspect);
-      const distance=sphere.radius/Math.sin(Math.min(halfV,halfH))*1.13;
-      const target=sphere.center.clone();
-      const direction=group===tank?tankViewDirection:viewDirection;
-      const position=target.clone().addScaledVector(direction,distance);
-      floor.visible=group!==tank;
-      controls.minDistance=Math.max(.65,sphere.radius*1.04);
-      controls.maxDistance=Math.max(controls.minDistance+3,sphere.radius*5.5);
-      if(smooth){
-        cameraTarget.copy(position);lookTarget.copy(target);moving=true;
-      }else{
-        camera.position.copy(position);controls.target.copy(target);
-        cameraTarget.copy(position);lookTarget.copy(target);moving=false;
-      }
-      controls.update();
-    }
-    const cameraTarget=new T.Vector3(),lookTarget=new T.Vector3();
-    let moving=false;
-    frameGroup(root,false);
     function clearHighlight(){
       selectedMeshes.forEach(mesh=>{mesh.material=originalMaterials.get(mesh);});
       selectedMeshes=[];
