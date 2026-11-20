@@ -3,1725 +3,342 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b131b">
-<meta name="description" content="BOX Integration Systems, Eurocontainer y E=Gedesel. Integración modular, fabricación de contenedores industriales e instalaciones eléctricas.">
+<meta name="theme-color" content="#09131b">
 <title>BOXIS · Eurocontainer · E=Gedesel | Integración industrial</title>
+<meta name="description" content="BOX Integration Systems, Eurocontainer y E=Gedesel. Integración modular, fabricación de contenedores industriales e instalaciones eléctricas de alta y baja tensión.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="BOXIS · Eurocontainer · E=Gedesel">
+<meta property="og:description" content="Ingeniería modular. Soluciones reales. Integración industrial, contenedores y instalaciones eléctricas.">
+<meta property="og:image" content="assets/img/unidad-eurocontainer.webp">
+<link rel="icon" type="image/png" href="assets/logos/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/eurocontainer-daylight-wide.webp">
-<style>
-:root{
-  --bg:#0a1219;--bg2:#101c26;--panel:#14232e;--ink:#f3f6f8;--muted:#9aabb6;--line:rgba(218,233,241,.16);
-  --blue:#59cce2;--blue2:#2e8aa6;--orange:#e87543;--green:#7dc9b6;--max:1720px;
-  --ease:cubic-bezier(.2,.72,.18,1);--shadow:0 26px 70px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-snap-type:y mandatory;scrollbar-color:#36505f #091119}
-body{margin:0;min-width:320px;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
-a{color:inherit}button{font:inherit}
-.scroll-line{position:fixed;z-index:80;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--blue),#d2e8ee,var(--orange));box-shadow:0 0 18px rgba(89,204,226,.6);pointer-events:none}
-.screen{position:relative;min-height:100svh;height:100svh;overflow:hidden;scroll-snap-align:start;isolation:isolate}
-.screen-hero{display:grid;grid-template-rows:76px minmax(0,1fr) 126px;padding:0 clamp(24px,4.1vw,76px) 22px;background:#0b141d}
-.hero-photo{position:absolute;inset:0;z-index:-3;background:url('assets/eurocontainer-daylight-wide.webp') center 54%/cover no-repeat;filter:brightness(.36) saturate(.64) contrast(1.12);transform:scale(1.025);transition:transform 1.2s var(--ease),filter 1.2s var(--ease)}
-.hero-vignette{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(5,12,18,.95) 0%,rgba(7,16,23,.86) 30%,rgba(7,16,23,.58) 62%,rgba(6,13,19,.72) 100%),linear-gradient(180deg,rgba(2,9,14,.45) 0%,transparent 36%,rgba(2,9,14,.72) 100%)}
-.hero-grid-lines{position:absolute;z-index:-1;inset:0;opacity:.16;pointer-events:none;background-image:linear-gradient(rgba(190,216,227,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(190,216,227,.13) 1px,transparent 1px);background-size:84px 84px;mask-image:linear-gradient(90deg,#000,transparent 76%)}
-.header{width:100%;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(233,245,250,.14);position:relative;z-index:30}
-.main-brand{display:flex;align-items:center;gap:16px;text-decoration:none;min-width:0}
-.main-brand img{width:160px;height:56px;object-fit:contain;object-position:left center;filter:drop-shadow(0 2px 14px rgba(0,0,0,.16))}
-.main-brand span{display:block;padding-left:15px;border-left:1px solid rgba(255,255,255,.24);font-size:8px;line-height:1.65;letter-spacing:.23em;text-transform:uppercase;font-weight:800;color:#c0d1d9;white-space:nowrap}
-.nav{display:flex;align-items:center;gap:clamp(16px,2.6vw,42px)}
-.nav a{font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#d2dfe5;text-decoration:none;position:relative;padding:10px 0;transition:color .25s,transform .25s}
-.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:var(--blue);transition:right .32s var(--ease)}
-.nav a:hover{color:#fff;transform:translateY(-2px)}.nav a:hover:after{right:0}
-.nav-cta{padding:11px 15px!important;border:1px solid rgba(255,255,255,.32);background:rgba(245,251,255,.06);backdrop-filter:blur(12px);}
-.nav-cta:after{display:none}.nav-cta:hover{border-color:var(--blue);background:rgba(89,204,226,.12)}
-.hero-main{width:100%;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(300px,.76fr) minmax(0,1.24fr);gap:clamp(18px,2vw,40px);align-items:center;min-height:0;padding:10px 0 6px}
-.hero-copy{position:relative;z-index:4;max-width:610px;padding:4px 0 12px}
-.eyebrow{display:flex;align-items:center;gap:12px;color:#91d8e7;font-size:9px;line-height:1.4;letter-spacing:.25em;text-transform:uppercase;font-weight:800;margin:0 0 22px}
-.eyebrow:before{content:"";width:38px;height:1px;background:var(--orange);box-shadow:0 0 12px rgba(232,117,67,.65)}
-h1{margin:0;max-width:650px;color:#f5f8fa;font-family:Manrope,Inter,sans-serif;font-size:clamp(42px,5.2vw,82px);font-weight:800;line-height:.99;letter-spacing:-.075em;text-wrap:balance}
-h1 span{color:#8fd9e8}
-.hero-lead{max-width:500px;margin:24px 0 0;color:#c2d0d8;font-size:13px;line-height:1.85;font-weight:500}
-.hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:33px 0 0;border-top:1px solid rgba(223,238,245,.18);border-bottom:1px solid rgba(223,238,245,.18)}
-.hero-stat{padding:13px 12px 13px 0;min-width:0}.hero-stat+.hero-stat{padding-left:14px;border-left:1px solid rgba(223,238,245,.15)}
-.hero-stat b{display:block;color:#f4f7f9;font-family:'Barlow Condensed',sans-serif;font-size:25px;font-weight:700;letter-spacing:.015em;line-height:1}
-.hero-stat span{display:block;margin-top:6px;color:#8fa3af;font-size:7px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;line-height:1.5}
-.hero-actions{display:flex;align-items:center;gap:12px;margin-top:27px;flex-wrap:wrap}
-.action-primary,.action-quiet{min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:0 17px;text-decoration:none;text-transform:uppercase;font-size:8px;font-weight:900;letter-spacing:.16em;transition:transform .3s var(--ease),background .3s,border-color .3s,color .3s;position:relative;overflow:hidden}
-.action-primary{background:linear-gradient(120deg,#dcecf1,#9bc8d4);color:#0c202b;border:1px solid rgba(255,255,255,.48);box-shadow:0 10px 24px rgba(0,0,0,.2)}
-.action-quiet{border:1px solid rgba(222,238,245,.28);background:rgba(228,241,247,.055);color:#edf7fa;backdrop-filter:blur(14px)}
-.action-primary:hover,.action-quiet:hover{transform:translateY(-3px);border-color:#9ee1ed}
-.action-quiet:hover{background:rgba(89,204,226,.14)}
-.action-primary .arr,.action-quiet .arr{font-size:16px;font-weight:400;line-height:0}
-.model-stage{position:relative;min-width:0;height:100%;min-height:430px;overflow:visible;perspective:1800px;isolation:isolate}
-.stage-glow{position:absolute;z-index:-1;inset:5% 0 0;background:radial-gradient(ellipse at 56% 54%,rgba(89,204,226,.18),transparent 56%),radial-gradient(ellipse at 70% 84%,rgba(229,118,67,.10),transparent 40%);pointer-events:none}
-.stage-grid{display:none!important;position:absolute;inset:12% 0 4%;z-index:-1;opacity:.26;background-image:linear-gradient(rgba(192,221,232,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(192,221,232,.16) 1px,transparent 1px);background-size:44px 44px;transform:perspective(500px) rotateX(63deg) scale(1.45);transform-origin:50% 80%;mask-image:linear-gradient(180deg,transparent,#000 24%,transparent 95%)}
-#container3d{position:absolute;inset:0;width:100%;height:100%;display:block;outline:none;cursor:grab;touch-action:pan-y;opacity:0;transition:opacity .45s}
-#container3d:active{cursor:grabbing}.model-stage.webgl-ready #container3d,.model-stage.model-ready #container3d{opacity:1}
-.stage-caption{position:absolute;z-index:3;left:2.8%;top:4%;display:flex;gap:12px;align-items:center;color:#afc4ce;font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;pointer-events:none}
-.stage-caption:before{content:"";width:7px;height:7px;background:var(--orange);transform:rotate(45deg);box-shadow:0 0 14px rgba(232,117,67,.6)}
-.stage-index{position:absolute;right:3%;top:4%;z-index:3;color:rgba(223,241,248,.58);font-family:'Barlow Condensed',sans-serif;font-size:22px;letter-spacing:.09em;font-weight:700;pointer-events:none}
-.stage-index span{color:var(--orange)}
-.model-hover-label{position:absolute;z-index:8;left:3%;bottom:13%;padding:9px 13px;border-left:2px solid var(--blue);background:rgba(3,13,20,.74);backdrop-filter:blur(16px);color:#e6f3f7;font-size:8px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;opacity:0;transform:translateY(6px);transition:opacity .18s,transform .18s;pointer-events:none}.model-hover-label.is-visible{opacity:1;transform:translateY(0)}
-.model-controls{position:absolute;z-index:5;right:2.5%;bottom:5%;display:flex;gap:5px;align-items:center;padding:5px;background:rgba(6,16,23,.49);border:1px solid rgba(231,245,250,.24);backdrop-filter:blur(18px) saturate(145%);box-shadow:0 12px 36px rgba(0,0,0,.24)}
-.model-controls button{height:31px;min-width:34px;padding:0 10px;border:1px solid rgba(233,245,250,.14);background:rgba(230,245,250,.045);color:#dce8ed;font-size:8px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s}
-.model-controls button:hover,.model-controls button[aria-pressed="true"]{background:rgba(89,204,226,.18);border-color:rgba(123,221,236,.65);color:#fff;transform:translateY(-1px)}
-.model-controls button.accent{border-color:rgba(232,117,67,.5);color:#ffd6c5}.model-controls button.accent:hover,.model-controls button.accent[aria-pressed="true"]{background:rgba(232,117,67,.19);border-color:rgba(232,117,67,.8)}
-.stage-hint{position:absolute;z-index:3;left:3%;bottom:6%;color:#b9cbd4;font-size:8px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;pointer-events:none;display:flex;align-items:center;gap:9px}
-.stage-hint:before{content:"";width:23px;height:1px;background:var(--blue)}
-.model-tag{position:absolute;z-index:3;left:4%;top:51%;transform:translateY(-50%);display:grid;gap:9px;pointer-events:none}
-.model-tag span{padding:7px 10px;border-left:1px solid rgba(115,208,225,.75);background:linear-gradient(90deg,rgba(6,18,27,.56),transparent);color:#d9e7ec;font-size:7px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;backdrop-filter:blur(6px)}
-.brand-dock{width:100%;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative;z-index:20}
-.brand-tile{--rx:0deg;--ry:0deg;--mx:50%;--my:50%;position:relative;isolation:isolate;min-width:0;min-height:112px;display:grid;grid-template-columns:minmax(145px,.78fr) minmax(0,1.22fr) 22px;align-items:center;gap:16px;padding:15px 18px;overflow:hidden;text-decoration:none;color:#fff;border:1px solid rgba(223,240,247,.29);background:rgba(7,20,29,.26);backdrop-filter:blur(18px) saturate(145%);box-shadow:0 17px 40px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.28);transform:perspective(1200px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .38s var(--ease),border-color .3s,box-shadow .3s}
-.brand-tile:before{content:"";position:absolute;z-index:-2;inset:0;background-image:linear-gradient(100deg,rgba(5,15,23,.82),rgba(5,15,23,.48)),var(--tile-image);background-size:cover;background-position:var(--tile-position,center);transition:transform .75s var(--ease),filter .5s;transform:scale(1.02)}
-.brand-tile:after{content:"";position:absolute;z-index:-1;inset:0;opacity:.8;background:radial-gradient(circle at var(--mx) var(--my),rgba(229,249,255,.17),transparent 35%),linear-gradient(115deg,transparent 18%,rgba(255,255,255,.075) 49%,transparent 64%);pointer-events:none}
-.brand-tile:hover{transform:perspective(1200px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-5px) translateZ(12px);border-color:rgba(239,251,255,.75);box-shadow:0 25px 54px rgba(0,0,0,.32),inset 0 1px rgba(255,255,255,.43)}
-.brand-tile:hover:before{transform:scale(1.08);filter:saturate(1.15)}
-.brand-tile.boxis{--tile-image:url('https://boxis.es/wp-content/uploads/2020/11/energia-background-icon.jpg');--tile-position:center 52%;--accent:#6bc9dc}
-.brand-tile.euro{--tile-image:url('assets/eurocontainer-daylight-wide.webp');--tile-position:83% 55%;--accent:#e87543}
-.brand-tile.gedesel{--tile-image:url('https://gedesel.net/wp-content/uploads/2026/04/gedesel_Hospital_teruel.jpg');--tile-position:center 54%;--accent:#80d0bf}
-.brand-tile.gedesel:before{background-image:linear-gradient(100deg,rgba(5,17,24,.84),rgba(6,22,29,.52)),var(--tile-image),radial-gradient(ellipse at 80% 22%,rgba(125,201,182,.2),transparent 42%),linear-gradient(135deg,#102c36,#153f49)}
-.brand-tile.gedesel:after{background-image:radial-gradient(circle at var(--mx) var(--my),rgba(150,239,220,.16),transparent 40%),linear-gradient(140deg,transparent 42%,rgba(117,209,189,.11) 42.1%,transparent 42.6%)}
-.tile-logo{position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-start;min-width:0;height:66px;transform:translateZ(26px)}
-.tile-logo img{display:block;width:auto;max-width:100%;max-height:55px;object-fit:contain;object-position:left center;filter:drop-shadow(0 3px 10px rgba(0,0,0,.22))}
-.tile-logo .boxis-logo{width:142px;max-height:56px}
-.tile-logo .euro-logo{width:168px;max-height:57px}
-.tile-logo .gedesel-logo{width:166px;max-height:54px}.brand-tile.gedesel .tile-logo{padding:7px 10px;border:1px solid rgba(235,249,246,.38);background:rgba(228,245,241,.15);backdrop-filter:blur(16px) saturate(135%)}
-.logo-fallback{display:none;color:#f8fbfc;font-weight:800;font-size:18px;letter-spacing:-.05em;line-height:1.05;white-space:nowrap}
-.logo-fallback.euro span{color:#ee8050}.logo-fallback.gedesel{font-weight:800;letter-spacing:-.025em}.logo-fallback.gedesel b{color:#8cd5c5}
-.tile-logo img.logo-failed{display:none}.tile-logo img.logo-failed+.logo-fallback{display:inline-flex}
-.tile-text{position:relative;z-index:2;min-width:0;transform:translateZ(18px)}
-.tile-text small{display:block;color:var(--accent);font-size:7px;font-weight:900;letter-spacing:.19em;text-transform:uppercase;margin:0 0 6px}
-.tile-text strong{display:block;font-size:clamp(13px,1.1vw,16px);font-weight:800;letter-spacing:-.035em;line-height:1.15}
-.tile-text span{display:block;margin-top:5px;color:rgba(233,244,248,.75);font-size:8px;line-height:1.45;font-weight:500}
-.tile-arrow{position:relative;z-index:2;display:grid;place-items:center;width:25px;height:25px;border:1px solid rgba(231,245,250,.38);color:#fff;font-size:17px;font-weight:300;transform:translateZ(35px);transition:transform .3s,border-color .3s,background .3s}
-.brand-tile:hover .tile-arrow{transform:translate(3px,-3px) translateZ(38px);border-color:var(--accent);background:rgba(245,250,252,.12)}
-.screen-footnote{position:absolute;bottom:9px;left:clamp(24px,4.1vw,76px);color:rgba(216,232,239,.44);font-size:7px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;pointer-events:none}
-
-/* Screen two: one compact, editorial overview with direct contacts. */
-.platform-screen{padding:clamp(25px,3.4vh,42px) clamp(24px,4.1vw,76px) 24px;background:radial-gradient(ellipse at 85% 0%,rgba(56,120,142,.15),transparent 42%),linear-gradient(145deg,#0d1821,#101e28 65%,#0a141c);display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:16px}
-.platform-screen:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.25;background-image:linear-gradient(rgba(196,221,231,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(196,221,231,.09) 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(135deg,#000,transparent 85%)}
-.platform-head{width:100%;max-width:var(--max);margin:0 auto;display:flex;align-items:end;justify-content:space-between;gap:26px}
-.platform-head .eyebrow{margin-bottom:9px}.platform-head h2{margin:0;color:#f2f6f8;font-size:clamp(28px,3vw,43px);font-weight:800;line-height:1.02;letter-spacing:-.06em}
-.platform-head h2 span{color:#8fd9e8}.platform-head p{max-width:360px;margin:0 0 4px;color:#a6b8c2;font-size:10px;line-height:1.7;font-weight:500}
-.company-grid{width:100%;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;min-height:0}
-.company-panel{--rx:0deg;--ry:0deg;--mx:50%;--my:50%;position:relative;isolation:isolate;min-width:0;overflow:hidden;padding:20px 20px 17px;border:1px solid rgba(221,238,245,.16);background:linear-gradient(145deg,rgba(28,47,59,.88),rgba(14,29,39,.84));box-shadow:0 18px 42px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.12);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .38s var(--ease),border-color .3s,box-shadow .3s;display:flex;flex-direction:column}
-.company-panel:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.85;pointer-events:none;background:radial-gradient(circle at var(--mx) var(--my),rgba(110,204,224,.12),transparent 44%)}
-.company-panel:hover{border-color:rgba(182,228,239,.45);box-shadow:0 25px 50px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.18);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-3px)}
-.company-panel:after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--brand-accent),transparent);opacity:.9}
-.company-panel.boxis{--brand-accent:#69cfe1}.company-panel.euro{--brand-accent:#e87543}.company-panel.gedesel{--brand-accent:#82cdbd}
-.company-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;margin-bottom:14px}
-.company-logo{display:flex;align-items:center;min-width:0;height:48px;max-width:76%}
-.company-logo img{display:block;max-width:100%;max-height:44px;width:auto;object-fit:contain;object-position:left center}.company-logo img.logo-failed{display:none}.company-logo img.logo-failed+.logo-fallback{display:inline-flex}
-.company-logo .boxis-logo{max-width:143px;max-height:47px}.company-logo .euro-logo{max-width:155px;max-height:44px}.company-logo .gedesel-logo{max-width:168px;max-height:43px}.company-panel.gedesel .company-logo{padding:5px 9px;border:1px solid rgba(235,249,246,.28);background:rgba(228,245,241,.12);backdrop-filter:blur(12px)}
-.company-index{color:rgba(208,226,235,.45);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.12em}
-.company-panel h3{margin:0;color:#f1f5f7;font-size:19px;line-height:1.1;letter-spacing:-.04em;font-weight:800}
-.company-intro{margin:9px 0 0;color:#aebfc8;font-size:9px;line-height:1.65;font-weight:500;max-width:430px}
-.company-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:15px 0 0}
-.company-fact{padding:9px 10px;border-left:1px solid rgba(124,207,224,.55);background:rgba(226,240,246,.045)}
-.company-fact b{display:block;color:#ecf5f8;font-family:'Barlow Condensed',sans-serif;font-size:23px;line-height:1;font-weight:700;letter-spacing:.02em}
-.company-fact span{display:block;color:#8ea4b0;font-size:7px;line-height:1.45;margin-top:5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.company-list{list-style:none;padding:0;margin:13px 0 0;display:grid;gap:6px}
-.company-list li{position:relative;padding-left:14px;color:#c2d0d7;font-size:8px;line-height:1.4;font-weight:550}
-.company-list li:before{content:"";position:absolute;left:0;top:5px;width:4px;height:4px;background:var(--brand-accent);transform:rotate(45deg)}
-.company-contact{margin-top:auto;padding-top:14px;border-top:1px solid rgba(218,235,243,.13);display:grid;gap:6px}
-.company-contact a{display:flex;align-items:center;gap:8px;color:#c7d8df;text-decoration:none;font-size:8px;font-weight:600;line-height:1.4;transition:color .2s}
-.company-contact a:hover{color:#fff}.company-contact .contact-label{color:#7f99a6;font-size:7px;letter-spacing:.14em;text-transform:uppercase;font-weight:900}
-.company-contact .contact-cta{display:inline-flex;align-items:center;justify-content:space-between;width:100%;margin-top:5px;padding:8px 0 0;border-top:1px solid rgba(218,235,243,.09);color:var(--brand-accent);font-size:7px;letter-spacing:.17em;text-transform:uppercase;font-weight:900}
-.team-strip{width:100%;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:170px repeat(3,minmax(0,1fr));gap:9px;align-items:stretch}
-.team-heading{display:flex;flex-direction:column;justify-content:center;padding:10px 15px 10px 0;border-right:1px solid rgba(218,235,243,.15)}
-.team-heading small{color:#8ed9e7;font-size:7px;letter-spacing:.18em;text-transform:uppercase;font-weight:900}
-.team-heading strong{margin-top:6px;color:#f1f6f8;font-size:13px;line-height:1.25;font-weight:800;letter-spacing:-.025em}
-.team-contact{min-width:0;padding:10px 12px;border:1px solid rgba(218,235,243,.13);background:rgba(232,244,249,.035);transition:background .25s,border-color .25s,transform .25s}
-.team-contact:hover{background:rgba(232,244,249,.075);border-color:rgba(146,216,231,.34);transform:translateY(-2px)}
-.team-contact strong{display:block;color:#edf4f7;font-size:9px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.team-contact span{display:block;color:#96aab4;font-size:7px;line-height:1.4;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.team-contact a{display:block;color:#8dd7e7;text-decoration:none;font-size:7px;font-weight:700;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.platform-footer{width:100%;max-width:var(--max);margin:0 auto;padding-top:9px;border-top:1px solid rgba(218,235,243,.12);display:flex;align-items:center;justify-content:space-between;gap:18px;color:#748b98;font-size:7px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
-.platform-footer nav{display:flex;gap:18px;flex-wrap:wrap}.platform-footer a{color:#b7c9d1;text-decoration:none;transition:color .2s}.platform-footer a:hover{color:#fff}
-
-/* 3D interaction across navigation and every raised panel. */
-.tilt-surface{transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d}
-:focus-visible{outline:2px solid #92e1ef;outline-offset:4px}
-@media(max-width:1200px){
-  .screen-hero{grid-template-rows:68px minmax(0,1fr) 112px;padding-left:26px;padding-right:26px}
-  .hero-main{grid-template-columns:minmax(285px,.72fr) minmax(0,1.28fr);gap:14px}
-  .brand-tile{grid-template-columns:minmax(118px,.78fr) minmax(0,1.22fr) 18px;gap:10px;padding:12px 13px}
-  .tile-logo .boxis-logo{width:120px}.tile-logo .euro-logo{width:140px}.tile-logo .gedesel-logo{width:138px}
-  .platform-screen{padding-left:26px;padding-right:26px}.company-panel{padding:17px 16px 14px}.team-strip{grid-template-columns:135px repeat(3,minmax(0,1fr))}
-}
-@media(max-width:850px){
-  html{scroll-snap-type:y proximity}
-  .screen{height:auto;min-height:100svh}
-  .screen-hero{grid-template-rows:auto auto auto;padding:0 16px 20px;min-height:100svh}
-  .header{min-height:67px;flex-wrap:wrap;padding:9px 0}.main-brand img{width:125px;height:40px}.main-brand span{font-size:7px;padding-left:10px}.nav{gap:13px}.nav a{font-size:7px}
-  .hero-main{grid-template-columns:1fr;gap:0;padding:23px 0 0}
-  .hero-copy{max-width:100%;padding:0 0 8px}.eyebrow{margin-bottom:12px;font-size:8px}.hero-copy h1{font-size:clamp(37px,7.2vw,60px);max-width:700px}.hero-lead{font-size:11px;line-height:1.65;margin-top:13px;max-width:620px}.hero-stats{margin-top:15px}.hero-stat{padding-top:9px;padding-bottom:9px}.hero-stat b{font-size:20px}.hero-stat span{font-size:6px}.hero-actions{margin-top:14px}
-  .model-stage{height:clamp(290px,48vw,430px);min-height:290px;margin-top:4px}.stage-caption{top:3%}.stage-index{top:3%;font-size:17px}.model-controls{bottom:3%;right:2%}.stage-hint{bottom:4%;font-size:7px}.model-tag{left:2%;top:48%}.model-tag span{font-size:6px;padding:6px 7px}
-  .brand-dock{grid-template-columns:1fr;gap:7px;margin-top:16px}.brand-tile{min-height:78px;grid-template-columns:138px minmax(0,1fr) 22px;padding:9px 13px}.tile-logo{height:54px}.tile-logo .boxis-logo{width:119px;max-height:47px}.tile-logo .euro-logo{width:128px;max-height:43px}.tile-logo .gedesel-logo{width:128px;max-height:41px}.tile-text small{font-size:6px;margin-bottom:4px}.tile-text strong{font-size:12px}.tile-text span{font-size:7px;margin-top:3px}
-  .screen-footnote{display:none}
-  .platform-screen{height:auto;min-height:100svh;padding:28px 16px 20px;display:flex;flex-direction:column;gap:13px}
-  .platform-head{display:block}.platform-head .eyebrow{margin-bottom:7px}.platform-head h2{font-size:31px}.platform-head p{margin-top:8px;font-size:9px;max-width:580px}
-  .company-grid{grid-template-columns:1fr;gap:8px}.company-panel{padding:14px 15px 12px;min-height:0}.company-top{min-height:42px;margin-bottom:8px}.company-logo{height:40px}.company-logo img{max-height:37px}.company-panel h3{font-size:16px}.company-intro{font-size:8px;margin-top:6px}.company-facts{margin-top:10px}.company-fact{padding:7px 8px}.company-fact b{font-size:19px}.company-fact span{font-size:6px}.company-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 10px;margin-top:9px}.company-list li{font-size:7px}.company-contact{padding-top:9px;margin-top:9px;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 10px}.company-contact a{font-size:7px}.company-contact .contact-label{grid-column:1/-1}
-  .team-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.team-heading{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(218,235,243,.12);padding:0 0 8px}.team-heading strong{font-size:11px}.team-contact{padding:8px}.team-contact strong{font-size:8px}.team-contact span,.team-contact a{font-size:6px}
-  .platform-footer{padding-top:9px;display:block;line-height:1.7}.platform-footer nav{margin-top:5px;gap:12px}
-}
-@media(max-width:520px){
-  .main-brand{gap:7px}.main-brand img{width:105px}.main-brand span{font-size:6px;letter-spacing:.14em}
-  .nav{gap:10px}.nav a{font-size:6px;letter-spacing:.12em}.nav-cta{padding:8px 9px!important}
-  .hero-copy h1{font-size:38px}.hero-lead{font-size:10px}.hero-stat b{font-size:18px}.hero-stat span{letter-spacing:.08em;font-size:5.5px}
-  .model-stage{height:285px;min-height:285px}.model-controls{gap:3px;padding:4px}.model-controls button{height:27px;min-width:27px;padding:0 7px;font-size:6px}.stage-hint{font-size:6px}.model-tag span{font-size:5px}
-  .brand-tile{grid-template-columns:116px minmax(0,1fr) 18px;min-height:72px;gap:8px;padding:8px 9px}.tile-logo .boxis-logo{width:106px}.tile-logo .euro-logo{width:112px}.tile-logo .gedesel-logo{width:110px}.tile-text strong{font-size:10px}.tile-text span{font-size:6px}.tile-arrow{width:21px;height:21px;font-size:14px}
-  .platform-head h2{font-size:28px}.company-panel{padding:12px}.company-logo img{max-height:33px}.company-list{grid-template-columns:1fr 1fr}.company-contact{grid-template-columns:1fr}.team-strip{grid-template-columns:1fr}.team-heading{grid-column:auto}.team-contact{display:grid;grid-template-columns:1fr 1fr;gap:3px 8px}.team-contact span{grid-column:1}.team-contact a{grid-column:2;grid-row:1/3;align-self:center;text-align:right}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-photo{transition:none}.brand-tile,.company-panel,.team-contact,.nav a,.action-primary,.action-quiet{transition:none!important}}
-
-/* Continuous industrial layout: no forced page-snap between blocks. */
-html{scroll-snap-type:none!important;scroll-padding-top:80px}
-.screen{height:auto!important;min-height:0;overflow:visible!important;scroll-snap-align:none!important}
-.screen-hero{min-height:100svh;height:auto;overflow:visible;grid-template-rows:76px minmax(520px,68vh) auto;padding-bottom:34px}
-.hero-photo{filter:brightness(.47) saturate(.82) contrast(1.09);transform:scale(1.018)}
-.hero-vignette{background:linear-gradient(90deg,rgba(5,12,18,.90) 0%,rgba(7,16,23,.77) 30%,rgba(7,16,23,.43) 63%,rgba(6,13,19,.59) 100%),linear-gradient(180deg,rgba(2,9,14,.28) 0%,transparent 38%,rgba(2,9,14,.66) 100%)}
-.hero-main{min-height:520px;align-items:stretch;grid-template-columns:minmax(330px,.72fr) minmax(0,1.28fr);gap:clamp(18px,2.5vw,48px)}
-.hero-copy{align-self:center;max-width:650px}
-.hero-copy h1{font-size:clamp(46px,5vw,84px);line-height:.96;letter-spacing:-.068em}
-.hero-lead{font-size:14px;line-height:1.8;max-width:540px}
-.hero-stat b{font-size:29px}.hero-stat span{font-size:8px}
-.model-stage{height:100%;min-height:520px;overflow:visible;isolation:isolate;perspective:1800px}
-#container3d{position:absolute;inset:0;width:100%;height:100%;overflow:visible;touch-action:pan-y;cursor:grab;z-index:2}
-#container3d:active{cursor:grabbing}
-
-.stage-glow{inset:6% 1% 0;background:radial-gradient(ellipse at 57% 53%,rgba(113,198,214,.19),transparent 57%),radial-gradient(ellipse at 70% 82%,rgba(229,118,67,.085),transparent 42%)}
-.model-controls{right:2%;bottom:3%;gap:6px;padding:6px;background:rgba(5,13,19,.68);border:1px solid rgba(231,245,250,.29);box-shadow:0 18px 40px rgba(0,0,0,.32)}
-.model-controls button{height:36px;min-width:38px;padding:0 12px;font-size:9px;letter-spacing:.1em}
-.stage-caption,.stage-hint,.model-tag,.stage-index{z-index:5}
-.stage-caption,.stage-hint{font-size:9px}
-.model-tag span{font-size:8px;padding:8px 12px}
-.brand-dock{gap:14px;margin-top:0;align-items:stretch}
-.brand-tile{min-height:150px;grid-template-columns:minmax(165px,.82fr) minmax(0,1.18fr) 28px;gap:17px;padding:20px 22px;border-color:rgba(232,246,251,.37);background:rgba(6,17,25,.27);backdrop-filter:blur(22px) saturate(155%);box-shadow:0 22px 48px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.32)}
-.brand-tile:before{background-image:linear-gradient(100deg,rgba(4,13,20,.66),rgba(5,15,22,.36)),var(--tile-image),linear-gradient(130deg,#132a38,#0b1822);background-size:cover;background-position:var(--tile-position,center);transform:scale(1.012)}
-.brand-tile:after{opacity:.88;background:radial-gradient(circle at var(--mx) var(--my),rgba(229,249,255,.2),transparent 38%),linear-gradient(115deg,transparent 16%,rgba(255,255,255,.1) 49%,transparent 64%)}
-.brand-tile.boxis:before{background-image:linear-gradient(100deg,rgba(3,14,22,.69),rgba(4,16,25,.42)),var(--tile-image),linear-gradient(130deg,#102c3b,#10202b)}
-.brand-tile.euro:before{background-image:linear-gradient(100deg,rgba(4,13,20,.63),rgba(5,15,22,.33)),var(--tile-image),linear-gradient(130deg,#27333a,#111d25)}
-.brand-tile.gedesel:before{background-image:linear-gradient(100deg,rgba(4,15,21,.72),rgba(5,19,26,.43)),var(--tile-image),linear-gradient(130deg,#102f36,#14232c)}
-.tile-logo{height:78px;transform:translateZ(32px);overflow:visible}
-.tile-logo img{max-width:100%;max-height:68px;filter:drop-shadow(0 4px 14px rgba(0,0,0,.45))}
-.tile-logo .boxis-logo{width:176px;max-height:68px}
-.tile-logo .euro-logo{width:182px;max-height:66px}
-.tile-logo .gedesel-logo{width:190px;max-height:62px}
-.brand-tile.gedesel .tile-logo{padding:0;border:0;background:transparent;backdrop-filter:none}
-.tile-text{transform:translateZ(22px)}
-.tile-text small{font-size:8px;letter-spacing:.18em;margin-bottom:8px}
-.tile-text strong{font-size:clamp(16px,1.35vw,21px);line-height:1.08;letter-spacing:-.04em}
-.tile-text span{font-size:10px;line-height:1.5;margin-top:7px;color:rgba(239,247,250,.84)}
-.tile-arrow{width:31px;height:31px;font-size:20px;transform:translateZ(38px)}
-.brand-tile:hover{transform:perspective(1300px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-7px) translateZ(13px);box-shadow:0 30px 64px rgba(0,0,0,.36),inset 0 1px rgba(255,255,255,.48)}
-.screen-footnote{bottom:12px;font-size:8px}
-.platform-screen{height:auto!important;min-height:0;padding:70px clamp(24px,4.1vw,76px) 36px;display:grid;grid-template-rows:auto auto auto auto;gap:26px;overflow:visible;background:radial-gradient(ellipse at 85% 0%,rgba(56,120,142,.15),transparent 42%),linear-gradient(145deg,#0d1821,#101e28 65%,#0a141c)}
-.platform-head{margin-bottom:2px}
-.platform-head h2{font-size:clamp(34px,3.3vw,52px)}
-.platform-head p{max-width:470px;font-size:12px;line-height:1.75}
-.company-grid{min-height:0;gap:16px;align-items:stretch}
-.company-panel{min-height:390px;padding:24px 24px 20px;transform-style:preserve-3d;backdrop-filter:blur(8px)}
-.company-panel h3{font-size:clamp(20px,1.55vw,26px)}
-.company-intro{font-size:11px;line-height:1.72}
-.company-fact{padding:11px 12px}.company-fact b{font-size:27px}.company-fact span{font-size:8px}
-.company-list{gap:8px}.company-list li{font-size:10px;line-height:1.5}
-.company-contact{gap:8px}.company-contact a{font-size:10px}.company-contact .contact-label{font-size:8px}
-.company-logo img{filter:drop-shadow(0 3px 12px rgba(0,0,0,.26))}
-.company-logo .boxis-logo{max-width:170px;max-height:54px}
-.company-logo .euro-logo{max-width:180px;max-height:54px}
-.company-logo .gedesel-logo{max-width:190px;max-height:50px}
-.company-panel.gedesel .company-logo{background:transparent;border:0;padding:0}
-.team-section{width:100%;max-width:var(--max);margin:0 auto;display:grid;gap:16px}
-.team-heading{display:flex;align-items:center;gap:20px;padding:18px 20px;border:1px solid rgba(221,238,245,.15);background:linear-gradient(110deg,rgba(26,48,62,.67),rgba(13,28,39,.42));box-shadow:inset 0 1px rgba(255,255,255,.09);transform-style:preserve-3d}
-.team-brand-logo{width:174px;height:66px;object-fit:contain;object-position:left center;filter:drop-shadow(0 3px 12px rgba(0,0,0,.4));transform:translateZ(24px)}
-.team-heading>div{transform:translateZ(16px)}
-.team-heading small{display:block;color:#88d6e4;font-size:8px;letter-spacing:.21em;text-transform:uppercase;font-weight:900}
-.team-heading h2{margin:7px 0 0;color:#f2f6f8;font-size:clamp(22px,2vw,30px);letter-spacing:-.05em;line-height:1.05}
-.team-heading p{margin:6px 0 0;color:#9db1bc;font-size:10px;line-height:1.5}
-.team-strip{width:100%;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
-.team-contact{--mx:50%;--my:50%;position:relative;isolation:isolate;min-width:0;padding:22px 22px 18px;overflow:hidden;border:1px solid rgba(223,240,247,.18);background:linear-gradient(140deg,rgba(31,52,65,.78),rgba(12,26,36,.74));box-shadow:0 20px 46px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.13);transform-style:preserve-3d;transition:transform .38s var(--ease),border-color .3s,box-shadow .3s}
-.team-contact:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at var(--mx) var(--my),rgba(116,209,227,.15),transparent 43%),linear-gradient(125deg,transparent 25%,rgba(255,255,255,.04) 51%,transparent 70%)}
-.team-contact:after{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#75cfe0,transparent);opacity:.8}
-.team-contact:hover{border-color:rgba(158,224,236,.55);box-shadow:0 28px 60px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.23);transform:perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-5px) translateZ(10px)}
-.team-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:17px;transform:translateZ(18px)}
-.team-num{color:#82d6e6;font-family:'Barlow Condensed',sans-serif;font-size:19px;letter-spacing:.1em;font-weight:700}
-.team-unit{color:#98acb8;font-size:7px;font-weight:900;letter-spacing:.14em;text-align:right}
-.team-contact h3{margin:0;color:#f1f6f8;font-size:clamp(18px,1.4vw,23px);font-weight:800;letter-spacing:-.04em;transform:translateZ(22px)}
-.team-role{margin:5px 0 15px;color:#93cfdb;font-size:10px;font-weight:700;transform:translateZ(17px)}
-.team-details{display:grid;gap:10px;transform:translateZ(15px)}
-.team-details a,.team-details>div{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:start;gap:10px;color:#c8d7de;text-decoration:none;font-size:10px;line-height:1.5;font-weight:550;overflow-wrap:anywhere}
-.team-details a:hover{color:#fff}
-.detail-icon{padding:3px 5px;border:1px solid rgba(131,205,221,.27);background:rgba(119,201,218,.07);color:#8dd9e8;font-size:6px;letter-spacing:.08em;text-align:center;font-weight:900}
-.team-card-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:12px;border-top:1px solid rgba(218,235,243,.13);transform:translateZ(22px)}
-.save-vcard,.contact-open{display:inline-flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid rgba(225,241,247,.2);background:rgba(226,240,246,.045);color:#d9e8ee;font-size:8px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
-.save-vcard:hover,.contact-open:hover{background:rgba(91,193,214,.13);border-color:rgba(131,218,231,.55);transform:translateY(-2px)}
-.save-vcard span,.contact-open span{font-size:14px;font-weight:400}
-.contact-open{color:#91d9e8}
-.platform-footer{margin-top:2px;padding-top:17px;font-size:8px}
-.platform-footer nav{gap:22px}
-.brand-tile,.company-panel,.team-contact,.team-heading{will-change:transform}
-@media(max-width:1200px){
- .screen-hero{grid-template-rows:70px minmax(500px,66vh) auto;padding-left:26px;padding-right:26px}
- .hero-main{grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);min-height:500px}
- .model-stage{min-height:500px}
- .brand-tile{grid-template-columns:minmax(142px,.82fr) minmax(0,1.18fr) 24px;min-height:132px;padding:16px;gap:12px}
- .tile-logo .boxis-logo{width:145px}.tile-logo .euro-logo{width:151px}.tile-logo .gedesel-logo{width:158px}
- .team-strip{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
-@media(max-width:850px){
- .screen-hero{min-height:0;grid-template-rows:auto auto auto;padding:0 16px 24px}
- .header{min-height:67px;flex-wrap:wrap;padding:9px 0}
- .hero-main{grid-template-columns:1fr;gap:0;padding:24px 0 0;min-height:0}
- .hero-copy{padding-bottom:6px}.hero-copy h1{font-size:clamp(38px,7.5vw,62px)}
- .model-stage{height:clamp(330px,66vw,500px);min-height:330px;margin-top:4px}
- .brand-dock{grid-template-columns:1fr;gap:9px;margin-top:18px}
- .brand-tile{min-height:110px;grid-template-columns:150px minmax(0,1fr) 28px;padding:14px 16px}
- .tile-logo{height:62px}.tile-logo .boxis-logo{width:135px;max-height:57px}.tile-logo .euro-logo{width:145px;max-height:55px}.tile-logo .gedesel-logo{width:155px;max-height:50px}
- .platform-screen{padding:52px 16px 24px;display:grid;grid-template-rows:auto auto auto auto;gap:19px}
- .platform-head{display:block}.platform-head h2{font-size:34px}.platform-head p{margin-top:10px;font-size:10px}
- .company-grid{grid-template-columns:1fr;gap:10px}.company-panel{min-height:0;padding:20px 18px 16px}
- .team-heading{padding:14px;gap:14px}.team-brand-logo{width:138px;height:52px}
- .team-strip{grid-template-columns:1fr;gap:10px}
- .team-contact{padding:19px}
-}
-@media(max-width:520px){
- .main-brand img{width:110px;height:42px}.main-brand span{font-size:6px}
- .nav{gap:10px}.nav a{font-size:6.5px}
- .hero-copy h1{font-size:38px}.hero-lead{font-size:11px}
- .model-stage{height:320px;min-height:320px}
- .model-controls{right:1%;bottom:2%;left:1%;justify-content:center;flex-wrap:wrap}
- .model-controls button{height:31px;min-width:33px;padding:0 9px;font-size:7px}
- .stage-hint{font-size:7px;bottom:11%}.model-tag{top:50%}
- .brand-tile{grid-template-columns:116px minmax(0,1fr) 20px;min-height:92px;padding:10px;gap:8px}
- .tile-logo{height:52px}.tile-logo .boxis-logo{width:108px;max-height:47px}.tile-logo .euro-logo{width:116px;max-height:43px}.tile-logo .gedesel-logo{width:120px;max-height:40px}
- .tile-text small{font-size:6.3px;letter-spacing:.12em}.tile-text strong{font-size:12px}.tile-text span{font-size:7.5px}
- .team-heading{align-items:flex-start}.team-brand-logo{width:110px;height:48px}
- .team-contact h3{font-size:19px}.team-details a,.team-details>div{font-size:9px}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-
-
-/* Premium surface refinement: no outlined pill/buttons, no double image, no clutter. */
-.model-stage{overflow:hidden!important;background:radial-gradient(ellipse at 56% 55%,rgba(65,116,135,.19),transparent 57%),linear-gradient(145deg,rgba(5,13,20,.16),rgba(5,13,20,.48));}
-.model-stage-top{position:absolute;z-index:5;left:3%;right:3%;top:3%;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
-.stage-caption{position:static;display:flex;align-items:center;gap:10px;font-size:8px;letter-spacing:.2em;color:#b9ced7}
-.stage-caption:before{content:"";width:5px;height:5px;transform:rotate(45deg);background:#d88a56;box-shadow:0 0 12px rgba(216,138,86,.6)}
-.stage-index{position:static;font-size:19px}
-.model-unavailable{position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);width:min(570px,82%);padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none;text-align:center;color:#e9f1f4}
-.model-unavailable[hidden]{display:none}
-.model-state-kicker{display:block;color:#9ccbd6;font-size:8px;letter-spacing:.24em;font-weight:900;text-transform:uppercase}
-.model-unavailable strong{display:block;margin-top:15px;color:#f4f7f8;font-size:clamp(20px,2.1vw,30px);font-weight:700;line-height:1.12;letter-spacing:-.045em}
-.model-unavailable p{max-width:510px;margin:13px auto 0;color:#b6c7cf;font-size:11px;line-height:1.8}
-.model-state-note{display:block;max-width:490px;margin:14px auto 0;color:#8da5b0;font-size:8px;line-height:1.6;letter-spacing:.04em}
-#container3d{opacity:0;transition:opacity .35s}
-.model-stage.model-ready #container3d{opacity:1}
-.model-stage.model-ready .model-unavailable{display:none}
-.model-stage:not(.model-ready) .model-controls,.model-stage:not(.model-ready) .model-selection-info,.model-stage:not(.model-ready) .stage-hint{display:none!important}
-.model-hover-label{display:block!important;position:absolute;z-index:6;left:3%;top:auto;bottom:14%;max-width:70%;padding:0;border:0;background:transparent;color:#b7dce4;font-size:8px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s;pointer-events:none}.model-hover-label.is-visible{opacity:1;transform:translateY(0)}
-.model-selection-info{position:absolute;z-index:5;left:3%;bottom:5%;padding:0;background:transparent;color:#a8c0ca;font-size:8px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;pointer-events:none}
-.model-hover-label{display:none!important}
-.model-tag{display:none!important}
-.stage-hint{left:auto;right:3%;bottom:5%;font-size:7px;color:#95aab5}
-.model-controls{right:3%;bottom:10%;left:3%;display:flex;justify-content:flex-end;gap:15px;padding:0;border:0;background:transparent;backdrop-filter:none;box-shadow:none}
-.model-controls button{height:34px;min-width:0;padding:0 3px;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#c7d7de;font-size:8px;letter-spacing:.12em;text-transform:uppercase}
-.model-controls button:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:linear-gradient(90deg,#83cddc,transparent);transition:right .24s}
-.model-controls button:hover:after,.model-controls button[aria-pressed="true"]:after{right:0}
-.model-controls button:hover,.model-controls button[aria-pressed="true"]{transform:translateY(-1px);color:#fff}
-.model-controls button.accent{color:#f1c1a6}
-.brand-tile{border:0!important;border-radius:0!important;box-shadow:0 20px 48px rgba(0,0,0,.22)!important;background:rgba(7,20,29,.16);backdrop-filter:blur(24px) saturate(155%)}
-.brand-tile:before{filter:saturate(.82) contrast(1.03);transition:transform .8s var(--ease),filter .55s}
-.brand-tile:after{opacity:.75}
-.brand-tile:hover{border:0!important;box-shadow:0 26px 62px rgba(0,0,0,.32)!important}
-.tile-arrow{width:auto!important;height:auto!important;min-width:0!important;border:0!important;background:transparent!important;box-shadow:none!important;font-size:25px!important;font-weight:300!important;color:rgba(242,249,251,.88)}
-.brand-tile:hover .tile-arrow{background:transparent!important;transform:translate(5px,-3px) translateZ(38px);color:#fff}
-.tile-logo img{filter:drop-shadow(0 4px 16px rgba(0,0,0,.52));}
-.tile-text small{font-size:8px;letter-spacing:.18em}
-.tile-text strong{font-size:clamp(18px,1.5vw,23px);line-height:1.13}
-.tile-text span{font-size:10px;line-height:1.55}
-.company-panel{border:0!important;border-radius:0!important;background:linear-gradient(145deg,rgba(28,47,59,.56),rgba(14,29,39,.36))!important;box-shadow:none!important}
-.company-panel:after{display:none}
-.company-panel:before{opacity:.55}
-.company-top{border:0!important}
-.company-contact{border:0!important;padding-top:12px}
-.company-contact .contact-cta{border:0!important;padding-top:8px}
-.company-fact{border:0!important;background:rgba(226,240,246,.035)!important}
-.team-heading{border:0!important;background:linear-gradient(110deg,rgba(26,48,62,.28),rgba(13,28,39,.14))!important;box-shadow:none!important}
-.team-contact{border:0!important;border-radius:0!important;background:linear-gradient(140deg,rgba(31,52,65,.52),rgba(12,26,36,.31))!important;box-shadow:none!important;backdrop-filter:blur(16px) saturate(135%)}
-.team-contact:after{display:none!important}
-.team-contact:before{background:radial-gradient(circle at var(--mx) var(--my),rgba(116,209,227,.12),transparent 43%)!important}
-.team-contact:hover{border:0!important;box-shadow:0 18px 42px rgba(0,0,0,.18)!important}
-.team-card-top{border:0!important}
-.team-unit{color:#7f9ba7;font-size:7px;letter-spacing:.16em}
-.team-contact h3{font-size:clamp(19px,1.5vw,24px);letter-spacing:-.045em}
-.team-role{font-size:10px;color:#a0d1dc;letter-spacing:.02em}
-.team-details{gap:11px}
-.team-details a,.team-details>div{grid-template-columns:32px minmax(0,1fr);gap:9px;font-size:10px;line-height:1.55}
-.detail-icon{padding:0;border:0!important;background:transparent!important;color:#76bdcb;font-size:7px;letter-spacing:.1em;text-align:left}
-.team-card-actions{border:0!important;padding-top:12px;gap:18px}
-.save-vcard,.contact-open{position:relative;padding:8px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#d8e7ed;font-size:8px;letter-spacing:.13em}
-.save-vcard:after,.contact-open:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,#8bd1df,transparent);transition:right .25s}
-.save-vcard:hover:after,.contact-open:hover:after{right:0}
-.save-vcard:hover,.contact-open:hover{background:transparent!important;transform:translateY(-1px);color:#fff}
-.platform-footer{border-top:0!important}
-.platform-footer nav a{border:0!important}
-
-
-/* Flatten remaining interface chrome for one uninterrupted glass-first language. */
-.action-primary,.action-quiet,.nav-cta{
-  border:0!important;border-radius:0!important;box-shadow:none!important;
-  background:rgba(212,235,243,.075)!important;color:#edf7fa!important;
-  backdrop-filter:blur(20px) saturate(145%);padding-left:15px;padding-right:15px
-}
-.action-primary:hover,.action-quiet:hover,.nav-cta:hover{
-  background:rgba(130,204,220,.15)!important;transform:translateY(-2px);
-  box-shadow:none!important
-}
-.action-primary:after,.action-quiet:after,.nav-cta:after{display:none!important}
-.main-brand span{border-left:0!important;padding-left:0!important}
-.hero-stats{border-top:0!important;border-bottom:0!important}
-.hero-stat+.hero-stat{border-left:0!important}
-.company-fact{background:transparent!important;padding-left:0;padding-right:10px}
-.company-contact{border-top:0!important;padding-top:16px!important}
-.company-panel,.team-contact{outline:0!important}
-.team-heading{border:0!important}
-.team-card-actions{border-top:0!important}
-
-
-/* Brand-rich lower section: a restrained montage instead of empty grid panels. */
-.platform-screen{position:relative;isolation:isolate;overflow:hidden!important;background:linear-gradient(135deg,#0b1720,#111e27 58%,#0b151d)!important;min-height:100svh;height:auto!important;grid-template-rows:auto auto auto auto;gap:clamp(18px,2.5vw,34px);padding-top:clamp(42px,5vw,74px);padding-bottom:clamp(28px,4vw,55px)}
-.platform-screen:before{inset:0;z-index:-2;opacity:1;mask-image:none;filter:saturate(.72);background-image:
- linear-gradient(110deg,rgba(7,16,23,.90),rgba(7,16,23,.73) 48%,rgba(7,16,23,.88)),
- url('assets/eurocontainer-daylight-wide.webp'),
- url('https://gedesel.net/wp-content/uploads/2026/04/gedesel_Hospital_teruel.jpg'),
- url('https://boxis.es/wp-content/uploads/2020/11/energia-background-icon.jpg');
- background-size:100% 100%,36% 100%,33% 100%,36% 100%;
- background-position:center,left center,center center,right center;
- background-repeat:no-repeat}
-.platform-screen:after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:
- radial-gradient(ellipse at 16% 12%,rgba(81,173,194,.11),transparent 35%),
- radial-gradient(ellipse at 83% 72%,rgba(224,119,73,.10),transparent 34%),
- linear-gradient(180deg,rgba(5,13,20,.05),rgba(5,13,20,.32))}
-.platform-head{position:relative;z-index:1}
-.platform-head h2{font-size:clamp(34px,3.2vw,54px)}
-.platform-head p{font-size:clamp(11px,.85vw,13px);max-width:440px;line-height:1.8}
-.company-grid{position:relative;z-index:1;gap:clamp(16px,1.6vw,26px)}
-.company-panel{border:0!important;border-radius:0!important;background:rgba(7,18,26,.38)!important;box-shadow:0 24px 65px rgba(0,0,0,.18)!important;backdrop-filter:blur(13px) saturate(125%);padding:clamp(20px,2vw,30px)}
-.company-panel:before{inset:0;opacity:.31;filter:saturate(.85);background-position:center;background-size:cover;background-repeat:no-repeat}
-.company-panel.boxis:before{background-image:linear-gradient(115deg,rgba(4,14,22,.84),rgba(4,14,22,.48)),url('https://boxis.es/wp-content/uploads/2020/11/energia-background-icon.jpg')}
-.company-panel.euro:before{background-image:linear-gradient(115deg,rgba(4,14,22,.82),rgba(4,14,22,.45)),url('assets/eurocontainer-daylight-wide.webp')}
-.company-panel.gedesel:before{background-image:linear-gradient(115deg,rgba(4,14,22,.84),rgba(4,14,22,.49)),url('https://gedesel.net/wp-content/uploads/2026/04/gedesel_Hospital_teruel.jpg')}
-.company-panel:after{display:none!important}
-.company-panel:hover{transform:perspective(1400px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-4px) translateZ(9px);box-shadow:0 28px 72px rgba(0,0,0,.28)!important}
-.company-index{font-size:25px;color:rgba(235,245,248,.66);text-shadow:0 3px 14px rgba(0,0,0,.5)}
-.company-logo{filter:drop-shadow(0 4px 16px rgba(0,0,0,.4))}
-.company-panel h3{font-size:clamp(19px,1.45vw,25px)}
-.company-intro{font-size:clamp(10px,.78vw,12px);line-height:1.75;color:#d0dbe0}
-.company-fact{border:0!important;background:rgba(236,245,248,.065)!important;backdrop-filter:blur(10px);padding:11px 12px}
-.company-fact b{font-size:26px}
-.company-fact span{font-size:8px}
-.company-list li{font-size:10px;line-height:1.6}
-.company-contact{border:0!important;padding-top:16px;gap:8px}
-.company-contact .contact-label{color:#a9dce5;font-size:8px}
-.company-contact a{font-size:10px}
-.company-contact .contact-cta{border:0!important;background:rgba(227,242,247,.07)!important;padding:10px 0!important;justify-content:space-between;backdrop-filter:blur(8px)}
-.team-section{position:relative;z-index:1;max-width:var(--max);width:100%;margin:0 auto;display:grid;gap:16px}
-.team-heading{border:0!important;background:rgba(7,18,26,.25)!important;box-shadow:none!important;backdrop-filter:blur(10px)}
-.team-contact{position:relative;isolation:isolate;overflow:hidden;border:0!important;border-radius:0!important;background:linear-gradient(130deg,rgba(8,22,31,.66),rgba(8,20,29,.38))!important;box-shadow:0 22px 58px rgba(0,0,0,.19)!important;backdrop-filter:blur(17px) saturate(130%);padding:clamp(19px,1.7vw,28px)}
-.team-contact:before{content:"";position:absolute;z-index:-1;inset:0;opacity:.075;pointer-events:none;background-image:url('assets/boxis-logo-white.webp');background-repeat:no-repeat;background-position:right 16px top 5px;background-size:190px auto;clip-path:inset(0 0 calc(100% - 70px) 0);filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
-.team-contact:after{content:"";position:absolute;z-index:-1;inset:0;top:auto;left:auto;right:0;bottom:0;width:160px;height:116px;opacity:.045;background:radial-gradient(ellipse at bottom right,rgba(107,207,223,.7),transparent 70%)}
-.team-contact:hover{transform:perspective(1300px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px) translateZ(8px);box-shadow:0 30px 70px rgba(0,0,0,.27)!important}
-.team-contact h3{font-size:clamp(20px,1.55vw,25px)}
-.team-role{font-size:11px}
-.team-details a,.team-details>div{font-size:10px;line-height:1.62}
-.team-card-actions{border:0!important;padding-top:14px}
-.team-card-actions .save-vcard,.team-card-actions .contact-open{border:0!important;background:rgba(220,239,245,.055)!important;box-shadow:none!important;padding:9px 0!important;border-radius:0!important}
-.platform-footer{position:relative;z-index:1;border:0!important;margin-top:8px;padding-top:12px}
-.platform-footer nav a{border:0!important}
-@media(max-width:850px){
- .platform-screen{padding:38px 16px 26px!important;gap:17px!important}
- .platform-screen:before{background-size:100% 100%,100% 38%,100% 34%,100% 34%;background-position:center,top center,center center,bottom center}
- .company-grid{grid-template-columns:1fr!important;gap:12px!important}
- .company-panel{padding:20px 18px!important}
- .team-strip{grid-template-columns:1fr!important;gap:12px!important}
- .team-contact{padding:19px!important}
- .company-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:520px){
- .platform-screen{padding:30px 13px 22px!important}
- .platform-head h2{font-size:30px!important}
- .team-contact h3{font-size:19px!important}
- .team-details a,.team-details>div{font-size:9px!important}
-}
-
-
-/* ── Premium readability and continuous glass language ── */
-:root{--line:rgba(220,239,246,.075)}
-body{font-size:15px}
-.nav a{font-size:10px;letter-spacing:.14em}
-.main-brand span{font-size:9px;line-height:1.5}
-.eyebrow{font-size:10px;letter-spacing:.19em}
-h1{font-size:clamp(48px,5.5vw,88px)}
-.hero-lead{font-size:15px;line-height:1.72;max-width:560px}
-.hero-stat b{font-size:31px}
-.hero-stat span{font-size:9px;line-height:1.5;letter-spacing:.11em}
-.action-primary,.action-quiet,.nav-cta{font-size:10px;min-height:46px;letter-spacing:.12em}
-.model-stage{min-height:560px}
-.stage-caption{font-size:10px;letter-spacing:.16em}
-.stage-hint{font-size:10px;letter-spacing:.1em}
-.model-selection-info{font-size:10px;letter-spacing:.12em}
-.model-hover-label{font-size:10px;letter-spacing:.1em}
-.stage-index{font-size:25px}
-.model-view-modes{position:absolute;z-index:7;left:3%;top:11%;display:flex;align-items:center;gap:clamp(12px,1.5vw,24px);padding:0;background:rgba(7,18,26,.18);backdrop-filter:blur(16px);box-shadow:none}
-.model-view-modes button{position:relative;padding:10px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:rgba(231,243,247,.72);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:color .2s,transform .2s}
-.model-view-modes button:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,#92d9e5,transparent);transition:right .25s}
-.model-view-modes button:hover,.model-view-modes button[aria-pressed="true"]{color:#fff;transform:translateY(-2px)}
-.model-view-modes button:hover:after,.model-view-modes button[aria-pressed="true"]:after{right:0}
-.model-controls{right:3%;bottom:4%;left:auto;display:flex;align-items:center;gap:clamp(12px,1.2vw,20px);padding:0;background:rgba(7,18,26,.18);backdrop-filter:blur(16px);border:0!important;box-shadow:none!important}
-.model-controls button{position:relative;height:38px;min-width:0;padding:6px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:rgba(231,243,247,.76);font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
-.model-controls button:after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:1px;background:linear-gradient(90deg,#91d9e7,transparent);transition:right .22s}
-.model-controls button:hover,.model-controls button[aria-pressed="true"]{color:#fff;background:transparent!important;transform:translateY(-2px)}
-.model-controls button:hover:after,.model-controls button[aria-pressed="true"]:after{right:0}
-.model-controls button.accent{color:#efb397}
-.model-controls button.accent:after{background:linear-gradient(90deg,#e87543,transparent)}
-.model-selection-info{left:3%;bottom:4%;padding:0;background:transparent;border:0;box-shadow:none}
-.model-hover-label{background:transparent;border:0;border-left:0;color:#d8edf2;font-size:10px;text-shadow:0 2px 12px rgba(0,0,0,.85)}
-.brand-tile{min-height:132px;grid-template-columns:minmax(165px,.82fr) minmax(0,1.18fr) 20px;padding:18px 20px;border:0!important;border-radius:0!important;box-shadow:0 20px 42px rgba(0,0,0,.18)!important;background:rgba(7,20,29,.23);backdrop-filter:blur(22px) saturate(145%)}
-.tile-logo{height:72px}
-.tile-logo .boxis-logo{width:170px;max-height:68px}
-.tile-logo .euro-logo{width:175px;max-height:67px}
-.tile-logo .gedesel-logo{width:180px;max-height:65px}
-.tile-text small{font-size:9px;letter-spacing:.14em}
-.tile-text strong{font-size:clamp(17px,1.4vw,22px);line-height:1.12}
-.tile-text span{font-size:11px;line-height:1.5;color:#eef4f6}
-.tile-arrow{width:auto!important;height:auto!important;min-width:0!important;border:0!important;background:transparent!important;box-shadow:none!important;font-size:27px!important}
-.brand-tile:hover .tile-arrow{background:transparent!important;transform:translate(4px,-3px) translateZ(38px)}
-.screen-footnote{font-size:9px}
-.platform-screen{padding:clamp(38px,4.5vw,68px) clamp(24px,4.1vw,76px) 38px!important;gap:clamp(22px,2.4vw,34px)!important}
-.platform-head h2{font-size:clamp(38px,3.5vw,58px);line-height:1.02}
-.platform-head p{font-size:13px;line-height:1.75;max-width:480px;color:#d0dce1}
-.company-grid{gap:clamp(16px,1.6vw,26px)}
-.company-panel{border:0!important;border-radius:0!important;box-shadow:0 24px 65px rgba(0,0,0,.19)!important;background:rgba(7,18,26,.36)!important;backdrop-filter:blur(18px) saturate(130%);padding:clamp(22px,2vw,32px)}
-.company-panel:after{display:none!important}
-.company-panel:hover{border:0!important;box-shadow:0 30px 72px rgba(0,0,0,.28)!important}
-.company-top{min-height:68px;margin-bottom:18px}
-.company-logo{height:58px;max-width:82%}
-.company-logo .boxis-logo{max-width:175px;max-height:58px}
-.company-logo .euro-logo{max-width:180px;max-height:58px}
-.company-logo .gedesel-logo{max-width:185px;max-height:58px}
-.company-index{font-size:27px;color:rgba(239,247,249,.72)}
-.company-panel h3{font-size:clamp(21px,1.55vw,27px);line-height:1.14}
-.company-intro{font-size:13px;line-height:1.75;color:#e0eaee;margin-top:12px}
-.company-facts{gap:14px;margin-top:19px}
-.company-fact{border:0!important;padding:12px 0;background:transparent!important;box-shadow:none!important}
-.company-fact b{font-size:29px}
-.company-fact span{font-size:10px;letter-spacing:.08em;color:#c1d1d8}
-.company-list{gap:10px;margin-top:18px}
-.company-list li{padding-left:16px;font-size:12px;line-height:1.6;color:#e2eaed}
-.company-list li:before{width:5px;height:5px;top:7px}
-.company-contact{border:0!important;border-top:0!important;padding-top:20px;gap:10px}
-.company-contact .contact-label{font-size:10px;letter-spacing:.12em;color:#9bd6e2}
-.company-contact a{font-size:12px;line-height:1.45;color:#f0f6f8}
-.company-contact .contact-cta{border:0!important;margin-top:8px;padding:10px 0!important;font-size:11px;color:#a7e0e9}
-.company-contact .contact-cta:after{display:none}
-.team-section{gap:20px}
-.team-heading{border:0!important;border-right:0!important;background:rgba(7,18,26,.24)!important;box-shadow:none!important;backdrop-filter:blur(14px);padding:21px 24px}
-.team-brand-logo{width:190px;height:72px}
-.team-heading small{font-size:10px;letter-spacing:.16em}
-.team-heading h2{font-size:clamp(26px,2.15vw,34px)}
-.team-heading p{font-size:12px;line-height:1.6;color:#c9d7dc}
-.team-strip{gap:clamp(14px,1.5vw,22px)}
-.team-contact{border:0!important;border-radius:0!important;background:linear-gradient(125deg,rgba(10,27,37,.68),rgba(10,24,34,.44))!important;box-shadow:0 22px 55px rgba(0,0,0,.18)!important;backdrop-filter:blur(18px) saturate(140%);padding:clamp(19px,1.65vw,28px)}
-.team-contact:hover{border:0!important;box-shadow:0 30px 68px rgba(0,0,0,.27)!important}
-.team-contact:before{opacity:.095;background-size:166px auto;background-position:right 15px top 10px}
-.team-card-top{margin-bottom:20px}
-.team-num{font-size:23px}
-.team-unit{font-size:9px;letter-spacing:.12em}
-.team-contact h3{font-size:clamp(21px,1.55vw,26px);white-space:normal;overflow:visible}
-.team-role{font-size:12px;line-height:1.5;color:#afe0e8}
-.team-details{gap:12px}
-.team-details a,.team-details>div{grid-template-columns:38px minmax(0,1fr);font-size:12px;line-height:1.6;color:#e3edf0;overflow-wrap:anywhere}
-.detail-icon{font-size:9px;color:#9bdde8}
-.team-card-actions{border:0!important;border-top:0!important;padding-top:16px;gap:18px}
-.save-vcard,.contact-open{border:0!important;border-radius:0!important;background:rgba(223,242,248,.045)!important;padding:10px 0!important;font-size:10px;letter-spacing:.1em}
-.save-vcard:after,.contact-open:after{bottom:3px}
-.platform-footer{border:0!important;border-top:0!important;padding-top:16px;font-size:10px;color:#b2c4cc}
-.platform-footer nav{gap:24px}
-.platform-footer nav a{font-size:10px}
-.action-primary,.action-quiet,.nav-cta{border:0!important;border-radius:0!important;box-shadow:none!important;background:rgba(225,243,249,.09)!important;backdrop-filter:blur(18px) saturate(145%)}
-.action-primary:hover,.action-quiet:hover,.nav-cta:hover{border:0!important;background:rgba(135,206,222,.16)!important;box-shadow:none!important}
-.company-panel,.team-contact,.brand-tile,.model-view-modes,.model-controls,.team-heading{transform-style:preserve-3d}
-button,.company-fact,.company-contact a,.team-card-actions a,.team-card-actions button,.company-list li,.hero-stat{transform-style:preserve-3d;transition:transform .25s var(--ease),color .2s,background .2s}
-button:hover,.company-fact:hover,.company-contact a:hover,.team-card-actions a:hover,.team-card-actions button:hover,.company-list li:hover,.hero-stat:hover{transform:translateY(-2px) translateZ(4px)}
-@media(max-width:1200px){
- .brand-tile{grid-template-columns:minmax(145px,.82fr) minmax(0,1.18fr) 18px}
- .tile-logo .boxis-logo{width:150px}.tile-logo .euro-logo{width:155px}.tile-logo .gedesel-logo{width:160px}
- .company-panel h3{font-size:22px}.company-intro{font-size:12px}.company-list li{font-size:11.5px}
- .team-details a,.team-details>div{font-size:11px}
-}
-@media(max-width:850px){
- .model-stage{min-height:490px}
- .model-view-modes{left:3%;right:3%;top:10%;gap:15px;flex-wrap:wrap}
- .model-view-modes button{font-size:9px}
- .model-controls{left:3%;right:3%;bottom:4%;justify-content:space-between;gap:10px;flex-wrap:wrap}
- .model-controls button{font-size:9px}
- .company-panel{padding:22px 20px!important}
- .company-intro{font-size:12.5px}
- .company-list li{font-size:12px}
- .team-strip{grid-template-columns:1fr!important}
- .team-contact{padding:22px!important}
- .team-contact h3{font-size:23px}
- .team-details a,.team-details>div{font-size:12px}
-}
-@media(max-width:520px){
- .nav a{font-size:8px}
- .hero-lead{font-size:13px}
- .model-stage{height:430px;min-height:430px}
- .model-view-modes{top:8%;gap:10px}
- .model-view-modes button{font-size:8px}
- .model-controls{bottom:3%;gap:9px}
- .model-controls button{font-size:8px}
- .platform-screen{padding:32px 14px 25px!important}
- .platform-head h2{font-size:32px}
- .company-intro{font-size:12px}
- .company-list li{font-size:11.5px}
- .team-heading{padding:15px}
- .team-brand-logo{width:140px;height:54px}
- .team-contact h3{font-size:21px}
- .team-details a,.team-details>div{font-size:11px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-}
-
-
-/* Technical viewer: refined glass selectors with no outlined capsules. */
-.model-view-modes{gap:clamp(12px,1.35vw,22px);padding:0;background:linear-gradient(90deg,rgba(7,18,26,.38),rgba(7,18,26,.08));backdrop-filter:blur(18px)}
-.model-view-modes button{font-size:10px;letter-spacing:.14em;white-space:nowrap}
-.model-controls{background:linear-gradient(90deg,rgba(7,18,26,.10),rgba(7,18,26,.34));backdrop-filter:blur(18px)}
-.model-controls button{font-size:10px;white-space:nowrap}
-.company-panel,.team-contact,.brand-tile{backdrop-filter:blur(18px) saturate(140%)}
-.company-panel h3,.team-contact h3,.tile-text strong{ text-shadow:0 2px 16px rgba(0,0,0,.38)}
-.company-intro,.company-list li,.team-details a,.team-details>div{ text-shadow:0 1px 10px rgba(0,0,0,.5)}
-@media(max-width:850px){
- .model-view-modes{gap:12px;flex-wrap:wrap;max-width:94%}
- .model-view-modes button{font-size:9px}
-}
-@media(max-width:520px){
- .model-view-modes{gap:9px 12px;top:7%;max-width:96%}
- .model-view-modes button{font-size:8px}
-}
-
-
-/* Final viewer layout QA: keep title, view selector, selection status and transport controls apart. */
-.model-stage{overflow:hidden!important;min-height:560px}
-.stage-grid{display:none!important}
-.model-stage-top{position:absolute;z-index:5;left:3%;right:3%;top:3%;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
-.stage-caption,.stage-index{position:static}
-.model-view-modes{left:3%;right:3%;top:10%;max-width:94%;flex-wrap:wrap;gap:clamp(11px,1.25vw,20px)}
-.model-selection-info{left:3%;right:auto;top:19%;bottom:auto;max-width:min(48%,560px);font-size:9px;line-height:1.5;letter-spacing:.12em;text-shadow:0 2px 10px rgba(0,0,0,.65)}
-.stage-hint{display:none!important}
-.model-controls{left:auto;right:3%;bottom:4%;max-width:94%;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:clamp(10px,1.1vw,17px)}
-.model-controls button{white-space:nowrap}
-.model-hover-label{left:3%;right:3%;bottom:13%;max-width:80%;font-size:9px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
-@media(max-width:850px){
- .model-stage{min-height:490px}
- .model-stage-top{top:3%}
- .model-view-modes{top:10%;gap:10px 14px}
- .model-view-modes button{font-size:9px}
- .model-selection-info{top:22%;max-width:90%;font-size:8px}
- .model-controls{left:3%;right:3%;bottom:3%;justify-content:space-between;gap:6px 12px;flex-wrap:wrap}
- .model-controls button{font-size:8px;height:31px}
- .model-hover-label{bottom:18%;font-size:8px}
-}
-@media(max-width:520px){
- .model-stage{height:370px;min-height:370px}
- .model-view-modes{top:9%;gap:8px 11px}
- .model-view-modes button{font-size:8px;padding:7px 0}
- .model-selection-info{top:23%;max-width:94%;font-size:7px;line-height:1.4}
- .model-controls{bottom:3%;gap:5px 9px}
- .model-controls button{font-size:7px;height:27px;padding:4px 0}
- .model-hover-label{bottom:19%;max-width:93%;font-size:7px}
-}
-
-
-/* ── BOXIS contact cards: prominent glass, generous type, original full logo watermark ── */
-.team-section{gap:24px}
-.team-heading{border:0!important;background:rgba(218,240,247,.055)!important;backdrop-filter:blur(24px) saturate(145%);box-shadow:none!important}
-.team-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,1.8vw,28px)}
-.team-contact{
-  position:relative;isolation:isolate;overflow:hidden;min-width:0;min-height:390px;
-  display:flex;flex-direction:column;gap:0;
-  padding:clamp(24px,2.15vw,34px)!important;
-  border:0!important;border-radius:0!important;
-  background:linear-gradient(135deg,rgba(16,39,52,.74),rgba(8,22,32,.49) 58%,rgba(9,28,39,.66))!important;
-  backdrop-filter:blur(26px) saturate(155%);
-  box-shadow:0 22px 60px rgba(0,0,0,.20),inset 0 1px rgba(255,255,255,.12)!important;
-  transform-style:preserve-3d;transition:transform .38s cubic-bezier(.2,.75,.2,1),box-shadow .38s,background .38s
-}
-.team-contact:before{
-  content:"";position:absolute;z-index:0;inset:0;pointer-events:none;
-  opacity:.19;clip-path:none!important;background-image:url('assets/boxis-logo-white.webp');background-position:center 57%;
-  background-repeat:no-repeat;background-size:min(78%,300px) auto;
-  filter:drop-shadow(0 12px 28px rgba(0,0,0,.24));mix-blend-mode:screen;
-  mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 82%,transparent 100%)
-}
-.team-contact:after{
-  content:"";position:absolute;z-index:0;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 88% 8%,rgba(112,209,226,.14),transparent 42%),
-             linear-gradient(180deg,rgba(5,16,23,.06),rgba(4,14,21,.30));
-  opacity:1
-}
-.team-contact>*{position:relative;z-index:1}
-.team-contact:hover{
-  transform:perspective(1400px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px) translateZ(12px);
-  box-shadow:0 34px 76px rgba(0,0,0,.30),inset 0 1px rgba(255,255,255,.19)!important;
-  background:linear-gradient(135deg,rgba(22,54,69,.78),rgba(8,24,36,.55) 58%,rgba(9,31,43,.72))!important
-}
-.team-card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}
-.team-num{font-size:25px;color:rgba(235,247,250,.75);letter-spacing:.04em}
-.team-unit{font-size:10px;line-height:1.4;letter-spacing:.13em;color:#a9dae4;text-align:right}
-.team-contact h3{font-size:clamp(23px,1.75vw,29px);line-height:1.12;font-weight:800;letter-spacing:-.025em;color:#fff;overflow-wrap:anywhere}
-.team-role{font-size:14px;line-height:1.5;color:#aee1ea;margin:8px 0 22px}
-.team-details{display:grid;gap:14px;flex:1}
-.team-details a,.team-details>div{
-  display:grid;grid-template-columns:26px minmax(0,1fr);align-items:start;gap:10px;
-  min-width:0;font-size:14px;line-height:1.55;font-weight:500;color:#edf6f8;
-  overflow-wrap:anywhere;text-decoration:none
-}
-.team-details a:hover{color:#fff;transform:translateX(3px)}
-.detail-icon{
-  display:inline-flex;align-items:center;justify-content:flex-start;
-  width:24px;height:24px;padding:0;border:0;border-radius:0;
-  color:#a6e0ea;background:transparent;font-size:17px;font-weight:600;line-height:1
-}
-.team-card-actions{
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;
-  margin-top:24px;padding:15px 0 0;border:0!important;border-top:0!important
-}
-.save-vcard,.contact-open{
-  position:relative;display:inline-flex;align-items:center;justify-content:flex-start;gap:9px;
-  min-height:35px;padding:7px 0!important;border:0!important;border-radius:0!important;
-  background:transparent!important;box-shadow:none!important;
-  color:#dff3f6!important;font-size:12px;font-weight:800;letter-spacing:.035em;text-decoration:none;
-  cursor:pointer;transition:color .22s,transform .22s
-}
-.save-vcard:before,.contact-open:before{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:linear-gradient(90deg,#94deea,transparent);transition:right .25s}
-.save-vcard:hover,.contact-open:hover{color:#fff!important;transform:translateY(-3px) translateZ(8px)}
-.save-vcard:hover:before,.contact-open:hover:before{right:0}
-.contact-action-icon{display:inline-flex;align-items:center;justify-content:center;color:#9cdde8;font-size:17px;font-weight:500}
-.team-heading h2{font-size:clamp(27px,2.25vw,36px);line-height:1.1}
-.team-heading p{font-size:13px;line-height:1.65}
-.team-heading small{font-size:11px;letter-spacing:.14em}
-.team-brand-logo{width:205px;height:78px;object-fit:contain}
-.team-contact .team-details a span:last-child,.team-contact .team-details>div span:last-child{overflow-wrap:anywhere}
-@media(max-width:1050px){
- .team-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
- .team-contact{min-height:370px}
-}
-@media(max-width:680px){
- .team-strip{grid-template-columns:1fr}
- .team-contact{min-height:0;padding:23px!important}
- .team-contact h3{font-size:25px}
- .team-role{font-size:14px}
- .team-details a,.team-details>div{font-size:14px}
- .team-card-actions{gap:20px}
-}
-@media(max-width:520px){
- .team-contact{padding:21px!important}
- .team-num{font-size:22px}
- .team-unit{font-size:9px}
- .team-contact h3{font-size:23px}
- .team-details{gap:12px}
- .team-details a,.team-details>div{font-size:13px;line-height:1.5}
- .save-vcard,.contact-open{font-size:11px}
-}
-
-/* ── One glass language for every interactive surface ── */
-.brand-tile,.company-panel,.team-heading,.team-contact,.action-primary,.action-quiet,.nav-cta,.model-view-modes,.model-controls{
-  border:0!important;border-radius:0!important;outline:0!important;
-  box-shadow:0 22px 55px rgba(0,0,0,.17),inset 0 1px rgba(255,255,255,.13)!important
-}
-.brand-tile,.company-panel,.team-contact,.team-heading{backdrop-filter:blur(22px) saturate(150%)}
-.action-primary,.action-quiet,.nav-cta{background:rgba(219,241,247,.10)!important;backdrop-filter:blur(20px) saturate(145%)}
-.action-primary:hover,.action-quiet:hover,.nav-cta:hover{background:rgba(133,206,220,.17)!important;transform:translateY(-3px) translateZ(10px)}
-button,.brand-tile,.company-panel,.team-contact,.team-heading,.company-fact,.company-contact a,.team-details a,.save-vcard,.contact-open{
-  transform-style:preserve-3d;will-change:transform
-}
-
-/* ── Clean three-mode 3D viewer ── */
-.model-stage{overflow:hidden!important;min-height:580px}
-.model-view-modes{
-  left:3%;right:3%;top:10%;display:flex;flex-wrap:wrap;align-items:center;
-  gap:clamp(14px,1.8vw,28px);padding:0;background:linear-gradient(90deg,rgba(6,17,25,.48),rgba(6,17,25,.10));
-  backdrop-filter:blur(18px) saturate(140%);box-shadow:none!important
-}
-.model-view-modes button{
-  position:relative;min-height:38px;padding:8px 0;border:0!important;border-radius:0!important;
-  background:transparent!important;box-shadow:none!important;color:rgba(232,245,248,.76);
-  font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
-  transition:color .22s,transform .22s
-}
-.model-view-modes button:after{
-  content:"";position:absolute;left:0;right:100%;bottom:2px;height:2px;
-  background:linear-gradient(90deg,#98e1ec,rgba(152,225,236,0));transition:right .24s
-}
-.model-view-modes button[aria-pressed="true"],.model-view-modes button:hover{color:#fff;transform:translateY(-2px)}
-.model-view-modes button[aria-pressed="true"]:after,.model-view-modes button:hover:after{right:0}
-.model-selection-info{left:3%;right:3%;top:18%;bottom:auto;max-width:620px;padding:0;border:0;background:transparent;box-shadow:none;color:#e5f3f6;font-size:10px;line-height:1.45;text-shadow:0 2px 12px rgba(0,0,0,.8)}
-.model-hover-label{left:3%;right:3%;bottom:14%;max-width:75%;font-size:10px;text-shadow:0 2px 12px rgba(0,0,0,.9)}
-.model-controls{
-  position:absolute;z-index:6;left:auto;right:3%;bottom:4%;
-  display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:clamp(14px,1.2vw,22px);
-  padding:0;background:linear-gradient(90deg,rgba(6,17,25,.10),rgba(6,17,25,.40));
-  backdrop-filter:blur(18px);border:0!important;box-shadow:none!important
-}
-.model-controls button{
-  position:relative;min-width:0;height:37px;padding:7px 0;border:0!important;border-radius:0!important;
-  background:transparent!important;box-shadow:none!important;color:#e4f0f3;
-  font-size:10px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap;
-  transition:color .2s,transform .2s
-}
-.model-controls button:after{content:"";position:absolute;left:0;right:100%;bottom:1px;height:1px;background:linear-gradient(90deg,#9cdeea,transparent);transition:right .22s}
-.model-controls button:hover{color:#fff;transform:translateY(-2px)}
-.model-controls button:hover:after{right:0}
-.stage-hint{display:block!important;left:3%;right:auto;bottom:4%;font-size:9px;line-height:1.4;color:#deedf1;text-shadow:0 2px 10px rgba(0,0,0,.8)}
-.stage-hint:before{display:none}
-@media(max-width:850px){
- .model-stage{min-height:490px}
- .model-view-modes{top:10%;gap:10px 15px}
- .model-view-modes button{font-size:9px}
- .model-selection-info{top:22%;font-size:9px}
- .model-controls{left:3%;right:3%;bottom:3%;justify-content:space-between;gap:9px 14px}
- .model-controls button{font-size:9px;height:32px}
- .stage-hint{bottom:12%;font-size:8px}
-}
-@media(max-width:520px){
- .model-stage{height:390px;min-height:390px}
- .model-view-modes{top:9%;gap:7px 12px}
- .model-view-modes button{font-size:8px;min-height:30px;letter-spacing:.08em}
- .model-selection-info{top:20%;font-size:8px;max-width:95%}
- .model-controls{bottom:3%;gap:6px 12px;justify-content:space-between}
- .model-controls button{font-size:8px;height:28px}
- .stage-hint{bottom:14%;font-size:7px}
-}
-
-</style>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/unidad-eurocontainer.webp">
+<link rel="stylesheet" href="css/styles.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<div class="scroll-line" id="scrollLine" aria-hidden="true"></div>
-<section class="screen screen-hero" id="inicio" aria-labelledby="hero-title">
-  <div class="hero-photo" id="heroPhoto" aria-hidden="true"></div>
-  <div class="hero-vignette" aria-hidden="true"></div><div class="hero-grid-lines" aria-hidden="true"></div>
-  <header class="header">
-    <a class="main-brand tilt-surface" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="BOX Integration Systems, web oficial">
-      <img src="assets/boxis-logo-white.webp" alt="BOX Integration Systems">
-      <span>Diseño · Fabricación<br>Integración industrial</span>
-    </a>
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="#empresas">Empresas</a><a href="#plataforma">Capacidades</a><a href="#contacto" class="nav-cta">Contacto ↗</a>
-    </nav>
-  </header>
 
-  <div class="hero-main">
+<!-- Iconos (SVG inline, trazo uniforme) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m3.5 7 8.5 6.5L20.500 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="9.500" r="2.500" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="17" height="17" rx="2.500" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10.500V16M8 7.700v.1M12 16v-5.500m0 2.500c0-1.700 1.200-2.600 2.600-2.600S17 11.300 17 13v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.500-4.500M12 15l4.500-4.500M5 19.500h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5 21 3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14m0 0-6-6m6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.500v13l11-6.500z" fill="currentColor"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4.500 12a7.500 7.500 0 1 0 2.300-5.400M4.500 4.500v4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="scroll-line" id="scrollLine" aria-hidden="true"></div>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#inicio" aria-label="BOX Integration Systems, inicio">
+      <img src="assets/logos/boxis-white.png" alt="BOX Integration Systems" width="739" height="260">
+      <span class="brand-tag">Diseño · Fabricación<br>Integración industrial</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#empresas">Empresas</a>
+      <a href="#capacidades">Capacidades</a>
+      <a href="#galeria">Galería</a>
+      <a href="#equipo" class="main-nav-cta">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Integración industrial · Ingeniería aplicada</p>
       <h1 id="hero-title">Ingeniería modular.<br><span>Soluciones reales.</span></h1>
-      <p class="hero-lead">Diseño, fabricación e integración de sistemas industriales. Tres especialidades complementarias para convertir requisitos técnicos en soluciones contenerizadas, fiables y preparadas para trabajar.</p>
-      <div class="hero-stats" aria-label="Datos destacados de las empresas">
-        <div class="hero-stat"><b>+8.000 m²</b><span>Instalaciones BOXIS</span></div>
-        <div class="hero-stat"><b>+100.000 m²</b><span>Fabricación Eurocontainer</span></div>
-        <div class="hero-stat"><b>1982</b><span>Trayectoria Gedesel</span></div>
-      </div>
+      <p class="lead">Diseño, fabricación e integración de sistemas industriales. Tres especialidades complementarias para convertir requisitos técnicos en soluciones contenerizadas, fiables y preparadas para trabajar.</p>
+      <dl class="stats" aria-label="Datos destacados">
+        <div class="stat"><dt>Instalaciones BOXIS</dt><dd>+8.000 m²</dd></div>
+        <div class="stat"><dt>Fabricación Eurocontainer</dt><dd>+100.000 m²</dd></div>
+        <div class="stat"><dt>Trayectoria Gedesel</dt><dd>1982</dd></div>
+      </dl>
       <div class="hero-actions">
-        <a class="action-primary" href="#plataforma">Explorar capacidades <span class="arr">↘</span></a>
-        <button class="action-quiet" type="button" id="focusModel">Ver conjunto 3D <span class="arr">＋</span></button>
+        <a class="btn btn-primary" href="#capacidades">Explorar capacidades <svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></a>
+        <a class="btn btn-secondary" href="#visor" id="focusModel">Ver conjunto 3D <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></a>
       </div>
     </div>
 
-    <div class="model-stage" id="modelStage" aria-label="Reconstrucción 3D exterior de la unidad Eurocontainer mostrada en las fotografías">
-      <div class="stage-glow" aria-hidden="true"></div><div class="stage-grid" aria-hidden="true"></div>
-      <canvas id="container3d" tabindex="0" aria-label="Modelo tridimensional de la unidad Eurocontainer basado en las fotografías aportadas. Arrastra para orbitar 360 grados, usa la rueda para acercar y selecciona puertas, torre, escape, bastidor y depósito inferior."></canvas>
-      <div class="model-stage-top"><span class="stage-caption">EUROCONTAINER · RECONSTRUCCIÓN 3D FOTOGRÁFICA</span><span class="stage-index">EC<span>/</span>01</span></div>
-      <div class="model-selection-info" id="modelSelectionInfo" aria-live="polite">CONJUNTO COMPLETO · Selecciona un componente</div>
-      <div class="model-hover-label" id="modelHoverLabel" aria-live="polite"></div>
-      <div class="model-view-modes" role="group" aria-label="Seleccionar vista del equipo">
-        <button type="button" data-model-view="exterior" aria-pressed="true">01 · Exterior completo</button>
-        <button type="button" data-model-view="interior" aria-pressed="false">02 · Interior del contenedor</button>
-        <button type="button" data-model-view="tank" aria-pressed="false">03 · Interior del belly tank</button>
+    <!-- Visor 3D -->
+    <div class="viewer" id="visor" aria-label="Visor 3D de la unidad Eurocontainer">
+      <div class="viewer-tabs" role="group" aria-label="Seleccionar vista del equipo">
+        <button type="button" class="viewer-tab" data-model-view="exterior" aria-pressed="true"><span class="tab-num">01</span><span class="tab-full">Exterior completo</span><span class="tab-short">Exterior</span></button>
+        <button type="button" class="viewer-tab" data-model-view="interior" aria-pressed="false"><span class="tab-num">02</span><span class="tab-full">Interior del contenedor</span><span class="tab-short">Interior</span></button>
+        <button type="button" class="viewer-tab" data-model-view="tank" aria-pressed="false"><span class="tab-num">03</span><span class="tab-full">Interior del belly tank</span><span class="tab-short">Belly tank</span></button>
       </div>
-      <div class="stage-hint">Arrastra para girar 360° · Rueda para acercar · Selecciona componentes</div>
-      <div class="model-controls" aria-label="Controles 3D">
-        <button type="button" id="autoRotate" aria-pressed="true">Pausar rotación</button>
-        <button type="button" id="resetView">Restablecer vista</button>
-        <button type="button" id="zoomIn" aria-label="Acercar">＋</button>
-        <button type="button" id="zoomOut" aria-label="Alejar">−</button>
+      <div class="viewer-canvas" id="modelStage">
+        <canvas id="container3d" tabindex="0" aria-label="Modelo tridimensional de la unidad Eurocontainer. Arrastra para orbitar 360 grados, usa la rueda o las teclas más y menos para acercar, y pulsa un componente para seleccionarlo."></canvas>
+        <div class="viewer-loading" id="modelState" role="status"><span class="spinner" aria-hidden="true"></span><span id="modelStateText">Cargando modelo 3D…</span></div>
       </div>
+      <div class="viewer-info" aria-live="polite"><span class="badge-kicker">Selección</span><strong id="partName">Conjunto completo</strong><span id="partDesc">Pulsa un componente para ver su función.</span></div>
+      <div class="viewer-bar">
+        <p class="viewer-hint">Arrastra para girar 360° · Pulsa en el visor y usa la rueda para acercar · Pulsa un componente</p>
+        <div class="viewer-controls" aria-label="Controles 3D">
+          <button type="button" class="ctl" id="autoRotate" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#i-pause"/></svg><span>Pausar</span></button>
+          <button type="button" class="ctl" id="resetView"><svg class="ico" aria-hidden="true"><use href="#i-reset"/></svg><span>Restablecer</span></button>
+          <button type="button" class="ctl ctl-icon" id="zoomIn" aria-label="Acercar"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          <button type="button" class="ctl ctl-icon" id="zoomOut" aria-label="Alejar"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg></button>
+        </div>
+      </div>
+      <ul class="viewer-chips" id="partChips" aria-label="Componentes de la vista actual"></ul>
+      <p class="viewer-note">Modelo 3D ilustrativo de la unidad. Los textos describen cada conjunto de forma general y no sustituyen a los planos ni a la documentación técnica del fabricante.</p>
     </div>
   </div>
-
-  <div class="brand-dock" id="empresas" aria-label="Accesos directos a las tres empresas">
-    <a class="brand-tile boxis tilt-surface" href="https://boxis.es/" target="_blank" rel="noopener" aria-label="Visitar BOX Integration Systems">
-      <span class="tile-logo"><img class="boxis-logo" src="assets/boxis-logo-white.webp" alt="BOX Integration Systems"><span class="logo-fallback">BOX <small>integration systems</small></span></span>
-      <span class="tile-text"><small>Diseño · Fabricación · Integración</small><strong>BOX Integration Systems</strong><span>Equipos modulares y soluciones industriales a medida</span></span>
-      <span class="tile-arrow" aria-hidden="true">↗</span>
-    </a>
-    <a class="brand-tile euro tilt-surface" href="https://eurocontainer.es/" target="_blank" rel="noopener" aria-label="Visitar Eurocontainer">
-      <span class="tile-logo"><img class="euro-logo" src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Eurocontainer" referrerpolicy="no-referrer"><span class="logo-fallback euro">Eurocontainer<span>.es</span></span></span>
-      <span class="tile-text"><small>Fabricación · Contenerización</small><strong>Eurocontainer</strong><span>Contenedores, cisternas, belly tanks y soluciones especiales</span></span>
-      <span class="tile-arrow" aria-hidden="true">↗</span>
-    </a>
-    <a class="brand-tile gedesel tilt-surface" href="https://gedesel.net/" target="_blank" rel="noopener" aria-label="Visitar E=Gedesel">
-      <span class="tile-logo"><img class="gedesel-logo" src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="E=Gedesel" referrerpolicy="no-referrer"><span class="logo-fallback gedesel"><b>E=</b>Gedesel</span></span>
-      <span class="tile-text"><small>Ingeniería · Instalaciones eléctricas</small><strong>E=Gedesel</strong><span>Alta y baja tensión, mantenimiento e integración eléctrica</span></span>
-      <span class="tile-arrow" aria-hidden="true">↗</span>
-    </a>
-  </div>
-  <div class="screen-footnote">BOX Integration Systems · Eurocontainer · E=Gedesel</div>
 </section>
 
-<section class="screen platform-screen" id="plataforma" aria-labelledby="platform-title">
-  <div class="platform-head">
-    <div><p class="eyebrow">Capacidades · Especialización · Contacto</p><h2 id="platform-title">Tres especialidades.<br><span>Una ejecución industrial.</span></h2></div>
-    <p>Una presentación coordinada de capacidades independientes: integración modular, fabricación contenerizada e ingeniería eléctrica especializada.</p>
+<!-- ============ EMPRESAS ============ -->
+<section class="brands" id="empresas" aria-label="Las tres empresas">
+  <div class="wrap">
+    <ul class="brand-row reveal">
+      <li>
+        <a class="brand-cell" href="https://boxis.es/" target="_blank" rel="noopener" data-tilt>
+          <span class="brand-logo" data-depth="30"><img src="assets/logos/boxis-white.png" alt="BOX Integration Systems" width="739" height="260"></span>
+          <span class="brand-name" data-depth="16">BOX Integration Systems</span>
+          <span class="brand-role">Diseño · Fabricación · Integración</span>
+          <span class="brand-url">boxis.es <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="brand-cell" href="https://eurocontainer.es/" target="_blank" rel="noopener" data-tilt>
+          <span class="brand-logo" data-depth="30"><img src="assets/logos/eurocontainer-white.png" alt="Eurocontainer.es · container manufacturer" width="689" height="78"></span>
+          <span class="brand-name" data-depth="16">Eurocontainer</span>
+          <span class="brand-role">Fabricación · Contenerización</span>
+          <span class="brand-url">eurocontainer.es <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="brand-cell" href="https://gedesel.net/" target="_blank" rel="noopener" data-tilt>
+          <span class="brand-logo" data-depth="30"><img src="assets/logos/gedesel-white.png" alt="E=Gedesel" width="553" height="127"></span>
+          <span class="brand-name" data-depth="16">E=Gedesel</span>
+          <span class="brand-role">Ingeniería · Instalaciones eléctricas</span>
+          <span class="brand-url">gedesel.net <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </li>
+    </ul>
   </div>
+</section>
 
-  <div class="company-grid">
-    <article class="company-panel boxis tilt-surface">
-      <div class="company-top"><div class="company-logo"><img class="boxis-logo" src="assets/boxis-logo-white.webp" alt="BOX Integration Systems"><span class="logo-fallback">BOX integration systems</span></div><span class="company-index">01 / 03</span></div>
-      <h3>Integración industrial a medida</h3>
-      <p class="company-intro">Diseño, fabricación e integración de equipos modulares para energía, servicios en obra, telecomunicaciones y movilidad urbana.</p>
-      <div class="company-facts"><div class="company-fact"><b>+8.000 m²</b><span>Naves cubiertas</span></div><div class="company-fact"><b>+100</b><span>Contenedores integrados/año</span></div></div>
-      <ul class="company-list"><li>Cálculos estructurales, eléctricos y de potencia</li><li>Diseño, fabricación e integración</li><li>Pruebas FAT/SAT y puesta en servicio</li></ul>
-      <div class="company-contact">
-        <span class="contact-label">Equipo de proyecto · BOXIS</span>
-        <a href="tel:+34659481773">José Luis Herrando · +34 659 481 773</a>
-        <a href="mailto:jlherrando@boxis.es">jlherrando@boxis.es</a>
-        <a href="tel:+34683223203">Alejandro Ballestín · +34 683 223 203</a>
-        <a href="mailto:aballestin@boxis.es">aballestin@boxis.es</a>
-        <a href="mailto:rruiz@boxis.es">Rubén Ruiz · Delineación eléctrica y calidad · rruiz@boxis.es</a>
-        <a class="contact-cta" href="https://boxis.es/" target="_blank" rel="noopener">Web oficial BOXIS <span>↗</span></a>
+<!-- ============ CAPACIDADES ============ -->
+<section class="section" id="capacidades" aria-labelledby="cap-title">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <div>
+        <p class="eyebrow">Capacidades · Especialización</p>
+        <h2 id="cap-title">Tres especialidades.<br><span>Una ejecución industrial.</span></h2>
       </div>
-    </article>
+      <p class="section-lead">Una presentación coordinada de capacidades independientes: integración modular, fabricación contenerizada e ingeniería eléctrica especializada.</p>
+    </header>
 
-    <article class="company-panel euro tilt-surface">
-      <div class="company-top"><div class="company-logo"><img class="euro-logo" src="https://www.portuensedecontenedores.com/wp-content/uploads/2025/02/logo-eurocontainer-blanco.webp" alt="Eurocontainer" referrerpolicy="no-referrer"><span class="logo-fallback euro">Eurocontainer<span>.es</span></span></div><span class="company-index">02 / 03</span></div>
-      <h3>Fabricación y soluciones contenerizadas</h3>
-      <p class="company-intro">Diseño y fabricación de contenedores, cajas móviles, cisternas, estructuras e integración de equipos para aplicaciones industriales y energéticas.</p>
-      <div class="company-facts"><div class="company-fact"><b>+100.000 m²</b><span>Fabricación y almacenaje</span></div><div class="company-fact"><b>ISO 9001</b><span>Calidad · UNE EN ISO 9001:2015</span></div></div>
-      <ul class="company-list"><li>Contenedores para energía y Data Center</li><li>Belly tanks cuadrados de doble pared</li><li>Cisternas, skids y soluciones especiales</li></ul>
-      <div class="company-contact">
-        <span class="contact-label">Contacto corporativo</span>
-        <a href="tel:+34976308051">Central Zaragoza · +34 976 30 80 51</a>
-        <a href="mailto:info@eurocontainer.es">info@eurocontainer.es</a>
-        <a href="tel:+34659729752">Centro de Remolinos · +34 659 729 752</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Carretera+Alagon+Tudela+km+44.900+Remolinos+Zaragoza" target="_blank" rel="noopener">Carretera Alagón–Tudela · km 44,900</a>
-        <a class="contact-cta" href="https://eurocontainer.es/" target="_blank" rel="noopener">Web oficial Eurocontainer <span>↗</span></a>
-      </div>
-    </article>
+    <div class="company-grid reveal">
+      <!-- BOX -->
+      <article class="company company--boxis" data-tilt>
+        <div class="company-head">
+          <img class="company-logo" data-depth="28" src="assets/logos/boxis-white.png" alt="BOX Integration Systems" width="739" height="260">
+          <span class="company-index">01 / 03</span>
+        </div>
+        <h3 data-depth="14">Integración industrial a medida</h3>
+        <p class="company-intro">Diseño, fabricación e integración de equipos modulares para energía, servicios en obra, telecomunicaciones y movilidad urbana.</p>
+        <dl class="facts">
+          <div><dt>Naves cubiertas</dt><dd>+8.000 m²</dd></div>
+          <div><dt>Contenedores integrados/año</dt><dd>+100</dd></div>
+        </dl>
+        <ul class="checks">
+          <li>Cálculos estructurales, eléctricos y de potencia</li>
+          <li>Diseño, fabricación e integración</li>
+          <li>Pruebas FAT/SAT y puesta en servicio</li>
+        </ul>
+        <dl class="contact-rows">
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Teléfono</span></dt>
+            <dd><a href="tel:+34659481773">José Luis Herrando · <span class="nw">+34 659 481 773</span></a><a href="tel:+34683223203">Alejandro Ballestín · <span class="nw">+34 683 223 203</span></a></dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span>Correo</span></dt>
+            <dd><a href="mailto:jlherrando@boxis.es">jlherrando@boxis.es</a><a href="mailto:aballestin@boxis.es">aballestin@boxis.es</a></dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Sede</span></dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Carretera+Alagon+Tudela+km+44.900+Remolinos+Zaragoza" target="_blank" rel="noopener">Carretera Alagón–Tudela, A-126 km 44,900<br>50637 Remolinos, Zaragoza</a></dd></div>
+        </dl>
+        <a class="text-link" href="https://boxis.es/" target="_blank" rel="noopener">Web oficial BOXIS <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
 
-    <article class="company-panel gedesel tilt-surface">
-      <div class="company-top"><div class="company-logo"><img class="gedesel-logo" src="https://gedesel.net/wp-content/uploads/2026/02/gedesel_logo-1024x243.png" alt="E=Gedesel" referrerpolicy="no-referrer"><span class="logo-fallback gedesel"><b>E=</b>Gedesel</span></div><span class="company-index">03 / 03</span></div>
-      <h3>Ingeniería e instalaciones eléctricas</h3>
-      <p class="company-intro">Empresa familiar con trayectoria desde 1982, especializada en instalaciones eléctricas de alta y baja tensión y mantenimiento industrial.</p>
-      <div class="company-facts"><div class="company-fact"><b>1982</b><span>Fundación</span></div><div class="company-fact"><b>AT / BT</b><span>Especialización eléctrica</span></div></div>
-      <ul class="company-list"><li>Instalaciones eléctricas de alta y baja tensión</li><li>Ingeniería aplicada y mantenimiento</li><li>Integración eléctrica en soluciones industriales</li></ul>
-      <div class="company-contact">
-        <span class="contact-label">Contacto corporativo</span>
-        <a href="tel:+34976573000">Zaragoza · +34 976 573 000</a>
-        <a href="mailto:info@gedesel.net">info@gedesel.net</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Poligono+Malpica+Calle+E+Parcela+29+31+Nave+8+Zaragoza" target="_blank" rel="noopener">Polígono Malpica · Zaragoza</a>
-        <a href="tel:+34978617447">Teruel · +34 978 617 447</a>
-        <a href="mailto:info@gedeselteruel.net">info@gedeselteruel.net</a>
-        <a class="contact-cta" href="https://gedesel.net/" target="_blank" rel="noopener">Web oficial E=Gedesel <span>↗</span></a>
-      </div>
-    </article>
+      <!-- Eurocontainer -->
+      <article class="company company--euro" data-tilt>
+        <div class="company-head">
+          <img class="company-logo" data-depth="28" src="assets/logos/eurocontainer-white.png" alt="Eurocontainer.es · container manufacturer" width="689" height="78">
+          <span class="company-index">02 / 03</span>
+        </div>
+        <h3 data-depth="14">Fabricación y soluciones contenerizadas</h3>
+        <p class="company-intro">Diseño y fabricación de contenedores, cajas móviles, cisternas, estructuras e integración de equipos para aplicaciones industriales y energéticas.</p>
+        <dl class="facts">
+          <div><dt>Fabricación y almacenaje</dt><dd>+100.000 m²</dd></div>
+          <div><dt>Calidad · UNE EN ISO 9001:2015</dt><dd>ISO 9001</dd></div>
+        </dl>
+        <ul class="checks">
+          <li>Contenedores para energía y Data Center</li>
+          <li>Belly tanks cuadrados de doble pared</li>
+          <li>Cisternas, skids y soluciones especiales</li>
+        </ul>
+        <dl class="contact-rows">
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Teléfono</span></dt>
+            <dd><a href="tel:+34976308051">Central Zaragoza · <span class="nw">+34 976 30 80 51</span></a><a href="tel:+34659729752">Centro de Remolinos · <span class="nw">+34 659 729 752</span></a></dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span>Correo</span></dt>
+            <dd><a href="mailto:info@eurocontainer.es">info@eurocontainer.es</a></dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Sede</span></dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Carretera+Alagon+Tudela+km+44.900+Remolinos+Zaragoza" target="_blank" rel="noopener">Carretera Alagón–Tudela, km 44,900<br>Remolinos, Zaragoza</a></dd></div>
+        </dl>
+        <a class="text-link" href="https://eurocontainer.es/" target="_blank" rel="noopener">Web oficial Eurocontainer <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <!-- Gedesel -->
+      <article class="company company--gedesel" data-tilt>
+        <div class="company-head">
+          <img class="company-logo" data-depth="28" src="assets/logos/gedesel-white.png" alt="E=Gedesel" width="553" height="127">
+          <span class="company-index">03 / 03</span>
+        </div>
+        <h3 data-depth="14">Ingeniería e instalaciones eléctricas</h3>
+        <p class="company-intro">Empresa familiar con trayectoria desde 1982, especializada en instalaciones eléctricas de alta y baja tensión y mantenimiento industrial.</p>
+        <dl class="facts">
+          <div><dt>Fundación</dt><dd>1982</dd></div>
+          <div><dt>Especialización eléctrica</dt><dd>AT / BT</dd></div>
+        </dl>
+        <ul class="checks">
+          <li>Instalaciones eléctricas de alta y baja tensión</li>
+          <li>Ingeniería aplicada y mantenimiento</li>
+          <li>Integración eléctrica en soluciones industriales</li>
+        </ul>
+        <dl class="contact-rows">
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Teléfono</span></dt>
+            <dd><a href="tel:+34976573000">Zaragoza · <span class="nw">+34 976 573 000</span></a><a href="tel:+34978617447">Teruel · <span class="nw">+34 978 617 447</span></a></dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span>Correo</span></dt>
+            <dd><a href="mailto:info@gedesel.net">info@gedesel.net</a><a href="mailto:info@gedeselteruel.net">info@gedeselteruel.net</a></dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Sede</span></dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Poligono+Malpica+Calle+E+Parcela+29+31+Nave+8+Zaragoza" target="_blank" rel="noopener">Polígono Malpica, Calle E, Parcela 29-31<br>Nave 8 · Zaragoza</a></dd></div>
+        </dl>
+        <a class="text-link" href="https://gedesel.net/" target="_blank" rel="noopener">Web oficial E=Gedesel <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
   </div>
+</section>
 
-  <section class="team-section" id="contacto" aria-labelledby="team-title">
-    <div class="team-heading tilt-surface">
-      <img src="assets/boxis-logo-white.webp" alt="BOX Integration Systems" class="team-brand-logo">
-      <div><small>BOX Integration Systems · Contacto directo</small><h2 id="team-title">El equipo detrás de cada proyecto</h2><p>Contactos directos, disponibilidad y datos profesionales.</p></div>
+<!-- ============ GALERÍA ============ -->
+<section class="section section--alt" id="galeria" aria-labelledby="gal-title">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <div>
+        <p class="eyebrow">Fabricación · Instalaciones</p>
+        <h2 id="gal-title">Del diseño a la <span>unidad terminada.</span></h2>
+      </div>
+      <p class="section-lead">Imágenes de la unidad Eurocontainer, del depósito en planta y de las instalaciones donde se fabrica e integra.</p>
+    </header>
+    <div class="gallery reveal">
+      <figure data-tilt>
+        <div class="shot"><img src="assets/img/unidad-eurocontainer.webp" alt="Unidad Eurocontainer en campa, con torre vertical y silenciador en cubierta" width="1280" height="720" loading="lazy"></div>
+        <figcaption><strong>Unidad Eurocontainer</strong><span>Contenedor con torre vertical, puertas de servicio y silenciador en cubierta.</span></figcaption>
+      </figure>
+      <figure data-tilt>
+        <div class="shot"><img src="assets/img/belly-tank-fabrica.webp" alt="Depósito belly tank blanco en la planta de Eurocontainer" width="1200" height="900" loading="lazy"></div>
+        <figcaption><strong>Depósito en planta</strong><span>Belly tank con puertas de registro y placa de características.</span></figcaption>
+      </figure>
+      <figure data-tilt>
+        <div class="shot"><img src="assets/img/instalaciones-recreacion.webp" alt="Recreación ilustrativa de la nave industrial y la unidad Eurocontainer" width="1672" height="741" loading="lazy"></div>
+        <figcaption><strong>Instalaciones</strong><span>Recreación ilustrativa de la nave y la unidad terminada.</span></figcaption>
+      </figure>
     </div>
-    <div class="team-strip">
-      <article class="team-contact tilt-surface" data-contact="jose">
-        <div class="team-card-top"><span class="team-num">01 / 03</span><span class="team-unit">DIRECCIÓN DE PROYECTO</span></div>
-        <h3>José Luis Herrando</h3><p class="team-role">Director de proyecto</p>
-        <div class="team-details">
-          <a href="tel:+34659481773"><span class="detail-icon" aria-hidden="true">☎</span><span>+34 659 481 773</span></a>
-          <a href="mailto:jlherrando@boxis.es"><span class="detail-icon" aria-hidden="true">✉</span><span>jlherrando@boxis.es</span></a>
-          <div><span class="detail-icon" aria-hidden="true">◷</span><span>Lunes a viernes · 08:30–16:30</span></div>
-          <div><span class="detail-icon" aria-hidden="true">⌖</span><span>Carretera Alagón–Tudela, A-126 km 44,900 · 50637 Remolinos, Zaragoza</span></div>
-        </div>
-        <div class="team-card-actions"><button type="button" class="save-vcard" data-contact-id="jose"><span class="contact-action-icon" aria-hidden="true">↓</span><span>Añadir a contactos</span></button><a href="mailto:jlherrando@boxis.es" class="contact-open"><span class="contact-action-icon" aria-hidden="true">↗</span><span>Enviar correo</span></a></div>
-      </article>
-      <article class="team-contact tilt-surface" data-contact="alejandro">
-        <div class="team-card-top"><span class="team-num">02 / 03</span><span class="team-unit">DIRECCIÓN DE PROYECTO</span></div>
-        <h3>Alejandro Ballestín</h3><p class="team-role">Director de proyecto</p>
-        <div class="team-details">
-          <a href="tel:+34683223203"><span class="detail-icon" aria-hidden="true">☎</span><span>+34 683 223 203</span></a>
-          <a href="mailto:aballestin@boxis.es"><span class="detail-icon" aria-hidden="true">✉</span><span>aballestin@boxis.es</span></a>
-          <div><span class="detail-icon" aria-hidden="true">◷</span><span>Lunes a viernes · 08:30–16:30</span></div>
-          <div><span class="detail-icon" aria-hidden="true">⌖</span><span>Carretera Alagón–Tudela, A-126 km 44,900 · 50637 Remolinos, Zaragoza</span></div>
-        </div>
-        <div class="team-card-actions"><button type="button" class="save-vcard" data-contact-id="alejandro"><span class="contact-action-icon" aria-hidden="true">↓</span><span>Añadir a contactos</span></button><a href="mailto:aballestin@boxis.es" class="contact-open"><span class="contact-action-icon" aria-hidden="true">↗</span><span>Enviar correo</span></a></div>
-      </article>
-      <article class="team-contact tilt-surface" data-contact="ruben">
-        <div class="team-card-top"><span class="team-num">03 / 03</span><span class="team-unit">OFICINA TÉCNICA · CALIDAD</span></div>
-        <h3>Rubén Ruiz Cañón</h3><p class="team-role">Delineante Eléctrico y Calidad</p>
-        <div class="team-details">
-          <a href="mailto:rruiz@boxis.es"><span class="detail-icon" aria-hidden="true">✉</span><span>rruiz@boxis.es</span></a>
-          <a href="https://es.linkedin.com/in/ruben-ruiz-canon" target="_blank" rel="noopener"><span class="detail-icon" aria-hidden="true">in</span><span>Perfil profesional de LinkedIn</span></a>
-          <div><span class="detail-icon" aria-hidden="true">◷</span><span>Lunes a viernes · 08:00–16:00</span></div>
-          <div><span class="detail-icon" aria-hidden="true">⌖</span><span>Carretera Alagón–Tudela, A-126 km 44,900 · 50637 Remolinos, Zaragoza</span></div>
-        </div>
-        <div class="team-card-actions"><button type="button" class="save-vcard" data-contact-id="ruben"><span class="contact-action-icon" aria-hidden="true">↓</span><span>Añadir a contactos</span></button><a href="mailto:rruiz@boxis.es" class="contact-open"><span class="contact-action-icon" aria-hidden="true">↗</span><span>Enviar correo</span></a></div>
-      </article>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="platform-footer">
+<!-- ============ EQUIPO ============ -->
+<section class="section" id="equipo" aria-labelledby="team-title">
+  <div class="wrap">
+    <header class="team-head reveal">
+      <img src="assets/logos/boxis-white.png" alt="BOX Integration Systems" width="739" height="260">
+      <div>
+        <p class="eyebrow">BOX Integration Systems · Contacto directo</p>
+        <h2 id="team-title">El equipo detrás de cada proyecto</h2>
+        <p class="section-lead">Contactos directos, disponibilidad y datos profesionales.</p>
+      </div>
+    </header>
+
+    <div class="team-grid reveal">
+      <article class="person" data-tilt data-contact="jose">
+        <p class="person-top"><span class="person-num">01 / 03</span><span class="person-unit">Dirección de proyecto</span></p>
+        <h3 data-depth="16">José Luis Herrando</h3>
+        <p class="person-role">Director de proyecto</p>
+        <ul class="person-details">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+34659481773">+34 659 481 773</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:jlherrando@boxis.es">jlherrando@boxis.es</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span>Lunes a viernes · 08:30–16:30</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Carretera Alagón–Tudela, A-126 km 44,900<br>50637 Remolinos, Zaragoza</span></li>
+        </ul>
+        <div class="person-actions">
+          <button type="button" class="act" data-contact-id="jose"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Añadir a contactos</button>
+          <a class="act" href="mailto:jlherrando@boxis.es"><svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>Enviar correo</a>
+        </div>
+      </article>
+
+      <article class="person" data-tilt data-contact="alejandro">
+        <p class="person-top"><span class="person-num">02 / 03</span><span class="person-unit">Dirección de proyecto</span></p>
+        <h3 data-depth="16">Alejandro Ballestín</h3>
+        <p class="person-role">Director de proyecto</p>
+        <ul class="person-details">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+34683223203">+34 683 223 203</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:aballestin@boxis.es">aballestin@boxis.es</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span>Lunes a viernes · 08:30–16:30</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Carretera Alagón–Tudela, A-126 km 44,900<br>50637 Remolinos, Zaragoza</span></li>
+        </ul>
+        <div class="person-actions">
+          <button type="button" class="act" data-contact-id="alejandro"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Añadir a contactos</button>
+          <a class="act" href="mailto:aballestin@boxis.es"><svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>Enviar correo</a>
+        </div>
+      </article>
+
+      <article class="person" data-tilt data-contact="ruben">
+        <p class="person-top"><span class="person-num">03 / 03</span><span class="person-unit">Oficina técnica · Calidad</span></p>
+        <h3 data-depth="16">Rubén Ruiz Cañón</h3>
+        <p class="person-role">Delineante eléctrico y calidad</p>
+        <ul class="person-details">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:rruiz@boxis.es">rruiz@boxis.es</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-in"/></svg><a href="https://es.linkedin.com/in/ruben-ruiz-canon" target="_blank" rel="noopener">Perfil profesional de LinkedIn</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span>Lunes a viernes · 08:00–16:00</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Carretera Alagón–Tudela, A-126 km 44,900<br>50637 Remolinos, Zaragoza</span></li>
+        </ul>
+        <div class="person-actions">
+          <button type="button" class="act" data-contact-id="ruben"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Añadir a contactos</button>
+          <a class="act" href="mailto:rruiz@boxis.es"><svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>Enviar correo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
     <span>BOX Integration Systems · Eurocontainer · E=Gedesel</span>
-    <nav aria-label="Webs corporativas"><a href="https://boxis.es/" target="_blank" rel="noopener">BOXIS ↗</a><a href="https://eurocontainer.es/" target="_blank" rel="noopener">EUROCONTAINER ↗</a><a href="https://gedesel.net/" target="_blank" rel="noopener">E=GEDESEL ↗</a></nav>
-  </footer>
-</section>
+    <nav aria-label="Webs corporativas">
+      <a href="https://boxis.es/" target="_blank" rel="noopener">BOXIS <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="https://eurocontainer.es/" target="_blank" rel="noopener">Eurocontainer <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="https://gedesel.net/" target="_blank" rel="noopener">E=Gedesel <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </nav>
+  </div>
+</footer>
 
-<script>
-(() => {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const line = document.getElementById('scrollLine');
-  const updateScroll = () => {
-    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    line.style.width = `${Math.min(100, (window.scrollY / max) * 100)}%`;
-  };
-  window.addEventListener('scroll', updateScroll, {passive:true});
-  window.addEventListener('resize', updateScroll, {passive:true});
-  updateScroll();
-
-  document.querySelectorAll('img.euro-logo, img.gedesel-logo, img.boxis-logo').forEach(img => {
-    img.addEventListener('error', () => {
-      img.classList.add('logo-failed');
-      const fallback = img.nextElementSibling;
-      if (fallback && fallback.classList.contains('logo-fallback')) fallback.style.display = 'inline-flex';
-    }, {once:true});
-  });
-  document.querySelectorAll('.brand-tile,.company-panel,.team-contact,.main-brand,.action-primary,.action-quiet,.nav a,button,.company-fact,.company-contact a,.team-card-actions a,.team-card-actions button,.company-list li,.hero-stat').forEach(el => {
-    if (reduceMotion || !window.matchMedia('(pointer:fine)').matches) return;
-    el.addEventListener('pointermove', e => {
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width;
-      const y = (e.clientY - r.top) / r.height;
-      el.style.setProperty('--ry', `${((x - .5) * 5.4).toFixed(2)}deg`);
-      el.style.setProperty('--rx', `${((.5 - y) * 4.2).toFixed(2)}deg`);
-      el.style.setProperty('--mx', `${(x*100).toFixed(1)}%`);
-      el.style.setProperty('--my', `${(y*100).toFixed(1)}%`);
-    });
-    el.addEventListener('pointerleave', () => {
-      el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');
-      el.style.setProperty('--mx','50%');el.style.setProperty('--my','50%');
-    });
-  });
-  const heroPhoto = document.getElementById('heroPhoto');
-  if (!reduceMotion && window.matchMedia('(pointer:fine)').matches) {
-    document.addEventListener('pointermove', e => {
-      const x = (e.clientX / window.innerWidth - .5) * 7;
-      const y = (e.clientY / window.innerHeight - .5) * 5;
-      heroPhoto.style.transform = `scale(1.04) translate(${x}px,${y}px)`;
-    }, {passive:true});
-  }
-
-  const teamContacts = {
-    jose: {first:'José Luis',last:'Herrando',full:'José Luis Herrando',role:'Director de proyecto',phone:'+34 659 481 773',email:'jlherrando@boxis.es',hours:'Lunes a viernes, 08:30–16:30'},
-    alejandro: {first:'Alejandro',last:'Ballestín',full:'Alejandro Ballestín',role:'Director de proyecto',phone:'+34 683 223 203',email:'aballestin@boxis.es',hours:'Lunes a viernes, 08:30–16:30'},
-    ruben: {first:'Rubén',last:'Ruiz Cañón',full:'Rubén Ruiz Cañón',role:'Delineante Eléctrico y Calidad',phone:'',email:'rruiz@boxis.es',hours:'Lunes a viernes, 08:00–16:00',url:'https://es.linkedin.com/in/ruben-ruiz-canon'}
-  };
-  const escapeVCard = value => String(value || '').replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
-  document.querySelectorAll('[data-contact-id]').forEach(button => {
-    button.addEventListener('click', () => {
-      const person = teamContacts[button.dataset.contactId];
-      if (!person) return;
-      const lines = ['BEGIN:VCARD','VERSION:3.0','N:' + escapeVCard(person.last) + ';' + escapeVCard(person.first) + ';;;',
-        'FN:' + escapeVCard(person.full),'ORG:BOX Integration Systems','TITLE:' + escapeVCard(person.role)];
-      if (person.phone) lines.push('TEL;TYPE=CELL:' + person.phone);
-      lines.push('EMAIL;TYPE=WORK:' + person.email,
-        'ADR;TYPE=WORK:;;Carretera Alagón–Tudela (A-126), km 44,900;Remolinos;Zaragoza;50637;España',
-        'URL:https://boxis.es/','NOTE:' + escapeVCard(person.hours),'END:VCARD');
-      const blob = new Blob([lines.join('\r\n')],{type:'text/vcard;charset=utf-8'});
-      const url = URL.createObjectURL(blob), link = document.createElement('a');
-      link.href = url;
-      link.download = person.full.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-') + '.vcf';
-      document.body.appendChild(link);link.click();link.remove();
-      setTimeout(() => URL.revokeObjectURL(url),1200);
-    });
-  });
-})();
-</script>
-
-<script type="module">
-(async()=>{
-  const stage=document.getElementById('modelStage');
-  const canvas=document.getElementById('container3d');
-  const selectionInfo=document.getElementById('modelSelectionInfo');
-  if(!stage||!canvas||!selectionInfo)return;
-
-  let renderer,controls,observer;
-  try{
-    const [T,{OrbitControls},{RoomEnvironment}]=await Promise.all([
-      import('three'),
-      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/controls/OrbitControls.js'),
-      import('https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/environments/RoomEnvironment.js')
-    ]);
-
-    const scene=new T.Scene();
-    const camera=new T.PerspectiveCamera(36,1,.05,500);
-    renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.75));
-    renderer.outputColorSpace=T.SRGBColorSpace;
-    renderer.toneMapping=T.ACESFilmicToneMapping;
-    renderer.toneMappingExposure=1.12;
-    renderer.shadowMap.enabled=true;
-    renderer.shadowMap.type=T.PCFSoftShadowMap;
-    const pmrem=new T.PMREMGenerator(renderer);
-    const studio=new RoomEnvironment(renderer);
-    scene.environment=pmrem.fromScene(studio).texture;
-    studio.dispose();pmrem.dispose();
-
-    scene.add(new T.HemisphereLight(0xf1f5f6,0x39434a,1.7));
-    const key=new T.DirectionalLight(0xfff8ec,3.35);
-    key.position.set(-7,13,10);key.castShadow=true;
-    key.shadow.mapSize.set(2048,2048);
-    key.shadow.camera.left=-15;key.shadow.camera.right=15;
-    key.shadow.camera.top=15;key.shadow.camera.bottom=-15;
-    key.shadow.bias=-.0002;key.shadow.normalBias=.025;scene.add(key);
-    const fill=new T.DirectionalLight(0xa8cbd5,1.45);fill.position.set(10,7,-9);scene.add(fill);
-    const rim=new T.DirectionalLight(0xffffff,2.0);rim.position.set(-10,8,-12);scene.add(rim);
-    const warm=new T.PointLight(0xdca27e,14,26,2);warm.position.set(4,5,8);scene.add(warm);
-
-    const materials={
-      shell:new T.MeshStandardMaterial({color:0xd8d6c9,metalness:.27,roughness:.63}),
-      panel:new T.MeshStandardMaterial({color:0xe4e1d5,metalness:.22,roughness:.58}),
-      rib:new T.MeshStandardMaterial({color:0xc9c8be,metalness:.34,roughness:.54}),
-      edge:new T.MeshStandardMaterial({color:0x7b8588,metalness:.52,roughness:.48}),
-      frame:new T.MeshStandardMaterial({color:0x39434a,metalness:.62,roughness:.48}),
-      dark:new T.MeshStandardMaterial({color:0x161c20,metalness:.42,roughness:.54}),
-      rubber:new T.MeshStandardMaterial({color:0x111619,metalness:.05,roughness:.86}),
-      door:new T.MeshStandardMaterial({color:0xd0cfc5,metalness:.25,roughness:.6}),
-      vent:new T.MeshStandardMaterial({color:0x343d42,metalness:.48,roughness:.58}),
-      tank:new T.MeshStandardMaterial({color:0x737f84,metalness:.54,roughness:.54}),
-      orange:new T.MeshStandardMaterial({color:0xd65a27,metalness:.22,roughness:.5}),
-      silver:new T.MeshStandardMaterial({color:0xaeb6b8,metalness:.68,roughness:.35}),
-      cabinet:new T.MeshStandardMaterial({color:0x9ea8aa,metalness:.48,roughness:.48}),
-      cabinetDark:new T.MeshStandardMaterial({color:0x27343a,metalness:.34,roughness:.48}),
-      screen:new T.MeshStandardMaterial({color:0x183c40,metalness:.12,roughness:.28,emissive:0x1a6870,emissiveIntensity:.62}),
-      fuelPipe:new T.MeshStandardMaterial({color:0xc69b51,metalness:.62,roughness:.36}),
-      fuelReturn:new T.MeshStandardMaterial({color:0x5c8794,metalness:.52,roughness:.42}),
-      cablePower:new T.MeshStandardMaterial({color:0x161d22,metalness:.18,roughness:.72}),
-      cablePhase:new T.MeshStandardMaterial({color:0x9a4a2d,metalness:.18,roughness:.66}),
-      cableControl:new T.MeshStandardMaterial({color:0x4b7e9a,metalness:.14,roughness:.7}),
-      engine:new T.MeshStandardMaterial({color:0x58656a,metalness:.58,roughness:.46}),
-      engineCover:new T.MeshStandardMaterial({color:0x9ca7a7,metalness:.55,roughness:.4}),
-      red:new T.MeshStandardMaterial({color:0xb53a2d,metalness:.22,roughness:.48}),
-      led:new T.MeshStandardMaterial({color:0xe7f5f4,emissive:0xbceaf2,emissiveIntensity:1.65,metalness:.08,roughness:.24}),
-      amber:new T.MeshStandardMaterial({color:0xe2a346,emissive:0x9d551a,emissiveIntensity:.42,metalness:.12,roughness:.34})
-    };
-
-    // A fine powder-coat grain; subtle enough to avoid a plastic/toy finish.
-    function makeGrain(){
-      const c=document.createElement('canvas');c.width=256;c.height=256;
-      const ctx=c.getContext('2d');ctx.fillStyle='#888';ctx.fillRect(0,0,256,256);
-      let seed=31;const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
-      for(let i=0;i<12500;i++){
-        const v=105+Math.floor(rnd()*55);
-        ctx.fillStyle='rgba('+v+','+v+','+v+','+(.08+rnd()*.16)+')';
-        ctx.fillRect(rnd()*256,rnd()*256,1,1);
-      }
-      const texture=new T.CanvasTexture(c);texture.wrapS=texture.wrapT=T.RepeatWrapping;
-      texture.repeat.set(5,3);texture.colorSpace=T.NoColorSpace;return texture;
-    }
-    const grain=makeGrain();
-    for(const key of ['shell','panel','rib','door','tank']){
-      materials[key].roughnessMap=grain;materials[key].bumpMap=grain;materials[key].bumpScale=.009;
-    }
-
-    const root=new T.Group();root.name='EUROCONTAINER · UNIDAD COMPLETA';root.userData.selectablePart=true;scene.add(root);
-    const selectable=[];
-    function part(name,parent=root){
-      const group=new T.Group();group.name=name;group.userData.selectablePart=true;
-      parent.add(group);selectable.push(group);return group;
-    }
-    function box(parent,name,w,h,d,x,y,z,material,opts={}){
-      const geometry=new T.BoxGeometry(w,h,d);
-      const mesh=new T.Mesh(geometry,material);
-      mesh.name=name;mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;
-      mesh.userData.component=name;parent.add(mesh);return mesh;
-    }
-    function cylinder(parent,name,radius,length,x,y,z,material,axis='y',segments=48){
-      const mesh=new T.Mesh(new T.CylinderGeometry(radius,radius,length,segments,1,false),material);
-      mesh.name=name;mesh.position.set(x,y,z);
-      if(axis==='x')mesh.rotation.z=Math.PI/2;
-      if(axis==='z')mesh.rotation.x=Math.PI/2;
-      mesh.castShadow=true;mesh.receiveShadow=true;mesh.userData.component=name;parent.add(mesh);return mesh;
-    }
-    function tube(parent,name,points,radius,material){
-      const curve=new T.CatmullRomCurve3(points.map(p=>new T.Vector3(p[0],p[1],p[2])));
-      const mesh=new T.Mesh(new T.TubeGeometry(curve,48,radius,16,false),material);
-      mesh.name=name;mesh.castShadow=true;mesh.receiveShadow=true;mesh.userData.component=name;parent.add(mesh);return mesh;
-    }
-    function addRibbedFace(group,label,x0,length,y0,height,z,front=true,skip=[]){
-      const side=front?1:-1;
-      box(group,label+' · chapa base',length,height,.055,x0+length/2,y0+height/2,z,materials.shell);
-      const step=.17,count=Math.floor(length/step);
-      for(let i=0;i<=count;i++){
-        const x=x0+(i/count)*length;
-        if(skip.some(([a,b])=>x>a&&x<b))continue;
-        box(group,label+' · nervio vertical '+String(i+1).padStart(2,'0'),.052,height-.07,.048,x,y0+height/2,z+side*.035,materials.rib);
-      }
-      box(group,label+' · perfil superior',length,.055,.09,x0+length/2,y0+height-.025,z+side*.035,materials.edge);
-      box(group,label+' · perfil inferior',length,.055,.09,x0+length/2,y0+.025,z+side*.035,materials.edge);
-    }
-    function addDoor(parent,label,x,y,z,width,height){
-      const g=part(label,parent);
-      const t=.065;
-      box(g,label+' · hoja',width,height,.075,x,y,z,materials.door);
-      box(g,label+' · marco izquierdo',t,height+.10,.11,x-width/2-t/2,y,z+.035,materials.edge);
-      box(g,label+' · marco derecho',t,height+.10,.11,x+width/2+t/2,y,z+.035,materials.edge);
-      box(g,label+' · dintel',width+.12,t,.11,x,y+height/2+t/2,z+.035,materials.edge);
-      box(g,label+' · umbral',width+.12,t,.11,x,y-height/2-t/2,z+.035,materials.edge);
-      for(const py of [y-height*.34,y,y+height*.34]){
-        cylinder(g,label+' · bisagra',.038,.12,x-width/2-.025,py,z+.10,materials.dark,'y',20);
-      }
-      box(g,label+' · maneta vertical',.035,.19,.035,x+width*.32,y,z+.10,materials.dark);
-      box(g,label+' · cerradero',.055,.055,.04,x+width*.32,y-.10,z+.10,materials.silver);
-      return g;
-    }
-    // Main horizontal acoustic container — external proportions read from the attached photographs.
-    const main=part('01 · CONTENEDOR PRINCIPAL / ENVOLVENTE ACÚSTICA');
-    const L=8.65,W=2.68,bodyBottom=.72,bodyTop=2.92,bodyH=bodyTop-bodyBottom;
-    const bodyCentreX=L/2;
-    const frontWall=part('01A · PANEL LATERAL FRONTAL DESMONTABLE',main);
-    addRibbedFace(frontWall,'Lateral frontal corrugado',0,L,bodyBottom,bodyH,1.335,true,[[2.0,3.1],[5.2,6.35]]);
-    const rearWall=part('01B · PANEL LATERAL POSTERIOR',main);
-    addRibbedFace(rearWall,'Lateral posterior corrugado',0,L,bodyBottom,bodyH,-1.335,false);
-    box(main,'Testero derecho',.07,bodyH,W, L-.035,bodyBottom+bodyH/2,0,materials.shell);
-    box(main,'Testero derecho · plano corrugado',.05,bodyH,W-.12,L-.075,bodyBottom+bodyH/2,0,materials.panel);
-    const roofGroup=part('01C · CUBIERTA Y PERFILES SUPERIORES',main);
-    box(roofGroup,'Cubierta superior',L+.08,.12,W+.12,bodyCentreX,bodyTop+.02,0,materials.panel);
-    box(roofGroup,'Alero longitudinal frontal',L+.12,.075,.12,bodyCentreX,bodyTop-.02,1.34,materials.edge);
-    box(roofGroup,'Alero longitudinal posterior',L+.12,.075,.12,bodyCentreX,bodyTop-.02,-1.34,materials.edge);
-
-    // The lower continuous skirt, folded rails and transportation frame visible in the reference.
-    const skirt=part('01D · FALDÓN INFERIOR DESMONTABLE');
-    const skirtBottom=.34,skirtHeight=.40;
-    for(const z of [1.31,-1.31]){
-      box(skirt,'Faldón inferior · chapa',L,skirtHeight,.075,bodyCentreX,skirtBottom+skirtHeight/2,z,materials.panel);
-      for(let y=skirtBottom+.075;y<skirtBottom+skirtHeight;y+=.105)
-        box(skirt,'Faldón inferior · nervio horizontal',L-.06,.027,.045,bodyCentreX,y,z+(z>0?.045:-.045),materials.rib);
-    }
-    const chassis=part('02 · BASTIDOR Y APOYOS');
-    box(chassis,'Larguero frontal',L+.2,.18,.16,bodyCentreX,.22,1.08,materials.frame);
-    box(chassis,'Larguero posterior',L+.2,.18,.16,bodyCentreX,.22,-1.08,materials.frame);
-    box(chassis,'Travesaño izquierdo',.18,.18,2.18,.15,.22,0,materials.frame);
-    box(chassis,'Travesaño derecho',.18,.18,2.18,L-.15,.22,0,materials.frame);
-    for(let x=.4;x<L;x+=1.15)box(chassis,'Travesaño de apoyo bajo el depósito',.12,.10,2.12,x,.13,0,materials.edge);
-    for(const x of [.12,L-.12])for(const z of [-1.18,1.18]){
-      box(chassis,'Esquinero de izado',.22,.22,.22,x,.32,z,materials.edge);
-    }
-
-    // Low-profile tank sits inside the base envelope; it is selectable as a single assembly.
-    const tank=part('03 · BELLY TANK / DEPÓSITO INFERIOR INTEGRADO');
-    const tankShell=part('03A · ENVOLVENTE Y PAREDES DEL BELLY TANK',tank);
-    box(tankShell,'Fondo estructural del belly tank',6.25,.07,1.78,4.28,.22,0,materials.tank);
-    box(tankShell,'Pared longitudinal frontal del depósito',6.25,.44,.075,4.28,.47,.855,materials.tank);
-    box(tankShell,'Pared longitudinal posterior del depósito',6.25,.44,.075,4.28,.47,-.855,materials.tank);
-    box(tankShell,'Testero izquierdo del depósito',.075,.44,1.78,1.155,.47,0,materials.tank);
-    box(tankShell,'Testero derecho del depósito',.075,.44,1.78,7.405,.47,0,materials.tank);
-    for(const x of [1.55,2.45,3.35,4.25,5.15,6.05,6.95]){
-      box(tankShell,'Nervio exterior frontal del belly tank',.075,.44,.055,x,.47,.915,materials.edge);
-      box(tankShell,'Nervio exterior posterior del belly tank',.075,.44,.055,x,.47,-.915,materials.edge);
-    }
-    const tankTop=part('03B · TAPA SUPERIOR DESMONTABLE DEL BELLY TANK',tank);
-    box(tankTop,'Tapa superior continua del depósito',6.12,.055,1.66,4.28,.735,0,materials.panel);
-    box(tankTop,'Registro superior de inspección',.42,.055,.42,3.1,.78,.35,materials.edge);
-    cylinder(tankTop,'Boca de llenado',.12,.10,5.8,.80,-.45,materials.silver,'y',36);
-    cylinder(tankTop,'Respiradero',.055,.22,6.25,.84,-.45,materials.silver,'y',24);
-    cylinder(tankTop,'Válvula de drenaje',.065,.15,2.4,.31,.945,materials.dark,'z',24);
-
-
-    // Interior equipment is independently selectable. Exact OEM/model and final placement remain configurable.
-    const interior=part('10 · CONJUNTO INTERIOR ELECTROMECÁNICO');
-    interior.visible=false;
-    function equipmentLabel(parent,name,title,subtitle,width,height,x,y,z,rotationY=0){
-      const c=document.createElement('canvas');c.width=640;c.height=190;
-      const ctx=c.getContext('2d');
-      ctx.fillStyle='rgba(10,25,33,.94)';ctx.fillRect(0,0,c.width,c.height);
-      ctx.fillStyle='#9ed9e5';ctx.fillRect(0,0,8,c.height);
-      ctx.fillStyle='#f0f5f6';ctx.font='700 36px Arial';ctx.textBaseline='middle';ctx.fillText(title,24,78);
-      ctx.fillStyle='#a7bbc4';ctx.font='500 22px Arial';ctx.fillText(subtitle,24,139);
-      const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;texture.anisotropy=8;
-      const mesh=new T.Mesh(new T.PlaneGeometry(width,height),new T.MeshBasicMaterial({map:texture,side:T.DoubleSide,depthWrite:false}));
-      mesh.name=name;mesh.position.set(x,y,z);mesh.rotation.y=rotationY;mesh.userData.component=name;parent.add(mesh);return mesh;
-    }
-    function cabinet(parent,name,title,x,width=.78,height=1.22,z=-.98,yPosition=1.78){
-      const g=part(name,parent);
-      const depth=.30,y=yPosition;
-      box(g,name+' · envolvente metálica',width,height,depth,x,y,z,materials.cabinet);
-      box(g,name+' · puerta técnica',width-.075,height-.085,.035,x,y,z+depth/2+.025,materials.panel);
-      box(g,name+' · visor LCD',width*.43,.20,.022,x,y+.28,z+depth/2+.05,materials.screen);
-      box(g,name+' · tirador',.035,.19,.035,x+width*.36,y-.08,z+depth/2+.055,materials.edge);
-      for(const py of [y-.42,y-.28])cylinder(g,name+' · pulsador',.026,.035,x-width*.31,py,z+depth/2+.05,materials.red,'z',18);
-      equipmentLabel(g,name+' · placa identificativa',title,'PANEL DE CONTROL',width*.82,.19,x,y+height*.34,z+depth/2+.055);
-      return g;
-    }
-    function sensorProbe(parent,name,x,y,z,height=.42,material=materials.silver){
-      const g=part(name,parent);
-      cylinder(g,name+' · cuerpo de sonda',.035,height,x,y+height/2,z,material,'y',24);
-      cylinder(g,name+' · cabeza',.065,.09,x,y+height,z,materials.dark,'y',24);
-      return g;
-    }
-
-    // Diesel engine and coupled alternator. OEM plate deliberately left configurable.
-    const engine=part('10.1 · MOTOR DIÉSEL · FABRICANTE POR CONFIRMAR',interior);
-    box(engine,'Bloque principal del motor',3.25,.92,1.18,4.35,1.30,.10,materials.engine);
-    box(engine,'Cárter inferior',2.95,.34,1.06,4.35,.67,.10,materials.dark);
-    box(engine,'Culata longitudinal',3.05,.28,1.10,4.35,1.91,.10,materials.engineCover);
-    for(let i=0;i<8;i++){
-      const x=2.92+i*.405;
-      box(engine,'Tapa de culata cilindro '+(i+1),.31,.16,.86,x,2.12,.10,materials.edge);
-      for(const z of [-.53,.72]){
-        cylinder(engine,'Tornillería de culata',.027,.045,x,2.10,z,materials.silver,'z',12);
-      }
-      box(engine,'Aleta de refrigeración cilindro '+(i+1),.035,.50,1.22,x,1.40,.10,materials.edge);
-    }
-    box(engine,'Colector de admisión',2.55,.19,.24,4.35,2.32,-.10,materials.dark);
-    tube(engine,'Tubería de admisión',[[3.1,2.30,-.18],[3.1,2.48,-.42],[4.0,2.48,-.42],[5.7,2.35,-.42]],.075,materials.rubber);
-    tube(engine,'Colector de escape',[[2.95,1.66,.76],[3.45,1.62,.79],[4.2,1.62,.79],[5.3,1.62,.79],[5.95,1.72,.70]],.07,materials.edge);
-    const turbo=part('10.1A · TURBO Y CONJUNTO DE ESCAPE DEL MOTOR',engine);
-    cylinder(turbo,'Carcasa de turbocompresor',.25,.34,5.98,1.74,.76,materials.edge,'z',40);
-    cylinder(turbo,'Entrada turbo',.15,.20,6.02,1.74,.98,materials.dark,'z',32);
-    tube(turbo,'Conexión turbo a silenciador',[[6.0,1.78,.75],[6.1,2.0,.73],[6.2,2.30,.55],[6.4,2.55,.2]],.08,materials.dark);
-    const alternator=part('10.1B · ALTERNADOR ACOPLADO',engine);
-    cylinder(alternator,'Carcasa de alternador',.42,.74,6.45,1.30,.1,materials.engine,'x',56);
-    cylinder(alternator,'Tapa frontal alternador',.35,.08,6.84,1.30,.1,materials.silver,'x',48);
-    box(alternator,'Caja de bornes de alternador',.36,.25,.33,6.40,1.77,.1,materials.cabinet);
-    equipmentLabel(engine,'Placa motor OEM configurable','MOTOR DIÉSEL','FABRICANTE POR CONFIRMAR',1.50,.28,4.55,1.02,.72);
-
-    // Secondary engine hardware: oil/fuel filters, injection rail, rigid injector lines and service fittings.
-    const engineAncillaries=part('10.1D · FILTRACIÓN, INYECCIÓN Y ACCESORIOS DEL MOTOR',engine);
-    cylinder(engineAncillaries,'Filtro de aceite principal',.12,.48,3.10,1.13,.79,materials.silver,'y',40);
-    cylinder(engineAncillaries,'Filtro secundario de combustible',.10,.40,3.42,1.15,.78,materials.cabinet,'y',36);
-    cylinder(engineAncillaries,'Separador de agua del gasóleo',.115,.42,3.72,1.14,.79,materials.silver,'y',36);
-    cylinder(engineAncillaries,'Bomba de alimentación de gasóleo',.15,.26,4.95,1.18,.76,materials.engine,'z',36);
-    box(engineAncillaries,'Soporte del filtro de combustible',.52,.08,.30,3.43,.86,.78,materials.frame);
-    box(engineAncillaries,'Colector de inyección common rail',2.18,.12,.12,4.35,2.18,.70,materials.silver);
-    for(let i=0;i<8;i++){
-      const x=3.17+i*.335;
-      tube(engineAncillaries,'Tubo rígido de inyector '+(i+1),[[x,2.18,.70],[x,2.32,.59],[x,2.32,.34],[x,2.08,.22]],.018,materials.fuelPipe);
-      cylinder(engineAncillaries,'Racor inyector '+(i+1),.036,.055,x,2.04,.22,materials.silver,'y',16);
-    }
-    tube(engineAncillaries,'Latiguillo flexible de combustible',[[4.95,1.18,.76],[5.15,1.28,.70],[5.45,1.27,.65],[5.58,1.58,.62]],.045,materials.rubber);
-    tube(engineAncillaries,'Manguera de refrigeración superior',[[3.1,1.72,-.48],[3.02,2.18,-.54],[3.22,2.37,-.54],[3.55,2.38,-.42]],.055,materials.rubber);
-    tube(engineAncillaries,'Manguera de refrigeración inferior',[[5.12,1.02,-.48],[5.35,.88,-.53],[5.66,.92,-.4],[5.75,1.16,-.34]],.052,materials.rubber);
-    for(const x of [3.15,3.75,4.35,4.95,5.55]){
-      cylinder(engineAncillaries,'Tornillo de culata visible',.025,.035,x,2.23,.66,materials.edge,'z',12);
-    }
-
-    const engineController=part('10.1C · CUADRO DE MOTOR INTEGRADO',engine);
-    box(engineController,'Caja de control de motor',.62,.48,.20,3.80,1.63,.76,materials.cabinet);
-    box(engineController,'Pantalla control motor',.31,.16,.025,3.80,1.71,.875,materials.screen);
-    equipmentLabel(engineController,'Identificación cuadro motor','ENGINE CONTROL','MONTADO EN EL MOTOR',.56,.14,3.80,1.40,.885);
-
-    // Internal electrical and control cabinets mounted along the rear equipment wall.
-    const panels=part('10.2 · CUADROS ELÉCTRICOS Y DE CONTROL',interior);
-    const auxPanel=cabinet(panels,'Cuadro auxiliar','AUXILIARY PANEL',.85,.76,1.18,-1.02);
-    const dataPanel=cabinet(panels,'Cuadro de datos','DATA PANEL',2.05,.76,1.18,-1.02);
-    const fuelPanel=cabinet(panels,'Cuadro Fuel Panel','FUEL PANEL',6.48,.78,1.18,-1.02);
-    const davenhamPanel=cabinet(panels,'Cuadro Davenham','DAVENHAM',7.64,.72,1.18,-1.02);
-    const panelCableTrunk=part('10.2A · CANALETA PRINCIPAL DE CONTROL',panels);
-    box(panelCableTrunk,'Canaleta superior de señales',6.9,.12,.12,4.25,2.48,-.82,materials.edge);
-    box(panelCableTrunk,'Canaleta inferior de señales',6.9,.10,.10,4.25,1.02,-.82,materials.edge);
-
-    // Belly tank instrumentation: HYTEK, T5020, level/overfill probes and fuel polisher.
-    const tankSystems=part('03A · INSTRUMENTACIÓN Y EQUIPOS DEL BELLY TANK',tank);
-    tankSystems.visible=false;
-    const tankInstrumentShelf=part('03D · BANCADA INTERIOR DE INSTRUMENTACIÓN',tankSystems);
-    box(tankInstrumentShelf,'Bandeja de soporte para cuadros HYTEK y T5020',3.12,.06,.74,3.10,.72,.28,materials.frame);
-    for(const x of [1.72,4.48]){
-      box(tankInstrumentShelf,'Perfil de apoyo de instrumentación',.07,.08,.78,x,.72,.28,materials.edge);
-    }
-    cabinet(tankSystems,'Cuadro belly tank','BELLY TANK PANEL',2.10,.62,.30,.28,.90);
-    cabinet(tankSystems,'Cuadro HYTEK','HYTEK · LEVEL',3.12,.56,.30,.28,.90);
-    cabinet(tankSystems,'Cuadro T5020','T5020 · LEVEL',4.08,.56,.30,.28,.90);
-    const fuelPolisher=part('03B · BOMBA FUEL POLISHER',tankSystems);
-    box(fuelPolisher,'Bancada fuel polisher',.86,.08,.54,5.82,.30,-.12,materials.frame);
-    cylinder(fuelPolisher,'Motor eléctrico fuel polisher',.18,.52,5.55,.55,-.12,materials.engine,'x',36);
-    cylinder(fuelPolisher,'Cuerpo de bomba fuel polisher',.22,.34,5.98,.55,-.12,materials.silver,'x',40);
-    box(fuelPolisher,'Filtro fuel polisher',.26,.40,.24,6.37,.56,-.12,materials.cabinet);
-    equipmentLabel(fuelPolisher,'Placa fuel polisher','FUEL POLISHER','BOMBA DE PULIDO DE COMBUSTIBLE',.86,.16,5.98,.83,.20);
-
-    const tankSensors=part('03C · SONDAS Y SENSORES DEL BELLY TANK',tankSystems);
-    sensorProbe(tankSensors,'Sonda de sobrellenado',1.62,.27,.38,.48,materials.orange);
-    sensorProbe(tankSensors,'Sonda HYTEK de nivel',3.12,.27,-.32,.40,materials.silver);
-    sensorProbe(tankSensors,'Sonda T5020 de nivel',4.08,.27,-.32,.40,materials.silver);
-    sensorProbe(tankSensors,'Sonda de detección de fuga',6.82,.27,.36,.36,materials.amber);
-
-    // Fuel flow: separate inlet/return lines, fire valve and solenoid shut-off valve.
-    const fuelSystem=part('10.3 · CIRCUITO DE COMBUSTIBLE Y SEGURIDAD',interior);
-    tube(fuelSystem,'Tubería de entrada de combustible',[[1.8,.70,.82],[2.10,.98,.85],[2.75,1.05,.82],[3.28,1.05,.72],[3.55,1.35,.70]],.045,materials.fuelPipe);
-    tube(fuelSystem,'Tubería de retorno de combustible',[[3.72,1.26,.73],[3.42,.92,.82],[2.72,.88,.88],[2.18,.78,.92],[1.85,.62,.88]],.04,materials.fuelReturn);
-    tube(fuelSystem,'Línea de aspiración belly tank a motor',[[6.25,.58,.74],[6.25,.82,.92],[5.95,1.03,.93],[5.72,1.13,.76],[5.42,1.23,.72]],.055,materials.fuelPipe);
-    tube(fuelSystem,'Línea de retorno motor a belly tank',[[5.42,1.04,.70],[5.82,.88,.92],[6.15,.74,1.02],[6.42,.62,.98],[6.58,.52,.88]],.048,materials.fuelReturn);
-    tube(fuelSystem,'Conducto de venteo tanque a exterior',[[6.25,.75,-.44],[6.25,1.18,-.80],[6.55,1.42,-1.10],[7.10,1.45,-1.12]],.035,materials.silver);
-    const fireValve=part('10.3A · FIRE VALVE',fuelSystem);
-    cylinder(fireValve,'Cuerpo de fire valve',.12,.24,2.18,.95,.86,materials.red,'z',32);
-    box(fireValve,'Palanca fire valve',.045,.38,.045,2.18,1.18,.86,materials.red);
-    box(fireValve,'Indicador fire valve',.22,.12,.10,2.18,1.35,.86,materials.dark);
-    const solenoid=part('10.3B · ELECTROVÁLVULA DE CORTE',fuelSystem);
-    cylinder(solenoid,'Cuerpo de electroválvula',.105,.24,2.82,1.04,.82,materials.silver,'z',32);
-    box(solenoid,'Bobina electroválvula',.24,.24,.22,2.82,1.22,.82,materials.cabinet);
-    equipmentLabel(solenoid,'Placa electroválvula','SOLENOID VALVE','CORTE DE COMBUSTIBLE',.56,.15,2.82,1.43,.94);
-
-    // Sensor and fire detection chain between the container and tank.
-    const safety=part('10.4 · DETECCIÓN DE INCENDIO Y SOBRELLENADO',interior);
-    for(const x of [2.0,5.5,7.2]){
-      cylinder(safety,'Detector de incendio en techo',.095,.08,x,2.67,0,materials.red,'y',32);
-      cylinder(safety,'Base detector de incendio',.13,.045,x,2.61,0,materials.cabinet,'y',32);
-    }
-    sensorProbe(safety,'Sonda de alarma por sobrellenado',5.05,1.05,.60,.78,materials.orange);
-    tube(safety,'Cable sonda incendio / señal',[[2.0,2.62,-.3],[2.0,2.48,-.75],[2.05,2.35,-.98],[2.05,2.0,-.98]],.018,materials.cableControl);
-    tube(safety,'Cable HYTEK hacia cuadro de datos',[[3.05,1.08,1.04],[3.05,1.55,.85],[2.7,2.20,.55],[2.05,2.48,-.82]],.018,materials.cableControl);
-    tube(safety,'Cable T5020 hacia Fuel Panel',[[4.02,1.08,1.04],[4.6,1.45,.75],[5.5,2.12,-.65],[6.48,2.43,-.82]],.018,materials.cablePhase);
-    tube(safety,'Enlace HYTEK belly tank a cuadro auxiliar',[[3.05,.95,.55],[3.10,1.18,.82],[2.75,1.72,-.74],[.85,2.25,-.82]],.021,materials.cableControl);
-    tube(safety,'Enlace T5020 belly tank a cuadro Davenham',[[4.02,.95,.55],[4.55,1.22,.72],[6.05,1.84,-.76],[7.64,2.26,-.82]],.021,materials.cablePhase);
-    tube(safety,'Cable de sonda de sobrellenado al Fuel Panel',[[1.72,1.22,.34],[2.20,1.55,.18],[4.85,2.18,-.73],[6.48,2.35,-.82]],.020,materials.cableControl);
-
-    // Power cabling to the engine and fluorescent/emergency lighting.
-    const power=part('10.5 · CABLEADO DE POTENCIA E ILUMINACIÓN',interior);
-    for(let i=0;i<3;i++){
-      const z=-.54+i*.17;
-      tube(power,'Cable de potencia fase '+(i+1),[[1.22,2.42,-.84],[2.2,2.43,-.70],[3.3,2.36,-.45],[4.05,2.15,-.25],[4.45,1.85,.45]],.038,materials.cablePower);
-    }
-    tube(power,'Cable de control apantallado hacia motor',[[2.05,2.30,-.84],[3.1,2.28,-.55],[3.7,2.10,.30],[3.8,1.75,.77]],.024,materials.cableControl);
-    for(const x of [1.5,3.35,5.2,7.05]){
-      box(power,'Luminaria LED estanca',1.18,.065,.16,x,2.69,0,materials.cabinetDark);
-      box(power,'Difusor fluorescente LED',1.06,.035,.12,x,2.64,0,materials.led);
-    }
-    for(const z of [-.95,.95]){
-      box(power,'Luz de emergencia',.24,.13,.12,.58,2.62,z,materials.red);
-      box(power,'Difusor luz de emergencia',.17,.07,.045,.58,2.62,z+.075,materials.amber);
-    }
-    equipmentLabel(power,'Identificación luminarias','ILUMINACIÓN LED','EMERGENCIA · ALUMBRADO INTERIOR',1.20,.17,4.2,2.47,.17);
-
-
-    // Tall two-level riser/tower at the left-hand end, clearly visible in both photographs.
-    const tower=part('04 · TORRE ELEVADA / MÓDULO VERTICAL');
-    const tx0=-2.25,tw=2.25,towerH=5.55,towerBottom=.34,towerTop=towerBottom+towerH;
-    const towerFront=part('04A · PANEL FRONTAL DE TORRE',tower);
-    addRibbedFace(towerFront,'Torre · frente corrugado',tx0,tw,towerBottom,towerH,1.335,true);
-    const towerRear=part('04B · PANEL POSTERIOR DE TORRE',tower);
-    addRibbedFace(towerRear,'Torre · trasera corrugada',tx0,tw,towerBottom,towerH,-1.335,false);
-    box(tower,'Torre · testero izquierdo',.07,towerH,W,-2.285,towerBottom+towerH/2,0,materials.shell);
-    box(tower,'Torre · testero derecho',.07,towerH,W,-.035,towerBottom+towerH/2,0,materials.shell);
-    for(const y of [2.85,4.70]){
-      for(const z of [-1.36,1.36])box(tower,'Junta perimetral horizontal de torre',tw+.12,.11,.12,tx0+tw/2,y,z,materials.edge);
-      for(const x of [tx0-.02,-.02])box(tower,'Junta lateral de torre',.12,.11,W+.12,x,y,0,materials.edge);
-    }
-    for(const y of [towerBottom+.08,towerTop-.04]){
-      for(const z of [-1.34,1.34])box(tower,'Marco perimetral de torre',tw+.15,.12,.12,tx0+tw/2,y,z,materials.frame);
-    }
-    for(const z of [-1.18,1.18])for(const y of [towerBottom+.08,2.85,4.70,towerTop-.08]){
-      box(tower,'Refuerzo vertical de esquina',.13,.12,.14,tx0+.08,y,z,materials.edge);
-      box(tower,'Refuerzo vertical de esquina',.13,.12,.14,-.08,y,z,materials.edge);
-    }
-
-    // Side access doors and latches visible on the long wall.
-    const doors=part('05 · PUERTAS Y REGISTROS DE MANTENIMIENTO');
-    addDoor(doors,'Puerta técnica principal',2.55,1.65,1.42,.88,1.42);
-    addDoor(doors,'Puerta de servicio secundaria',6.10,1.68,1.42,.72,1.38);
-    addDoor(doors,'Registro eléctrico auxiliar',7.13,1.20,1.425,.42,.66);
-
-    // Roof-mounted black acoustic exhaust silencer and its supports.
-    const exhaust=part('06 · SILENCIADOR Y CONDUCTO DE ESCAPE');
-    cylinder(exhaust,'Silenciador cilíndrico horizontal',.30,2.02,2.15,3.34,-.10,materials.rubber,'x',64);
-    cylinder(exhaust,'Tapa silenciador izquierda',.305,.10,1.12,3.34,-.10,materials.dark,'x',48);
-    cylinder(exhaust,'Tapa silenciador derecha',.305,.10,3.18,3.34,-.10,materials.dark,'x',48);
-    for(const x of [1.55,2.75]){
-      box(exhaust,'Cuna de apoyo del silenciador',.20,.12,.72,x,3.05,-.10,materials.frame);
-      cylinder(exhaust,'Abrazadera de escape',.035,.65,x,3.20,-.10,materials.edge,'z',24);
-    }
-    tube(exhaust,'Codo de salida de escape',[[3.15,3.34,-.10],[3.48,3.34,-.10],[3.58,3.50,-.10],[3.58,3.70,-.10]],.105,materials.dark);
-    cylinder(exhaust,'Boca de escape',.12,.08,3.58,3.70,-.10,materials.rubber,'y',36);
-
-    // Ventilation grilles: dark recess, individual horizontal louvers and an outer frame.
-    const vents=part('07 · REJILLAS DE VENTILACIÓN');
-    const ventX=8.12,ventY=1.88,ventW=.50,ventH=1.2,ventZ=1.43;
-    box(vents,'Hueco de ventilación',ventW,ventH,.055,ventX,ventY,ventZ,materials.dark);
-    for(let y=ventY-ventH/2+.08;y<ventY+ventH/2-.03;y+=.105)
-      box(vents,'Lama de ventilación',ventW-.06,.035,.09,ventX,y,ventZ+.055,materials.vent);
-    for(const x of [ventX-ventW/2,ventX+ventW/2])
-      box(vents,'Marco de ventilación',.045,ventH+.06,.08,x,ventY,ventZ+.07,materials.edge);
-
-    // Corner castings and transport locks at both visible tower and container edges.
-    const locks=part('08 · ESQUINEROS Y CIERRES DE TRANSPORTE');
-    for(const x of [-2.20,0.08,8.52])for(const y of [.42,2.84,4.68,5.82])for(const z of [-1.32,1.32]){
-      if(y>3.0&&x>0.1)continue;
-      box(locks,'Esquinero de fundición',.16,.18,.16,x,y,z,materials.edge);
-      cylinder(locks,'Perno de cierre',.035,.03,x,y,z+(z>0?.09:-.09),materials.dark,'z',16);
-    }
-
-    // Exact Eurocontainer serigraphy cropped from the real unit photograph supplied in this conversation.
-    const branding=part('09 · SERIGRAFÍA EUROCONTAINER · ORIGINAL FOTOGRAFIADA');
-    const logoLoader=new T.TextureLoader();
-    const sideMap=logoLoader.load('assets/eurocontainer-side-logo-transparent.webp');
-    sideMap.colorSpace=T.SRGBColorSpace;sideMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
-    const sideLogo=new T.Mesh(new T.PlaneGeometry(2.10,.438),new T.MeshBasicMaterial({
-      map:sideMap,transparent:true,alphaTest:.06,opacity:1,side:T.DoubleSide,depthWrite:false,toneMapped:false
-    }));
-    sideLogo.name='Serigrafía original Eurocontainer.es · lateral';
-    sideLogo.position.set(7.20,2.70,1.418);sideLogo.userData.component=sideLogo.name;sideLogo.renderOrder=4;branding.add(sideLogo);
-    const endMap=logoLoader.load('assets/eurocontainer-tower-logo-transparent.webp');
-    endMap.colorSpace=T.SRGBColorSpace;endMap.anisotropy=renderer.capabilities.getMaxAnisotropy();
-    const endLogo=new T.Mesh(new T.PlaneGeometry(1.18,1.14),new T.MeshBasicMaterial({
-      map:endMap,transparent:true,alphaTest:.04,opacity:1,side:T.DoubleSide,depthWrite:false,toneMapped:false
-    }));
-    endLogo.name='Serigrafía original Eurocontainer · torre';
-    endLogo.position.set(-1.14,1.52,1.418);endLogo.userData.component=endLogo.name;endLogo.renderOrder=4;branding.add(endLogo);
-
-    // Studio ground is separate from the selectable product.
-    const floor=new T.Mesh(new T.PlaneGeometry(120,120),new T.MeshStandardMaterial({color:0x202b31,metalness:.16,roughness:.8}));
-    floor.rotation.x=-Math.PI/2;floor.position.y=.02;floor.receiveShadow=true;scene.add(floor);
-
-    const controls=new OrbitControls(camera,canvas);
-    controls.enableDamping=true;controls.dampingFactor=.072;
-    controls.rotateSpeed=.58;controls.zoomSpeed=.82;controls.panSpeed=.38;
-    controls.enablePan=false;controls.minPolarAngle=.08;controls.maxPolarAngle=Math.PI-.08;
-    controls.autoRotate=true;controls.autoRotateSpeed=.32;
-
-    root.updateMatrixWorld(true);
-    root.updateMatrixWorld(true);
-    let selectedMeshes=[];
-    function collectMeshes(group){
-      const list=[];group.traverse(object=>{if(object.isMesh)list.push(object);});return list;
-    }
-    const allMeshes=collectMeshes(root);
-    const originalMaterials=new Map(allMeshes.map(mesh=>[mesh,mesh.material]));
-    function clearHighlight(){
-      selectedMeshes.forEach(mesh=>{mesh.material=originalMaterials.get(mesh);});
-      selectedMeshes=[];
-    }
-    function selectGroup(group){
-      clearHighlight();
-      const name=group===root?'CONJUNTO COMPLETO':group.name;
-      if(group!==root){
-        selectedMeshes=collectMeshes(group);
-        selectedMeshes.forEach(mesh=>{
-          const base=originalMaterials.get(mesh);
-          const applyHighlight=material=>{
-            const clone=material.clone();
-            if(clone.emissive){clone.emissive.set('#6aa8b4');clone.emissiveIntensity=.24;}
-            return clone;
-          };
-          mesh.material=Array.isArray(base)?base.map(applyHighlight):applyHighlight(base);
-        });
-      }
-      selectionInfo.textContent=(group===root?'VISTA COMPLETA · ':'COMPONENTE · ')+name;
-    }
-
-    const raycaster=new T.Raycaster(),pointer=new T.Vector2();
-    const hoverLabel=document.getElementById('modelHoverLabel');
-    let pointerStart=null;
-    canvas.addEventListener('pointerdown',event=>{pointerStart={x:event.clientX,y:event.clientY};});
-    canvas.addEventListener('pointermove',event=>{
-      if(event.pointerType==='touch'||pointerStart)return;
-      const rect=canvas.getBoundingClientRect();
-      pointer.set(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
-      raycaster.setFromCamera(pointer,camera);
-      const hit=raycaster.intersectObjects(allMeshes,false).find(item=>{
-        let node=item.object;while(node){if(!node.visible)return false;node=node.parent;}return true;
-      });
-      if(!hit){hoverLabel.classList.remove('is-visible');canvas.style.cursor='grab';return;}
-      let target=hit.object.parent;
-      while(target&&target!==root&&!target.userData.selectablePart)target=target.parent;
-      hoverLabel.textContent=(target&&target!==root?target.name:'CONJUNTO EUROCONTAINER')+' · CLIC PARA SELECCIONAR';
-      hoverLabel.classList.add('is-visible');canvas.style.cursor='pointer';
-    });
-    canvas.addEventListener('pointerleave',()=>{hoverLabel.classList.remove('is-visible');canvas.style.cursor='grab';});
-    canvas.addEventListener('pointercancel',()=>{pointerStart=null;hoverLabel.classList.remove('is-visible');});
-    canvas.addEventListener('pointerup',event=>{
-      if(!pointerStart)return;
-      const moved=Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y);
-      pointerStart=null;
-      if(moved>6)return;
-      const rect=canvas.getBoundingClientRect();
-      pointer.set(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
-      raycaster.setFromCamera(pointer,camera);
-      const hit=raycaster.intersectObjects(allMeshes,false).find(item=>{
-        let node=item.object;while(node){if(!node.visible)return false;node=node.parent;}return true;
-      });
-      if(!hit){selectGroup(root);return;}
-      let group=hit.object.parent;
-      while(group&&group!==root&&!group.userData.selectablePart)group=group.parent;
-      selectGroup(group&&group.userData.selectablePart?group:root);
-      controls.autoRotate=false;syncRotate();
-    });
-    canvas.addEventListener('keydown',event=>{
-      if(event.key==='Escape'){selectGroup(root);frameVisible(true);}
-    });
-
-    const rotateButton=document.getElementById('autoRotate');
-    const resetButton=document.getElementById('resetView');
-    const zoomIn=document.getElementById('zoomIn');
-    const zoomOut=document.getElementById('zoomOut');
-    const modeButtons=[...document.querySelectorAll('[data-model-view]')];
-    let currentMode='exterior';
-    let isVisible=true,frameHandle=0;
-    function syncRotate(){
-      rotateButton.setAttribute('aria-pressed',String(controls.autoRotate));
-      rotateButton.textContent=controls.autoRotate?'Pausar rotación':'Reanudar rotación';
-    }
-    syncRotate();
-
-    const viewDirection=new T.Vector3(-.90,.34,1.20).normalize();
-    const interiorViewDirection=new T.Vector3(-.52,.70,1.25).normalize();
-    const tankViewDirection=new T.Vector3(-.52,1.35,1.08).normalize();
-
-    function isWorldVisible(object){
-      let node=object;
-      while(node){
-        if(!node.visible)return false;
-        node=node.parent;
-      }
-      return true;
-    }
-    function visibleSceneBounds(){
-      root.updateMatrixWorld(true);
-      const bounds=new T.Box3();
-      allMeshes.forEach(mesh=>{
-        if(isWorldVisible(mesh))bounds.union(new T.Box3().setFromObject(mesh));
-      });
-      return bounds;
-    }
-    function frameVisible(smooth=true){
-      const bounds=visibleSceneBounds();
-      if(bounds.isEmpty())return;
-      const sphere=bounds.getBoundingSphere(new T.Sphere());
-      const aspect=Math.max(.48,canvas.clientWidth/Math.max(1,canvas.clientHeight));
-      const halfV=T.MathUtils.degToRad(camera.fov/2);
-      const halfH=Math.atan(Math.tan(halfV)*aspect);
-      const distance=sphere.radius/Math.sin(Math.min(halfV,halfH))*1.12;
-      const target=sphere.center.clone();
-      const direction=currentMode==='tank'?tankViewDirection:(currentMode==='interior'?interiorViewDirection:viewDirection);
-      const position=target.clone().addScaledVector(direction,distance);
-      controls.minDistance=Math.max(.45,sphere.radius*.55);
-      controls.maxDistance=Math.max(controls.minDistance+3,sphere.radius*5.2);
-      if(smooth){
-        cameraTarget.copy(position);lookTarget.copy(target);moving=true;
-      }else{
-        camera.position.copy(position);controls.target.copy(target);
-        cameraTarget.copy(position);lookTarget.copy(target);moving=false;
-      }
-      controls.update();
-    }
-
-    const cameraTarget=new T.Vector3(),lookTarget=new T.Vector3();
-    let moving=false;
-    frameVisible(false);
-
-    function setView(mode,shouldFrame=true){
-      if(!['exterior','interior','tank'].includes(mode))mode='exterior';
-      currentMode=mode;
-      floor.visible=mode!=='tank';
-
-      // Start from a known clean state every time. No leftover hidden panels or exploded offsets.
-      main.visible=true;tower.visible=true;chassis.visible=true;tank.visible=true;skirt.visible=true;
-      doors.visible=true;exhaust.visible=true;vents.visible=true;locks.visible=true;branding.visible=true;
-      interior.visible=false;tankSystems.visible=false;
-      tankShell.visible=true;tankTop.visible=true;
-      frontWall.visible=true;rearWall.visible=true;roofGroup.visible=true;
-      towerFront.visible=true;towerRear.visible=true;
-
-      if(mode==='exterior'){
-        selectionInfo.textContent='VISTA EXTERIOR COMPLETA · Unidad Eurocontainer';
-      }else if(mode==='interior'){
-        doors.visible=false;exhaust.visible=false;vents.visible=false;locks.visible=false;branding.visible=false;
-        frontWall.visible=false;roofGroup.visible=false;towerFront.visible=false;skirt.visible=false;
-        rearWall.visible=true;towerRear.visible=true;
-        interior.visible=true;
-        tank.visible=false;
-        chassis.visible=true;
-        selectionInfo.textContent='INTERIOR DEL CONTENEDOR · Motor, cuadros, combustible, sensores y alumbrado';
-      }else if(mode==='tank'){
-        main.visible=false;tower.visible=false;chassis.visible=false;skirt.visible=false;
-        doors.visible=false;exhaust.visible=false;vents.visible=false;locks.visible=false;branding.visible=false;
-        interior.visible=false;
-        tank.visible=true;tankShell.visible=true;tankTop.visible=false;tankSystems.visible=true;
-        selectionInfo.textContent='INTERIOR DEL BELLY TANK · Cuadro, HYTEK, T5020, sondas y Fuel Polisher';
-      }
-
-      modeButtons.forEach(button=>{
-        button.setAttribute('aria-pressed',String(button.dataset.modelView===mode));
-      });
-      if(shouldFrame)frameVisible(true);
-    }
-    modeButtons.forEach(button=>button.addEventListener('click',()=>{
-      clearHighlight();
-      setView(button.dataset.modelView,true);
-      controls.autoRotate=false;syncRotate();
-    }));
-    rotateButton.addEventListener('click',()=>{controls.autoRotate=!controls.autoRotate;syncRotate();});
-    resetButton.addEventListener('click',()=>{
-      clearHighlight();setView(currentMode,true);
-      controls.autoRotate=false;syncRotate();
-    });
-    function zoomBy(factor){
-      const offset=camera.position.clone().sub(controls.target).multiplyScalar(factor);
-      const next=offset.length();
-      if(next>=controls.minDistance&&next<=controls.maxDistance){
-        camera.position.copy(controls.target).add(offset);controls.update();
-      }
-    }
-    zoomIn.addEventListener('click',()=>zoomBy(.88));
-    zoomOut.addEventListener('click',()=>zoomBy(1.14));
-    controls.addEventListener('start',()=>{moving=false;controls.autoRotate=false;syncRotate();});
-
-    const resize=()=>{
-      const rect=stage.getBoundingClientRect();if(rect.width<2||rect.height<2)return;
-      renderer.setSize(rect.width,rect.height,false);
-      camera.aspect=rect.width/rect.height;camera.updateProjectionMatrix();
-      frameVisible(true);
-    };
-    if('ResizeObserver' in window)new ResizeObserver(resize).observe(stage);
-    else window.addEventListener('resize',resize,{passive:true});
-    resize();
-    stage.classList.add('model-ready');
-    const state=document.getElementById('modelState');if(state)state.hidden=true;
-
-    observer=new IntersectionObserver(entries=>{isVisible=entries[0].isIntersecting;},{threshold:.02});
-    observer.observe(stage);
-    const clock=new T.Clock();
-    function animate(){
-      frameHandle=requestAnimationFrame(animate);
-      if(!isVisible||document.hidden)return;
-      const delta=Math.min(clock.getDelta(),.05);
-      if(moving){
-        camera.position.lerp(cameraTarget,.085);
-        controls.target.lerp(lookTarget,.085);
-        if(camera.position.distanceTo(cameraTarget)<.012&&controls.target.distanceTo(lookTarget)<.012)moving=false;
-      }
-      controls.update(delta);renderer.render(scene,camera);
-    }
-    animate();
-    window.addEventListener('pagehide',()=>{cancelAnimationFrame(frameHandle);observer?.disconnect();controls.dispose();renderer.dispose();},{once:true});
-  }catch(error){
-    console.error('Error al iniciar la reconstrucción 3D de Eurocontainer:',error);
-    stage.classList.remove('model-ready');
-    stage.classList.add('model-load-error');
-    const state=document.getElementById('modelState');
-    if(state){state.hidden=false;state.querySelector('strong').textContent='No se ha podido iniciar el visor 3D';state.querySelector('p').textContent='Comprueba la conexión WebGL o la carga de Three.js. No se ha sustituido el modelo por una fotografía.';}
-  }
-})();
-</script>
+<script src="js/ui.js" defer></script>
+<script type="module" src="js/viewer.js"></script>
 </body>
 </html>

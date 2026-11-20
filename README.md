@@ -1,19 +1,38 @@
-# BOXIS · Eurocontainer · E=Gedesel
+# BOX Integration Systems · Eurocontainer · E=Gedesel
 
-Landing corporativa industrial con superficies de cristal, tipografía legible, interacción 3D y contactos BOXIS.
+Página de presentación para feria. Sitio estático (sin servidor, sin compilación): se publica tal cual en GitHub Pages.
+
+## Estructura
+
+```
+index.html            Contenido de la página
+css/styles.css        Estilos (una sola hoja, sin parches superpuestos)
+js/ui.js              Interfaz: aparición al hacer scroll, inclinación 3D de tarjetas, navegación, vCards
+js/viewer.js          Visor 3D de la unidad (three.js)
+assets/3d/            Modelo GLB propio (boxis-modelo.glb) y logotipos originales de Eurocontainer para la chapa
+assets/logos/         Logotipos originales de BOX, Eurocontainer y E=Gedesel (versión original y versión blanca para fondo oscuro)
+assets/img/           Fotografías de la unidad, del belly tank y recreación de las instalaciones
+vendor/three/         three.js (r188dev) incluido en local (la página funciona sin CDN ni conexión a otros servidores)
+```
 
 ## Visor 3D
-El visor muestra únicamente tres modos de trabajo:
-1. **Exterior completo:** conjunto Eurocontainer, torre, puertas, silenciador, rejillas, faldón, bastidor y serigrafías.
-2. **Interior del contenedor:** motor diésel genérico, alternador, cuadro de motor, cuadros auxiliar/datos/Fuel Panel/Davenham, líneas de combustible, Fire Valve, electroválvula, sensores, cableado de potencia y alumbrado.
-3. **Interior del belly tank:** paredes y fondo del depósito, tapa desmontable, cuadro propio, HYTEK, T5020, sondas y bomba Fuel Polisher.
 
-El ratón permite orbitar 360°, usar zoom, pausar/reanudar la rotación y seleccionar componentes visibles. La cámara encuadra automáticamente solo la geometría visible en cada uno de los tres modos.
+Trabaja directamente sobre `assets/3d/boxis-modelo.glb`. Para cambiar el modelo basta con sustituir ese archivo por otro con los mismos nombres de material (`estructura-container`, `torre-extraccion`, `estructura-belly-tank`, `motor`, `ventilador-del-motor`, `aspas-ventilador`, `silenciador-escape`, `aislamiento-tubo-escape`, `cuadro-de-potencia`, `cuadros-de-control`, `filtros-de-aire`).
 
-## Identidad gráfica
-- La serigrafía lateral y la marca de la torre se obtienen de recortes de las fotografías de la unidad proporcionadas por el usuario. Las texturas conservan transparencia para que no aparezca un rectángulo negro sobre la chapa.
-- Las fichas de José Luis Herrando, Alejandro Ballestín y Rubén Ruiz Cañón utilizan el logotipo BOX Integration Systems como marca de agua de fondo, texto ampliado y acciones «Añadir a contactos» / «Enviar correo» sin cajas ni marcos.
-- Los datos de contacto conservan la descarga individual de vCards.
+En tiempo de ejecución el visor añade lo que el GLB no trae: normales con aristas vivas, materiales físicos y suciedad por posición, tejado corrugado (el modelo original está abierto por arriba), sillines del silenciador, iluminación con sombras y los logotipos originales de Eurocontainer proyectados sobre la chapa corrugada.
 
-## Precisión técnica
-La geometría exterior es una reconstrucción visual a partir de las fotografías. La disposición de los equipos interiores es conceptual y se ha montado a partir de la lista de componentes facilitada por el usuario. No es un CAD/STEP del fabricante y no debe utilizarse para fabricación, mantenimiento ni ingeniería de detalle. El fabricante del motor queda por confirmar.
+Tres vistas:
+1. **Exterior completo**: unidad cerrada con logotipos.
+2. **Interior del contenedor**: corte animado (tejado, torre y lateral retirados) con motor, radiador, cuadros y filtros.
+3. **Interior del belly tank**: el resto de la unidad se vuelve transparente y el depósito inferior queda abierto por un lateral.
+
+Interacción: arrastrar para orbitar, rueda para acercar (tras pulsar en el visor, para no bloquear el scroll de la página), pulsar un componente para aislarlo y encuadrarlo, botones y teclado (flechas, + / −, Esc, Inicio, 1 / 2 / 3). Cada pieza se identifica por color-ID en GPU, por lo que la selección es exacta.
+
+Los parámetros editables (vistas, cortes, textos de cada pieza, posición y tamaño de los logotipos) están al principio de `js/viewer.js` (`PARTS`, `MODES`, `LOOKS`, `DECALS`).
+
+## Tipografías y logotipos
+- Titulares e interfaz: Barlow Condensed, Inter y Manrope, cargadas desde Google Fonts con tipografías del sistema como alternativa.
+- Los logotipos son los originales facilitados; sobre fondo oscuro se usa su versión en blanco (mismo trazo, sin redibujar) y sobre la chapa del modelo 3D la versión original con sus colores.
+
+## Contactos
+Las tres tarjetas del equipo de BOX Integration Systems descargan su vCard desde `js/ui.js` (objeto `team`) y abren el correo con `mailto:`.
