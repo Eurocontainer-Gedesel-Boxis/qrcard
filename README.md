@@ -2,6 +2,8 @@
 
 Página de presentación para feria. Sitio estático (sin servidor, sin compilación): se publica tal cual en GitHub Pages.
 
+**Dirección definitiva:** https://eurocontainer-gedesel-boxis.github.io/qrcard/
+
 ## Estructura
 
 ```
