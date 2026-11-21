@@ -125,8 +125,8 @@ const LOOKS = {
 
 /* Logotipos originales: dónde se proyectan sobre la chapa */
 const DECALS = [
-  { url: DECAL_SIDE, aspect: 1364 / 142, axis: 'x', side: -1, along: -0.4, y: 3.42, width: 4.0, outerMin: 1.6 },
-  { url: DECAL_END, aspect: 926 / 589, axis: 'z', side: -1, along: 0, y: 1.5, width: 2.0, outerMin: 7.6 }
+  { url: DECAL_SIDE, aspect: 1400 / 248, axis: 'x', side: -1, along: -0.4, y: 3.36, width: 3.4, outerMin: 1.6 },
+  { url: DECAL_END, aspect: 1000 / 601, axis: 'z', side: -1, along: 0, y: 1.5, width: 2.0, outerMin: 7.6 }
 ];
 
 /* --------------------------------------------------------------------------

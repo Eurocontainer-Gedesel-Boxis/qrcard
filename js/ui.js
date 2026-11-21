@@ -93,11 +93,27 @@
     });
   }
 
+  /* ---------- Vídeo del montaje: botón de reproducción sobre el póster ---------- */
+  document.querySelectorAll('.shot--video').forEach((box) => {
+    const video = box.querySelector('video');
+    if (!video) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'video-play';
+    btn.setAttribute('aria-label', 'Reproducir el vídeo del montaje');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8a.6.6 0 0 0 .92.5l10-6.4a.6.6 0 0 0 0-1l-10-6.4A.6.6 0 0 0 8 5.6Z" fill="currentColor"/></svg>';
+    video.removeAttribute('controls');
+    box.appendChild(btn);
+    const start = () => { video.setAttribute('controls', ''); box.classList.add('is-started'); };
+    btn.addEventListener('click', () => { start(); const p = video.play(); if (p && p.catch) p.catch(() => {}); video.focus({ preventScroll: true }); });
+    video.addEventListener('play', start);
+  });
+
   /* ---------- vCard ---------- */
   const team = {
     jose:      { first: 'José Luis', last: 'Herrando',    full: 'José Luis Herrando',  role: 'Director de proyecto',           phone: '+34 659 481 773', email: 'jlherrando@boxis.es', hours: 'Lunes a viernes, 08:30–16:30' },
     alejandro: { first: 'Alejandro', last: 'Ballestín',   full: 'Alejandro Ballestín', role: 'Director de proyecto',           phone: '+34 683 223 203', email: 'aballestin@boxis.es', hours: 'Lunes a viernes, 08:30–16:30' },
-    ruben:     { first: 'Rubén',     last: 'Ruiz Cañón',  full: 'Rubén Ruiz Cañón',    role: 'Delineante eléctrico y calidad', phone: '',                email: 'rruiz@boxis.es',      hours: 'Lunes a viernes, 08:00–16:00', url: 'https://es.linkedin.com/in/ruben-ruiz-canon' }
+    ruben:     { first: 'Rubén',     last: 'Ruiz Cañón',  full: 'Rubén Ruiz Cañón',    role: 'Delineante eléctrico y calidad', phone: '+34 659 341 288', email: 'rruiz@boxis.es',      hours: 'Lunes a viernes, 08:00–16:00' }
   };
   const esc = (v) => String(v || '').replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
 
@@ -110,11 +126,11 @@
         'N:' + esc(p.last) + ';' + esc(p.first) + ';;;',
         'FN:' + esc(p.full), 'ORG:BOX Integration Systems', 'TITLE:' + esc(p.role)
       ];
-      if (p.phone) lines.push('TEL;TYPE=CELL:' + p.phone);
       lines.push(
+        'TEL;TYPE=CELL:' + p.phone,
         'EMAIL;TYPE=WORK:' + p.email,
         'ADR;TYPE=WORK:;;Carretera Alagón–Tudela (A-126) km 44\\,900;Remolinos;Zaragoza;50637;España',
-        'URL:' + (p.url || 'https://boxis.es/'),
+        'URL:https://boxis.es/',
         'NOTE:' + esc(p.hours),
         'END:VCARD'
       );

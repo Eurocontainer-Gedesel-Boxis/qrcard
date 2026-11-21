@@ -11,9 +11,10 @@ index.html            Contenido de la página
 css/styles.css        Estilos (una sola hoja, sin parches superpuestos)
 js/ui.js              Interfaz: aparición al hacer scroll, inclinación 3D de tarjetas, navegación, vCards
 js/viewer.js          Visor 3D de la unidad (three.js)
-assets/3d/            Modelo GLB propio (boxis-modelo.glb) y logotipos originales de Eurocontainer para la chapa
-assets/logos/         Logotipos originales de BOX, Eurocontainer y E=Gedesel (versión original y versión blanca para fondo oscuro)
-assets/img/           Fotografías de la unidad, del belly tank y recreación de las instalaciones
+assets/3d/            Modelo GLB propio (boxis-modelo.glb) y logotipo de Eurocontainer para la chapa
+assets/logos/         Logotipos de BOX, Eurocontainer y E=Gedesel: `*-color.png` (a color, para fondo oscuro) y `*-original.png` (colores tal cual, para fondo claro)
+assets/img/           Fotografías de la unidad, del belly tank y vista aérea de las instalaciones de Remolinos
+assets/video/         Vídeo del montaje del contenedor y del belly tank (H.264, 848×478, sin audio) y su póster
 vendor/three/         three.js (r188dev) incluido en local (la página funciona sin CDN ni conexión a otros servidores)
 ```
 
@@ -34,7 +35,10 @@ Los parámetros editables (vistas, cortes, textos de cada pieza, posición y tam
 
 ## Tipografías y logotipos
 - Titulares e interfaz: Barlow Condensed, Inter y Manrope, cargadas desde Google Fonts con tipografías del sistema como alternativa.
-- Los logotipos son los originales facilitados; sobre fondo oscuro se usa su versión en blanco (mismo trazo, sin redibujar) y sobre la chapa del modelo 3D la versión original con sus colores.
+- Los logotipos proceden de los archivos facilitados, sin redibujar: se reescalan con separación limpia de color y transparencia (sin halos). Sobre el fondo oscuro se usa la versión a color (símbolo con sus colores de marca y rotulación clara) y sobre la chapa del modelo 3D la versión original con sus colores. En el logotipo de Eurocontainer la geometría procede del archivo de mayor resolución alineado con el logotipo facilitado.
+
+## Galería
+Cuatro elementos en una fila (unidad, belly tank, vídeo del montaje, instalaciones). El vídeo solo carga sus metadatos hasta que se pulsa reproducir. En tablet pasa a 2×2 y en móvil a una columna.
 
 ## Contactos
-Las tres tarjetas del equipo de BOX Integration Systems descargan su vCard desde `js/ui.js` (objeto `team`) y abren el correo con `mailto:`.
+Las tres tarjetas del equipo de BOX Integration Systems tienen el mismo formato (teléfono, correo, horario y sede), descargan su vCard desde `js/ui.js` (objeto `team`) y abren el correo con `mailto:`.
