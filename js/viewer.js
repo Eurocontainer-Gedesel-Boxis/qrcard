@@ -8,7 +8,7 @@
    transiciones suaves.
    ========================================================================== */
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { FreeOrbit } from './free-orbit.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
@@ -85,7 +85,7 @@ const MODES = {
     chips: ['shell', 'tower', 'exhaust', 'tank'],
     title: 'Unidad completa',
     desc: 'Contenedor con belly tank integrado, torre de extracción y silenciador. Pulsa una zona para conocer su función.',
-    cam: { theta: -2.38, phi: 1.3, dist: 28, target: [0, 3.6, -0.6] },
+    cam: { theta: -Math.PI / 2, phi: 1.42, dist: 28, target: [0, 3.6, -0.6], fit: 'unit' },
     clip: { roof: 10.8, wall: 2.6, tankWall: 2.6, floor: 10.8 },
     sun: [-10, 14, -5], lamps: 0
   },
@@ -98,13 +98,14 @@ const MODES = {
     sun: [8, 17, -5], lamps: 1
   },
   tank: {
-    chips: ['tank', 'shell'],
+    chips: ['tank'],
     title: 'Interior del belly tank',
-    desc: 'Corte por el depósito inferior: tabiques transversales que refuerzan la estructura y limitan el movimiento del combustible.',
-    cam: { theta: 1.5, phi: 1.12, dist: 23, target: [0, 1.2, 0.2] },
+    desc: 'Depósito inferior abierto por un lateral: tabiques transversales que refuerzan la estructura y limitan el movimiento del combustible.',
+    cam: { theta: 1.5, phi: 0.86, dist: 18, target: [0, 0.5, 0], fit: 'tank' },
     clip: { roof: 'roofCut', wall: 1.56, tankWall: 1.56, floor: 10.8 },
     ghostBase: 'tank',
-    sun: [8, 15, 3], lamps: 0.25
+    only: 'tank', // el contenedor y el resto de piezas se ocultan por completo
+    sun: [8, 15, 3], lamps: 0
   }
 };
 
@@ -345,7 +346,7 @@ async function main() {
   scene.environmentIntensity = 0.6;
 
   const camera = new THREE.PerspectiveCamera(32, 1, 0.5, 220);
-  const controls = new OrbitControls(camera, canvas);
+  const controls = new FreeOrbit(camera, canvas); // órbita 360° sin límites verticales (también desde abajo)
   controls.enableDamping = true;
   controls.dampingFactor = 0.075;
   controls.rotateSpeed = 0.75;
@@ -353,9 +354,7 @@ async function main() {
   controls.panSpeed = 0.7;
   controls.minDistance = 4.5;
   controls.maxDistance = 46;
-  controls.minPolarAngle = 0.12;
-  controls.maxPolarAngle = 1.5;
-  controls.autoRotateSpeed = 1.1;
+  controls.autoRotateSpeed = (Math.PI * 2) / 55;
   canvas.style.touchAction = 'pan-y'; // el scroll vertical de la página sigue funcionando en móvil
 
   /* ---- Luces ---- */
@@ -369,10 +368,15 @@ async function main() {
   sun.position.set(...MODES.exterior.sun);
   sun.target.position.set(0, 1.5, -0.3);
   scene.add(sun, sun.target);
-  const hemi = new THREE.HemisphereLight(0xcfe3f2, 0x2a3640, 0.25);
+  const hemi = new THREE.HemisphereLight(0xcfe3f2, 0x4d6475, 0.3);
   const fill = new THREE.DirectionalLight(0xbcd6ee, 0.55);
   fill.position.set(7, 6, -12);
-  scene.add(hemi, fill);
+  // luces desde abajo: la parte inferior de la unidad también se ve bien al orbitar por debajo
+  const under = new THREE.DirectionalLight(0xb7cfe4, 1.0);
+  under.position.set(-5, -12, 7);
+  const under2 = new THREE.DirectionalLight(0xb7cfe4, 0.6);
+  under2.position.set(6, -10, -8);
+  scene.add(hemi, fill, under, under2);
   const lamps = [[-1.2, 3.5, -3.6], [1.2, 3.5, 1.0], [-1.2, 3.5, 5.2]].map((p) => {
     const l = new THREE.PointLight(0xfff0d8, 0, 9, 1.6);
     l.position.set(...p);
@@ -717,27 +721,48 @@ async function main() {
 
   /* ---- Cámara ---- */
   const fitMul = () => clamp(1.3 / camera.aspect, 1, 1.6);
-  const sph = new THREE.Spherical();
   const tmp = new THREE.Vector3();
+  const tmpB = new THREE.Vector3();
+  const unitBox = new THREE.Box3();
+  partKeys.forEach((k) => unitBox.union(partBox[k]));
+  const fitBoxes = { unit: unitBox, tank: partBox.tank };
+
+  /* Distancia mínima a la que toda la caja cabe en pantalla desde el ángulo dado (θ, φ).
+     Con ella el conjunto nunca se corta, ni de perfil ni de frente ni desde arriba. */
+  const fwd = new THREE.Vector3(), rgt = new THREE.Vector3(), upv = new THREE.Vector3(), ctr = new THREE.Vector3(), cor = new THREE.Vector3();
+  function fitDistance(box, theta, phi, aspect = camera.aspect, margin = 0.9) {
+    const sp = Math.sin(phi), cp = Math.cos(phi), st = Math.sin(theta), ct = Math.cos(theta);
+    fwd.set(-sp * st, -cp, -sp * ct);        // dirección de mira
+    upv.set(-cp * st, sp, -cp * ct);
+    rgt.crossVectors(fwd, upv);
+    box.getCenter(ctr);
+    const ty = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)), tx = ty * aspect;
+    let D = 0;
+    for (let i = 0; i < 8; i++) {
+      cor.set(i & 1 ? box.max.x : box.min.x, i & 2 ? box.max.y : box.min.y, i & 4 ? box.max.z : box.min.z).sub(ctr);
+      const zc = cor.dot(fwd);
+      D = Math.max(D, Math.abs(cor.dot(rgt)) / (margin * tx) - zc, Math.abs(cor.dot(upv)) / (margin * ty) - zc);
+    }
+    return D;
+  }
+  const modeBox = (m) => fitBoxes[MODES[m].cam.fit] || null;
+  const modeFit = (m, theta, phi, aspect) => {
+    const box = modeBox(m);
+    return box ? fitDistance(box, theta, phi, aspect, m === 'tank' ? 0.86 : 0.84) : null;
+  };
+  let zoomFactor = 1; // zoom elegido por la persona respecto al encuadre automático
 
   function applyView(v) {
-    controls.target.set(v.tx, v.ty, v.tz);
-    camera.position.setFromSpherical(sph.set(v.dist, v.phi, v.theta)).add(controls.target);
-    camera.lookAt(controls.target);
-    controls.update();
+    controls.setState({ theta: v.theta, phi: v.phi, radius: v.dist, target: tmp.set(v.tx, v.ty, v.tz) });
     dirty = true;
   }
-  function currentView() {
-    tmp.copy(camera.position).sub(controls.target);
-    sph.setFromVector3(tmp);
-    return { tx: controls.target.x, ty: controls.target.y, tz: controls.target.z, theta: sph.theta, phi: sph.phi, dist: sph.radius };
-  }
+  const currentView = () => controls.getState();
   function flyTo(to, ms = 1300) {
     const from = currentView();
     tip.classList.remove('on');
     const goal = { ...from, ...to };
     goal.theta = from.theta + angDiff(from.theta, goal.theta);
-    goal.phi = clamp(goal.phi, 0.2, 1.48);
+    goal.phi = from.phi + angDiff(from.phi, goal.phi);
     goal.dist = clamp(goal.dist, 4.8, 44);
     if (reduceMotion || ms <= 0) { tween = null; applyView(goal); return; }
     tween = { t0: performance.now(), ms, from, to: goal };
@@ -751,11 +776,24 @@ async function main() {
       tx: lerp(f.tx, t.tx, e), ty: lerp(f.ty, t.ty, e), tz: lerp(f.tz, t.tz, e),
       theta: lerp(f.theta, t.theta, e), phi: lerp(f.phi, t.phi, e), dist: lerp(f.dist, t.dist, e)
     });
-    if (k >= 1) tween = null;
+    if (k >= 1) {
+      tween = null;
+      if (mode === 'exterior' && !selected) {
+        const f = modeFit('exterior', controls.theta, controls.phi, camera.aspect);
+        if (f > 0) zoomFactor = clamp(controls.radius / f, 0.3, 2);
+      }
+    }
     return true;
   }
   const presetView = (m) => {
     const c = MODES[m].cam;
+    const box = modeBox(m);
+    if (box) {
+      // objetivo = centro de la caja que se encuadra; distancia calculada para que quepa entera
+      box.getCenter(tmpB);
+      const d = fitDistance(box, c.theta, c.phi, camera.aspect, m === 'tank' ? 0.86 : 0.84);
+      return { tx: tmpB.x, ty: tmpB.y, tz: tmpB.z, theta: c.theta, phi: c.phi, dist: d };
+    }
     return { tx: c.target[0], ty: c.target[1], tz: c.target[2], theta: c.theta, phi: c.phi, dist: c.dist * fitMul() };
   };
   function focusView(key) {
@@ -848,7 +886,11 @@ async function main() {
     if (key && !partState[key]) key = null;
     selected = key;
     const focusKey = key || MODES[mode].ghostBase || null;
-    partKeys.forEach((k) => { partState[k].target = !focusKey || k === focusKey ? 1 : 0.13; });
+    const only = MODES[mode].only;
+    partKeys.forEach((k) => {
+      if (only) partState[k].target = k === only ? 1 : 0;
+      else partState[k].target = !focusKey || k === focusKey ? 1 : 0.13;
+    });
     chipsEl && chipsEl.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.part === key)));
     if (!quiet) {
       if (key) setInfo(PARTS[key].name, PARTS[key].desc); else setInfo(MODES[mode].title, MODES[mode].desc);
@@ -977,6 +1019,11 @@ async function main() {
   controls.addEventListener('start', () => { tween = null; interacting = true; clearTimeout(idleTimer); });
   controls.addEventListener('end', () => { interacting = false; clearTimeout(idleTimer); idleTimer = setTimeout(() => { dirty = true; }, 2500); });
   controls.addEventListener('change', () => { dirty = true; });
+  controls.addEventListener('zoom', () => {
+    if (mode !== 'exterior' || selected) return;
+    const f = modeFit('exterior', controls.theta, controls.phi, camera.aspect);
+    if (f > 0) zoomFactor = clamp(controls.targetRadius / f, 0.3, 2);
+  });
 
   /* ---- Controles de la barra ---- */
   const autoBtn = $('autoRotate');
@@ -1024,10 +1071,11 @@ async function main() {
     const wasAspect = camera.aspect;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    if (Math.abs(wasAspect - camera.aspect) > 0.3 && !tween && !selected && !interacting) {
+    if (Math.abs(wasAspect - camera.aspect) > 0.02 && !tween && !selected && !interacting && modeBox(mode)) {
+      // al cambiar la proporción del visor se conserva el zoom relativo al encuadre automático
       const v = currentView();
-      const base = MODES[mode].cam.dist;
-      if (Math.abs(v.dist - base * clamp(1.3 / wasAspect, 1, 1.6)) < 0.5) applyView({ ...v, dist: base * fitMul() });
+      const before = modeFit(mode, v.theta, v.phi, wasAspect), after = modeFit(mode, v.theta, v.phi, camera.aspect);
+      if (before > 0 && after > 0) applyView({ ...v, dist: v.dist * (after / before) });
     }
     dirty = true;
   }
@@ -1054,6 +1102,11 @@ async function main() {
 
     const auto = userAuto && mode === 'exterior' && !selected && !interacting && !tween && !(down) && !hovered;
     controls.autoRotate = auto;
+    if (auto) {
+      // durante el giro automático la distancia se ajusta a cada ángulo: de frente y de perfil entra siempre entero
+      const f = modeFit('exterior', controls.theta, controls.phi, camera.aspect);
+      if (f > 0) controls.setRadius(lerp(controls.radius, f * zoomFactor, 1 - Math.exp(-dt * 5)));
+    }
     const changed = controls.update(dt);
     controls.target.x = clamp(controls.target.x, -7, 7);
     controls.target.y = clamp(controls.target.y, -1, 9);
@@ -1090,7 +1143,7 @@ async function main() {
   if (DEBUG) {
     window.__viewer = {
       THREE, scene, camera, controls, renderer, partState, planes, roofY, towerBox, pipeBox, silBox, shellBox,
-      setMode, select, flyTo, applyView, currentView, pickAt, setHover,
+      setMode, select, flyTo, applyView, currentView, pickAt, setHover, modeFit, fitDistance, unitBox, partBox, presetView,
       shot: (v) => { tween = null; applyView({ ...currentView(), ...v }); dirty = true; renderer.shadowMap.needsUpdate = true; renderer.render(scene, camera); }
     };
   }

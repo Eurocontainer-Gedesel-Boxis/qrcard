@@ -10,7 +10,7 @@
 - E=Gedesel · Identidad corporativa: https://es.linkedin.com/company/egedesel
 
 ## Tecnología
-- three.js r188dev (licencia MIT, incluida en `vendor/three/LICENSE`): https://threejs.org/ — WebGL, OrbitControls, GLTFLoader y DRACOLoader (decodificador Draco de Google incluido en local).
+- three.js r188dev (licencia MIT, incluida en `vendor/three/LICENSE`): https://threejs.org/ — WebGL, GLTFLoader y DRACOLoader (decodificador Draco de Google incluido en local).
 
 ## Material gráfico
 Logotipos, fotografías (incluida la vista aérea de las instalaciones de Remolinos), el vídeo del montaje «Del acero a la energía» y el modelo 3D `boxis-modelo.glb` son material facilitado por el propietario del sitio. Las tres compañías se presentan como especialidades complementarias, no como una única entidad societaria.

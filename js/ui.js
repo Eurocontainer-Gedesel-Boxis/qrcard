@@ -84,15 +84,6 @@
     });
   }
 
-  /* ---------- Botón «Ver conjunto 3D» ---------- */
-  const focusBtn = document.getElementById('focusModel');
-  if (focusBtn) {
-    focusBtn.addEventListener('click', () => {
-      const canvas = document.getElementById('container3d');
-      if (canvas) setTimeout(() => canvas.focus({ preventScroll: true }), 450);
-    });
-  }
-
   /* ---------- Vídeo del montaje: botón de reproducción sobre el póster ---------- */
   document.querySelectorAll('.shot--video').forEach((box) => {
     const video = box.querySelector('video');
@@ -107,6 +98,29 @@
     const start = () => { video.setAttribute('controls', ''); box.classList.add('is-started'); };
     btn.addEventListener('click', () => { start(); const p = video.play(); if (p && p.catch) p.catch(() => {}); video.focus({ preventScroll: true }); });
     video.addEventListener('play', start);
+
+    /* Al pasar a pantalla completa se carga la versión 4K (3840×2160), conservando el punto de reproducción */
+    const hires = video.dataset.hires;
+    if (hires) {
+      const saveData = !!(navigator.connection && navigator.connection.saveData);
+      let hiLoaded = false;
+      const swapToHires = () => {
+        if (hiLoaded || saveData) return;
+        hiLoaded = true;
+        const t = video.currentTime, playing = !video.paused;
+        video.removeAttribute('poster');
+        video.src = hires;
+        video.addEventListener('loadedmetadata', () => {
+          try { video.currentTime = t; } catch (_) { /* sin punto de reproducción */ }
+          if (playing) { const p = video.play(); if (p && p.catch) p.catch(() => {}); }
+        }, { once: true });
+        video.load();
+      };
+      const onFullscreen = () => { if ((document.fullscreenElement || document.webkitFullscreenElement) === video) swapToHires(); };
+      document.addEventListener('fullscreenchange', onFullscreen);
+      document.addEventListener('webkitfullscreenchange', onFullscreen);
+      video.addEventListener('webkitbeginfullscreen', swapToHires);
+    }
   });
 
   /* ---------- vCard ---------- */
